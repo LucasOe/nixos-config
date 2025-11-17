@@ -22,8 +22,49 @@
     enableSystemSound = true; # System sound effects
 
     # Default Settings
+    # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/settings/SettingsSpec.js
+    # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/SettingsData.qml
     default.settings = {
-      theme = "dark";
+      currentThemeName = "blue";
+      cornerRadius = 12;
+      monoFontFamily = "JetBrains Mono";
+      dankBarSpacing = 0;
+      dankBarSquareCorners = true;
+
+      weatherEnabled = false;
+
+      controlCenterWidgets = [
+        {
+          id = "volumeSlider";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "brightnessSlider";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "wifi";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "bluetooth";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "audioOutput";
+          enabled = true;
+          width = 50;
+        }
+        {
+          id = "audioInput";
+          enabled = true;
+          width = 50;
+        }
+      ];
     };
   };
 }

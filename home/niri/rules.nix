@@ -8,11 +8,11 @@
         place-within-backdrop = true;
       }
       {
-        matches = [ { namespace = "^quickshell-wallpaper$"; } ];
+        matches = [ { namespace = "dms:blurwallpaper"; } ];
         place-within-backdrop = true;
       }
       {
-        matches = [ { namespace = "^quickshell-overview$"; } ];
+        matches = [ { namespace = "^noctalia-overview*"; } ];
         place-within-backdrop = true;
       }
     ];

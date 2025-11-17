@@ -11,6 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +45,12 @@
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+    inputs@{
+      nixpkgs,
+      stylix,
+      home-manager,
+      ...
+    }:
     {
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#hostname'
@@ -50,6 +60,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/laptop/configuration.nix
+            stylix.nixosModules.stylix
 
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -57,6 +68,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = { inherit inputs; };
               home-manager.users.lucas = import ./home/home.nix;
             }

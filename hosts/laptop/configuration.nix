@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/system.nix
+    ../../modules/stylix.nix
     ../../modules/noctalia.nix
     ./modules
     inputs.dankMaterialShell.nixosModules.greeter
@@ -62,5 +63,5 @@
   programs.nix-ld.enable = true;
 
   # System packages
-  environment.systemPackages = with pkgs; [ ];
+  # environment.systemPackages = with pkgs; [ ];
 }

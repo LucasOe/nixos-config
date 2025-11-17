@@ -5,7 +5,6 @@
     inputs.niri.homeModules.niri # Import home-manager module
     ./settings.nix
     ./keybinds.nix
-    # ./noctalia.nix
     ./rules.nix
     ./autostart.nix
   ];

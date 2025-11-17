@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # https://danklinux.com/docs/dankmaterialshell/nixos
   programs.dankMaterialShell = {
     # Niri Integration
     # https://github.com/AvengeMedia/DankMaterialShell/blob/master/distro/nix/niri.nix

@@ -7,6 +7,7 @@
   imports = [
     ./niri
     ./noctalia
+    ./firefox
   ];
 
   # Let Home Manager install and manage itself
@@ -66,10 +67,5 @@
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
     '';
-  };
-
-  # Firefox
-  programs.firefox = {
-    enable = true;
   };
 }

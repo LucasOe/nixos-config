@@ -6,6 +6,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +52,7 @@
   outputs =
     inputs@{
       nixpkgs,
+      nur,
       stylix,
       home-manager,
       ...
@@ -60,6 +66,11 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/laptop/configuration.nix
+
+            # Nix User Repository
+            nur.modules.nixos.default
+
+            # Stylix
             stylix.nixosModules.stylix
 
             # make home-manager as a module of nixos

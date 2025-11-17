@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/system.nix
-    ../../modules/dms.nix
+    ../../modules/noctalia.nix
     ./modules
     inputs.dankMaterialShell.nixosModules.greeter
   ];

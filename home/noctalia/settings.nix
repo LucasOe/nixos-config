@@ -71,7 +71,7 @@
         name = "Berlin, Germany";
       };
       appLauncher = {
-        nableClipboardHistory = true;
+        enableClipboardHistory = true;
         terminalCommand = "kitty";
       };
       dock = {

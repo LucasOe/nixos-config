@@ -6,11 +6,14 @@
 
   imports = [
     ./niri
-    ./dms
+    ./noctalia
   ];
 
-  # Let Home Manager install and manage itself.
+  # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
+
+  # Enable fontconfig configuration
+  fonts.fontconfig.enable = true;
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -67,11 +70,5 @@
   # Firefox
   programs.firefox = {
     enable = true;
-  };
-
-  # Clipboard Manager
-  services.cliphist = {
-    enable = true;
-    allowImages = true;
   };
 }

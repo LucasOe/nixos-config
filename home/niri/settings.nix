@@ -4,6 +4,7 @@
   programs.niri = {
     # https://github.com/sodiboo/niri-flake/blob/main/docs.md
     # https://github.com/YaLTeR/niri/wiki/
+    # https://github.com/YaLTeR/niri/blob/main/resources/default-config.kdl
     settings = {
       prefer-no-csd = true;
 
@@ -13,11 +14,10 @@
 
       layout = {
         background-color = "transparent";
-        # background-color = "#21252b";
 
         focus-ring = {
           enable = true;
-          width = 3;
+          width = 2;
           active = {
             color = "#98c379";
           };
@@ -28,12 +28,15 @@
 
         gaps = 10;
 
-        struts = {
-          left = 0;
-          right = 0;
-          top = 0;
-          bottom = 0;
+        default-column-width = {
+          proportion = 1. / 2.;
         };
+
+        preset-column-widths = [
+          { proportion = 1. / 3.; }
+          { proportion = 1. / 2.; }
+          { proportion = 2. / 3.; }
+        ];
       };
 
       input = {
@@ -54,10 +57,13 @@
 
       window-rules = [
         {
-          geometry-corner-radius.bottom-left = 12.0;
-          geometry-corner-radius.bottom-right = 12.0;
-          geometry-corner-radius.top-left = 12.0;
-          geometry-corner-radius.top-right = 12.0;
+          geometry-corner-radius = {
+            bottom-left = 12.0;
+            bottom-right = 12.0;
+            top-left = 12.0;
+            top-right = 12.0;
+          };
+
           clip-to-geometry = true;
         }
       ];

@@ -6,6 +6,7 @@
     ../../modules/system.nix
     ../../modules/stylix.nix
     ../../modules/noctalia.nix
+    ../../modules/firefox.nix
     ./modules
     inputs.dankMaterialShell.nixosModules.greeter
   ];

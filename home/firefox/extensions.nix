@@ -4,6 +4,8 @@
   programs.firefox = {
     profiles.default = {
       extensions.force = true;
+
+      # https://gitlab.com/rycee/nur-expressions/blob/master/pkgs/firefox-addons/generated-firefox-addons.nix
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         firefox-color
         kagi-search

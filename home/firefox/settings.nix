@@ -7,6 +7,9 @@
         # Set UI scaling
         "layout.css.devPixelsPerPx" = 1.5;
 
+        # Automatically enable extensions
+        "extensions.autoDisableScopes" = 0;
+
         # Allow userChrome/userContent
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         # Allow unsigned extension

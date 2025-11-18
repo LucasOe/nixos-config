@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -9,17 +9,27 @@
     ./settings.nix
   ];
 
+  home.file = {
+    ".mozilla/firefox/default/chrome/customChrome.css".source = ./assets/customChrome.css;
+    ".mozilla/firefox/default/chrome/customContent.css".source = ./assets/customContent.css;
+  };
+
   programs.firefox = {
     enable = true;
     profiles.default = {
       id = 0;
       name = "default";
       isDefault = true;
+
+      userChrome = lib.mkAfter ''
+        @import "customChrome.css";
+        @import "customContent.css";
+      '';
     };
   };
 
   stylix.targets.firefox = {
-    colorTheme.enable = true;
+    firefoxGnomeTheme.enable = true;
     profileNames = [
       "default"
     ];

@@ -235,6 +235,9 @@
       # Set UI scaling
       "layout.css.devPixelsPerPx" = 1.5;
 
+      # This preference is required to recolor the icons
+      "svg.context-properties.content.enabled" = true;
+
       # Automatically enable extensions
       "extensions.autoDisableScopes" = 0;
 
@@ -273,6 +276,29 @@
       "privacy.clearSiteData.formdata" = true;
       "privacy.clearSiteData.historyFormDataAndDownloads" = true;
       "privacy.clearSiteData.siteSettings" = false;
+
+      # ============================================================================
+      # START: GNOME THEME
+      # ============================================================================
+
+      "gnomeTheme.hideSingleTab" = false;
+      "gnomeTheme.normalWidthTabs" = true;
+      "gnomeTheme.swapTabClose" = false;
+      "gnomeTheme.bookmarksToolbarUnderTabs" = true;
+      "gnomeTheme.activeTabContrast" = false;
+      "gnomeTheme.closeOnlySelectedTabs" = false;
+      "gnomeTheme.systemIcons" = false;
+      "gnomeTheme.noThemedIcons" = false;
+      "gnomeTheme.symbolicTabIcons" = false;
+      "gnomeTheme.hideWebrtcIndicator" = false;
+      "gnomeTheme.hideUnifiedExtensions" = false;
+      "gnomeTheme.dragWindowHeaderbarButtons" = false;
+      "gnomeTheme.tabsAsHeaderbar" = true;
+      "gnomeTheme.oledBlack" = false;
+      "gnomeTheme.allTabsButtonOnOverflow" = false;
+      "gnomeTheme.allTabsButton" = false;
+      "gnomeTheme.tabAlignLeft" = true;
+      "gnomeTheme.bookmarksOnFullscreen" = false;
     };
   };
 }

@@ -1,0 +1,4 @@
+/* Remove x-padding from tab bar */
+:root[customtitlebar]:not([inFullscreen], [sizemode="maximized"]) #TabsToolbar .toolbar-items {
+	padding: 0 1px;
+}

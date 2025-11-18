@@ -47,6 +47,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.dgop.follows = "dgop";
     };
+
+    arkenfox = {
+      url = "github:dwarfmaster/arkenfox-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -67,11 +72,9 @@
           modules = [
             ./hosts/laptop/configuration.nix
 
-            # Nix User Repository
-            nur.modules.nixos.default
-
-            # Stylix
-            stylix.nixosModules.stylix
+            # Additional Modules
+            nur.modules.nixos.default # Nix User Repository
+            stylix.nixosModules.stylix # Stylix
 
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`

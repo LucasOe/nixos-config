@@ -2,8 +2,11 @@
 
 {
   imports = [
+    ./arkenfox.nix
     ./extensions.nix
+    ./pinned.nix
     ./search.nix
+    ./settings.nix
   ];
 
   programs.firefox = {

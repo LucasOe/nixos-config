@@ -56,6 +56,7 @@
         avatarImage = "/home/lucas/Pictures/Avatars/Tamas.png";
         dimmerOpacity = 0.5;
         radiusRatio = 0.5;
+        enableShadows = false;
       };
       ui = {
         fontDefault = "JetBrains Mono";

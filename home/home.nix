@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   home.username = "lucas";
@@ -30,7 +30,15 @@
   home.packages = with pkgs; [
     nixfmt-rfc-style
     nixd
+    devenv
   ];
+
+  # Force override is required for some reason
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = lib.mkForce "prefer-dark";
+    };
+  };
 
   # Git
   programs.git = {

@@ -22,6 +22,8 @@ in
             "developer-button"
             "bookmarks-menu-button"
             "unified-extensions-button"
+
+            # Extensions
             (extension "78272b6fa58f4a1abaac99321d503a20@proton.me")
             (extension "clipper@obsidian.md")
           ];
@@ -41,7 +43,6 @@ in
           ];
         };
         seen = [ ];
-        dirtyAreaCache = [ ];
         currentVersion = 23;
         newElementCount = 0;
       };

@@ -4,6 +4,7 @@
   imports = [
     ./arkenfox.nix
     ./extensions.nix
+    ./layout.nix
     ./pinned.nix
     ./search.nix
     ./settings.nix

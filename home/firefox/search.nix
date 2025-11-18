@@ -3,22 +3,22 @@
 {
   programs.firefox = {
     profiles.default = {
-      settings = {
-        "browser.search.defaultenginename" = "Kagi";
-        "browser.search.order.0" = "Kagi";
-      };
       search = {
         force = true;
-        default = "Kagi";
+        default = "kagi";
         engines = {
-          "Kagi" = {
-            urls = [
-              {
-                template = "https://kagi.com/search?q={searchTerms}";
-              }
-            ];
-            iconUpdateURL = "https://kagi.com/favicon.ico";
+          kagi = {
+            name = "Kagi";
+            urls = [ { template = "https://kagi.com/search?q={searchTerms}"; } ];
+            icon = "https://kagi.com/favicon.ico";
           };
+
+          # Disable default search engines
+          bing.metaData.hidden = true;
+          google.metaData.hidden = true;
+          ddg.metaData.hidden = true;
+          perplexity.metaData.hidden = true;
+          wikipedia.metaData.hidden = true;
         };
       };
     };

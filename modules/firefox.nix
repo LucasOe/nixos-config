@@ -18,6 +18,8 @@
       OfferToSaveLogins = false;
       OfferToSaveLoginsDefault = false;
       PasswordManagerEnabled = false;
+      DisplayBookmarksToolbar = "never";
+      SearchEngines.PreventInstalls = true;
     };
   };
 }

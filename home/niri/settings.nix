@@ -86,6 +86,13 @@
         DISPLAY = ":0";
       };
 
+      outputs = {
+        # Laptop monitor
+        "eDP-1" = {
+          scale = 1.5;
+        };
+      };
+
       debug = {
         # Allows notification actions and window activation from Noctalia.
         honor-xdg-activation-with-invalid-serial = [ ];

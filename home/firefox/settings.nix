@@ -184,7 +184,6 @@
       # SMOOTH SCROLLING
       "general.smoothScroll" = true;
       "general.smoothScroll.msdPhysics.enabled" = true;
-      "mousewheel.default.delta_multiplier_y" = 300;
 
       # ============================================================================
       # START: MY OVERRIDES
@@ -232,8 +231,10 @@
       # START: CUSTOM
       # ============================================================================
 
-      # Set UI scaling
-      "layout.css.devPixelsPerPx" = 1.5;
+      # Firefox does not honor display scale on Wayland by default
+      # See Display0 in `about:support`
+      "widget.wayland.fractional-scale.enabled" = true;
+      "layout.css.devPixelsPerPx" = 1.0;
 
       # This preference is required to recolor the icons
       "svg.context-properties.content.enabled" = true;

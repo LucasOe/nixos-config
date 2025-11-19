@@ -148,15 +148,6 @@
         "toggleHistory"
       ];
 
-      # Settings
-      "Mod+I".action = spawn [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "settings"
-        "toggle"
-      ];
-
       # Lock Screen
       "Mod+Alt+L".action = spawn [
         "noctalia-shell"

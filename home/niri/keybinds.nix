@@ -17,9 +17,9 @@ in
     in
     {
       # Apps
-      "Mod+B".action = spawn apps.firefox;
-      "Mod+T".action = spawn apps.kitty;
-      "Mod+Return".action = spawn apps.kitty;
+      "Mod+B".action = spawn "firefox";
+      "Mod+T".action = spawn "kitty";
+      "Mod+Return".action = spawn "kitty";
 
       # General
       "Mod+Q".action = close-window;

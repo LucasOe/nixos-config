@@ -2,8 +2,6 @@
 
 {
   programs.firefox = {
-    enable = true;
-
     # Firefox has to be installed system wide for policies to work
     # https://mozilla.github.io/policy-templates/
     policies = {

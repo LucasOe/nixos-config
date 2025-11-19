@@ -60,7 +60,7 @@
       ];
 
       # Settings
-      "Mod+Comma".action = spawn [
+      "Mod+I".action = spawn [
         "noctalia-shell"
         "ipc"
         "call"

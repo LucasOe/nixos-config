@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   programs.niri = {
@@ -14,28 +14,33 @@
 
       layout = {
         background-color = "transparent";
+        gaps = 10;
 
         focus-ring = {
           enable = true;
           width = 2;
-          active = {
-            color = "#98c379";
-          };
-          inactive = {
-            color = "#282c34";
-          };
+          active.color = "#${config.lib.stylix.colors.base0B}";
+          inactive.color = "#${config.lib.stylix.colors.base03}";
+          urgent.color = "#${config.lib.stylix.colors.base0F}";
         };
 
-        gaps = 10;
+        tab-indicator = {
+          enable = true;
+          gap = 2;
+          corner-radius = 1;
+          active.color = "#${config.lib.stylix.colors.base0B}";
+          inactive.color = "#${config.lib.stylix.colors.base02}";
+          urgent.color = "#${config.lib.stylix.colors.base0F}";
+        };
 
         default-column-width = {
-          proportion = 1. / 2.;
+          proportion = 0.499;
         };
 
         preset-column-widths = [
-          { proportion = 1. / 3.; }
-          { proportion = 1. / 2.; }
-          { proportion = 2. / 3.; }
+          { proportion = 0.333; }
+          { proportion = 0.499; }
+          { proportion = 0.666; }
         ];
       };
 

@@ -10,18 +10,29 @@ in
     "Mod+T".action = spawn apps.kitty;
     "Mod+Return".action = spawn apps.kitty;
 
-    # Windows
+    # General
     "Mod+Q".action = close-window;
     "Mod+O".action = toggle-overview;
     "Mod+R".action = switch-preset-column-width;
     "Mod+W".action = toggle-column-tabbed-display;
+    "Mod+C".action = center-column;
+
+    # Fullscreen
     "Mod+F".action = maximize-column;
     "Mod+Shift+F".action = fullscreen-window;
+    "Mod+Ctrl+F".action = expand-column-to-available-width;
 
+    # Columns
+    "Mod+BracketLeft".action = consume-or-expel-window-left;
+    "Mod+BracketRight".action = consume-or-expel-window-right;
+    "Mod+Odiaeresis".action = consume-or-expel-window-left;
+    "Mod+Adiaeresis".action = consume-or-expel-window-right;
+
+    # Focusing and moving
     "Mod+Left".action = focus-column-left;
     "Mod+Right".action = focus-column-right;
-    "Mod+Down".action = focus-workspace-down;
-    "Mod+Up".action = focus-workspace-up;
+    "Mod+Down".action = focus-window-down;
+    "Mod+Up".action = focus-window-up;
 
     "Mod+Shift+Left".action = move-column-left;
     "Mod+Shift+Right".action = move-column-right;
@@ -30,6 +41,23 @@ in
 
     "Mod+WheelScrollRight".action = focus-column-right;
     "Mod+WheelScrollLeft".action = focus-column-left;
+
+    # Monitors
+    "Mod+Ctrl+Left".action = focus-monitor-left;
+    "Mod+Ctrl+Right".action = focus-monitor-right;
+    "Mod+Ctrl+Down".action = focus-monitor-down;
+    "Mod+Ctrl+Up".action = focus-monitor-up;
+
+    "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
+    "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
+    "Mod+Shift+Ctrl+Down".action = move-column-to-monitor-down;
+    "Mod+Shift+Ctrl+Up".action = move-column-to-monitor-up;
+
+    "Mod+Comma".action = focus-monitor-left;
+    "Mod+Period".action = focus-monitor-right;
+
+    "Mod+Shift+Comma".action = move-column-to-monitor-left;
+    "Mod+Shift+Period".action = move-column-to-monitor-right;
 
     # Workspaces
     "Mod+Page_Down".action = focus-workspace-down;

@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  apps = import ./applications.nix { inherit pkgs; };
-in
 {
   programs.niri.settings.binds =
     with config.lib.niri.actions;

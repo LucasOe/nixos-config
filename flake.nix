@@ -46,6 +46,11 @@
       stylix,
       ...
     }:
+    let
+      inherit (nixpkgs) lib;
+      configLib = import ./lib { inherit lib; };
+      specialArgs = { inherit inputs configLib; };
+    in
     {
       # Reusable nixos modules
       nixosModules = import ./modules/nixos;
@@ -57,7 +62,7 @@
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          specialArgs = specialArgs;
           modules = [
             ./hosts/laptop/configuration.nix
 
@@ -72,8 +77,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.lucas = import ./home/home.nix;
+              home-manager.extraSpecialArgs = specialArgs;
+              home-manager.users.lucas = import ./home/default.nix;
             }
           ];
         };

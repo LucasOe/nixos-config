@@ -68,49 +68,6 @@
         "type": "github"
       }
     },
-    "dankMaterialShell": {
-      "inputs": {
-        "dgop": [
-          "dgop"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1763340619,
-        "narHash": "sha256-wnnqY/4NBMsaQ7z47RzEDXi5gCp2KQkk0cy4IdH3Z+w=",
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "rev": "c1a314332eb5462807ab34a112a2545a12ad86f6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AvengeMedia",
-        "repo": "DankMaterialShell",
-        "type": "github"
-      }
-    },
-    "dgop": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1762835999,
-        "narHash": "sha256-UykYGrGFOFTmDpKTLNxj1wvd1gbDG4TkqLNSbV0TYwk=",
-        "owner": "AvengeMedia",
-        "repo": "dgop",
-        "rev": "799301991cd5dcea9b64245f9d500dcc76615653",
-        "type": "github"
-      },
-      "original": {
-        "owner": "AvengeMedia",
-        "repo": "dgop",
-        "type": "github"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -422,8 +379,6 @@
     },
     "root": {
       "inputs": {
-        "dankMaterialShell": "dankMaterialShell",
-        "dgop": "dgop",
         "home-manager": "home-manager",
         "niri": "niri",
         "nixpkgs": "nixpkgs",

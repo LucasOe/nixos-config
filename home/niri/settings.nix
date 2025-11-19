@@ -6,6 +6,15 @@
     # https://github.com/YaLTeR/niri/wiki/
     # https://github.com/YaLTeR/niri/blob/main/resources/default-config.kdl
     settings = {
+      spawn-at-startup = [
+        {
+          command = [
+            "xwayland-satellite"
+            "noctalia-shell"
+          ];
+        }
+      ];
+
       prefer-no-csd = true;
 
       hotkey-overlay = {

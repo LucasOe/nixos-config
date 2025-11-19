@@ -6,7 +6,6 @@
     ./settings.nix
     ./keybinds.nix
     ./rules.nix
-    ./autostart.nix
   ];
 
   programs.niri.enable = true;

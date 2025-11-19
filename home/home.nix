@@ -5,9 +5,10 @@
   home.homeDirectory = "/home/lucas";
 
   imports = [
+    ./firefox
+    ./kitty
     ./niri
     ./noctalia
-    ./firefox
   ];
 
   # Let Home Manager install and manage itself
@@ -70,14 +71,6 @@
       aws.disabled = true;
       gcloud.disabled = true;
       line_break.disabled = true;
-    };
-  };
-
-  # Kitty
-  programs.kitty = {
-    enable = true;
-    settings = {
-      window_padding_width = 10;
     };
   };
 

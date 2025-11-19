@@ -69,6 +69,14 @@
     };
   };
 
+  # Enable Niri
+  # Installs xdg-desktop-portal-gnome and gnome-keyring as dependencies
+  programs.niri.enable = true;
+
+  # Enable GDM Display Manager
+  services.displayManager.gdm.enable = true;
+  services.displayManager.defaultSession = "niri";
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

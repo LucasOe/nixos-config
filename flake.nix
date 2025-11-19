@@ -52,12 +52,17 @@
   outputs =
     inputs@{
       nixpkgs,
+      home-manager,
       nur,
       stylix,
-      home-manager,
       ...
     }:
     {
+      # Reusable nixos modules
+      nixosModules = import ./modules/nixos;
+      # Reusable  home-manager modules
+      homeManagerModules = import ./modules/home-manager;
+
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {

@@ -2,13 +2,15 @@
 
 {
   imports = [
+    # Modules
+    inputs.self.nixosModules
+    inputs.self.homeManagerModules
+
+    # HSHL Root certificates
+    ./certificates.nix
+
+    # Generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    ../../modules/system.nix
-    ../../modules/stylix.nix
-    ../../modules/noctalia.nix
-    ../../modules/firefox.nix
-    ./modules
-    inputs.dankMaterialShell.nixosModules.greeter
   ];
 
   # Enable networking

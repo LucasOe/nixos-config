@@ -7,12 +7,8 @@
     # https://github.com/YaLTeR/niri/blob/main/resources/default-config.kdl
     settings = {
       spawn-at-startup = [
-        {
-          command = [
-            "xwayland-satellite"
-            "noctalia-shell"
-          ];
-        }
+        { command = [ "xwayland-satellite" ]; }
+        { command = [ "noctalia-shell" ]; }
       ];
 
       prefer-no-csd = true;

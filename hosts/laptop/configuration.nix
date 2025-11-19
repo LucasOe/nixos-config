@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -21,6 +21,7 @@
 
     defaultGateway = "192.168.2.1";
     nameservers = [ "192.168.2.208" ];
+
     # Set static IP address
     interfaces.wlp0s20f3.ipv4.addresses = [
       {
@@ -56,15 +57,6 @@
     ];
   };
 
-  # Fonts
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-  ];
-
   # Install nix-ld for VSCode code-server
   programs.nix-ld.enable = true;
-
-  # System packages
-  # environment.systemPackages = with pkgs; [ ];
 }

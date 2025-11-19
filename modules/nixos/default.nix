@@ -4,8 +4,9 @@
 
 {
   imports = [
-    ./system.nix
     ./firefox.nix
+    ./fonts.nix
     ./stylix.nix
+    ./system.nix
   ];
 }

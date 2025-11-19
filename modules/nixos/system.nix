@@ -1,3 +1,4 @@
+# Common system configuration that is being used on all hosts
 { pkgs, ... }:
 
 {

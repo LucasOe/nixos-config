@@ -72,7 +72,7 @@
       };
       appLauncher = {
         enableClipboardHistory = true;
-        terminalCommand = "kitty";
+        terminalCommand = "ghostty";
       };
       controlCenter = {
         position = "close_to_bar_button";

@@ -15,8 +15,8 @@
     {
       # Apps
       "Mod+B".action = spawn "firefox";
-      "Mod+T".action = spawn "kitty";
-      "Mod+Return".action = spawn "kitty";
+      "Mod+T".action = spawn "ghostty";
+      "Mod+Return".action = spawn "ghostty";
 
       # General
       "Mod+Q".action = close-window;

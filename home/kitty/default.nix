@@ -10,7 +10,7 @@
       cursor_shape = "beam";
       cursor_shape_unfocused = "beam";
       enable_audio_bell = false;
-      enabled_layouts = "horizontal, vertical";
+      enabled_layouts = "vertical, horizontal";
       window_padding_width = 10;
     };
     mouseBindings = {
@@ -35,8 +35,8 @@
       "ctrl+shift+home" = "scroll_home";
       "ctrl+shift+end" = "scroll_end";
       # Window management
-      "ctrl+t" = "new_window";
-      "ctrl+w" = "close_window";
+      "ctrl+shift+t" = "new_window";
+      "ctrl+shift+w" = "close_window";
       "ctrl+tab" = "next_window";
       # Layout management
       "ctrl+shift+l" = "next_layout";

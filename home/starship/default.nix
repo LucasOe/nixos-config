@@ -7,6 +7,7 @@
       add_newline = false;
       format = lib.concatStrings [
         "$username"
+        "$hostname"
         "$directory"
         # Git
         "$git_branch"
@@ -31,6 +32,19 @@
         format = lib.concatStrings [
           "[](bright-black)"
           "[ $user ](bg:bright-black $style)"
+          "[](bright-black)"
+        ];
+      };
+      # Hostname
+      hostname = {
+        disabled = false;
+        # Settings
+        ssh_only = true;
+        ssh_symbol = "";
+        # Format
+        format = lib.concatStrings [
+          "[](bright-black inverted)"
+          "[ $ssh_symbol on $hostname ](bg:bright-black bold bright-green)"
           "[](bright-black)"
         ];
       };

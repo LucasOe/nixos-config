@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -44,6 +44,9 @@
   # Console keymap
   console.keyMap = "de";
 
+  programs.fish.enable = true;
+  environment.shells = with pkgs; [ fish ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lucas = {
     isNormalUser = true;
@@ -55,6 +58,7 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQfqJnnqE7DxuGPh1ia7DlsoZMSenVPq2ND0X34dvBo lucas.oelker@proton.me"
     ];
+    shell = pkgs.fish;
   };
 
   # Install nix-ld for VSCode code-server

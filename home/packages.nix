@@ -12,7 +12,6 @@
     bat
     eza
     fd
-    fzf
     jq
     ripgrep
   ];

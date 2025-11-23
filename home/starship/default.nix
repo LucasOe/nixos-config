@@ -122,13 +122,13 @@
           "[](blue)"
         ];
       };
-      # The direnv module has problems when using Ghostty!
+      # The direnv module has problems when using Ghostty and bash!
       direnv = {
         disabled = false;
         # Settings
         allowed_msg = "";
         not_allowed_msg = "";
-        denied_msg = "";
+        denied_msg = "";
         loaded_msg = "";
         unloaded_msg = "";
         # Format

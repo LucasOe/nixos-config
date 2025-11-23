@@ -3,7 +3,7 @@
 {
   programs.fish = {
     enable = true;
-    generateCompletions = true;
+    generateCompletions = false; # Completions don't work when set to true for some reason
     interactiveShellInit = with config.lib.stylix.colors; ''
       set fish_greeting # Disable greeting
 

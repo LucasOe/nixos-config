@@ -19,9 +19,6 @@
               id = "SystemMonitor";
             }
             {
-              id = "ActiveWindow";
-            }
-            {
               id = "MediaMini";
             }
           ];
@@ -48,6 +45,7 @@
             }
             {
               id = "Clock";
+              usePrimaryColor = false;
             }
           ];
         };

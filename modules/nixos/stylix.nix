@@ -42,6 +42,13 @@
       };
     };
 
+    icons = {
+      enable = true;
+      light = "MoreWaita";
+      dark = "MoreWaita";
+      package = pkgs.morewaita-icon-theme;
+    };
+
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";

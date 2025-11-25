@@ -15,10 +15,12 @@
     jq
     ripgrep
     # GNOME Applications
-    nautilus
-    loupe
-    showtime
+    baobab
     decibels
+    loupe
+    nautilus
+    papers
+    showtime
     gnome-text-editor
   ];
 }

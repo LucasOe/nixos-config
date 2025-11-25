@@ -14,5 +14,11 @@
     fd
     jq
     ripgrep
+    # GNOME Applications
+    nautilus
+    loupe
+    showtime
+    decibels
+    gnome-text-editor
   ];
 }

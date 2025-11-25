@@ -17,6 +17,7 @@
       "Mod+B".action = spawn "firefox";
       "Mod+T".action = spawn "ghostty";
       "Mod+Return".action = spawn "ghostty";
+      "Mod+E".action = spawn "nautilus";
 
       # General
       "Mod+Q".action = close-window;

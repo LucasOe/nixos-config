@@ -43,7 +43,8 @@
     let
       inherit (nixpkgs) lib;
       configLib = import ./lib { inherit lib; };
-      specialArgs = { inherit inputs configLib; };
+      username = "lucas";
+      specialArgs = { inherit inputs configLib username; };
     in
     {
       # Reusable nixos modules
@@ -72,7 +73,7 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.lucas = import ./home/default.nix;
+              home-manager.users.${username} = import ./home/default.nix;
             }
           ];
         };

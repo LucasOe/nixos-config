@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 
 {
   programs.noctalia-shell = {
@@ -51,7 +51,7 @@
         };
       };
       general = {
-        avatarImage = "/home/lucas/Pictures/Avatars/Tamas.png";
+        avatarImage = "/home/${username}/Pictures/Avatars/Tamas.png";
         dimmerOpacity = 0.5;
         radiusRatio = 0.5;
         enableShadows = false;
@@ -65,8 +65,8 @@
       };
       wallpaper = {
         overviewEnabled = true;
-        directory = "/home/lucas/Pictures/Wallpapers";
-        defaultWallpaper = "/home/lucas/Pictures/Wallpapers/amber.jpg";
+        directory = "/home/${username}/Pictures/Wallpapers";
+        defaultWallpaper = "/home/${username}/Pictures/Wallpapers/amber.jpg";
       };
       appLauncher = {
         enableClipboardHistory = true;

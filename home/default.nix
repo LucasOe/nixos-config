@@ -1,8 +1,8 @@
-{ configLib, ... }:
+{ configLib, username, ... }:
 
 {
-  home.username = "lucas";
-  home.homeDirectory = "/home/lucas";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   # Import all configurations
   imports = configLib.scanPaths ./.;

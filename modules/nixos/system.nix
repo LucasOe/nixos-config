@@ -22,6 +22,9 @@
     "flakes"
   ];
 
+  # Disable Channels, we're using Flakes instead
+  nix.channel.enable = false;
+
   environment.systemPackages = with pkgs; [
     git # Required for Flakes
   ];

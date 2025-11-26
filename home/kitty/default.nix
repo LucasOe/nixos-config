@@ -42,4 +42,8 @@
       "ctrl+shift+l" = "next_layout";
     };
   };
+
+  stylix.targets.kitty = {
+    enable = true;
+  };
 }

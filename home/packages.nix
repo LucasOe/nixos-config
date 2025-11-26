@@ -9,7 +9,6 @@
     # Development
     devenv
     # Command Line
-    bat
     eza
     fd
     jq

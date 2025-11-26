@@ -30,6 +30,7 @@
   };
 
   stylix.targets.firefox = {
+    enable = true;
     firefoxGnomeTheme.enable = true;
     profileNames = [
       "default"

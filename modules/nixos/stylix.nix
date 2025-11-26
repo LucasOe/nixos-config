@@ -3,7 +3,7 @@
 {
   stylix = {
     enable = true;
-    autoEnable = true;
+    autoEnable = false;
 
     # https://github.com/tinted-theming/schemes
     #
@@ -53,6 +53,11 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
       size = 20;
+    };
+
+    targets = {
+      fontconfig.enable = true;
+      plymouth.enable = true;
     };
   };
 }

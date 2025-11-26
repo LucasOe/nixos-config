@@ -57,6 +57,7 @@
 
     targets = {
       fontconfig.enable = true;
+      gnome.enable = true;
       plymouth.enable = true;
     };
   };

@@ -1,16 +1,9 @@
-{ inputs, username, ... }:
+{ username, ... }:
 
 {
   imports = [
-    # Modules
-    inputs.self.nixosModules
-    inputs.self.homeManagerModules
-
-    # HSHL Root certificates
-    ./certificates.nix
-
-    # Generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    ./hardware-configuration.nix # Generated (nixos-generate-config) hardware configuration
+    ./certificates.nix # HSHL Root certificates
   ];
 
   # Enable networking
@@ -56,7 +49,4 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQfqJnnqE7DxuGPh1ia7DlsoZMSenVPq2ND0X34dvBo"
     ];
   };
-
-  # Install nix-ld for VSCode code-server
-  programs.nix-ld.enable = true;
 }

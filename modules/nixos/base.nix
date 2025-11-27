@@ -97,13 +97,13 @@
   # Installs xdg-desktop-portal-gnome and gnome-keyring as dependencies
   programs.niri.enable = true;
 
-  # Enable GDM Display Manager
-  services.displayManager.gdm.enable = true;
-  services.displayManager.defaultSession = "niri";
-
   # Enable Gnome Virtual File System
   # Required by Nautilus
   services.gvfs.enable = true;
+
+  # Allow dynamically linked libraries
+  # Required by vscode-server
+  programs.nix-ld.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -4,7 +4,6 @@
   inputs = {
     # Official NixOS package source, using nixos's unstable branch by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -34,6 +33,7 @@
 
   outputs =
     inputs@{
+      self,
       nixpkgs,
       home-manager,
       nur,
@@ -41,17 +41,16 @@
       ...
     }:
     let
-      inherit (nixpkgs) lib;
-      configLib = import ./lib { inherit lib; };
+      configLib = import ./lib { inherit (nixpkgs) lib; };
       username = "lucas";
-      specialArgs = { inherit inputs configLib username; };
+
+      specialArgs = {
+        inherit inputs;
+        inherit configLib;
+        inherit username;
+      };
     in
     {
-      # Reusable nixos modules
-      nixosModules = import ./modules/nixos;
-      # Reusable  home-manager modules
-      homeManagerModules = import ./modules/home-manager;
-
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
@@ -59,7 +58,11 @@
           system = "x86_64-linux";
           specialArgs = specialArgs;
           modules = [
+            # Host specific configuration
             ./hosts/laptop/configuration.nix
+
+            # Default modules
+            ./modules/nixos
 
             # Additional Modules
             nur.modules.nixos.default # Nix User Repository
@@ -71,13 +74,11 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username} = import ./home/default.nix;
+              home-manager.users.${username} = import ./modules/home-manager;
             }
           ];
         };
-        # Add other hosts here
       };
     };
 }

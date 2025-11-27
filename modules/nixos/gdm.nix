@@ -1,6 +1,10 @@
 { username, ... }:
 
 {
+  # Enable GDM Display Manager
+  services.displayManager.gdm.enable = true;
+  services.displayManager.defaultSession = "niri";
+
   # Set GDM user profile picture
   # https://discourse.nixos.org/t/setting-the-user-profile-image-under-gnome/36233/7
   systemd.tmpfiles.rules =

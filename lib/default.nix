@@ -1,6 +1,9 @@
 { lib, ... }:
 
 {
+  # use path relative to the root of the project
+  relativeToRoot = lib.path.append ../.;
+
   # Scan for all directories and nix files.
   # Don't call outside of `default.nix`
   scanPaths =

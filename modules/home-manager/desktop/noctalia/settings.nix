@@ -1,4 +1,4 @@
-{ username, ... }:
+{ configLib, ... }:
 
 {
   programs.noctalia-shell = {
@@ -51,7 +51,7 @@
         };
       };
       general = {
-        avatarImage = "/home/${username}/Pictures/Avatars/Tamas.png";
+        avatarImage = configLib.relativeToRoot "assets/avatars/tamas.png";
         dimmerOpacity = 0.5;
         radiusRatio = 0.5;
         enableShadows = false;
@@ -65,8 +65,11 @@
       };
       wallpaper = {
         overviewEnabled = true;
-        directory = "/home/${username}/Pictures/Wallpapers";
-        defaultWallpaper = "/home/${username}/Pictures/Wallpapers/amber.jpg";
+        directory = configLib.relativeToRoot "assets/wallpapers";
+        defaultWallpaper = configLib.relativeToRoot "assets/wallpapers/nixos.png";
+        fillMode = "fit";
+        fillColor = "#21252b";
+        transitionType = "fade";
       };
       appLauncher = {
         enableClipboardHistory = true;

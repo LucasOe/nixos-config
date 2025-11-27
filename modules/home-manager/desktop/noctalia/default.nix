@@ -3,8 +3,9 @@
 {
   imports = [
     inputs.noctalia.homeModules.default # Import home-manager module
-    ./settings.nix
     ./colors.nix
+    ./niri.nix
+    ./settings.nix
   ];
 
   programs.noctalia-shell.enable = true;

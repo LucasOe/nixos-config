@@ -3,6 +3,7 @@
 {
   imports = [
     ./niri
-    ./noctalia
+    ./dms
+    # ./noctalia
   ];
 }

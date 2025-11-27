@@ -21,7 +21,8 @@
         background-color = "transparent";
         gaps = 10;
 
-        focus-ring = {
+        focus-ring.enable = false;
+        border = {
           enable = true;
           width = 2;
           active.color = "#${config.lib.stylix.colors.base0B}";

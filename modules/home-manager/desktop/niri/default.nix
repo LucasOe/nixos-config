@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -7,7 +7,4 @@
     ./keybinds.nix
     ./rules.nix
   ];
-
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.niri;
 }

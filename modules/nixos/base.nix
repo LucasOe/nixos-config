@@ -1,5 +1,5 @@
 # Common system configuration that is being used on all hosts
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   boot = {
@@ -36,11 +36,29 @@
     options = "--delete-older-than 5d";
   };
 
-  # Enable Flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    # Enable Flakes
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    # Add substituters
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://niri.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+    ];
+
+    # Add sudo users as trusted, so nixos-rebuild works
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
+  };
 
   # Disable Channels, we're using Flakes instead
   nix.channel.enable = false;
@@ -94,8 +112,9 @@
   };
 
   # Enable Niri
-  # Installs xdg-desktop-portal-gnome and gnome-keyring as dependencies
   programs.niri.enable = true;
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  programs.niri.package = pkgs.niri-unstable;
 
   # Enable Gnome Virtual File System
   # Required by Nautilus

@@ -28,6 +28,13 @@
     firewall.allowedTCPPorts = [ 22 ];
   };
 
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+
+  # Services
+  services.power-profiles-daemon.enable = true; # Power-profiles
+  services.upower.enable = true; # Battery management
+
   # Keymap
   services.xserver.xkb = {
     layout = "de";

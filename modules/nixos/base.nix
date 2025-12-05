@@ -86,7 +86,6 @@
   };
 
   services.printing.enable = true; # Printing
-  services.upower.enable = true; # Battery
   programs.gpu-screen-recorder.enable = true; # Recording
   services.playerctld.enable = true; # Media Keys
 

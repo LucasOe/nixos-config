@@ -2,9 +2,9 @@
 
 {
   imports = [
+    ./bookmarks.nix
     ./extensions.nix
     ./layout.nix
-    ./pinned.nix
     ./policies.nix
     ./search.nix
     ./settings.nix

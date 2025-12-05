@@ -90,7 +90,6 @@
   services.playerctld.enable = true; # Media Keys
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -122,6 +121,11 @@
   # Allow dynamically linked libraries
   # Required by vscode-server
   programs.nix-ld.enable = true;
+
+  # Enable Docker
+  virtualisation.docker = {
+    enable = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

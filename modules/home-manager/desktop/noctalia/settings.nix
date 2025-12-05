@@ -133,6 +133,14 @@
       dock = {
         enabled = false;
       };
+      osd = {
+        enabledTypes = [
+          0 # Output volume
+          1 # Input volume
+          2 # Brightness
+          3 # Lock keys
+        ];
+      };
       colorSchemes = {
         predefinedScheme = "Monochrome";
       };

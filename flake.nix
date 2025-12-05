@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -76,7 +71,6 @@
             ./modules/nixos
 
             # Additional Modules
-            nur.modules.nixos.default # Nix User Repository
             stylix.nixosModules.stylix # Stylix
 
             # make home-manager as a module of nixos

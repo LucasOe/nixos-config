@@ -19,7 +19,7 @@ in
             "urlbar-container"
             "customizableui-special-spring2"
             "downloads-button"
-            "developer-button"
+            # "developer-button"
             "bookmarks-menu-button"
             "unified-extensions-button"
 

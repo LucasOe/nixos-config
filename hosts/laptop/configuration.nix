@@ -1,4 +1,4 @@
-{ username, ... }:
+{ username, pkgs, ... }:
 
 {
   imports = [
@@ -35,6 +35,20 @@
   services.power-profiles-daemon.enable = true; # Power-profiles
   services.upower.enable = true; # Battery management
   services.thermald.enable = true; # Prevents overheating on Intel CPUs
+
+  # Enable hardware encoding for Intel Graphics
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      vpl-gpu-rt
+      intel-media-driver
+      libvdpau-va-gl
+    ];
+  };
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD"; # Force intel-media-driver
+  };
 
   # Keymap
   services.xserver.xkb = {

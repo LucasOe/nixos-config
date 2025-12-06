@@ -89,13 +89,14 @@
   programs.gpu-screen-recorder.enable = true; # Recording
   services.playerctld.enable = true; # Media Keys
 
-  # Enable sound with pipewire.
+  # Enable sound with PipeWire
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
     wireplumber.enable = true;
   };
 

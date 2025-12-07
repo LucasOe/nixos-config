@@ -44,9 +44,9 @@
 
     icons = {
       enable = true;
-      light = "MoreWaita";
-      dark = "MoreWaita";
-      package = pkgs.morewaita-icon-theme;
+      light = "Papirus-Light";
+      dark = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     cursor = {

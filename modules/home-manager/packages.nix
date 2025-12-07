@@ -16,10 +16,19 @@
     # GNOME Applications
     baobab
     decibels
+    gnome-calculator
+    gnome-characters
+    gnome-connections
+    gnome-disk-utility
+    gnome-font-viewer
+    gnome-logs
+    gnome-system-monitor
+    gnome-text-editor
     loupe
     nautilus
     papers
     showtime
-    gnome-text-editor
+    simple-scan
+    snapshot
   ];
 }

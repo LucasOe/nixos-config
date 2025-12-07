@@ -17,6 +17,10 @@
         name = "Kvantum Manager";
         noDisplay = true;
       };
+      gnome-system-monitor-kde = {
+        name = "GNOME System Monitor";
+        noDisplay = true;
+      };
     };
   };
 }

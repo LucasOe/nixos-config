@@ -4,16 +4,49 @@
   programs.niri.settings = {
     layer-rules = [
       {
-        matches = [ { namespace = "^quickshell$"; } ];
+        matches = [
+          {
+            namespace = "^quickshell$";
+          }
+          {
+            namespace = "dms:blurwallpaper";
+          }
+          {
+            namespace = "^noctalia-overview*";
+          }
+        ];
         place-within-backdrop = true;
       }
+    ];
+    window-rules = [
       {
-        matches = [ { namespace = "dms:blurwallpaper"; } ];
-        place-within-backdrop = true;
+        matches = [
+          {
+            app-id = "firefox$";
+            title = "^Picture-in-Picture$";
+          }
+        ];
+        open-floating = true;
+        open-focused = false;
+        default-column-width = {
+          fixed = 480;
+        };
+        default-window-height = {
+          fixed = 270;
+        };
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "bottom-right";
+        };
       }
       {
-        matches = [ { namespace = "^noctalia-overview*"; } ];
-        place-within-backdrop = true;
+        matches = [
+          {
+            app-id = "firefox$";
+          }
+        ];
+        open-maximized = true;
       }
     ];
   };

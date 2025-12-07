@@ -8,3 +8,13 @@
 	--gnome-private-text-primary-color: #565c64 !important;
 	--gnome-private-wordmark: #565c64 !important;
 }
+
+/* Hide search bar and info container in private browsing */
+@-moz-document url("about:privatebrowsing") {
+	#search-handoff-button {
+		display: none !important;
+	}
+	.showPrivate.showSearch.container .info {
+		display: none !important;
+	}
+}

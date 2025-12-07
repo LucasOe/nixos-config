@@ -5,6 +5,7 @@
     profiles.default.search = {
       force = true;
       default = "kagi";
+      privateDefault = "kagi";
       engines = {
         kagi = {
           name = "Kagi";

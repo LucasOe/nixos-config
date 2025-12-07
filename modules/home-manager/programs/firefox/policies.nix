@@ -17,7 +17,7 @@
       DisableAppUpdate = true;
       DisableFeedbackCommands = true;
       DisableFirefoxAccounts = true;
-      DisableFirefoxScreenshots = true;
+      DisableFirefoxScreenshots = false;
       DisableFirefoxStudies = true;
       DisableFormHistory = true;
       DisableMasterPasswordCreation = true;

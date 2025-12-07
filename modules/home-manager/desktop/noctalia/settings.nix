@@ -6,9 +6,11 @@
     # Defauls Settings: https://github.com/noctalia-dev/noctalia-shell/blob/main/Assets/settings-default.json
     settings = {
       bar = {
+        monitors = [ "eDP-1" ];
         position = "top";
         showCapsule = true;
         outerCorners = false;
+        # https://github.com/noctalia-dev/noctalia-shell/blob/6fc754104858479e02bf51a55eef5e4e8ad722b3/Services/UI/BarWidgetRegistry.qml
         widgets = {
           left = [
             {
@@ -16,15 +18,21 @@
               useDistroLogo = true;
             }
             {
+              id = "Workspace";
+              hideUnoccupied = true;
+            }
+            {
               id = "SystemMonitor";
             }
             {
               id = "MediaMini";
+              maxWidth = 200;
             }
           ];
           center = [
             {
-              id = "Workspace";
+              id = "Taskbar";
+              onlySameOutput = false;
             }
           ];
           right = [
@@ -62,7 +70,8 @@
         fontFixed = "JetBrains Mono";
       };
       location = {
-        name = "Berlin, Germany";
+        name = "Hamm, Germany";
+        weatherShowEffects = false;
       };
       wallpaper = {
         overviewEnabled = true;
@@ -78,36 +87,6 @@
       };
       controlCenter = {
         position = "close_to_bar_button";
-        shortcuts = {
-          left = [
-            {
-              id = "WiFi";
-            }
-            {
-              id = "Bluetooth";
-            }
-            {
-              id = "ScreenRecorder";
-            }
-            {
-              id = "WallpaperSelector";
-            }
-          ];
-          right = [
-            {
-              id = "Notifications";
-            }
-            {
-              id = "PowerProfile";
-            }
-            {
-              id = "KeepAwake";
-            }
-            {
-              id = "NightLight";
-            }
-          ];
-        };
         cards = [
           {
             enabled = true;
@@ -122,11 +101,11 @@
             id = "audio-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "weather-card";
           }
           {
-            enabled = true;
+            enabled = false;
             id = "media-sysmon-card";
           }
         ];
@@ -141,9 +120,6 @@
           2 # Brightness
           3 # Lock keys
         ];
-      };
-      colorSchemes = {
-        predefinedScheme = "Monochrome";
       };
     };
   };

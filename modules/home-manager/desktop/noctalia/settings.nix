@@ -54,7 +54,8 @@
         avatarImage = configLib.relativeToRoot "assets/avatars/tamas.png";
         dimmerOpacity = 0.5;
         radiusRatio = 0.5;
-        enableShadows = false;
+        enableShadows = true;
+        shadowDirection = "center";
       };
       ui = {
         fontDefault = "JetBrains Mono";

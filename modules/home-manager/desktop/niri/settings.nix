@@ -21,6 +21,14 @@
         background-color = "transparent";
         gaps = 10;
 
+        shadow = {
+          enable = true;
+          offset.x = 0;
+          offset.y = 0;
+          spread = 0;
+          softness = 15;
+        };
+
         focus-ring.enable = false;
         border = {
           enable = true;

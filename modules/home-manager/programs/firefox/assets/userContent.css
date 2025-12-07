@@ -1,0 +1,10 @@
+/* Add missing UserContent.css colors */
+:root {
+	/* New Tab */
+	--gnome-window-background: #282c34 !important;
+	--gnome-menu-background: #353b45 !important;
+	/* Private Browsing */
+	--gnome-private-in-content-page-background: #282c34 !important;
+	--gnome-private-text-primary-color: #565c64 !important;
+	--gnome-private-wordmark: #565c64 !important;
+}

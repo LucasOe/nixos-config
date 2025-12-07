@@ -10,11 +10,6 @@
     ./settings.nix
   ];
 
-  home.file = {
-    ".mozilla/firefox/default/chrome/customChrome.css".source = ./assets/customChrome.css;
-    ".mozilla/firefox/default/chrome/customContent.css".source = ./assets/customContent.css;
-  };
-
   programs.firefox = {
     enable = true;
     profiles.default = {
@@ -22,10 +17,8 @@
       name = "default";
       isDefault = true;
 
-      userChrome = lib.mkAfter ''
-        @import "customChrome.css";
-        @import "customContent.css";
-      '';
+      userChrome = lib.mkAfter (builtins.readFile ./assets/userChrome.css);
+      userContent = lib.mkAfter (builtins.readFile ./assets/userContent.css);
     };
   };
 

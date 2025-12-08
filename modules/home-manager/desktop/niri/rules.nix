@@ -25,6 +25,9 @@
             app-id = "firefox$";
             title = "^Picture-in-Picture$";
           }
+          {
+            app-id = "eyedropper$";
+          }
         ];
         open-floating = true;
         open-focused = false;

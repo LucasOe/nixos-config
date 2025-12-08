@@ -30,5 +30,7 @@
     showtime
     simple-scan
     snapshot
+    # GNOME Circle Applications
+    eyedropper
   ];
 }

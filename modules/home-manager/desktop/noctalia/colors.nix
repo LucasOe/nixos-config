@@ -1,23 +1,25 @@
 { config, ... }:
 
 {
-  programs.noctalia-shell = with config.lib.stylix.colors; {
+  programs.noctalia-shell = with config.lib.stylix.colors.withHashtag; {
     # https://docs.noctalia.dev/getting-started/nixos/#theme-colors
     colors = {
-      mError = "#${base08}";
-      mOnError = "#${base00}";
-      mOnPrimary = "#${base00}";
-      mOnSecondary = "#${base00}";
-      mOnSurface = "#${base07}";
-      mOnSurfaceVariant = "#${base07}";
-      mOnTertiary = "#${base00}";
-      mOutline = "#${base02}";
-      mPrimary = "#${base0B}";
-      mSecondary = "#${base0A}";
-      mShadow = "#${base00}";
-      mSurface = "#${base00}";
-      mSurfaceVariant = "#${base01}";
-      mTertiary = "#${base0D}";
+      mPrimary = base0B;
+      mOnPrimary = base00;
+      mSecondary = base0D;
+      mOnSecondary = base00;
+      mTertiary = base09;
+      mOnTertiary = base00;
+      mError = base0F;
+      mOnError = base00;
+      mSurface = base00;
+      mOnSurface = base05;
+      mSurfaceVariant = base01;
+      mOnSurfaceVariant = base05;
+      mOutline = base02;
+      mShadow = base00;
+      mHover = base05;
+      mOnHover = base00;
     };
   };
 }

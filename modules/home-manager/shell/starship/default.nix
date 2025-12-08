@@ -43,7 +43,7 @@
         ssh_symbol = "";
         # Format
         format = lib.concatStrings [
-          "[](bright-black inverted)"
+          "[](bright-black)"
           "[ $ssh_symbol on $hostname ](bg:bright-black bold bright-green)"
           "[](bright-black)"
         ];
@@ -61,12 +61,12 @@
         repo_root_style = "bold bright-yellow";
         # Format
         format = lib.concatStrings [
-          "[](bright-black inverted)"
+          "[](bright-black)"
           "[ $path ](bg:bright-black $style)"
           "[](bright-black)"
         ];
         repo_root_format = lib.concatStrings [
-          "[](bright-black inverted)"
+          "[](bright-black)"
           "[ $before_root_path](bg:bright-black $before_repo_root_style)[$repo_root](bg:bright-black $repo_root_style)[$path ](bg:bright-black $style)"
           "[](bright-black)"
         ];
@@ -76,7 +76,7 @@
         disabled = false;
         # Format
         format = lib.concatStrings [
-          "[](bright-green inverted)"
+          "[](bright-green)"
           "[ $symbol$branch ](bg:bright-green black)"
         ];
       };
@@ -86,7 +86,7 @@
         only_detached = true;
         # Format
         format = lib.concatStrings [
-          "[](bright-green inverted)"
+          "[](bright-green)"
           "[  $hash$tag ](bg:bright-green black)"
         ];
       };
@@ -117,7 +117,7 @@
         symbol = "󱄅";
         # Format
         format = lib.concatStrings [
-          "[](blue inverted)"
+          "[](blue)"
           "[ $symbol ](bg:blue black)"
           "[](blue)"
         ];
@@ -133,7 +133,7 @@
         unloaded_msg = "";
         # Format
         format = lib.concatStrings [
-          "[](blue inverted)"
+          "[](blue)"
           "[ $symbol$loaded$allowed ](bg:blue black)"
           "[](blue)"
         ];

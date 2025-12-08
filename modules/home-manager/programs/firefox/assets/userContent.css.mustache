@@ -1,0 +1,16 @@
+/* Hide search bar and info container in private browsing */
+@-moz-document url("about:privatebrowsing") {
+	#search-handoff-button {
+		display: none !important;
+	}
+	.showPrivate.showSearch.container .info {
+		display: none !important;
+	}
+}
+
+/* Change newtab background color */
+@-moz-document url("about:newtab"), url("about:home") {
+    body {
+        --gnome-window-background: #{{base01-hex}};
+    }
+}

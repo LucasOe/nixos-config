@@ -1,5 +1,24 @@
-{ lib, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
 
+let
+  colors = config.lib.stylix.colors {
+    template = ./assets/colors.css.mustache;
+    extension = ".css";
+  };
+  userChrome = config.lib.stylix.colors {
+    template = ./assets/userChrome.css.mustache;
+    extension = ".css";
+  };
+  userContent = config.lib.stylix.colors {
+    template = ./assets/userContent.css.mustache;
+    extension = ".css";
+  };
+in
 {
   imports = [
     ./bookmarks.nix
@@ -17,13 +36,21 @@
       name = "default";
       isDefault = true;
 
-      userChrome = lib.mkAfter (builtins.readFile ./assets/userChrome.css);
-      userContent = lib.mkAfter (builtins.readFile ./assets/userContent.css);
+      userChrome = lib.mkAfter ''
+        @import "${inputs.firefox-gnome-theme}/userChrome.css";
+        @import "${colors}";
+        @import "${userChrome}";
+      '';
+      userContent = lib.mkAfter ''
+        @import "${inputs.firefox-gnome-theme}/userContent.css";
+        @import "${colors}";
+        @import "${userContent}";
+      '';
     };
   };
 
   stylix.targets.firefox = {
-    enable = true;
+    enable = false;
     firefoxGnomeTheme.enable = true;
     profileNames = [
       "default"

@@ -36,13 +36,6 @@
     };
   };
 
-  # Perform garbage collection weekly to maintain low disk usage
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 5d";
-  };
-
   nix.settings = {
     # Enable Flakes
     experimental-features = [

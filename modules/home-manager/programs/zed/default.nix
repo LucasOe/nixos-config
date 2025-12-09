@@ -18,6 +18,7 @@
     # Extensions
     extensions = [
       "biome"
+      "colored-zed-icons-theme"
       "nix"
     ];
   };

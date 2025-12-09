@@ -15,9 +15,8 @@
 
   # Environment variables
   home.sessionVariables = {
-    EDITOR = "zed";
-    VISUAL = "zed";
-    GIT_EDITOR = "zed --wait";
+    EDITOR = "zeditor";
+    VISUAL = "zeditor";
   };
 
   # This value determines the home Manager release that your

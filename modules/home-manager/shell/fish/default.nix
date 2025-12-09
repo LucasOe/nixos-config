@@ -20,6 +20,7 @@
       ll = "eza -l";
       ls = "eza";
       lt = "eza --tree";
+      zed = "zeditor";
     };
   };
 }

@@ -9,16 +9,22 @@
       user.email = "github@lucasoe.com";
 
       core.autocrlf = "input";
-      diff.tool = "meld";
-      difftool."meld".cmd = "meld \"$LOCAL\" \"$REMOTE\"";
+      core.editor = "zeditor --wait";
+      diff.tool = "zed";
+      difftool.meld.cmd = "meld \"$LOCAL\" \"$REMOTE\"";
       difftool.prompt = false;
+      difftool.vscode.cmd = "code --wait --diff \"$LOCAL\" \"$REMOTE\"";
+      difftool.zed.cmd = "zeditor --wait --diff \"$LOCAL\" \"$REMOTE\"";
       fetch.prune = true;
       init.defaultBranch = "main";
       log.abbrevCommit = true;
-      merge.ff = "only";
-      merge.tool = "meld";
       merge.conflictStyle = "zdiff3";
-      mergetool."meld".cmd = "meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"";
+      merge.ff = "only";
+      merge.tool = "zed";
+      mergetool.meld.cmd = "meld \"$LOCAL\" \"$MERGED\" \"$REMOTE\" --output \"$MERGED\"";
+      mergetool.prompt = false;
+      mergetool.vscode.cmd = "code --wait \"$MERGED\"";
+      mergetool.zed.cmd = "zeditor --wait \"$MERGED\"";
       pull.rebase = true;
       rebase.autosquash = true;
       rerere.autoupdate = true;

@@ -14,7 +14,6 @@
     fd
     jq
     ripgrep
-    delta
     # GNOME Applications
     baobab
     decibels

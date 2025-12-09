@@ -108,6 +108,7 @@
     openFirewall = true;
     settings = {
       PermitRootLogin = "no"; # disable root login
+      KbdInteractiveAuthentication = false; # disable keyboard-interactive authentication
       PasswordAuthentication = false; # disable password login
     };
   };
@@ -129,6 +130,12 @@
   virtualisation.docker = {
     enable = true;
   };
+
+  # Sudo
+  security.sudo.extraConfig = ''
+    Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
+    Defaults timestamp_timeout=120 # only ask for password every 2h
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

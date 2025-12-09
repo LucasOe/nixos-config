@@ -44,11 +44,8 @@
 
   outputs =
     inputs@{
-      self,
       nixpkgs,
       home-manager,
-      nur,
-      stylix,
       ...
     }:
     let
@@ -76,7 +73,7 @@
             ./modules/nixos
 
             # Additional Modules
-            stylix.nixosModules.stylix # Stylix
+            inputs.stylix.nixosModules.stylix # Stylix
 
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`

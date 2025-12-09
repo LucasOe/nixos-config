@@ -15,6 +15,7 @@
       cat = "bat";
       fetch = "fastfetch";
       find = "fd";
+      g = "git";
       grep = "rg";
       la = "eza -la";
       ll = "eza -l";

@@ -13,6 +13,13 @@
   # Enable fontconfig configuration
   fonts.fontconfig.enable = true;
 
+  # Environment variables
+  home.sessionVariables = {
+    EDITOR = "zed";
+    VISUAL = "zed";
+    GIT_EDITOR = "zed --wait";
+  };
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

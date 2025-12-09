@@ -13,11 +13,12 @@
     '';
     shellAliases = {
       cat = "bat";
-      grep = "rg";
+      fetch = "fastfetch";
       find = "fd";
-      ls = "eza";
-      ll = "eza -l";
+      grep = "rg";
       la = "eza -la";
+      ll = "eza -l";
+      ls = "eza";
       lt = "eza --tree";
     };
   };

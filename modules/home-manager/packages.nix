@@ -8,11 +8,13 @@
     nixd
     # Development
     devenv
+    meld
     # Command Line
     eza
     fd
     jq
     ripgrep
+    delta
     # GNOME Applications
     baobab
     decibels

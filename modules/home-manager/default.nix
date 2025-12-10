@@ -19,6 +19,21 @@
     VISUAL = "zeditor";
   };
 
+  # Aliases
+  home.shellAliases = {
+    cat = "bat";
+    fetch = "fastfetch";
+    find = "fd";
+    g = "git";
+    grep = "rg";
+    la = "eza -la";
+    ll = "eza -l";
+    ls = "eza";
+    lt = "eza --tree";
+    tree = "eza --tree";
+    zed = "zeditor";
+  };
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

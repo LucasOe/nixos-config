@@ -11,17 +11,5 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
     '';
-    shellAliases = {
-      cat = "bat";
-      fetch = "fastfetch";
-      find = "fd";
-      g = "git";
-      grep = "rg";
-      la = "eza -la";
-      ll = "eza -l";
-      ls = "eza";
-      lt = "eza --tree";
-      zed = "zeditor";
-    };
   };
 }

@@ -14,6 +14,7 @@
     fd
     jq
     ripgrep
+    trashy
     # GNOME Applications
     baobab
     decibels

@@ -31,6 +31,12 @@
       rerere.enabled = true;
       submodule.recurse = true;
 
+      # Enforce SSH
+      url."git@github.com:".insteadOf = "https://github.com/";
+      url."git@gitlab.com:".insteadOf = "https://gitlab.com/";
+      url."git@bitbucket.org:".insteadOf = "https://bitbucket.org/";
+
+      # Aliases
       alias = {
         a = "add";
         aa = "add --all";

@@ -5,9 +5,16 @@
   # https://github.com/junegunn/fzf/blob/master/ADVANCED.md
   programs.fzf = {
     enable = true;
+
+    # Disable when using television
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+
     defaultCommand = "fd --type f --follow";
     fileWidgetCommand = "fd --type f --follow"; # Ctrl+T
     changeDirWidgetCommand = "fd --type d --follow"; # Alt+C
+
     defaultOptions = [
       "--ansi"
       "--cycle"

@@ -1,9 +1,9 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   programs.noctalia-shell = with config.lib.stylix.colors.withHashtag; {
     # https://docs.noctalia.dev/getting-started/nixos/#theme-colors
-    colors = {
+    colors = lib.mkForce {
       mPrimary = base0B;
       mOnPrimary = base00;
       mSecondary = base0D;

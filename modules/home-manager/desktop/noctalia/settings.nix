@@ -1,4 +1,4 @@
-{ configLib, ... }:
+{ configLib, config, ... }:
 
 {
   programs.noctalia-shell = {
@@ -65,10 +65,6 @@
         enableShadows = true;
         shadowDirection = "center";
       };
-      ui = {
-        fontDefault = "JetBrains Mono";
-        fontFixed = "JetBrains Mono";
-      };
       location = {
         name = "Hamm, Germany";
         weatherShowEffects = false;
@@ -76,8 +72,8 @@
       wallpaper = {
         overviewEnabled = true;
         directory = configLib.relativeToRoot "assets/wallpapers";
-        defaultWallpaper = configLib.relativeToRoot "assets/wallpapers/nixos.png";
-        fillMode = "fit";
+        defaultWallpaper = config.stylix.image;
+        fillMode = config.stylix.imageScalingMode;
         fillColor = "#21252b";
         transitionType = "fade";
       };

@@ -37,6 +37,9 @@
       size = 20;
     };
 
+    image = configLib.relativeToRoot "assets/wallpapers/nixos.png";
+    imageScalingMode = "fit";
+
     targets = {
       fontconfig.enable = true;
       gnome.enable = true;

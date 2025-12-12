@@ -1,7 +1,8 @@
 {
+  config,
   inputs,
   lib,
-  config,
+  pkgs,
   ...
 }:
 
@@ -31,22 +32,33 @@ in
 
   programs.firefox = {
     enable = true;
-    profiles.default = {
-      id = 0;
-      name = "default";
-      isDefault = true;
+    package = pkgs.firefox-devedition;
 
-      userChrome = lib.mkAfter ''
-        @import "${inputs.firefox-gnome-theme}/userChrome.css";
-        @import "${colors}";
-        @import "${userChrome}";
-      '';
-      userContent = lib.mkAfter ''
-        @import "${inputs.firefox-gnome-theme}/userContent.css";
-        @import "${colors}";
-        @import "${userContent}";
-      '';
+    profiles = {
+      # Set dev edition profile to the same as default release
+      dev-edition-default = {
+        path = "default";
+        id = 1;
+      };
+
+      default = {
+        id = 0;
+        name = "default";
+        isDefault = true;
+
+        userChrome = lib.mkAfter ''
+          @import "${inputs.firefox-gnome-theme}/userChrome.css";
+          @import "${colors}";
+          @import "${userChrome}";
+        '';
+        userContent = lib.mkAfter ''
+          @import "${inputs.firefox-gnome-theme}/userContent.css";
+          @import "${colors}";
+          @import "${userContent}";
+        '';
+      };
     };
+
   };
 
   stylix.targets.firefox = {

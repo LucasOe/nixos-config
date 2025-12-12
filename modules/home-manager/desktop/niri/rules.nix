@@ -26,6 +26,10 @@
             title = "^Picture-in-Picture$";
           }
           {
+            app-id = "firefox-devedition$";
+            title = "^Picture-in-Picture$";
+          }
+          {
             app-id = "eyedropper$";
           }
         ];
@@ -47,6 +51,9 @@
         matches = [
           {
             app-id = "firefox$";
+          }
+          {
+            app-id = "firefox-devedition$";
           }
         ];
         open-maximized = true;

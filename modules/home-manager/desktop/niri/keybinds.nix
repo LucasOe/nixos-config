@@ -4,7 +4,7 @@
   # Shell specific keybinds are configure in the `dms` or `noctalia` modules
   programs.niri.settings.binds = with config.lib.niri.actions; {
     # Apps
-    "Mod+B".action = spawn "firefox";
+    "Mod+B".action = spawn "firefox-devedition";
     "Mod+T".action = spawn "ghostty";
     "Mod+Return".action = spawn "ghostty";
     "Mod+E".action = spawn "nautilus";

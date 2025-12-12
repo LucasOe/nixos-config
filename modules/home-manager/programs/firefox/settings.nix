@@ -231,11 +231,6 @@
       # START: CUSTOM
       # ============================================================================
 
-      # Firefox does not honor display scale on Wayland by default
-      # See Display0 in `about:support`
-      "widget.wayland.fractional-scale.enabled" = true;
-      # "layout.css.devPixelsPerPx" = 1.0;
-
       # This preference is required to recolor the icons
       "svg.context-properties.content.enabled" = true;
 

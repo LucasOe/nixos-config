@@ -8,14 +8,14 @@
     "Mod+T".action = spawn "ghostty";
     "Mod+Return".action = spawn "ghostty";
     "Mod+E".action = spawn "nautilus";
-    "Mod+C".action = spawn "eyedropper";
+    "Mod+Shift+C".action = spawn "eyedropper";
 
     # General
     "Mod+Q".action = close-window;
     "Mod+O".action = toggle-overview;
     "Mod+R".action = switch-preset-column-width;
     "Mod+W".action = toggle-column-tabbed-display;
-    # "Mod+C".action = center-column;
+    "Mod+C".action = center-column;
 
     # Fullscreen
     "Mod+F".action = maximize-column;

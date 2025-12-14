@@ -19,6 +19,7 @@
       }
     ];
     window-rules = [
+      # Firefox Picture-in-Picture mode
       {
         matches = [
           {
@@ -28,9 +29,6 @@
           {
             app-id = "firefox-devedition$";
             title = "^Picture-in-Picture$";
-          }
-          {
-            app-id = "eyedropper$";
           }
         ];
         open-floating = true;
@@ -47,16 +45,26 @@
           relative-to = "bottom-right";
         };
       }
+      # Eyedropper
       {
         matches = [
           {
-            app-id = "firefox$";
-          }
-          {
-            app-id = "firefox-devedition$";
+            app-id = "eyedropper$";
           }
         ];
-        open-maximized = true;
+        open-floating = true;
+        open-focused = true;
+        default-column-width = {
+          fixed = 480;
+        };
+        default-window-height = {
+          fixed = 270;
+        };
+        default-floating-position = {
+          x = 32;
+          y = 32;
+          relative-to = "bottom-right";
+        };
       }
     ];
   };

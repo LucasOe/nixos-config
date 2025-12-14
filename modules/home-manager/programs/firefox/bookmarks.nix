@@ -23,12 +23,12 @@ let
       name = "Github";
     }
     {
-      url = "https://search.nixos.org/";
+      url = "https://search.nixos.org/packages?channel=unstable";
       name = "NixOS Search";
     }
     {
-      url = "https://nix-community.github.io/home-manager/options.xhtml";
-      name = "Home Manager Options";
+      url = "https://home-manager-options.extranix.com/";
+      name = "Home Manager";
     }
     {
       url = "https://mynixos.com/";

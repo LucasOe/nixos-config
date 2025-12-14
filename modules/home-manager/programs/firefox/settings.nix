@@ -2,7 +2,7 @@
   programs.firefox = {
     profiles.default.settings = {
       # Betterfox
-      # version: 144
+      # version: 146
       # https://github.com/yokoffing/Betterfox
 
       # ============================================================================
@@ -12,6 +12,7 @@
       # GENERAL
       "gfx.content.skia-font-cache-size" = 32;
       # GFX
+      "gfx.webrender.layer-compositor" = true;
       "gfx.canvas.accelerated.cache-items" = 32768;
       "gfx.canvas.accelerated.cache-size" = 4096;
       "webgl.max-size" = 16384;
@@ -46,7 +47,6 @@
       "browser.urlbar.speculativeConnect.enabled" = false;
       "browser.places.speculativeConnect.enabled" = false;
       "network.prefetch-next" = false;
-      "network.predictor.enabled" = false;
 
       # ============================================================================
       # SECTION: SECUREFOX
@@ -54,18 +54,20 @@
 
       # TRACKING PROTECTION
       "browser.contentblocking.category" = "strict";
-      "privacy.trackingprotection.allow_list.baseline.enabled" = true;
       "browser.download.start_downloads_in_tmp_dir" = true;
-      "browser.helperApps.deleteTempFileOnExit" = true;
       "browser.uitour.enabled" = false;
       "privacy.globalprivacycontrol.enabled" = true;
       # OCSP & CERTS / HPKP
       "security.OCSP.enabled" = 0;
+      "privacy.antitracking.isolateContentScriptResources" = true;
       "security.csp.reporting.enabled" = false;
       # SSL / TLS
       "security.ssl.treat_unsafe_negotiation_as_broken" = true;
       "browser.xul.error_pages.expert_bad_cert" = true;
       "security.tls.enable_0rtt_data" = false;
+      # HTTPS-ONLY MODE
+      "dom.security.https_only_mode" = true;
+      "dom.security.https_only_mode_error_page_user_suggestions" = true;
       # DISK AVOIDANCE
       "browser.privatebrowsing.forceMediaMemoryCache" = true;
       "browser.sessionstore.interval" = 60000;
@@ -86,15 +88,14 @@
       "signon.privateBrowsingCapture.enabled" = false;
       "network.auth.subresource-http-auth-allow" = 1;
       "editor.truncate_user_pastes" = false;
-      # MIXED CONTENT + CROSS-SITE
-      "security.mixed_content.block_display_content" = true;
-      "pdfjs.enableScripting" = false;
       # EXTENSIONS
       "extensions.enabledScopes" = 5;
       # HEADERS / REFERERS
       "network.http.referer.XOriginTrimmingPolicy" = 2;
       # CONTAINERS
       "privacy.userContext.ui.enabled" = true;
+      # VARIOUS
+      "pdfjs.enableScripting" = false;
       # SAFE BROWSING
       "browser.safebrowsing.downloads.remote.enabled" = false;
       # MOZILLA
@@ -135,7 +136,6 @@
       # ============================================================================
 
       # MOZILLA UI
-      "browser.privatebrowsing.vpnpromourl" = "";
       "extensions.getAddons.showPane" = false;
       "extensions.htmlaboutaddons.recommendations.enabled" = false;
       "browser.discovery.enabled" = false;
@@ -144,6 +144,7 @@
       "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
       "browser.preferences.moreFromMozilla" = false;
       "browser.aboutConfig.showWarning" = false;
+      "browser.startup.homepage_override.mstone" = "ignore";
       "browser.aboutwelcome.enabled" = false;
       "browser.profiles.enabled" = true;
       # THEME ADJUSTMENTS

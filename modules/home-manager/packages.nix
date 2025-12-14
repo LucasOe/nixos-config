@@ -8,7 +8,6 @@
     nixd
     # Development
     devenv
-    meld
     # Command Line
     eza
     fd
@@ -25,14 +24,14 @@
     gnome-font-viewer
     gnome-logs
     gnome-system-monitor
-    gnome-text-editor
     loupe
     nautilus
     papers
     showtime
     simple-scan
     snapshot
-    # GNOME Circle Applications
+    # GTK Applications
     eyedropper
+    typesetter
   ];
 }

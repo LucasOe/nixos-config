@@ -6,6 +6,7 @@
     # Language Server & Formatting
     nixfmt-rfc-style
     nixd
+    nil
     # Development
     devenv
     # Command Line

@@ -13,8 +13,8 @@
             name = "Stylix";
             appearance = "dark";
             style = {
-              "border" = "#${base03}";
-              "border.variant" = "#${base01}";
+              "border" = "#${base02}";
+              "border.variant" = "#${base02}";
               "border.focused" = null;
               "border.selected" = null;
               "border.transparent" = null;

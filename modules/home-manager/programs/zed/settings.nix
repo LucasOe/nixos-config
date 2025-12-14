@@ -32,6 +32,7 @@
         diagnostics = false;
       };
       # Editor
+      format_on_save = "off"; # We override this either per language or per project
       hard_tabs = true;
       tab_size = 4;
       wrap_guides = [

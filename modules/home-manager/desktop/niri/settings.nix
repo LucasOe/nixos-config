@@ -55,7 +55,6 @@
           { proportion = 0.333; }
           { proportion = 0.500; }
           { proportion = 0.666; }
-          { proportion = 1.000; }
         ];
       };
 

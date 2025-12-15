@@ -38,6 +38,11 @@
           right = [
             {
               id = "Tray";
+              pinned = [
+                "Discord"
+                "Vesktop"
+                "spotify-client"
+              ];
             }
             {
               id = "NotificationHistory";

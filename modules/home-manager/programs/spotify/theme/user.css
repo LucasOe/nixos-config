@@ -1,0 +1,94 @@
+/* hide stuff */
+button[aria-label="Friend Activity"],
+button[aria-label="Enter Full screen"],
+button[aria-label="Looks like we don't have the lyrics for this song."],
+span:has(button[aria-label^="More options for"]),
+span[aria-label="Music video"],
+div[aria-label="Switch to video"],
+button[aria-label^="Explore"],
+button[aria-label="Download"],
+span[data-sortbox-label="true"],
+button[data-testid="control-button-npv"],
+button[data-testid="pip-toggle-button"]
+{
+    display: none;
+}
+/* disable colored top bar */
+.main-topBar-background,
+.aBTcK0jHBextE7fGnKiw {
+    background-color: var(--spice-main);
+    
+    & div, &:after {
+        background-color: transparent !important;
+    }
+}
+/* add gradient to top for artists and Discover Weekly */
+.ZLQMyiECjwh0Fat0ymny,
+.ZLQMyiECjwh0Fat0ymny::after {
+    background: none !important;
+}
+.main-entityHeader-container {
+    z-index: 100;
+}
+.playlist-playlist-actionBarBackground-background::before {
+    content: "";
+    width: 100%;
+    height: 40vh;
+    position: absolute;
+    transform: translateY(calc(-100% + 1px));
+    background: linear-gradient(transparent, var(--background-base));
+}
+/* make the gradient a bit nicer */
+.playlist-playlist-actionBarBackground-background {
+    background-image: linear-gradient(to bottom, var(--color-from) 20px, var(--color-to));
+}
+/* fix playlist header gradients */
+.playlist-playlist-actionBarBackground-background {
+    --color-from: var(--background-base) !important;
+}
+.main-actionBarBackground-background {
+    background-image: linear-gradient(rgba(var(--spice-rgb-shadow), .5), var(--spice-main)), var(--background-noise) !important;
+}
+/* change tracklist header to main color */
+.main-trackList-trackListHeader {
+    --background-highlight: var(--spice-main);
+}
+/* fix now playing view background */
+.NowPlayingView {
+    overflow: hidden;
+    border-radius: 8px;
+    
+    .UUydeXMsXVZofB0YAOgm::before {
+        display: none;
+    }
+}
+/* disable shadow for album cover */
+.main-entityHeader-shadow {
+    box-shadow: unset;
+}
+/* fix now playing icon color */
+.main-trackList-playingIcon,
+.X_HqPouENflGygaUXNus {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg id='playing-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 24'%3E%3Cdefs%3E%3Cstyle%3E %23playing-icon %7B fill: %2320BC54; %7D @keyframes play %7B 0%25 %7Btransform: scaleY(1);%7D 3.3%25 %7Btransform: scaleY(0.9583);%7D 6.6%25 %7Btransform: scaleY(0.9166);%7D 9.9%25 %7Btransform: scaleY(0.8333);%7D 13.3%25 %7Btransform: scaleY(0.7083);%7D 16.6%25 %7Btransform: scaleY(0.5416);%7D 19.9%25 %7Btransform: scaleY(0.4166);%7D 23.3%25 %7Btransform: scaleY(0.25);%7D 26.6%25 %7Btransform: scaleY(0.1666);%7D 29.9%25 %7Btransform: scaleY(0.125);%7D 33.3%25 %7Btransform: scaleY(0.125);%7D 36.6%25 %7Btransform: scaleY(0.1666);%7D 39.9%25 %7Btransform: scaleY(0.1666);%7D 43.3%25 %7Btransform: scaleY(0.2083);%7D 46.6%25 %7Btransform: scaleY(0.2916);%7D 49.9%25 %7Btransform: scaleY(0.375);%7D 53.3%25 %7Btransform: scaleY(0.5);%7D 56.6%25 %7Btransform: scaleY(0.5833);%7D 59.9%25 %7Btransform: scaleY(0.625);%7D 63.3%25 %7Btransform: scaleY(0.6666);%7D 66.6%25 %7Btransform: scaleY(0.6666);%7D 69.9%25 %7Btransform: scaleY(0.6666);%7D 73.3%25 %7Btransform: scaleY(0.6666);%7D 76.6%25 %7Btransform: scaleY(0.7083);%7D 79.9%25 %7Btransform: scaleY(0.75);%7D 83.3%25 %7Btransform: scaleY(0.8333);%7D 86.6%25 %7Btransform: scaleY(0.875);%7D 89.9%25 %7Btransform: scaleY(0.9166);%7D 93.3%25 %7Btransform: scaleY(0.9583);%7D 96.6%25 %7Btransform: scaleY(1);%7D %7D %23bar1 %7B transform-origin: bottom; animation: play 1.5s -0.51s infinite; %7D %23bar2 %7B transform-origin: bottom; animation: play 1.5s infinite; %7D %23bar3 %7B transform-origin: bottom; animation: play 1.5s -0.15s infinite; %7D %23bar4 %7B transform-origin: bottom; animation: play 1.5s -0.75s infinite; %7D %3C/style%3E%3C/defs%3E%3Ctitle%3Eplaying-icon%3C/title%3E%3Crect id='bar1' class='cls-1' width='4' height='24'/%3E%3Crect id='bar2' class='cls-1' x='6' width='4' height='24'/%3E%3Crect id='bar3' class='cls-1' x='12' width='4' height='24'/%3E%3Crect id='bar4' class='cls-1' x='18' width='4' height='24'/%3E%3C/svg%3E");
+    background: var(--spice-button);
+    content-visibility: hidden;
+    -webkit-mask-repeat: no-repeat;
+}
+/* fix fade color for carousels on home page */
+.search-searchCategory-contentArea {
+    --carousel-start-chevron-gradient: var(--spice-main);
+    --carousel-end-chevron-gradient: var(--spice-main);
+}
+/* change playlist image border-radius */
+.main-entityHeader-image,
+.hn6wKYDgRJLk3ObMeArw {
+  border-radius: 8px;
+}
+/* remove border for transitions in mixes */
+.main-rootlist-wrapper .e-91000-box--bordered {
+    border: none;
+}
+/* remove spacing next to navigation buttons */
+.main-globalNav-historyButtonsContainer div:empty {
+    display: none;
+}

@@ -310,6 +310,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1765472234,
+        "narHash": "sha256-9VvC20PJPsleGMewwcWYKGzDIyjckEz8uWmT0vCDYK0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2fbfb1d73d239d2402a8fe03963e37aab15abe8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "noctalia": {
       "inputs": {
         "nixpkgs": [
@@ -386,7 +402,61 @@
         "niri": "niri",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
+        "spicetify-genres": "spicetify-genres",
+        "spicetify-nix": "spicetify-nix",
+        "spicetify-utilities": "spicetify-utilities",
         "stylix": "stylix"
+      }
+    },
+    "spicetify-genres": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759595646,
+        "narHash": "sha256-sGmqgL+UmFw587yfBHWT/UvcOI7+TkXb+IOFZGB+reo=",
+        "owner": "LucasOe",
+        "repo": "spicetify-genres",
+        "rev": "b833f2d94ea6c59262f433857083e377b2522b52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LucasOe",
+        "repo": "spicetify-genres",
+        "type": "github"
+      }
+    },
+    "spicetify-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2",
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1765687197,
+        "narHash": "sha256-5aJgT+lEC7ypuAGE3DQLj3LzYDQ+kRG6MnkVr3ZF9RU=",
+        "owner": "Gerg-L",
+        "repo": "spicetify-nix",
+        "rev": "fa6a5dde9d95bf7b8f075ff5aceeb1d97fa9043a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gerg-L",
+        "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "spicetify-utilities": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1695919657,
+        "narHash": "sha256-LZcrmoA+SOpTeTiBeiOtneojzBhvbZfkawTyFRLhNk8=",
+        "owner": "kyrie25",
+        "repo": "spicetify-utilities",
+        "rev": "af53aabc63b8d197b952f4ecb0e4252ee79eca26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kyrie25",
+        "repo": "spicetify-utilities",
+        "type": "github"
       }
     },
     "stylix": {
@@ -402,7 +472,7 @@
           "nixpkgs"
         ],
         "nur": "nur",
-        "systems": "systems",
+        "systems": "systems_2",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
@@ -424,6 +494,21 @@
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

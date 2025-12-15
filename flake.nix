@@ -40,6 +40,20 @@
       url = "github:rafaelmardojai/firefox-gnome-theme";
       flake = false;
     };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+    };
+
+    spicetify-genres = {
+      url = "github:LucasOe/spicetify-genres";
+      flake = false;
+    };
+
+    spicetify-utilities = {
+      url = "github:kyrie25/spicetify-utilities";
+      flake = false;
+    };
   };
 
   outputs =

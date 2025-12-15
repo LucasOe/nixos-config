@@ -9,12 +9,12 @@
       main = base01;
       main-elevated = base02;
       highlight = base04;
-      highlight-elevated = base05;
+      highlight-elevated = base02;
       sidebar = base00;
       player = base00;
       card = base00;
       shadow = base00;
-      selected-row = base04;
+      selected-row = base05;
       button = base0B;
       button-active = base0B;
       button-disabled = base02;

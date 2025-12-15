@@ -21,6 +21,17 @@
         name = "GNOME System Monitor";
         noDisplay = true;
       };
+      vesktop = {
+        name = "Discord";
+        exec = "vesktop %U";
+        icon = "discord";
+        genericName = "Internet Messenger";
+        categories = [
+          "Network"
+          "InstantMessaging"
+          "Chat"
+        ];
+      };
     };
   };
 }

@@ -12,9 +12,6 @@
 
     networkmanager.enable = true;
 
-    defaultGateway = "192.168.2.1";
-    nameservers = [ "192.168.2.208" ];
-
     # Set static IP address
     interfaces.wlp0s20f3.ipv4.addresses = [
       {

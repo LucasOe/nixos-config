@@ -12,14 +12,6 @@
 
     networkmanager.enable = true;
 
-    # Set static IP address
-    interfaces.wlp0s20f3.ipv4.addresses = [
-      {
-        address = "192.168.2.205";
-        prefixLength = 24;
-      }
-    ];
-
     # Firewall
     firewall.enable = true;
     firewall.allowedTCPPorts = [ 22 ];

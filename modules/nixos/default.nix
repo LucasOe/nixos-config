@@ -4,6 +4,7 @@
 {
   imports = [
     ./greeter/gdm.nix
+    ./programs/nextdns.nix
     ./programs/nh.nix
     ./shell/fish.nix
     ./stylix.nix

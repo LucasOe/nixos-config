@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   programs.firefox = {
     profiles.default.settings = {
@@ -231,6 +233,12 @@
       # ============================================================================
       # START: CUSTOM
       # ============================================================================
+
+      # Set DNS-over-HTTPS (DoH) provider
+      "network.trr.uri" = "https://dns.nextdns.io/fcc66c/firefox";
+      # Enforce DNS-over-HTTPS (DoH)
+      "network.trr.mode" = 2;
+      "network.trr.max-fails" = 5;
 
       # This preference is required to recolor the icons
       "svg.context-properties.content.enabled" = true;

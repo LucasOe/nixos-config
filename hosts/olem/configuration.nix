@@ -8,7 +8,7 @@
 
   # Enable networking
   networking = {
-    hostName = "laptop";
+    hostName = "olem";
 
     networkmanager.enable = true;
 

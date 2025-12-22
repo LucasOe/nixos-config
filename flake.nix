@@ -76,12 +76,12 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
+        olem = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = specialArgs;
           modules = [
             # Host specific configuration
-            ./hosts/laptop/configuration.nix
+            ./hosts/olem/configuration.nix
 
             # Default modules
             ./modules/nixos

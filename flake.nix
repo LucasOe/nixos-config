@@ -25,15 +25,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     dankMaterialShell = {
-      url = "github:AvengeMedia/DankMaterialShell";
+      url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dgop.follows = "dgop";
     };
 
     firefox-gnome-theme = {
@@ -88,6 +82,7 @@
 
             # Additional Modules
             inputs.stylix.nixosModules.stylix # Stylix
+            inputs.niri.nixosModules.niri # Niri
 
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`

@@ -38,10 +38,14 @@
           right = [
             {
               id = "Tray";
+              blacklist = [
+                "nm-applet"
+              ];
               pinned = [
                 "Discord"
-                "Vesktop"
+                "nm-applet"
                 "spotify-client"
+                "Vesktop"
               ];
             }
             {
@@ -55,6 +59,9 @@
             }
             {
               id = "Brightness";
+            }
+            {
+              id = "VPN";
             }
             {
               id = "Clock";

@@ -15,6 +15,7 @@
     # Firewall
     firewall.enable = true;
     firewall.allowedTCPPorts = [ 22 ];
+    firewall.checkReversePath = false;
   };
 
   # Enable Bluetooth
@@ -65,5 +66,6 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     adw-bluetooth
+    networkmanagerapplet
   ];
 }

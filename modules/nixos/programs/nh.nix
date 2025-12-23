@@ -5,6 +5,6 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep 3";
-    flake = "/home/${username}/dev/nixos-config";
+    flake = "/home/${username}/Projects/nixos-config";
   };
 }

@@ -4,6 +4,11 @@
   programs.television = {
     enable = true;
 
+    # Disable when using fzf
+    enableBashIntegration = false;
+    enableFishIntegration = false;
+    enableZshIntegration = false;
+
     settings = {
       ui = {
         status_bar = {

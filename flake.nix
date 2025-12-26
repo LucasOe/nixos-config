@@ -48,6 +48,10 @@
       url = "github:kyrie25/spicetify-utilities";
       flake = false;
     };
+
+    maccel = {
+      url = "github:Gnarus-G/maccel";
+    };
   };
 
   outputs =
@@ -108,6 +112,7 @@
             # Additional Modules
             inputs.stylix.nixosModules.stylix # Stylix
             inputs.niri.nixosModules.niri # Niri
+            inputs.maccel.nixosModules.default # maccel
 
             # make home-manager as a module of nixos
             # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`

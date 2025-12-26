@@ -6,7 +6,10 @@
     # Defauls Settings: https://github.com/noctalia-dev/noctalia-shell/blob/main/Assets/settings-default.json
     settings = {
       bar = {
-        monitors = [ "eDP-1" ];
+        monitors = [
+          "eDP-1"
+          "DP-2"
+        ];
         position = "top";
         showCapsule = true;
         outerCorners = false;

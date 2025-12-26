@@ -95,6 +95,31 @@
             }
           ];
         };
+        tamas = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = specialArgs;
+          modules = [
+            # Host specific configuration
+            ./hosts/tamas/configuration.nix
+
+            # Default modules
+            ./modules/nixos
+
+            # Additional Modules
+            inputs.stylix.nixosModules.stylix # Stylix
+            inputs.niri.nixosModules.niri # Niri
+
+            # make home-manager as a module of nixos
+            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = specialArgs;
+              home-manager.users.${username} = import ./modules/home-manager;
+            }
+          ];
+        };
       };
     };
 }

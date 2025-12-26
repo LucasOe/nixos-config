@@ -3,15 +3,15 @@
 let
   toolbarBookmarks = [
     {
-      url = "https://mail.proton.me/u/1/";
+      url = "https://mail.proton.me/";
       name = "Proton Mail";
     }
     {
-      url = "https://calendar.proton.me/u/1/";
+      url = "https://calendar.proton.me/";
       name = "Proton Calendar";
     }
     {
-      url = "https://drive.proton.me/u/1/";
+      url = "https://drive.proton.me/";
       name = "Proton Drive";
     }
     {

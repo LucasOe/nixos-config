@@ -47,14 +47,14 @@
           urgent.color = "#${config.lib.stylix.colors.base0F}";
         };
 
-        default-column-width = {
-          proportion = 0.500;
-        };
+        default-column-width.proportion = 0.500;
 
         preset-column-widths = [
+          { proportion = 0.250; }
           { proportion = 0.333; }
           { proportion = 0.500; }
           { proportion = 0.666; }
+          { proportion = 0.750; }
         ];
       };
 
@@ -103,13 +103,6 @@
         XDG_CURRENT_DESKTOP = "niri";
         XDG_SESSION_DESKTOP = "niri";
         DISPLAY = ":0";
-      };
-
-      outputs = {
-        # Laptop monitor
-        "eDP-1" = {
-          scale = 1.5;
-        };
       };
 
       debug = {

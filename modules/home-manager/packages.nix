@@ -13,6 +13,7 @@
     eza
     fd
     jq
+    p7zip
     ripgrep
     trashy
     # GNOME Applications
@@ -33,6 +34,7 @@
     snapshot
     # GTK Applications
     eyedropper
+    file-roller
     typesetter
   ];
 }

@@ -19,8 +19,8 @@
 
   # Keymap
   services.xserver.xkb = {
-    layout = "de";
-    variant = "us";
+    layout = "eu"; # Alternatively use 'de'
+    variant = ""; # Alternatively use 'us'
   };
 
   # Console keymap

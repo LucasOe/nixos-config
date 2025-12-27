@@ -36,8 +36,8 @@
       inputDpi = 1600.0;
 
       mode = "linear";
-      acceleration = 0.02;
-      offset = 0.0;
+      acceleration = 0.03;
+      offset = 7.0;
       outputCap = 2.0;
     };
   };

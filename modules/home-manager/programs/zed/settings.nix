@@ -11,7 +11,7 @@
       ui_font_size = 18;
       # Buffer Font
       buffer_font_family = fonts.monospace.name;
-      buffer_font_size = 17;
+      buffer_font_size = 15;
       buffer_line_height.custom = 1.4;
       buffer_font_features = {
         calt = true;
@@ -72,7 +72,7 @@
       };
       # Project Panel
       project_panel = {
-        default_width = 270;
+        default_width = 300;
       };
       # Agent Panel
       agent = {

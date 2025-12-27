@@ -4,7 +4,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      font-size = 12;
+      font-size = 13;
       font-feature = "calt zero";
       cursor-style = "bar";
       cursor-click-to-move = true;

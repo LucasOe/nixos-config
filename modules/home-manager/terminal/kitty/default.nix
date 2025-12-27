@@ -11,6 +11,7 @@
       cursor_shape_unfocused = "beam";
       enable_audio_bell = false;
       enabled_layouts = "vertical, horizontal";
+      font_size = 13.0;
       window_padding_width = 10;
     };
     mouseBindings = {

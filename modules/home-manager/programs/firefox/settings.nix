@@ -253,6 +253,9 @@
       # Keep the download button visible
       "browser.download.autohideButton" = false;
 
+      # Hide translation popup
+      "browser.translations.automaticallyPopup" = false;
+
       # Enable Firefox to clear items on shutdown
       "privacy.sanitize.sanitizeOnShutdown" = true;
       # Categories of data to be cleared on shutdown

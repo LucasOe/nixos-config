@@ -23,7 +23,7 @@
       DisableMasterPasswordCreation = true;
       DisablePocket = true;
       DisablePrivateBrowsing = false;
-      DisableProfileImport = false;
+      DisableProfileImport = true;
       DisableProfileRefresh = false;
       DisableSafeMode = false;
       DisableTelemetry = true;
@@ -52,9 +52,12 @@
         Snippets = false;
         Locked = false;
       };
+      GenerativeAI = {
+        Enabled = false;
+        Locked = true;
+      };
       HardwareAcceleration = true;
       ManualAppUpdateOnly = true;
-      NoDefaultBookmarks = false;
       OfferToSaveLogins = false;
       OfferToSaveLoginsDefault = false;
       PasswordManagerEnabled = false;
@@ -70,11 +73,15 @@
         PreventInstalls = true;
       };
       SearchSuggestEnabled = false;
-      ShowHomeButton = false;
+      SkipTermsOfUse = true;
       StartDownloadsInTempDirectory = false;
       UserMessaging = {
         ExtensionRecommendations = false;
+        FeatureRecommendations = false;
         SkipOnboarding = true;
+        MoreFromMozilla = false;
+        FirefoxLabs = false;
+        Locked = true;
       };
     };
   };

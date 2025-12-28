@@ -78,6 +78,9 @@
           system = "x86_64-linux";
           specialArgs = specialArgs;
           modules = [
+            # Overlays
+            (import ./overlays)
+
             # Host specific configuration
             ./hosts/olem/configuration.nix
 
@@ -103,6 +106,9 @@
           system = "x86_64-linux";
           specialArgs = specialArgs;
           modules = [
+            # Overlays
+            (import ./overlays)
+
             # Host specific configuration
             ./hosts/tamas/configuration.nix
 

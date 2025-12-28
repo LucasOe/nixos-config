@@ -31,6 +31,9 @@
   # Console keymap
   console.keyMap = "de";
 
+  # Enable ratbagd for configuring gaming mice
+  services.ratbagd.enable = true;
+
   # https://github.com/Gnarus-G/maccel/blob/main/README_NIXOS.md
   hardware.maccel = {
     enable = true;
@@ -85,5 +88,12 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
+    via
+    piper
+  ];
+
+  # Permit to run via for /dev/hidraw*
+  services.udev.packages = with pkgs; [
+    via
   ];
 }

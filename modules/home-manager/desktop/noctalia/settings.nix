@@ -62,9 +62,6 @@
               id = "Volume";
             }
             {
-              id = "Brightness";
-            }
-            {
               id = "VPN";
             }
             {
@@ -76,6 +73,7 @@
       };
       general = {
         avatarImage = configLib.relativeToRoot "assets/avatars/tamas.png";
+        compactLockScreen = true;
         dimmerOpacity = 0.5;
         radiusRatio = 0.5;
         enableShadows = true;
@@ -84,6 +82,8 @@
       location = {
         name = "Hamm, Germany";
         weatherShowEffects = false;
+        analogClockInCalendar = true;
+        firstDayOfWeek = 1;
       };
       wallpaper = {
         overviewEnabled = true;
@@ -125,12 +125,48 @@
       dock = {
         enabled = false;
       };
+      sessionMenu = {
+        enableCountdown = false;
+        powerOptions = [
+          {
+            "action" = "lock";
+            "enabled" = true;
+          }
+          {
+            "action" = "suspend";
+            "enabled" = true;
+          }
+          {
+            "action" = "hibernate";
+            "enabled" = false;
+          }
+          {
+            "action" = "reboot";
+            "enabled" = true;
+          }
+          {
+            "action" = "logout";
+            "enabled" = true;
+          }
+          {
+            "action" = "shutdown";
+            "enabled" = true;
+          }
+        ];
+      };
+      notifications = {
+        monitors = [
+          "eDP-1"
+          "DP-2"
+        ];
+      };
       osd = {
         enabledTypes = [
           0 # Output volume
           1 # Input volume
           2 # Brightness
           3 # Lock keys
+          4 # IPC Messages
         ];
       };
     };

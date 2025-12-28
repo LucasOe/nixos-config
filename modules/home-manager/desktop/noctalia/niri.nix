@@ -35,6 +35,10 @@
         action = noctalia-ipc "launcher" "toggle";
         hotkey-overlay.title = "Toggle Application Launcher";
       };
+      "Alt+Space" = {
+        action = noctalia-ipc "launcher" "toggle";
+        hotkey-overlay.title = "Toggle Application Launcher";
+      };
       "Mod+V" = {
         action = noctalia-ipc "launcher" "clipboard";
         hotkey-overlay.title = "Toggle Clipboard";

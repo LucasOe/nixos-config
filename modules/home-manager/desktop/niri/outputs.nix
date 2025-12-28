@@ -31,6 +31,7 @@
         mode.height = 1440;
         mode.refresh = 143.923;
         variable-refresh-rate = true;
+        focus-at-startup = true;
       };
     };
   };

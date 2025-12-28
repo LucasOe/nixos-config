@@ -35,6 +35,10 @@
         action = dms-ipc "spotlight" "toggle";
         hotkey-overlay.title = "Toggle Application Launcher";
       };
+      "Alt+Space" = {
+        action = dms-ipc "spotlight" "toggle";
+        hotkey-overlay.title = "Toggle Application Launcher";
+      };
 
       # Notifications
       "Mod+N" = {

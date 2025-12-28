@@ -83,10 +83,17 @@
       "wheel"
       "docker"
     ];
+
+    # Home packages
+    packages = with pkgs; [
+      gdlauncher-carbon
+      cartridges
+    ];
   };
 
   # System Packages
   environment.systemPackages = with pkgs; [
+    (bottles.override { removeWarningPopup = true; })
     networkmanagerapplet
     via
     piper
@@ -96,4 +103,19 @@
   services.udev.packages = with pkgs; [
     via
   ];
+
+  # Enable Steam
+  programs.steam = {
+    enable = true;
+
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+
+    # Open ports in the firewall
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
 }

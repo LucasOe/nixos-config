@@ -66,6 +66,15 @@
           relative-to = "bottom-right";
         };
       }
+      # Black Desert
+      {
+        matches = [
+          {
+            app-id = "^blackdesert64.exe$";
+          }
+        ];
+        open-on-output = "DP-2";
+      }
     ];
   };
 }

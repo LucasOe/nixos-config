@@ -48,6 +48,7 @@
                 "Discord"
                 "nm-applet"
                 "spotify-client"
+                "steam"
                 "Vesktop"
               ];
             }

@@ -36,5 +36,7 @@
     eyedropper
     file-roller
     typesetter
+    # Other Applications
+    obsidian
   ];
 }

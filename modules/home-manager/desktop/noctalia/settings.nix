@@ -168,6 +168,10 @@
           3 # Lock keys
           4 # IPC Messages
         ];
+        monitors = [
+          "eDP-1"
+          "DP-2"
+        ];
       };
     };
   };

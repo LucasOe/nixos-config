@@ -1,0 +1,30 @@
+{ pkgs, ... }:
+
+{
+  # Enable Steam
+  programs.steam = {
+    enable = true;
+
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+
+    # Open ports in the firewall
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
+  # Autostart Steam
+  environment.systemPackages = [
+    (pkgs.makeAutostartItem rec {
+      name = "steam";
+      package = pkgs.makeDesktopItem {
+        inherit name;
+        desktopName = "Steam";
+        exec = "steam -silent %U";
+        icon = "steam";
+      };
+    })
+  ];
+}

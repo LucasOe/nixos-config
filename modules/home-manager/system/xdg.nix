@@ -22,10 +22,5 @@
         noDisplay = true;
       };
     };
-
-    autostart = {
-      enable = true;
-      readOnly = true;
-    };
   };
 }

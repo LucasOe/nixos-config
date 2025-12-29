@@ -1,5 +1,6 @@
 {
   config,
+  configLib,
   pkgs,
   username,
   ...
@@ -8,6 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix # Generated (nixos-generate-config) hardware configuration
+    (configLib.relativeToRoot "modules/nixos/programs/steam.nix") # Steam
   ];
 
   # Enable networking
@@ -103,19 +105,4 @@
   services.udev.packages = with pkgs; [
     via
   ];
-
-  # Enable Steam
-  programs.steam = {
-    enable = true;
-
-    extraCompatPackages = with pkgs; [
-      proton-ge-bin
-    ];
-
-    # Open ports in the firewall
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-  };
-
 }

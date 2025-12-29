@@ -25,8 +25,10 @@ in
       checkUpdates = false;
       clickTrayToShowHide = true;
       disableMinSize = true;
+      hardwareAcceleration = true;
+      hardwareVideoAcceleration = true;
       minimizeToTray = true;
-      openLinksWithElectron = true;
+      openLinksWithElectron = false;
       splashBackground = config.lib.stylix.colors.withHashtag.base01;
       splashColor = config.lib.stylix.colors.withHashtag.base05;
     };
@@ -42,9 +44,13 @@ in
           "disblockOrigin.css"
         ];
         themeLinks = [
-          "https://croissantdunord.github.io/discord-adblock/adblock.css"
-          "https://croissantdunord.github.io/discord-adblock/adblock-extras.css"
+          "https://codeberg.org/ridge/Discord-Adblock/raw/branch/main/discord-adblock.css"
         ];
+        plugins = {
+          NoProfileThemes = {
+            enabled = true;
+          };
+        };
       };
     };
 

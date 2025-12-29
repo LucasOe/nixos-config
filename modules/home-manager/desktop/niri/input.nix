@@ -8,6 +8,10 @@
         accel-speed = 0.5;
         accel-profile = "flat";
       };
+      touchpad = {
+        dwt = true; # Disable touchpad while typing
+        dwtp = true; # Disable touchpad while trackpoint is in use
+      };
     };
   };
 }

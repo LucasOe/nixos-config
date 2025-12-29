@@ -18,8 +18,10 @@
       };
 
       layout = {
-        background-color = "transparent";
         gaps = 10;
+        center-focused-column = "never";
+        empty-workspace-above-first = true;
+        background-color = "transparent";
 
         shadow = {
           enable = true;
@@ -59,19 +61,8 @@
       };
 
       input = {
-        touchpad = {
-          click-method = "button-areas";
-          dwt = true;
-          dwtp = true;
-          natural-scroll = true;
-          scroll-method = "two-finger";
-          tap = true;
-          tap-button-map = "left-right-middle";
-          middle-emulation = true;
-          accel-profile = "adaptive";
-        };
         focus-follows-mouse.enable = true;
-        warp-mouse-to-focus.enable = false;
+        focus-follows-mouse.max-scroll-amount = "0%";
       };
 
       window-rules = [

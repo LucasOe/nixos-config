@@ -66,14 +66,18 @@
           relative-to = "bottom-right";
         };
       }
-      # Black Desert
+      # Games
       {
         matches = [
+          {
+            app-id = "^steam_app";
+          }
           {
             app-id = "^blackdesert64.exe$";
           }
         ];
         open-on-output = "DP-2";
+        #fullscreen-window = true;
       }
     ];
   };

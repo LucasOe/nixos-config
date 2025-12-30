@@ -73,10 +73,14 @@
             app-id = "^steam_app";
           }
           {
+            app-id = "^Minecraft";
+          }
+          {
             app-id = "^blackdesert64.exe$";
           }
         ];
         open-on-output = "DP-2";
+        variable-refresh-rate = true;
         #fullscreen-window = true;
       }
     ];

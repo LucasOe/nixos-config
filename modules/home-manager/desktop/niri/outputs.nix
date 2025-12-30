@@ -15,7 +15,7 @@
         mode.width = 2560;
         mode.height = 1440;
         mode.refresh = 144.0;
-        variable-refresh-rate = true;
+        variable-refresh-rate = "on-demand";
 
         # https://github.com/sodiboo/niri-flake/issues/1404
         # layout = {
@@ -30,7 +30,7 @@
         mode.width = 3440;
         mode.height = 1440;
         mode.refresh = 143.923;
-        variable-refresh-rate = true;
+        variable-refresh-rate = "on-demand";
         focus-at-startup = true;
       };
     };

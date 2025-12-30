@@ -19,7 +19,9 @@ in
   programs.vesktop = {
     enable = true;
 
+    # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
     settings = {
+      appBadge = false;
       arRPC = false;
       autoStartMinimized = true;
       checkUpdates = false;
@@ -63,7 +65,7 @@ in
   xdg.desktopEntries = {
     vesktop = {
       name = "Discord";
-      exec = "vesktop %U";
+      exec = "vesktop --user-agent-os windows %U";
       icon = "discord";
       genericName = "Internet Messenger";
       categories = [

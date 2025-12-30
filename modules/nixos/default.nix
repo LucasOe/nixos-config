@@ -91,6 +91,7 @@
   services.printing.enable = true; # Printing
   programs.gpu-screen-recorder.enable = true; # Recording
   services.playerctld.enable = true; # Media Keys
+  services.resolved.enable = true; # DNS
 
   # Enable sound with PipeWire
   security.rtkit.enable = true;

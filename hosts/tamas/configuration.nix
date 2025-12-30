@@ -42,12 +42,12 @@
     enableCli = true;
 
     parameters = {
-      sensMultiplier = 0.25;
+      sensMultiplier = 0.50;
       inputDpi = 1600.0;
 
       mode = "linear";
-      acceleration = 0.03;
-      offset = 7.0;
+      acceleration = 0.02;
+      offset = 5.0;
       outputCap = 2.0;
     };
   };

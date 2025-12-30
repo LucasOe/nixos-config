@@ -5,7 +5,7 @@
     input = {
       mouse = {
         # https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html
-        accel-speed = 0.5;
+        accel-speed = 0.0;
         accel-profile = "flat";
       };
       touchpad = {

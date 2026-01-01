@@ -92,6 +92,7 @@
   programs.gpu-screen-recorder.enable = true; # Recording
   services.playerctld.enable = true; # Media Keys
   services.resolved.enable = true; # DNS
+  programs.dconf.enable = true; # dconf
 
   # Enable sound with PipeWire
   security.rtkit.enable = true;
@@ -138,12 +139,4 @@
     Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
     Defaults timestamp_timeout=120 # only ask for password every 2h
   '';
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
 }

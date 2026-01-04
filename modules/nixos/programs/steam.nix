@@ -1,9 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  nixpkgs.overlays = [ inputs.millennium.overlays.default ];
+
   # Enable Steam
   programs.steam = {
     enable = true;
+    package = pkgs.millennium-steam;
 
     extraCompatPackages = with pkgs; [
       proton-ge-bin

@@ -52,6 +52,10 @@
     maccel = {
       url = "github:Gnarus-G/maccel";
     };
+
+    millennium = {
+      url = "github:Trivaris/Millennium?dir=packages/nix";
+    };
   };
 
   outputs =

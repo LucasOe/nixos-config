@@ -410,11 +410,11 @@
       },
       "locked": {
         "dir": "packages/nix",
-        "lastModified": 1767537890,
-        "narHash": "sha256-a3EtyuLxilDqqLHxHqzZ/+P/snSVS7Y5SElTJwRDgb4=",
+        "lastModified": 1767558109,
+        "narHash": "sha256-X6aDui632Z9rDkOKJFuVyNnD1kf7MI97qHM10qi2YSs=",
         "owner": "Trivaris",
         "repo": "Millennium",
-        "rev": "eda348661bf3b2d11dbca60d546312a67b6dc191",
+        "rev": "26d699999cb3d50abcc47f2b9e28709f24443d23",
         "type": "github"
       },
       "original": {

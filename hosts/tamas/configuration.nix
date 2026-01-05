@@ -99,14 +99,17 @@
   environment.systemPackages = with pkgs; [
     (bottles.override { removeWarningPopup = true; })
     networkmanagerapplet
-    via
     piper
+    via
   ];
 
   # Permit to run via for /dev/hidraw*
   services.udev.packages = with pkgs; [
     via
   ];
+
+  # Flatpak
+  services.flatpak.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

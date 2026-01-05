@@ -3,7 +3,7 @@
 {
   programs.noctalia-shell = {
     # Docs: https://docs.noctalia.dev/getting-started/nixos/#config-ref
-    # Defauls Settings: https://github.com/noctalia-dev/noctalia-shell/blob/main/Assets/settings-default.json
+    # Default Settings: https://github.com/noctalia-dev/noctalia-shell/blob/main/Assets/settings-default.json
     settings = {
       bar = {
         monitors = [
@@ -35,7 +35,6 @@
           center = [
             {
               id = "Taskbar";
-              onlySameOutput = false;
             }
           ];
           right = [
@@ -53,13 +52,21 @@
               ];
             }
             {
+              id = "plugin:mini-docker";
+            }
+            {
               id = "NotificationHistory";
             }
             {
               id = "Battery";
             }
             {
+              id = "Microphone";
+              displayMode = "alwaysHide";
+            }
+            {
               id = "Volume";
+              displayMode = "alwaysHide";
             }
             {
               id = "VPN";

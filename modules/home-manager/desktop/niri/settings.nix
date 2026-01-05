@@ -61,7 +61,7 @@
       };
 
       input = {
-        focus-follows-mouse.enable = true;
+        focus-follows-mouse.enable = false;
         focus-follows-mouse.max-scroll-amount = "0%";
       };
 

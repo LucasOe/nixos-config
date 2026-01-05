@@ -20,15 +20,11 @@ let
     }
     {
       url = "https://github.com/";
-      name = "Github";
+      name = "GitHub";
     }
     {
       url = "https://search.nixos.org/packages?channel=unstable";
       name = "NixOS Search";
-    }
-    {
-      url = "https://home-manager-options.extranix.com/";
-      name = "Home Manager";
     }
     {
       url = "https://mynixos.com/";
@@ -37,10 +33,6 @@ let
     {
       url = "https://chatgpt.com/?temporary-chat=true";
       name = "ChatGPT";
-    }
-    {
-      url = "https://drive.google.com/";
-      name = "Drive";
     }
     {
       url = "https://my.hshl.de/";

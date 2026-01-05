@@ -52,6 +52,10 @@ in
           NoProfileThemes = {
             enabled = true;
           };
+          CustomIdle = {
+            enabled = true;
+            idleTimeout = 0;
+          };
         };
       };
     };

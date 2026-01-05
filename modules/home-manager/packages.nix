@@ -4,9 +4,12 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # Language Server & Formatting
-    nixfmt-rfc-style
-    nixd
+    biome
     nil
+    nixd
+    nixfmt-rfc-style
+    oxfmt
+    oxlint
     # Development
     devenv
     # Command Line

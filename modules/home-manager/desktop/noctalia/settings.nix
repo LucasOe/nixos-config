@@ -13,7 +13,7 @@
         position = "top";
         showCapsule = true;
         outerCorners = false;
-        # https://github.com/noctalia-dev/noctalia-shell/blob/6fc754104858479e02bf51a55eef5e4e8ad722b3/Services/UI/BarWidgetRegistry.qml
+        # https://github.com/noctalia-dev/noctalia-shell/blob/main/Services/UI/BarWidgetRegistry.qml
         widgets = {
           left = [
             {
@@ -23,6 +23,8 @@
             {
               id = "Workspace";
               hideUnoccupied = true;
+              labelMode = "index+name";
+              characterCount = 10;
             }
             {
               id = "SystemMonitor";
@@ -30,6 +32,8 @@
             {
               id = "MediaMini";
               maxWidth = 200;
+              showAlbumArt = false;
+              compactMode = true;
             }
           ];
           center = [

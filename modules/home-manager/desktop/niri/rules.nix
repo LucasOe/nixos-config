@@ -5,15 +5,9 @@
     layer-rules = [
       {
         matches = [
-          {
-            namespace = "^quickshell$";
-          }
-          {
-            namespace = "dms:blurwallpaper";
-          }
-          {
-            namespace = "^noctalia-overview*";
-          }
+          { namespace = "^quickshell$"; }
+          { namespace = "dms:blurwallpaper"; }
+          { namespace = "^noctalia-overview*"; }
         ];
         place-within-backdrop = true;
       }
@@ -45,13 +39,10 @@
           relative-to = "bottom-right";
         };
       }
+
       # Eyedropper
       {
-        matches = [
-          {
-            app-id = "eyedropper$";
-          }
-        ];
+        matches = [ { app-id = "eyedropper$"; } ];
         open-floating = true;
         open-focused = true;
         default-column-width = {
@@ -66,22 +57,18 @@
           relative-to = "bottom-right";
         };
       }
+
       # Games
       {
         matches = [
-          {
-            app-id = "^steam_app";
-          }
-          {
-            app-id = "^Minecraft";
-          }
-          {
-            app-id = "^blackdesert64.exe$";
-          }
+          { app-id = "^gamescope$"; }
+          { app-id = "^steam_app_.*$"; }
+          { app-id = "^steam_proton$"; }
+          { app-id = "^Minecraft"; }
+          { app-id = "^blackdesert64.exe$"; }
         ];
         open-on-output = "DP-2";
         variable-refresh-rate = true;
-        #fullscreen-window = true;
       }
     ];
   };

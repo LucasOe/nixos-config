@@ -66,8 +66,9 @@
 
   environment.systemPackages = with pkgs; [
     git # Required for Flakes
-    xwayland-satellite # xwayland support
-    gpu-screen-recorder-gtk # GUI app
+    gpu-screen-recorder-gtk
+    papirus-icon-theme
+    xwayland-satellite
   ];
 
   # Allow unfree packages

@@ -98,6 +98,7 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     (bottles.override { removeWarningPopup = true; })
+    heroic
     networkmanagerapplet
     piper
     via

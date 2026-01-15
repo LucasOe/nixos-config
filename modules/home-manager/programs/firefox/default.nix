@@ -67,7 +67,4 @@ in
       "default"
     ];
   };
-
-  # Firefox depends on dconf color scheme
-  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 }

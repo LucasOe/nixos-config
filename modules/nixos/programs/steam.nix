@@ -18,6 +18,9 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
+  programs.gamescope.enable = true;
+  programs.gamemode.enable = true;
+
   # Autostart Steam
   environment.systemPackages = [
     (pkgs.makeAutostartItem rec {

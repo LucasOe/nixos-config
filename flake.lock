@@ -410,16 +410,16 @@
       },
       "locked": {
         "dir": "packages/nix",
-        "lastModified": 1767577426,
-        "narHash": "sha256-rtbKMHfAQz9DbR7t6dTFBHDlgS0cYdKaWaWzE5M4ANU=",
-        "owner": "Trivaris",
+        "lastModified": 1768604720,
+        "narHash": "sha256-I0aRTdaAWTitvKtRRLDMP6PNbU9C5rsCZ525bXgI/Rw=",
+        "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "aa139d77eda1d396c51ae972df0d7b12cb792381",
+        "rev": "458cc441e3c34c3960e71785bd907971215041e8",
         "type": "github"
       },
       "original": {
         "dir": "packages/nix",
-        "owner": "Trivaris",
+        "owner": "SteamClientHomebrew",
         "repo": "Millennium",
         "type": "github"
       }
@@ -429,14 +429,14 @@
       "locked": {
         "lastModified": 1767577350,
         "narHash": "sha256-vtnqP4WxEr8C0vJ59rvEPSJTAyx0MmxzIEn+HrlCobI=",
-        "owner": "Trivaris",
-        "repo": "millennium",
+        "owner": "SteamClientHomebrew",
+        "repo": "Millennium",
         "rev": "4722a8ec5824e0425a3d07f2c21935dbf694813f",
         "type": "github"
       },
       "original": {
-        "owner": "Trivaris",
-        "repo": "millennium",
+        "owner": "SteamClientHomebrew",
+        "repo": "Millennium",
         "rev": "4722a8ec5824e0425a3d07f2c21935dbf694813f",
         "type": "github"
       }

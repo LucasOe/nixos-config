@@ -54,7 +54,7 @@
     };
 
     millennium = {
-      url = "github:Trivaris/Millennium?dir=packages/nix";
+      url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     };
   };
 

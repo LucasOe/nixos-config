@@ -1,11 +1,12 @@
 # Common system configuration that is being used on all hosts
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./greeter/gdm.nix
     ./programs/nextdns.nix
     ./programs/nh.nix
+    ./programs/niri.nix
     ./shell/fish.nix
     ./stylix.nix
   ];
@@ -68,7 +69,6 @@
     git # Required for Flakes
     gpu-screen-recorder-gtk
     papirus-icon-theme
-    xwayland-satellite
   ];
 
   # Allow unfree packages
@@ -116,11 +116,6 @@
       PasswordAuthentication = false; # disable password login
     };
   };
-
-  # Enable Niri
-  programs.niri.enable = true;
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  programs.niri.package = pkgs.niri-unstable;
 
   # Enable Gnome Virtual File System
   # Required by Nautilus

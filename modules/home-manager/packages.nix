@@ -7,7 +7,7 @@
     biome
     nil
     nixd
-    nixfmt-rfc-style
+    nixfmt
     oxfmt
     oxlint
     # Development

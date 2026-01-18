@@ -90,7 +90,6 @@
   # User Packages
   home-manager.users.${username} = {
     home.packages = with pkgs; [
-      gdlauncher-carbon
       cartridges
     ];
   };

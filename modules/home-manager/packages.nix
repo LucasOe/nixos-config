@@ -36,6 +36,7 @@
     simple-scan
     snapshot
     # GTK Applications
+    bazaar
     eyedropper
     file-roller
     typesetter

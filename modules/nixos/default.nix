@@ -89,11 +89,15 @@
     LC_TIME = "en_IE.UTF-8"; # Use en_IE locale as a replacement for en_DE
   };
 
-  services.printing.enable = true; # Printing
-  programs.gpu-screen-recorder.enable = true; # Recording
-  services.playerctld.enable = true; # Media Keys
-  services.resolved.enable = true; # DNS
   programs.dconf.enable = true; # dconf
+  programs.gpu-screen-recorder.enable = true; # Recording
+  programs.nix-ld.enable = true; # Allow dynamically linked libraries / Required by vscode-server
+
+  services.flatpak.enable = true; # Flatpak
+  services.gvfs.enable = true; # Gnome Virtual File System / Required by Nautilus
+  services.playerctld.enable = true; # Media Keys
+  services.printing.enable = true; # Printing
+  services.resolved.enable = true; # DNS
 
   # Enable sound with PipeWire
   security.rtkit.enable = true;
@@ -117,14 +121,6 @@
     };
   };
 
-  # Enable Gnome Virtual File System
-  # Required by Nautilus
-  services.gvfs.enable = true;
-
-  # Allow dynamically linked libraries
-  # Required by vscode-server
-  programs.nix-ld.enable = true;
-
   # Enable Docker
   virtualisation.docker = {
     enable = true;
@@ -135,7 +131,4 @@
     Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
     Defaults timestamp_timeout=120 # only ask for password every 2h
   '';
-
-  # Enable Flatpak
-  services.flatpak.enable = true;
 }

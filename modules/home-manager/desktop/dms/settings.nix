@@ -1,19 +1,16 @@
-{ ... }:
+{ config, ... }:
 
 {
-  # https://danklinux.com/docs/dankmaterialshell/nixos
-  programs.dankMaterialShell = {
-    # Default Settings
+  programs.dank-material-shell = {
     # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/settings/SettingsSpec.js
-    # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/SettingsData.qml
-    default.settings = {
+    settings = {
       barConfigs = import ./bar.nix;
       controlCenterWidgets = import ./widgets.nix;
 
       # Theme
       currentThemeName = "blue";
       cornerRadius = 12;
-      wallpaperFillMode = "Fill";
+      wallpaperFillMode = "Fit";
       blurredWallpaperLayer = false;
       blurWallpaperOnOverview = false;
       monoFontFamily = "JetBrains Mono";
@@ -81,6 +78,11 @@
 
       # Weather
       weatherEnabled = false;
+    };
+
+    # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/settings/SessionSpec.js
+    session = {
+      wallpaperPath = config.stylix.image;
     };
   };
 }

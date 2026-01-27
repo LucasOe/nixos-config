@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # https://sodiboo.github.io/niri-flake/settings
   imports = [
     ./input.nix
     ./keybinds.nix

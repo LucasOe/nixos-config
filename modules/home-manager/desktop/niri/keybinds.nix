@@ -93,11 +93,8 @@
     # "Mod+Shift+9".action = move-column-to-workspace 9;
 
     # Screenshots
-    "Mod+Print".action.screenshot = {
-      show-pointer = false;
-    };
-    "Mod+Alt+Print".action.screenshot-window = {
-      write-to-disk = true;
-    };
+    "Mod+Print".action.screenshot = [ ];
+    "Mod+Ctrl+Print".action.screenshot-screen = [ ];
+    "Mod+Alt+Print".action.screenshot-window = [ ];
   };
 }

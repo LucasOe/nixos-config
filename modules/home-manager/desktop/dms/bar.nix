@@ -16,8 +16,8 @@
 
     screenPreferences = [
       {
-        name = "eDP-1";
-        model = "LQ135P1JX51";
+        name = "eDP-2";
+        model = "LG ULTRAGEAR";
       }
     ];
 

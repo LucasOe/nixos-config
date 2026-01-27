@@ -16,7 +16,7 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:sodiboo/niri-flake/very-refactor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,8 +25,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dankMaterialShell = {
+    dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dms-plugin-registry = {
+      url = "github:AvengeMedia/dms-plugin-registry";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

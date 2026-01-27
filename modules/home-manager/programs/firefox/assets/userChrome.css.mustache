@@ -2,3 +2,11 @@
 :root[customtitlebar]:not([inFullscreen], [sizemode="maximized"]) #TabsToolbar .toolbar-items {
 	padding: 0 1px;
 }
+
+/* Fix missing extension icons with themed icons enabled. Broken since version 147.0 */
+/* https://github.com/rafaelmardojai/firefox-gnome-theme/blob/master/theme/parts/icons.css#L588 */
+@media (prefers-color-scheme: dark) {
+	.webextension-browser-action {
+		list-style-image: var(--webextension-menupanel-image-dark, inherit) !important;
+	}
+}

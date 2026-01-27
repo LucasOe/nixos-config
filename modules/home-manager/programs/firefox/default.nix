@@ -32,7 +32,8 @@ in
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-devedition;
+    package = inputs.firefox.packages.${pkgs.system}.firefox-devedition-bin;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     profiles = {
       # Set dev edition profile to the same as default release
@@ -59,6 +60,8 @@ in
       };
     };
   };
+
+  home.file.".mozilla/native-messaging-hosts".enable = false;
 
   stylix.targets.firefox = {
     enable = false;

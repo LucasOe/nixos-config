@@ -19,7 +19,9 @@ in
       ExtensionSettings =
         with builtins;
         listToAttrs [
+          (extension "audible-volume-control" "{6416fba2-1151-4e0b-ad65-1c36b3994ef1}" false)
           (extension "control-panel-for-youtube" "control-panel-for-youtube@jbscript.dev" false)
+          (extension "dictionary-german" "de-DE@dictionaries.addons.mozilla.org" false)
           (extension "kagi-search-for-firefox" "search@kagi.com" true)
           (extension "modern-for-hacker-news" "{b9edf38a-e293-4606-a088-e63cd4e56d2d}" false)
           (extension "proton-pass" "78272b6fa58f4a1abaac99321d503a20@proton.me" true)

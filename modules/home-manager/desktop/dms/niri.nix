@@ -1,16 +1,16 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 {
   programs.niri.settings = {
     # Files under `$XDG_CONFIG_HOME/niri/dms` to be included into the new config
-    # Please note that niri will throw an error if any of these files are missing.
-    includes = [
-      { path = "$XDG_CONFIG_HOME/niri/dms/alttab"; }
-      { path = "$XDG_CONFIG_HOME/niri/dms/binds"; }
-      { path = "$XDG_CONFIG_HOME/niri/dms/colors"; }
-      { path = "$XDG_CONFIG_HOME/niri/dms/layout"; }
-      { path = "$XDG_CONFIG_HOME/niri/dms/outputs"; }
-      { path = "$XDG_CONFIG_HOME/niri/dms/wpblur"; }
+    includes = lib.mkAfter [
+      "dms/alttab.kdl"
+      "dms/binds.kdl"
+      # "dms/colors.kdl"
+      "dms/cursor.kdl"
+      # "dms/layout.kdl"
+      "dms/outputs.kdl"
+      "dms/wpblur.kdl"
     ];
 
     # Keybinds for Niri

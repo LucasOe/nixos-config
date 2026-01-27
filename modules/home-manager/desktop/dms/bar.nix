@@ -16,29 +16,46 @@
 
     screenPreferences = [
       {
-        name = "eDP-2";
+        name = "DP-2";
         model = "LG ULTRAGEAR";
       }
     ];
 
     leftWidgets = [
       {
-        id = "workspaceSwitcher";
+        id = "controlCenterButton";
         enabled = true;
+
+        showNetworkIcon = false;
+        showBluetoothIcon = false;
+        showAudioIcon = false;
+        showAudioPercent = false;
+        showVpnIcon = false;
+        showBrightnessIcon = false;
+        showBrightnessPercent = false;
+        showMicIcon = false;
+        showMicPercent = false;
+        showBatteryIcon = false;
+        showPrinterIcon = false;
+        showScreenSharingIcon = false;
       }
       {
-        id = "runningApps";
+        id = "workspaceSwitcher";
         enabled = true;
       }
       {
         id = "focusedWindow";
         enabled = true;
       }
+      {
+        id = "music";
+        enabled = true;
+      }
     ];
 
     centerWidgets = [
       {
-        id = "clock";
+        id = "runningApps";
         enabled = true;
       }
     ];
@@ -49,11 +66,11 @@
         enabled = true;
       }
       {
-        id = "clipboard";
+        id = "notificationButton";
         enabled = true;
       }
       {
-        id = "notificationButton";
+        id = "clipboard";
         enabled = true;
       }
       {
@@ -61,11 +78,29 @@
         enabled = true;
       }
       {
+        id = "vpn";
+        enabled = true;
+      }
+      {
         id = "controlCenterButton";
         enabled = true;
-        showNetworkIcon = true;
-        showBluetoothIcon = true;
+
+        showNetworkIcon = false;
+        showBluetoothIcon = false;
         showAudioIcon = true;
+        showAudioPercent = false;
+        showVpnIcon = false;
+        showBrightnessIcon = false;
+        showBrightnessPercent = false;
+        showMicIcon = true;
+        showMicPercent = false;
+        showBatteryIcon = false;
+        showPrinterIcon = false;
+        showScreenSharingIcon = false;
+      }
+      {
+        id = "clock";
+        enabled = true;
       }
     ];
   }

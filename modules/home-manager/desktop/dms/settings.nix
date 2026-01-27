@@ -78,6 +78,9 @@
 
       # Weather
       weatherEnabled = false;
+
+      # Running Apps
+      runningAppsCurrentWorkspace = true;
     };
 
     # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/settings/SessionSpec.js

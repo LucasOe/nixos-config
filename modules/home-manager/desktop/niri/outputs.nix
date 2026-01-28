@@ -17,11 +17,10 @@
         mode.refresh = 144.0;
         variable-refresh-rate = "on-demand";
 
-        # https://github.com/sodiboo/niri-flake/issues/1404
-        # layout = {
-        #   default-column-width.proportion = 1.0;
-        #   preset-column-widths = [ ];
-        # };
+        layout = {
+          default-column-width.proportion = 1.0;
+          preset-column-widths = [ { proportion = 1.0; } ];
+        };
       };
       # Desktop primary monitor
       "DP-2" = {

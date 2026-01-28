@@ -9,6 +9,7 @@
   ];
 
   programs.noctalia-shell.enable = true;
+  services.polkit-gnome.enable = true;
 
   stylix.targets.noctalia-shell = {
     enable = true;

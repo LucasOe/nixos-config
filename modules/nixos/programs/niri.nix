@@ -14,6 +14,9 @@
   security.polkit.enable = true; # polkit
   services.gnome.gnome-keyring.enable = true; # secret service
 
+  # Disable KDE polkit agent from niri-flake
+  systemd.user.services.niri-flake-polkit.enable = false;
+
   # XDG Portals
   xdg.portal = {
     enable = true;

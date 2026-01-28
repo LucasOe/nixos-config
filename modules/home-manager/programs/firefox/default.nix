@@ -7,6 +7,8 @@
 }:
 
 let
+  firefoxFlake = inputs.firefox.packages.${pkgs.system};
+
   colors = config.lib.stylix.colors {
     template = ./assets/colors.css.mustache;
     extension = ".css";
@@ -32,7 +34,7 @@ in
 
   programs.firefox = {
     enable = true;
-    package = inputs.firefox.packages.${pkgs.system}.firefox-devedition-bin;
+    package = firefoxFlake.firefox-devedition-bin;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     profiles = {

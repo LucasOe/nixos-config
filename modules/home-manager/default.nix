@@ -17,6 +17,8 @@
   home.sessionVariables = {
     EDITOR = "zeditor";
     VISUAL = "zeditor";
+    DIRENV_WARN_TIMEOUT = "120s";
+    NODE_OPTIONS = "--no-deprecation";
   };
 
   # Aliases

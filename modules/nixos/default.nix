@@ -131,4 +131,10 @@
     Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
     Defaults timestamp_timeout=120 # only ask for password every 2h
   '';
+
+  # Valent / KDE Connect
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.valent;
+  };
 }

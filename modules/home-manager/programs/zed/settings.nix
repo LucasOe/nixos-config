@@ -4,95 +4,115 @@
   programs.zed-editor = {
     # https://zed.dev/docs/visual-customization
     userSettings = with config.stylix; {
-      # Themes
-      theme = "Stylix";
-      icon_theme = "Colored Zed Icons Theme Dark";
-      # UI Font
-      ui_font_size = 18;
-      # Buffer Font
-      buffer_font_family = fonts.monospace.name;
-      buffer_font_size = 15;
-      buffer_line_height.custom = 1.4;
-      buffer_font_features = {
-        calt = true;
-        zero = true;
-      };
-      # Titlebar
-      window_decorations = "server";
-      title_bar = {
-        show_branch_icon = true;
-        show_user_picture = false;
-      };
-      # Workspace Resoration
+      # General -> Workspace Restoration
       session.restore_unsaved_buffers = false;
-      restore_on_startup = "none";
-      # Telemetry
+      restore_on_startup = "launchpad"; # https://github.com/zed-industries/zed/issues/47075
+      # General -> Privacy
       telemetry = {
         metrics = false;
         diagnostics = false;
       };
-      # Editor
-      format_on_save = "off"; # We override this either per language or per project
-      hard_tabs = true;
+      # Apperance -> Theme
+      theme = "Stylix";
+      icon_theme = "Colored Zed Icons Theme Dark";
+      # Apperance -> Buffer Font
+      buffer_font_family = fonts.monospace.name;
+      buffer_font_size = 15;
+      buffer_line_height.custom = 1.4;
+      buffer_font_features = {
+        calt = true; # https://github.com/zed-industries/zed/pull/48504
+        zero = true;
+      };
+      # Apperance -> UI Font
+      ui_font_size = 18;
+      # Editor -> Gutter
+      inline_code_actions = false;
+      # Editor -> Toolbar
+      toolbar = {
+        agent_review = false;
+      };
+      # Editor -> Indentation
       tab_size = 4;
+      hard_tabs = true;
+      # Editor -> Wrapping
       wrap_guides = [
         80
         120
       ];
-      # Prettier
+      # Editor -> Formatting
+      format_on_save = "off"; # We override this either per language or per project
+      # Editor -> Inlay Hints
+      inlay_hints = {
+        enabled = false; # We override this per language
+        show_type_hints = true;
+        show_parameter_hints = true;
+        show_other_hints = true;
+      };
+      # Languages & Tools -> Prettier
       prettier = {
         allowed = false;
       };
-      # Inline Diagnostics
+      # Languages & Tools -> Inline Diagnostics
       diagnostics = {
         inline.enabled = true;
       };
-      # Editor Toolbar
-      toolbar = {
-        agent_review = false;
+      # Window & Layout -> Title Bar
+      title_bar = {
+        show_branch_icon = true;
+        show_user_picture = false;
       };
-      # Editor Tabs
+      # Window & Layout -> Tab Bar
       tabs = {
         git_status = true;
-        show_close_button = "always";
       };
-      # Editor Completions, Snippets, Actions, Diagnostics
-      inline_code_actions = false;
-      # Edit Predictions
-      features.edit_prediction_provider = "none";
-      edit_predictions.mode = "subtle";
-      edit_predictions.enabled_in_text_threads = false;
-      show_edit_predictions = false;
-      # Editor Inlay Hints
-      inlay_hints = {
-        enabled = true;
-        show_type_hints = true;
-        show_parameter_hints = false;
-        show_other_hints = true;
-      };
-      # Project Panel
+      # Window & Layout -> Window
+      window_decorations = "server";
+      # Panels -> Project Panel
       project_panel = {
         default_width = 300;
       };
-      # Agent Panel
+      # Panels -> Git Panel
+      git_panel = {
+        tree_view = true;
+      };
+      # Panels -> Collaboration Panels
+      collaboration_panel = {
+        button = false;
+      };
+      # Terminal
+      terminal = {
+        line_height = "standard";
+        cursor_shape = "bar";
+        blinking = "on";
+      };
+      # Version Control
+      git = {
+        inline_blame = {
+          enabled = true;
+          min_column = 80;
+        };
+      };
+      # Collaboration
+      audio = {
+        experimental = {
+          auto_microphone_volume = true;
+          auto_speaker_volume = true;
+          denoise = false;
+        };
+      };
+      # AI -> Agent Configuration
       agent = {
         enable_feedback = false;
-        use_modifier_to_send = true;
         default_model = {
           provider = "copilot_chat";
           model = "gpt-5-mini";
         };
       };
-      # Terminal Panel
-      terminal = {
-        blinking = "on";
-        cursor_shape = "bar";
-        line_height = "standard";
-      };
-      # Collaboration Panels
-      collaboration_panel = {
-        button = false;
-      };
+      # AI -> Edit Predictions
+      show_edit_predictions = false;
+      edit_predictions.mode = "subtle";
+      edit_predictions.enabled_in_text_threads = false;
+      features.edit_prediction_provider = "none";
     };
   };
 }

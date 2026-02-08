@@ -17,9 +17,17 @@
 
     # Extensions
     extensions = [
-      "biome"
+      # Themes
       "colored-zed-icons-theme"
+      # Languages / Grammars
+      "biome"
+      "dockerfile"
+      "emmet"
+      "fish"
+      "html"
       "nix"
+      "sql"
+      "toml"
     ];
   };
 

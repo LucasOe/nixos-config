@@ -106,6 +106,7 @@
       };
       appLauncher = {
         enableClipboardHistory = true;
+        enableSettingsSearch = false;
         terminalCommand = "ghostty";
       };
       controlCenter = {

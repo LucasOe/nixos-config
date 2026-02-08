@@ -11,12 +11,6 @@
         { command = [ "noctalia-shell" ]; }
       ];
 
-      prefer-no-csd = true;
-
-      hotkey-overlay = {
-        skip-at-startup = true;
-      };
-
       layout = {
         gaps = 10;
         center-focused-column = "never";
@@ -80,6 +74,13 @@
         bottom-right = false;
       };
 
+      hotkey-overlay = {
+        skip-at-startup = true;
+      };
+
+      clipboard.disable-primary = true;
+      prefer-no-csd = true;
+
       environment = {
         CLUTTER_BACKEND = "wayland";
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
@@ -87,8 +88,6 @@
         GSK_RENDERER = "ngl";
         MOZ_ENABLE_WAYLAND = "1";
         QT_QPA_PLATFORM = "wayland";
-        QT_QPA_PLATFORMTHEME = "gtk3";
-        QT_QPA_PLATFORMTHEME_QT6 = "gtk3";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         XDG_CURRENT_DESKTOP = "niri";
         XDG_SESSION_DESKTOP = "niri";

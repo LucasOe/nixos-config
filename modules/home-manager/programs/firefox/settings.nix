@@ -256,6 +256,9 @@
       # Hide translation popup
       "browser.translations.automaticallyPopup" = false;
 
+      # Disable middle-click paste
+      "middlemouse.paste" = false;
+
       # Enable Firefox to clear items on shutdown
       "privacy.sanitize.sanitizeOnShutdown" = true;
       # Categories of data to be cleared on shutdown

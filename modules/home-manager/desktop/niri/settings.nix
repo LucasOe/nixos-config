@@ -2,9 +2,7 @@
 
 {
   programs.niri = {
-    # https://github.com/sodiboo/niri-flake/blob/main/docs.md
-    # https://github.com/YaLTeR/niri/wiki/
-    # https://github.com/YaLTeR/niri/blob/main/resources/default-config.kdl
+    # https://sodiboo.github.io/niri-flake/settings
     settings = {
       spawn-at-startup = [
         { command = [ "xwayland-satellite" ]; }
@@ -26,21 +24,22 @@
         };
 
         focus-ring.enable = false;
+
         border = {
           enable = true;
           width = 2;
-          active.color = "#${config.lib.stylix.colors.base0B}";
-          inactive.color = "#${config.lib.stylix.colors.base03}";
-          urgent.color = "#${config.lib.stylix.colors.base0F}";
+          active.color = config.lib.stylix.colors.withHashtag.base0B;
+          inactive.color = config.lib.stylix.colors.withHashtag.base03;
+          urgent.color = config.lib.stylix.colors.withHashtag.base0F;
         };
 
         tab-indicator = {
           enable = true;
           gap = 2;
           corner-radius = 1;
-          active.color = "#${config.lib.stylix.colors.base0B}";
-          inactive.color = "#${config.lib.stylix.colors.base02}";
-          urgent.color = "#${config.lib.stylix.colors.base0F}";
+          active.color = config.lib.stylix.colors.withHashtag.base0B;
+          inactive.color = config.lib.stylix.colors.withHashtag.base02;
+          urgent.color = config.lib.stylix.colors.withHashtag.base0F;
         };
 
         default-column-width.proportion = 0.500;
@@ -67,11 +66,17 @@
         }
       ];
 
-      gestures.hot-corners = {
-        top-left = false;
-        top-right = false;
-        bottom-left = false;
-        bottom-right = false;
+      overview = {
+        backdrop-color = config.lib.stylix.colors.withHashtag.base00;
+      };
+
+      gestures = {
+        hot-corners = {
+          top-left = false;
+          top-right = false;
+          bottom-left = false;
+          bottom-right = false;
+        };
       };
 
       hotkey-overlay = {

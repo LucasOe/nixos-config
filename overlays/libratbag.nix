@@ -4,7 +4,7 @@
       libratbag = prev.libratbag.overrideAttrs (_: {
         version = "unstable-2025-12-28";
 
-        src = prev.fetchFromGitHub {
+        src = final.fetchFromGitHub {
           owner = "libratbag";
           repo = "libratbag";
           rev = "c5214d26336695d1414a6b4e32697f5b5a835089";
@@ -15,7 +15,7 @@
       piper = prev.piper.overrideAttrs (_: {
         version = "unstable-2025-12-28";
 
-        src = prev.fetchFromGitHub {
+        src = final.fetchFromGitHub {
           owner = "libratbag";
           repo = "piper";
           rev = "48056eb1788cdfbdda67a2360c53b7157782a9b3";

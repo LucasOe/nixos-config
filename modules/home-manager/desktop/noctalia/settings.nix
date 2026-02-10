@@ -89,6 +89,14 @@
         radiusRatio = 0.5;
         enableShadows = true;
         shadowDirection = "center";
+        showChangelogOnStartup = false;
+        clockStyle = "digital";
+        showSessionButtonsOnLockScreen = false;
+        lockScreenAnimations = true;
+        lockScreenMonitors = [
+          "eDP-1"
+          "DP-2"
+        ];
       };
       location = {
         name = "Hamm, Germany";
@@ -97,6 +105,7 @@
         firstDayOfWeek = 1;
       };
       wallpaper = {
+        enabled = false; # Using wpaperd
         overviewEnabled = true;
         directory = configLib.relativeToRoot "assets/wallpapers";
         defaultWallpaper = config.stylix.image;
@@ -107,7 +116,8 @@
       appLauncher = {
         enableClipboardHistory = true;
         enableSettingsSearch = false;
-        terminalCommand = "ghostty";
+        enableWindowsSearch = false;
+        terminalCommand = "ghostty -e";
       };
       controlCenter = {
         position = "close_to_bar_button";

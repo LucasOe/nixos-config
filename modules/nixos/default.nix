@@ -139,4 +139,11 @@
     enable = true;
     package = pkgs.valent;
   };
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    inter
+    roboto
+    roboto-mono
+  ];
 }

@@ -56,6 +56,23 @@
       diagnostics = {
         inline.enabled = true;
       };
+      # Search & Files
+      file_scan_exclusions = [
+        # Defaults
+        "**/.classpath"
+        "**/.DS_Store"
+        "**/.git"
+        "**/.hg"
+        "**/.jj"
+        "**/.settings"
+        "**/.svn"
+        "**/CVS"
+        "**/Thumbs.db"
+        # Nix
+        "**/.direnv"
+        # JavaScript
+        "**/node_modules"
+      ];
       # Window & Layout -> Title Bar
       title_bar = {
         show_branch_icon = true;

@@ -3,7 +3,7 @@
 {
   imports = [
     ./niri
-    # ./dms
     ./noctalia
+    ./wpaperd.nix
   ];
 }

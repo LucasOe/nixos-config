@@ -68,6 +68,11 @@
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zed-editor = {
+      url = "github:zortax/zed/wgpu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

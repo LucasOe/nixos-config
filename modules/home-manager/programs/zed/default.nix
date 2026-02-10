@@ -1,5 +1,8 @@
-{ ... }:
+{ inputs, pkgs, ... }:
 
+let
+  zedFlake = inputs.zed-editor.packages.${pkgs.system};
+in
 {
   imports = [
     ./settings.nix
@@ -9,6 +12,7 @@
 
   programs.zed-editor = {
     enable = true;
+    package = zedFlake.default;
 
     # Make settings read only
     mutableUserKeymaps = false;
@@ -21,6 +25,7 @@
       "colored-zed-icons-theme"
       # Languages / Grammars
       "biome"
+      "csharp"
       "dockerfile"
       "emmet"
       "fish"

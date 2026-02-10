@@ -109,14 +109,6 @@
           min_column = 80;
         };
       };
-      # Collaboration
-      audio = {
-        experimental = {
-          auto_microphone_volume = true;
-          auto_speaker_volume = true;
-          denoise = false;
-        };
-      };
       # AI -> Agent Configuration
       agent = {
         enable_feedback = false;
@@ -127,9 +119,10 @@
       };
       # AI -> Edit Predictions
       show_edit_predictions = false;
+      dit_predictions.provider = "copilot"; # Nightly
       edit_predictions.mode = "subtle";
       edit_predictions.enabled_in_text_threads = false;
-      features.edit_prediction_provider = "none";
+      # features.edit_prediction_provider = "copilot"; # Renamed in Nightly
     };
   };
 }

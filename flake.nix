@@ -70,7 +70,7 @@
     };
 
     zed-editor = {
-      url = "github:zortax/zed/wgpu";
+      url = "github:zed-industries/zed";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

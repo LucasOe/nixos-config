@@ -119,7 +119,7 @@
       };
       # AI -> Edit Predictions
       show_edit_predictions = false;
-      dit_predictions.provider = "copilot"; # Nightly
+      edit_predictions.provider = "copilot"; # Nightly
       edit_predictions.mode = "subtle";
       edit_predictions.enabled_in_text_threads = false;
       # features.edit_prediction_provider = "copilot"; # Renamed in Nightly

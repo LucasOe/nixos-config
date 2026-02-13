@@ -18,8 +18,17 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  programs.gamescope.enable = true;
+  # Enable Gamemode
   programs.gamemode.enable = true;
+
+  # Enable Gamescope
+  programs.gamescope = {
+    enable = true;
+    # https://github.com/ValveSoftware/gamescope/issues/1924
+    package = pkgs.gamescope.overrideAttrs (_: {
+      NIX_CFLAGS_COMPILE = [ "-fno-fast-math" ];
+    });
+  };
 
   # Autostart Steam
   environment.systemPackages = [

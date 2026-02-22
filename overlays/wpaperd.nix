@@ -8,7 +8,7 @@
           owner = "danyspin97";
           repo = "wpaperd";
           rev = "8d9ae1edbdc648063a8cdade3a3a9fc38b45b139";
-          hash = "sha256-WByb493PT3RcH9RH/VQTabjQUC1jgXO12ZXMSZgoS0M=";
+          hash = "sha256-ZjI/LrbweEFwVVrzEQ6JqUO9CaWkd2WINte6pJu4t+U=";
         };
 
         cargoDeps = final.rustPlatform.fetchCargoVendor {

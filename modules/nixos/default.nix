@@ -4,6 +4,7 @@
 {
   imports = [
     ./greeter/gdm.nix
+    ./programs/kdeconnect.nix
     ./programs/nextdns.nix
     ./programs/nh.nix
     ./programs/niri.nix
@@ -133,12 +134,6 @@
     Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
     Defaults timestamp_timeout=120 # only ask for password every 2h
   '';
-
-  # Valent / KDE Connect
-  programs.kdeconnect = {
-    enable = true;
-    package = pkgs.valent;
-  };
 
   # Fonts
   fonts.packages = with pkgs; [

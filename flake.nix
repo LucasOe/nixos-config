@@ -15,6 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-colorizer = {
+      url = "github:nutsalhan87/nix-colorizer";
+    };
+
     niri = {
       url = "github:sodiboo/niri-flake/very-refactor";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -79,6 +83,7 @@
     inputs@{
       nixpkgs,
       home-manager,
+      nix-colorizer,
       ...
     }:
     let
@@ -89,6 +94,7 @@
         inherit inputs;
         inherit configLib;
         inherit username;
+        inherit nix-colorizer;
       };
     in
     {

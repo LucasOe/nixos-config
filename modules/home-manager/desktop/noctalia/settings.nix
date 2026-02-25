@@ -19,12 +19,9 @@
             {
               id = "ControlCenter";
               useDistroLogo = true;
-            }
-            {
-              id = "Workspace";
-              hideUnoccupied = true;
-              labelMode = "index+name";
-              characterCount = 10;
+              colorizeDistroLogo = true;
+              colorizeSystemIcon = "secondary";
+              enableColorization = true;
             }
             {
               id = "SystemMonitor";
@@ -38,7 +35,16 @@
           ];
           center = [
             {
-              id = "Taskbar";
+              id = "Workspace";
+              labelMode = "index+name";
+              followFocusedScreen = true;
+              hideUnoccupied = true;
+              characterCount = 10;
+              showApplications = true;
+              iconScale = 0.95;
+              focusedColor = "primary";
+              occupiedColor = "none";
+              emptyColor = "none";
             }
           ];
           right = [
@@ -56,6 +62,10 @@
               ];
             }
             {
+              id = "Spacer";
+              width = 10;
+            }
+            {
               id = "plugin:mini-docker";
             }
             {
@@ -65,7 +75,7 @@
               id = "NotificationHistory";
             }
             {
-              id = "Battery";
+              id = "plugin:network-manager-vpn";
             }
             {
               id = "Microphone";
@@ -76,7 +86,8 @@
               displayMode = "alwaysHide";
             }
             {
-              id = "plugin:network-manager-vpn";
+              id = "Battery";
+              displayMode = "icon-hover";
             }
             {
               id = "Clock";

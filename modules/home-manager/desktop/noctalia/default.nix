@@ -5,6 +5,7 @@
     inputs.noctalia.homeModules.default # Import home-manager module
     ./colors.nix
     ./niri.nix
+    ./plugins.nix
     ./settings.nix
   ];
 

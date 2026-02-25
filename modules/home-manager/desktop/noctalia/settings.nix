@@ -59,6 +59,9 @@
               id = "plugin:mini-docker";
             }
             {
+              id = "plugin:kde-connect";
+            }
+            {
               id = "NotificationHistory";
             }
             {
@@ -73,7 +76,7 @@
               displayMode = "alwaysHide";
             }
             {
-              id = "VPN";
+              id = "plugin:network-manager-vpn";
             }
             {
               id = "Clock";

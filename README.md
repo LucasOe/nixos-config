@@ -7,9 +7,10 @@ My personal NixOS configuration, packaged as a flake for reproducible system and
 .
 ├── hosts              # Per-host NixOS configurations
 ├── lib                # Utility functions
-└── modules            # Reusable modules
-    ├── home-manager   # Home-manager modules
-    └── nixos          # Platform/system-level modules
+├── modules            # Reusable modules
+│   ├── home-manager   # Home-manager modules
+│   └── nixos          # Platform/system-level modules
+└── overlays           # Package Overlays
 ```
 
 ## Commands

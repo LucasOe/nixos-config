@@ -2,26 +2,12 @@
 
 {
   programs.niri.settings = {
-    layer-rules = [
-      {
-        matches = [
-          { namespace = "^quickshell$"; }
-          { namespace = "dms:blurwallpaper"; }
-          { namespace = "^noctalia-overview*"; }
-        ];
-        place-within-backdrop = true;
-      }
-    ];
     window-rules = [
       # Firefox Picture-in-Picture mode
       {
         matches = [
           {
-            app-id = "firefox$";
-            title = "^Picture-in-Picture$";
-          }
-          {
-            app-id = "firefox-devedition$";
+            app-id = "^firefox";
             title = "^Picture-in-Picture$";
           }
         ];
@@ -55,6 +41,19 @@
           x = 32;
           y = 32;
           relative-to = "bottom-right";
+        };
+      }
+
+      # Steam Windows
+      {
+        matches = [ { app-id = "^steam$"; } ];
+        excludes = [ { title = "^Steam$"; } ];
+        open-floating = true;
+        default-column-width = {
+          fixed = 810;
+        };
+        default-window-height = {
+          fixed = 1080;
         };
       }
 

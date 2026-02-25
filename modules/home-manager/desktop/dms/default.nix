@@ -24,4 +24,8 @@
     enableCalendarEvents = false; # Calendar integration (khal)
     enableClipboardPaste = true; # Pasting items from the clipboard (wtype)
   };
+
+  stylix.targets.dank-material-shell = {
+    enable = true;
+  };
 }

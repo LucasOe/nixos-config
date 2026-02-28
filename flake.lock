@@ -739,19 +739,42 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
+        ],
+        "noctalia-qs": [
+          "noctalia-qs"
         ]
       },
       "locked": {
-        "lastModified": 1771723372,
-        "narHash": "sha256-HMWAc0cx9/I3Bq1s0vBZ2Vo9gW3ZIMyhNtW19Ixk04w=",
+        "lastModified": 1772289847,
+        "narHash": "sha256-kI7u2JjyYda6WyOrkAioXMRT/eVE5H27zEBUME/5JZ4=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "d709779c51bf624e69ba60a9a13f000e2db5e4b5",
+        "rev": "e725020c660e812721eae48fc56da5b97dddf8c7",
         "type": "github"
       },
       "original": {
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
+    "noctalia-qs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772227064,
+        "narHash": "sha256-f821ZSoGpa/aXrWq0gPpea9qBnX8KDyavGKkptz2Mog=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-qs",
+        "rev": "0741d27d2f7db567270f139c5d1684614ecf9863",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-qs",
         "type": "github"
       }
     },
@@ -832,6 +855,7 @@
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
+        "noctalia-qs": "noctalia-qs",
         "spicetify-genres": "spicetify-genres",
         "spicetify-nix": "spicetify-nix",
         "spicetify-utilities": "spicetify-utilities",

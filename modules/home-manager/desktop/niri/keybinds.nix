@@ -96,5 +96,10 @@
     "Mod+Print".action.screenshot = [ ];
     "Mod+Ctrl+Print".action.screenshot-screen = [ ];
     "Mod+Alt+Print".action.screenshot-window = [ ];
+
+    # Screen mirroring
+    # https://github.com/Ferdi265/wl-mirror/issues/59
+    "Mod+Alt+P".action = spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)";
+    "Mod+Alt+P".repeat = false;
   };
 }

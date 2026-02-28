@@ -70,7 +70,6 @@
 
   environment.systemPackages = with pkgs; [
     git # Required for Flakes
-    gpu-screen-recorder-gtk
     papirus-icon-theme
   ];
 
@@ -93,7 +92,6 @@
   };
 
   programs.dconf.enable = true; # dconf
-  programs.gpu-screen-recorder.enable = true; # Recording
   programs.nix-ld.enable = true; # Allow dynamically linked libraries / Required by vscode-server
 
   services.flatpak.enable = true; # Flatpak

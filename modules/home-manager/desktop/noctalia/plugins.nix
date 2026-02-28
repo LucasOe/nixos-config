@@ -16,6 +16,10 @@
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
         };
+        screen-recorder = {
+          enabled = true;
+          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+        };
         # Community
         mini-docker = {
           enabled = true;
@@ -34,6 +38,22 @@
     };
 
     pluginSettings = {
+      screen-recorder = {
+        hideInactive = true;
+        iconColor = "none";
+        directory = "";
+        filenamePattern = "recording_yyyyMMdd_HHmmss";
+        frameRate = "60";
+        audioCodec = "opus";
+        videoCodec = "h264";
+        quality = "very_high";
+        colorRange = "limited";
+        showCursor = true;
+        copyToClipboard = false;
+        audioSource = "both"; # none, default_output, default_input, both
+        videoSource = "portal"; # portal, screen
+        resolution = "original";
+      };
       network-manager-vpn = {
         displayMode = "onhover";
         connectedColor = "none";

@@ -75,6 +75,9 @@
               id = "plugin:mini-docker";
             }
             {
+              id = "plugin:screen-recorder";
+            }
+            {
               id = "NotificationHistory";
             }
             {
@@ -144,6 +147,7 @@
             { id = "Bluetooth"; }
             { id = "PowerProfile"; }
             { id = "NightLight"; }
+            { id = "plugin:screen-recorder"; }
           ];
           right = [ ];
         };

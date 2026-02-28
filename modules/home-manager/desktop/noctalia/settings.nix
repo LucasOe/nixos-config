@@ -25,6 +25,11 @@
             }
             {
               id = "SystemMonitor";
+              compactMode = false;
+              showCpuUsage = true;
+              showCpuTemp = true;
+              showGpuTemp = true;
+              showMemoryUsage = true;
             }
             {
               id = "MediaMini";
@@ -41,6 +46,7 @@
               hideUnoccupied = true;
               characterCount = 10;
               showApplications = true;
+              groupedBorderOpacity = 0.0;
               iconScale = 0.95;
               focusedColor = "primary";
               occupiedColor = "none";
@@ -101,7 +107,7 @@
         enableShadows = true;
         shadowDirection = "center";
         showChangelogOnStartup = false;
-        clockStyle = "digital";
+        clockStyle = "analog";
         showSessionButtonsOnLockScreen = false;
         lockScreenAnimations = true;
         lockScreenMonitors = [
@@ -132,6 +138,15 @@
       };
       controlCenter = {
         position = "close_to_bar_button";
+        shortcuts = {
+          left = [
+            { id = "Network"; }
+            { id = "Bluetooth"; }
+            { id = "PowerProfile"; }
+            { id = "NightLight"; }
+          ];
+          right = [ ];
+        };
         cards = [
           {
             enabled = true;
@@ -155,35 +170,43 @@
           }
         ];
       };
+      systemMonitor = {
+        enableDgpuMonitoring = true;
+      };
       dock = {
         enabled = false;
       };
       sessionMenu = {
-        enableCountdown = false;
+        enableCountdown = true;
+        countdownDuration = 3000;
         powerOptions = [
           {
-            "action" = "lock";
-            "enabled" = true;
+            action = "lock";
+            enabled = true;
           }
           {
-            "action" = "suspend";
-            "enabled" = true;
+            action = "suspend";
+            enabled = true;
           }
           {
-            "action" = "hibernate";
-            "enabled" = false;
+            action = "hibernate";
+            enabled = false;
           }
           {
-            "action" = "reboot";
-            "enabled" = true;
+            action = "reboot";
+            enabled = true;
           }
           {
-            "action" = "logout";
-            "enabled" = true;
+            action = "logout";
+            enabled = true;
           }
           {
-            "action" = "shutdown";
-            "enabled" = true;
+            action = "shutdown";
+            enabled = true;
+          }
+          {
+            action = "rebootToUefi";
+            enabled = false;
           }
         ];
       };
@@ -205,6 +228,13 @@
           "eDP-1"
           "DP-2"
         ];
+      };
+      nightLight = {
+        nightTemp = 4300;
+        dayTemp = 6500;
+      };
+      plugins = {
+        autoUpdate = true;
       };
     };
   };

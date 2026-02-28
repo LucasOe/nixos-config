@@ -69,9 +69,6 @@
               id = "plugin:mini-docker";
             }
             {
-              id = "plugin:kde-connect";
-            }
-            {
               id = "NotificationHistory";
             }
             {

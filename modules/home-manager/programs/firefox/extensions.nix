@@ -23,6 +23,7 @@ in
           (extension "control-panel-for-youtube" "control-panel-for-youtube@jbscript.dev" false)
           (extension "dictionary-german" "de-DE@dictionaries.addons.mozilla.org" false)
           (extension "kagi-search-for-firefox" "search@kagi.com" true)
+          (extension "kagi-translate" "{bd6be57d-91d7-41d2-b61d-3ba20f7942e5}" false)
           (extension "modern-for-hacker-news" "{b9edf38a-e293-4606-a088-e63cd4e56d2d}" false)
           (extension "proton-pass" "78272b6fa58f4a1abaac99321d503a20@proton.me" true)
           (extension "react-devtools" "@react-devtools" false)

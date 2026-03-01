@@ -75,6 +75,7 @@
       SearchSuggestEnabled = false;
       SkipTermsOfUse = true;
       StartDownloadsInTempDirectory = false;
+      TranslateEnabled = false;
       UserMessaging = {
         ExtensionRecommendations = false;
         FeatureRecommendations = false;

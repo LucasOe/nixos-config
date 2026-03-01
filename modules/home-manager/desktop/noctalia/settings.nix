@@ -131,7 +131,8 @@
         defaultWallpaper = config.stylix.image;
         fillMode = config.stylix.imageScalingMode;
         fillColor = "#21252b";
-        transitionType = "fade";
+        useSolidColor = true;
+        solidColor = "#282c34";
       };
       appLauncher = {
         enableClipboardHistory = true;

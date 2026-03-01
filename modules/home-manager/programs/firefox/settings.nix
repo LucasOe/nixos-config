@@ -8,48 +8,68 @@
       # https://github.com/yokoffing/Betterfox
 
       # ============================================================================
-      # SECTION: FASTFOX
+      # START: FASTFOX
       # ============================================================================
 
-      "gfx.canvas.accelerated.cache-size" = 256;
+      # SECTION: GFX RENDERING TWEAKS
       "gfx.webrender.layer-compositor" = true;
 
       # ============================================================================
-      # SECTION: SECUREFOX
+      # START: SECUREFOX
       # ============================================================================
 
-      # TRACKING PROTECTION
+      # SECTION: TRACKING PROTECTION
       "browser.contentblocking.category" = "strict";
       "browser.download.start_downloads_in_tmp_dir" = true;
       "browser.uitour.enabled" = false;
       "privacy.globalprivacycontrol.enabled" = true;
-      # OCSP & CERTS / HPKP
+      # SECTION: OCSP & CERTS / HPKP (HTTP Public Key Pinning)
       "security.OCSP.enabled" = 0;
       "privacy.antitracking.isolateContentScriptResources" = true;
       "security.csp.reporting.enabled" = false;
-      # SSL / TLS
+      # SECTION: SSL (Secure Sockets Layer) / TLS (Transport Layer Security)
       "security.ssl.treat_unsafe_negotiation_as_broken" = true;
       "browser.xul.error_pages.expert_bad_cert" = true;
       "security.tls.enable_0rtt_data" = false;
-      # HTTPS-ONLY MODE
-      "dom.security.https_only_mode" = true;
-      "dom.security.https_only_mode_error_page_user_suggestions" = true;
-      # DISK AVOIDANCE
+      # SECTION: DISK AVOIDANCE
       "browser.cache.disk.enable" = false;
       "browser.privatebrowsing.forceMediaMemoryCache" = true;
       "media.memory_cache_max_size" = 65536;
       "browser.sessionstore.interval" = 60000;
-      # SHUTDOWN & SANITIZING
-      "privacy.history.custom" = true;
+      # SECTION: SANITIZE HISTORY
+      "privacy.clearHistory.browsingHistoryAndDownloads" = true;
+      "privacy.clearHistory.cache" = false;
+      "privacy.clearHistory.cookiesAndStorage" = false;
+      "privacy.clearHistory.downloads" = true;
+      "privacy.clearHistory.formdata" = true;
+      "privacy.clearHistory.historyFormDataAndDownloads" = true;
+      "privacy.clearHistory.siteSettings" = false;
+      "privacy.clearSiteData.browsingHistoryAndDownloads" = true;
+      "privacy.clearSiteData.cache" = false;
+      "privacy.clearSiteData.cookiesAndStorage" = false;
+      "privacy.clearSiteData.downloads" = true;
+      "privacy.clearSiteData.formdata" = true;
+      "privacy.clearSiteData.historyFormDataAndDownloads" = true;
+      "privacy.clearSiteData.siteSettings" = false;
       "browser.privatebrowsing.resetPBM.enabled" = true;
-      # SPECULATIVE LOADING
+      # SECTION: SHUTDOWN & SANITIZING
+      "privacy.history.custom" = true;
+      "privacy.sanitize.sanitizeOnShutdown" = true;
+      "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
+      "privacy.clearOnShutdown_v2.cache" = false;
+      "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+      "privacy.clearOnShutdown_v2.downloads" = true;
+      "privacy.clearOnShutdown_v2.formdata" = true;
+      "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = true;
+      "privacy.clearOnShutdown_v2.siteSettings" = false;
+      # SECTION: SPECULATIVE LOADING
       "network.http.speculative-parallel-limit" = 0;
       "network.dns.disablePrefetch" = true;
       "network.dns.disablePrefetchFromHTTPS" = true;
       "browser.urlbar.speculativeConnect.enabled" = false;
       "browser.places.speculativeConnect.enabled" = false;
       "network.prefetch-next" = false;
-      # SEARCH / URL BAR
+      # SECTION: SEARCH / URL BAR
       "browser.urlbar.trimHttps" = true;
       "browser.urlbar.untrimOnUserInteraction.featureGate" = true;
       "browser.search.separatePrivateDefault.ui.enabled" = true;
@@ -58,29 +78,53 @@
       "browser.urlbar.groupLabels.enabled" = false;
       "browser.formfill.enable" = false;
       "network.IDN_show_punycode" = true;
-      # PASSWORDS
+      # SECTION: HTTPS-ONLY MODE
+      "dom.security.https_only_mode" = true;
+      "dom.security.https_only_mode_error_page_user_suggestions" = true;
+      # SECTION: DNS-over-HTTPS
+      "network.trr.mode" = 2;
+      "network.trr.max-fails" = 5;
+      "network.trr.uri" = "https://dns.nextdns.io/fcc66c/firefox";
+      # SECTION: PASSWORDS
+      "signon.rememberSignons" = false;
+      "signon.schemeUpgrades" = true;
+      "signon.showAutoCompleteFooter" = true;
+      "signon.autologin.proxy" = false;
+      "signon.autofillForms" = false;
+      "signon.autofillForms.autocompleteOff" = true;
       "signon.formlessCapture.enabled" = false;
       "signon.privateBrowsingCapture.enabled" = false;
+      "signon.generation.enabled" = false;
+      "signon.management.page.breach-alerts.enabled" = false;
+      "signon.management.page.breachAlertUrl" = "";
+      "browser.contentblocking.report.lockwise.enabled" = false;
+      "browser.contentblocking.report.lockwise.how_it_works.url" = "";
+      "signon.firefoxRelay.feature" = "";
+      "signon.storeWhenAutocompleteOff" = false;
       "network.auth.subresource-http-auth-allow" = 1;
       "editor.truncate_user_pastes" = false;
-      # EXTENSIONS
+      # SECTION: ADDRESS + CREDIT CARD MANAGER
+      "extensions.formautofill.addresses.enabled" = false;
+      "extensions.formautofill.creditCards.enabled" = false;
+      # SECTION: EXTENSIONS
       "extensions.enabledScopes" = 5;
-      # HEADERS / REFERERS
+      "extensions.autoDisableScopes" = 0;
+      # SECTION: HEADERS / REFERERS
       "network.http.referer.XOriginTrimmingPolicy" = 2;
-      # CONTAINERS
+      # SECTION: CONTAINERS
       "privacy.userContext.ui.enabled" = true;
-      # VARIOUS
+      # SECTION: VARIOUS
       "pdfjs.enableScripting" = false;
-      # SAFE BROWSING
+      # SECTION: SAFE BROWSING
       "browser.safebrowsing.downloads.remote.enabled" = false;
-      # MOZILLA
+      # SECTION: MOZILLA
       "permissions.default.desktop-notification" = 2;
       "permissions.default.geo" = 2;
       "geo.provider.network.url" = "https://beacondb.net/v1/geolocate";
       "browser.search.update" = false;
       "permissions.manager.defaultsUrl" = "";
       "extensions.getAddons.cache.enabled" = false;
-      # TELEMETRY
+      # SECTION: TELEMETRY
       "datareporting.policy.dataSubmissionEnabled" = false;
       "datareporting.healthreport.uploadEnabled" = false;
       "toolkit.telemetry.unified" = false;
@@ -98,19 +142,19 @@
       "browser.newtabpage.activity-stream.feeds.telemetry" = false;
       "browser.newtabpage.activity-stream.telemetry" = false;
       "datareporting.usage.uploadEnabled" = false;
-      # EXPERIMENTS
+      # SECTION: EXPERIMENTS
       "app.shield.optoutstudies.enabled" = false;
       "app.normandy.enabled" = false;
       "app.normandy.api_url" = "";
-      # CRASH REPORTS
+      # SECTION: CRASH REPORTS
       "breakpad.reportURL" = "";
       "browser.tabs.crashReporting.sendReport" = false;
 
       # ============================================================================
-      # SECTION: PESKYFOX
+      # START: PESKYFOX
       # ============================================================================
 
-      # MOZILLA UI
+      # SECTION: MOZILLA UI
       "extensions.getAddons.showPane" = false;
       "extensions.htmlaboutaddons.recommendations.enabled" = false;
       "browser.discovery.enabled" = false;
@@ -121,53 +165,24 @@
       "browser.aboutConfig.showWarning" = false;
       "browser.startup.homepage_override.mstone" = "ignore";
       "browser.aboutwelcome.enabled" = false;
+      "browser.messaging-system.whatsNewPanel.enabled" = false;
       "browser.profiles.enabled" = true;
-      # THEME ADJUSTMENTS
+      # SECTION: THEME ADJUSTMENTS
       "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       "browser.compactmode.show" = true;
-      # AI
-      "browser.ai.control.default" = false;
+      # SECTION: AI
+      "browser.ai.control.default" = "blocked";
       "browser.ml.enable" = false;
       "browser.ml.chat.enabled" = false;
       "browser.ml.chat.menu" = false;
       "browser.tabs.groups.smart.enabled" = false;
       "browser.ml.linkPreview.enabled" = false;
-      # FULLSCREEN NOTICE
+      # SECTION: FULLSCREEN NOTICE
       "full-screen-api.transition-duration.enter" = "0 0";
       "full-screen-api.transition-duration.leave" = "0 0";
       "full-screen-api.warning.timeout" = 0;
-      # URL BAR
+      # SECTION: URL BAR
       "browser.urlbar.trending.featureGate" = false;
-      # NEW TAB PAGE
-      "browser.newtabpage.activity-stream.default.sites" = "";
-      "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-      "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-      "browser.newtabpage.activity-stream.showSponsored" = false;
-      "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = false;
-      # DOWNLOADS
-      "browser.download.manager.addToRecentDocs" = false;
-      # PDF
-      "browser.download.open_pdf_attachments_inline" = true;
-      # TAB BEHAVIOR
-      "browser.bookmarks.openInTabClosesMenu" = false;
-      "browser.menu.showViewImageInfo" = true;
-      "findbar.highlightAll" = true;
-      "layout.word_select.eat_space_to_next_word" = false;
-
-      # ============================================================================
-      # SECTION: SMOOTHFOX
-      # ============================================================================
-
-      # SMOOTH SCROLLING
-      "general.smoothScroll" = true;
-      "general.smoothScroll.msdPhysics.enabled" = true;
-
-      # ============================================================================
-      # START: MY OVERRIDES
-      # ============================================================================
-
-      # Peskyfox
-      # PREF: minimize URL bar suggestions (bookmarks, history, open tabs)
       "browser.urlbar.suggest.history" = false;
       "browser.urlbar.suggest.bookmark" = false;
       "browser.urlbar.suggest.clipboard" = false;
@@ -179,88 +194,43 @@
       "browser.urlbar.weather.ignoreVPN" = false;
       "browser.urlbar.suggest.calculator" = true;
       "browser.urlbar.unitConversion.enabled" = true;
-
-      # Securefox
-      # PREF: disable password manager
-      "signon.rememberSignons" = false;
-      "signon.schemeUpgrades" = true;
-      "signon.showAutoCompleteFooter" = true;
-      "signon.autologin.proxy" = false;
-      # PREF: disable auto-filling username & password form fields
-      "signon.autofillForms" = false;
-      "signon.autofillForms.autocompleteOff" = true;
-      # PREF: disable Firefox built-in password generator
-      "signon.generation.enabled" = false;
-      # PREF: disable Firefox Lockwise (about:logins)
-      "signon.management.page.breach-alerts.enabled" = false;
-      "signon.management.page.breachAlertUrl" = "";
-      "browser.contentblocking.report.lockwise.enabled" = false;
-      "browser.contentblocking.report.lockwise.how_it_works.url" = "";
-      # PREF: disable Firefox Relay
-      "signon.firefoxRelay.feature" = "";
-      # PREF: disable websites autocomplete
-      "signon.storeWhenAutocompleteOff" = false;
-      # PREF: disable form autofill
-      "extensions.formautofill.addresses.enabled" = false;
-      "extensions.formautofill.creditCards.enabled" = false;
-
-      # ============================================================================
-      # START: CUSTOM
-      # ============================================================================
-
-      # Set DNS-over-HTTPS (DoH) provider
-      "network.trr.uri" = "https://dns.nextdns.io/fcc66c/firefox";
-      # Enforce DNS-over-HTTPS (DoH)
-      "network.trr.mode" = 2;
-      "network.trr.max-fails" = 5;
-
-      # This preference is required to recolor the icons
-      "svg.context-properties.content.enabled" = true;
-
-      # Automatically enable extensions
-      "extensions.autoDisableScopes" = 0;
-
-      # Enable the ability of web pages to open popups in response to user actions
-      # Used by the Obsidian Web Clipper extension
-      "extensions.openPopupWithoutUserGesture.enabled" = true;
-
-      # Keep the download button visible
+      # SECTION: NEW TAB PAGE
+      "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+      "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+      "browser.newtabpage.activity-stream.showSponsored" = false;
+      "browser.newtabpage.activity-stream.showSponsoredCheckboxes" = false;
+      "browser.newtabpage.activity-stream.default.sites" = "";
+      # SECTION: DOWNLOADS
       "browser.download.autohideButton" = false;
+      "browser.download.manager.addToRecentDocs" = false;
+      # SECTION: PDF
+      "browser.download.open_pdf_attachments_inline" = true;
+      # SECTION: TAB BEHAVIOR
+      "browser.bookmarks.openInTabClosesMenu" = false;
+      "browser.menu.showViewImageInfo" = true;
+      "findbar.highlightAll" = true;
+      "layout.word_select.eat_space_to_next_word" = false;
 
-      # Hide translation popup
+      # ============================================================================
+      # START: SMOOTHFOX
+      # ============================================================================
+
+      # SECTION: SMOOTH SCROLLING
+      "general.smoothScroll" = true;
+      "general.smoothScroll.msdPhysics.enabled" = true;
+
+      # ============================================================================
+      # START: OTHER
+      # ============================================================================
+
+      # PREF: enable the non-standard `-moz-context-properties` CSS property
+      "svg.context-properties.content.enabled" = true;
+      # PREF: enable the ability of web pages to open popups in response to user actions
+      "extensions.openPopupWithoutUserGesture.enabled" = true;
+      # PREF: hide translation popup
       "browser.translations.automaticallyPopup" = false;
-
-      # Disable middle-click paste
+      # PREF: disable middle-click paste
       "middlemouse.paste" = false;
-
-      # Enable Firefox to clear items on shutdown
-      "privacy.sanitize.sanitizeOnShutdown" = true;
-      # Categories of data to be cleared on shutdown
-      "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
-      "privacy.clearOnShutdown_v2.cache" = false;
-      "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
-      "privacy.clearOnShutdown_v2.downloads" = true;
-      "privacy.clearOnShutdown_v2.formdata" = true;
-      "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = true;
-      "privacy.clearOnShutdown_v2.siteSettings" = false;
-      # Categories of data to be cleared in the clear history or browser context
-      # Firefox remembers your last choices. This will reset them when you start Firefox
-      "privacy.clearHistory.browsingHistoryAndDownloads" = true;
-      "privacy.clearHistory.cache" = false;
-      "privacy.clearHistory.cookiesAndStorage" = false;
-      "privacy.clearHistory.downloads" = true;
-      "privacy.clearHistory.formdata" = true;
-      "privacy.clearHistory.historyFormDataAndDownloads" = true;
-      "privacy.clearHistory.siteSettings" = false;
-      # Categories of data to be cleared in the clear site data context
-      # Firefox remembers your last choices. This will reset them when you start Firefox
-      "privacy.clearSiteData.browsingHistoryAndDownloads" = true;
-      "privacy.clearSiteData.cache" = false;
-      "privacy.clearSiteData.cookiesAndStorage" = false;
-      "privacy.clearSiteData.downloads" = true;
-      "privacy.clearSiteData.formdata" = true;
-      "privacy.clearSiteData.historyFormDataAndDownloads" = true;
-      "privacy.clearSiteData.siteSettings" = false;
 
       # ============================================================================
       # START: GNOME THEME

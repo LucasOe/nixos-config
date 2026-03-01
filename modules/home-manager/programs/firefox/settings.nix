@@ -4,51 +4,15 @@
   programs.firefox = {
     profiles.default.settings = {
       # Betterfox
-      # version: 146
+      # version: 148.0
       # https://github.com/yokoffing/Betterfox
 
       # ============================================================================
       # SECTION: FASTFOX
       # ============================================================================
 
-      # GENERAL
-      "gfx.content.skia-font-cache-size" = 32;
-      # GFX
+      "gfx.canvas.accelerated.cache-size" = 256;
       "gfx.webrender.layer-compositor" = true;
-      "gfx.canvas.accelerated.cache-items" = 32768;
-      "gfx.canvas.accelerated.cache-size" = 4096;
-      "webgl.max-size" = 16384;
-      # DISK CACHE
-      "browser.cache.disk.enable" = false;
-      # MEMORY CACHE
-      "browser.cache.memory.capacity" = 131072;
-      "browser.cache.memory.max_entry_size" = 20480;
-      "browser.sessionhistory.max_total_viewers" = 4;
-      "browser.sessionstore.max_tabs_undo" = 10;
-      # MEDIA CACHE
-      "media.memory_cache_max_size" = 262144;
-      "media.memory_caches_combined_limit_kb" = 1048576;
-      "media.cache_readahead_limit" = 600;
-      "media.cache_resume_threshold" = 300;
-      # IMAGE CACHE
-      "image.cache.size" = 10485760;
-      "image.mem.decode_bytes_at_a_time" = 65536;
-      # NETWORK
-      "network.http.max-connections" = 1800;
-      "network.http.max-persistent-connections-per-server" = 10;
-      "network.http.max-urgent-start-excessive-connections-per-host" = 5;
-      "network.http.request.max-start-delay" = 5;
-      "network.http.pacing.requests.enabled" = false;
-      "network.dnsCacheEntries" = 10000;
-      "network.dnsCacheExpiration" = 3600;
-      "network.ssl_tokens_cache_capacity" = 10240;
-      # SPECULATIVE LOADING
-      "network.http.speculative-parallel-limit" = 0;
-      "network.dns.disablePrefetch" = true;
-      "network.dns.disablePrefetchFromHTTPS" = true;
-      "browser.urlbar.speculativeConnect.enabled" = false;
-      "browser.places.speculativeConnect.enabled" = false;
-      "network.prefetch-next" = false;
 
       # ============================================================================
       # SECTION: SECUREFOX
@@ -71,11 +35,20 @@
       "dom.security.https_only_mode" = true;
       "dom.security.https_only_mode_error_page_user_suggestions" = true;
       # DISK AVOIDANCE
+      "browser.cache.disk.enable" = false;
       "browser.privatebrowsing.forceMediaMemoryCache" = true;
+      "media.memory_cache_max_size" = 65536;
       "browser.sessionstore.interval" = 60000;
       # SHUTDOWN & SANITIZING
       "privacy.history.custom" = true;
       "browser.privatebrowsing.resetPBM.enabled" = true;
+      # SPECULATIVE LOADING
+      "network.http.speculative-parallel-limit" = 0;
+      "network.dns.disablePrefetch" = true;
+      "network.dns.disablePrefetchFromHTTPS" = true;
+      "browser.urlbar.speculativeConnect.enabled" = false;
+      "browser.places.speculativeConnect.enabled" = false;
+      "network.prefetch-next" = false;
       # SEARCH / URL BAR
       "browser.urlbar.trimHttps" = true;
       "browser.urlbar.untrimOnUserInteraction.featureGate" = true;
@@ -153,6 +126,7 @@
       "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       "browser.compactmode.show" = true;
       # AI
+      "browser.ai.control.default" = false;
       "browser.ml.enable" = false;
       "browser.ml.chat.enabled" = false;
       "browser.ml.chat.menu" = false;
@@ -195,13 +169,13 @@
       # Peskyfox
       # PREF: minimize URL bar suggestions (bookmarks, history, open tabs)
       "browser.urlbar.suggest.history" = false;
-      "browser.urlbar.suggest.bookmark" = true;
+      "browser.urlbar.suggest.bookmark" = false;
       "browser.urlbar.suggest.clipboard" = false;
       "browser.urlbar.suggest.openpage" = false;
       "browser.urlbar.suggest.engines" = false;
       "browser.urlbar.suggest.searches" = false;
       "browser.urlbar.quickactions.enabled" = false;
-      "browser.urlbar.suggest.weather" = true;
+      "browser.urlbar.suggest.weather" = false;
       "browser.urlbar.weather.ignoreVPN" = false;
       "browser.urlbar.suggest.calculator" = true;
       "browser.urlbar.unitConversion.enabled" = true;

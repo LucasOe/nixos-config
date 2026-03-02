@@ -243,7 +243,7 @@
       "gnomeTheme.activeTabContrast" = false;
       "gnomeTheme.closeOnlySelectedTabs" = false;
       "gnomeTheme.systemIcons" = false;
-      "gnomeTheme.noThemedIcons" = false; # Broken since version 147.0
+      "gnomeTheme.noThemedIcons" = false;
       "gnomeTheme.symbolicTabIcons" = false;
       "gnomeTheme.hideWebrtcIndicator" = false;
       "gnomeTheme.hideUnifiedExtensions" = false;

@@ -29,6 +29,7 @@ in
           (extension "react-devtools" "@react-devtools" false)
           (extension "redirector" "redirector@einaregilsson.com" false)
           (extension "refined-github-" "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}" false)
+          (extension "sink-it-for-reddit" "{09acf9ff-55d4-4366-a1a9-c9b3c8877c09}" false)
           (extension "sponsorblock" "sponsorBlocker@ajay.app" false)
           (extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" false)
           (extension "ublacklist" "@ublacklist" false)

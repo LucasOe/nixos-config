@@ -68,6 +68,17 @@
   # Disable Channels, we're using Flakes instead
   nix.channel.enable = false;
 
+  # Enable networking
+  networking = {
+    networkmanager.enable = true;
+    enableIPv6 = false;
+
+    # Firewall
+    firewall.enable = true;
+    firewall.allowedTCPPorts = [ 22 ];
+    firewall.checkReversePath = false;
+  };
+
   environment.systemPackages = with pkgs; [
     git # Required for Flakes
     papirus-icon-theme

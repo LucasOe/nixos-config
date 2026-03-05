@@ -13,16 +13,7 @@
   ];
 
   # Enable networking
-  networking = {
-    hostName = "tamas";
-
-    networkmanager.enable = true;
-
-    # Firewall
-    firewall.enable = true;
-    firewall.allowedTCPPorts = [ 22 ];
-    firewall.checkReversePath = false;
-  };
+  networking.hostName = "tamas";
 
   # Keymap
   services.xserver.xkb = {

@@ -7,16 +7,7 @@
   ];
 
   # Enable networking
-  networking = {
-    hostName = "olem";
-
-    networkmanager.enable = true;
-
-    # Firewall
-    firewall.enable = true;
-    firewall.allowedTCPPorts = [ 22 ];
-    firewall.checkReversePath = false;
-  };
+  networking.hostName = "olem";
 
   # Enable Bluetooth
   hardware.bluetooth.enable = true;

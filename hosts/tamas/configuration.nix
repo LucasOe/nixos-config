@@ -67,6 +67,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
+  # Disable Intel HD Audio
+  # https://docs.kernel.org/sound/alsa-configuration.html#module-snd-hda-intel
+  boot.blacklistedKernelModules = [ "snd_hda_intel" ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;

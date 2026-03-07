@@ -19,13 +19,13 @@
     # Extensions
     enabledExtensions = [
       {
-        src = "${inputs.spicetify-genres}/dist";
-        name = "whatsThatGenre.js";
-      }
-      {
         src = "${inputs.spicetify-utilities}";
         name = "utilities.js";
       }
+      # {
+      #   src = "${inputs.spicetify-genres}/dist";
+      #   name = "whatsThatGenre.js";
+      # }
     ];
   };
 

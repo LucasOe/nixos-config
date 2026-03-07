@@ -17,7 +17,7 @@ button[data-testid="pip-toggle-button"]
 .main-topBar-background,
 .aBTcK0jHBextE7fGnKiw {
     background-color: var(--spice-main);
-    
+
     & div, &:after {
         background-color: transparent !important;
     }
@@ -57,7 +57,7 @@ button[data-testid="pip-toggle-button"]
 .NowPlayingView {
     overflow: hidden;
     border-radius: 8px;
-    
+
     .UUydeXMsXVZofB0YAOgm::before {
         display: none;
     }
@@ -87,8 +87,4 @@ button[data-testid="pip-toggle-button"]
 /* remove border for transitions in mixes */
 .main-rootlist-wrapper .e-91000-box--bordered {
     border: none;
-}
-/* remove spacing next to navigation buttons */
-.main-globalNav-historyButtonsContainer div:empty {
-    display: none;
 }

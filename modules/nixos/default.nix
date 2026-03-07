@@ -104,6 +104,7 @@
 
   programs.dconf.enable = true; # dconf
   programs.nix-ld.enable = true; # Allow dynamically linked libraries / Required by vscode-server
+  programs.seahorse.enable = true; # GNOME Passwords & Key management
 
   services.flatpak.enable = true; # Flatpak
   services.gvfs.enable = true; # Gnome Virtual File System / Required by Nautilus

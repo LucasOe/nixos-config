@@ -102,8 +102,15 @@
     LC_TIME = "en_IE.UTF-8"; # Use en_IE locale as a replacement for en_DE
   };
 
+  # Allow dynamically linked libraries
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      glibc # Required by zed-editor / https://zed.dev/docs/linux
+    ];
+  };
+
   programs.dconf.enable = true; # dconf
-  programs.nix-ld.enable = true; # Allow dynamically linked libraries / Required by vscode-server
   programs.seahorse.enable = true; # GNOME Passwords & Key management
 
   services.flatpak.enable = true; # Flatpak

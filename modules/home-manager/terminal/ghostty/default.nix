@@ -18,8 +18,8 @@
         # Clipboard
         "copy=copy_to_clipboard"
         "paste=paste_from_clipboard"
-        "ctrl+c=copy_to_clipboard"
-        "ctrl+v=paste_from_clipboard"
+        "performable:ctrl+c=copy_to_clipboard"
+        "performable:ctrl+v=paste_from_clipboard"
         # Splits
         "ctrl+shift+t=new_split:auto"
         "ctrl+shift+w=close_surface"

@@ -23,6 +23,11 @@
             diagnostics = {
               ignored = [ "unused_binding" ];
             };
+            nix = {
+              flake = {
+                autoArchive = true;
+              };
+            };
           };
         };
       };

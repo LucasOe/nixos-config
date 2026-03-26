@@ -4,15 +4,8 @@
   programs.firefox = {
     profiles.default.settings = {
       # Betterfox
-      # version: 148.0
+      # version: 149.0
       # https://github.com/yokoffing/Betterfox
-
-      # ============================================================================
-      # START: FASTFOX
-      # ============================================================================
-
-      # SECTION: GFX RENDERING TWEAKS
-      "gfx.webrender.layer-compositor" = true;
 
       # ============================================================================
       # START: SECUREFOX

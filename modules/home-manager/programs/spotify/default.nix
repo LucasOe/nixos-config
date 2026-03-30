@@ -18,10 +18,6 @@
 
     # Extensions
     enabledExtensions = [
-      {
-        src = "${inputs.spicetify-utilities}";
-        name = "utilities.js";
-      }
       # {
       #   src = "${inputs.spicetify-genres}/dist";
       #   name = "whatsThatGenre.js";

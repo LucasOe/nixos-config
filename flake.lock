@@ -763,22 +763,6 @@
         "type": "github"
       }
     },
-    "spicetify-utilities": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1695919657,
-        "narHash": "sha256-LZcrmoA+SOpTeTiBeiOtneojzBhvbZfkawTyFRLhNk8=",
-        "owner": "kyrie25",
-        "repo": "spicetify-utilities",
-        "rev": "af53aabc63b8d197b952f4ecb0e4252ee79eca26",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kyrie25",
-        "repo": "spicetify-utilities",
-        "type": "github"
-      }
-    },
     "stylix": {
       "inputs": {
         "base16": "base16",

@@ -60,11 +60,6 @@
       flake = false;
     };
 
-    spicetify-utilities = {
-      url = "github:kyrie25/spicetify-utilities";
-      flake = false;
-    };
-
     maccel = {
       url = "github:Gnarus-G/maccel";
     };

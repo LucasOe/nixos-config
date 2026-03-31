@@ -10,6 +10,7 @@
 
     extraCompatPackages = with pkgs; [
       proton-ge-bin
+      proton-cachyos-bin
     ];
 
     # Open ports in the firewall

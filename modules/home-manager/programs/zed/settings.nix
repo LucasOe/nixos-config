@@ -20,7 +20,7 @@
       buffer_font_size = 15;
       buffer_line_height.custom = 1.4;
       buffer_font_features = {
-        calt = true; # https://github.com/zed-industries/zed/pull/48504
+        calt = true;
         zero = true;
       };
       # Apperance -> UI Font
@@ -101,6 +101,10 @@
         line_height = "standard";
         cursor_shape = "bar";
         blinking = "on";
+        font_features = {
+          calt = true;
+          zero = true;
+        };
       };
       # Version Control
       git = {

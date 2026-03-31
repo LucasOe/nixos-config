@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       font-size = 13;
-      font-feature = "calt zero";
+      font-feature = "'calt', 'zero'";
       cursor-style = "bar";
       cursor-click-to-move = true;
       window-padding-x = 10;

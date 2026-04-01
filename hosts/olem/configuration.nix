@@ -13,7 +13,6 @@
   hardware.bluetooth.enable = true;
 
   # Laptop Services
-  services.power-profiles-daemon.enable = true; # Power-profiles
   services.upower.enable = true; # Battery management
   services.thermald.enable = true; # Prevents overheating on Intel CPUs
 

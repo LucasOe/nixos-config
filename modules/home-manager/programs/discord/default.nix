@@ -9,6 +9,10 @@ let
     template = ./themes/disblockOrigin.css.mustache;
     extension = ".css";
   };
+  discordAdblockTheme = config.lib.stylix.colors {
+    template = ./themes/discordAdblock.css.mustache;
+    extension = ".css";
+  };
 in
 {
   home.file = {
@@ -44,9 +48,7 @@ in
         enabledThemes = [
           "midnight.css"
           "disblockOrigin.css"
-        ];
-        themeLinks = [
-          "https://codeberg.org/ridge/Discord-Adblock/raw/branch/main/discord-adblock.css"
+          "discordAdblock.css"
         ];
         plugins = {
           NoProfileThemes = {

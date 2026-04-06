@@ -1,0 +1,14 @@
+/**
+ * @name Adblock for Discord
+ * @author Ridge and CroissantDuNords
+ * @version 1.0.0
+ * @description Hide Ads For Discord Nitro, with CustomCSS
+ * @source https://codeberg.org/page/Discord-Adblock
+ */
+
+@import url('https://raw.codeberg.page/ridge/Discord-Adblock/discord-adblock.css');
+
+/* Add '!important' because the midnight theme overrides this style */
+[class^="trailing"] > div:has([aria-label="Last Meadow Online"]) {
+  display: none !important;
+}

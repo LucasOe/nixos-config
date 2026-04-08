@@ -43,6 +43,7 @@ in
       themes = {
         midnight = midnightTheme;
         disblockOrigin = disblockOriginTheme;
+        discordAdblock = discordAdblockTheme;
       };
       settings = {
         enabledThemes = [

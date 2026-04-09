@@ -224,6 +224,11 @@
       "browser.translations.automaticallyPopup" = false;
       # PREF: disable middle-click paste
       "middlemouse.paste" = false;
+      # PREF: disable WebRTC audio post processing
+      "media.getusermedia.audio.processing.aec.enabled" = false; # Acoustic Echo Cancellation
+      "media.getusermedia.audio.processing.agc.enabled" = false; # Automatic Gain Control
+      "media.getusermedia.audio.processing.noise.enabled" = false; # Noise suppression
+      "media.getusermedia.audio.processing.hpf.enabled" = false; # High-pass filter
 
       # ============================================================================
       # START: GNOME THEME

@@ -2,9 +2,10 @@
 
 {
   imports = [
+    ./languages
+    ./keymap.nix
     ./settings.nix
     ./theme.nix
-    ./languages
   ];
 
   programs.zed-editor = {

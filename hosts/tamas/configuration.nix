@@ -9,6 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix # Generated (nixos-generate-config) hardware configuration
+    ./audio.nix # Audio configuration
     (configLib.relativeToRoot "modules/nixos/programs/steam.nix") # Steam
   ];
 

@@ -1,36 +1,50 @@
 {
     "input": {
         "blocklist": [],
+        "filter#0": {
+            "balance": 0.0,
+            "bypass": false,
+            "equal-mode": "IIR",
+            "frequency": 80.0,
+            "gain": 0.0,
+            "input-gain": 0.0,
+            "mode": "RLC (BT)",
+            "output-gain": 0.0,
+            "quality": 0.7,
+            "slope": "x4",
+            "type": "High-pass",
+            "width": 4.0
+        },
         "limiter#0": {
             "alr": false,
             "alr-attack": 5.0,
             "alr-knee": 0.0,
             "alr-knee-smooth": -5.0,
             "alr-release": 50.0,
-            "attack": 2.0,
+            "attack": 5.0,
             "bypass": false,
-            "dithering": "16bit",
+            "dithering": "None",
             "gain-boost": false,
             "input-gain": 0.0,
             "input-to-link": 0.0,
             "input-to-sidechain": 0.0,
             "link-to-input": 0.0,
             "link-to-sidechain": 0.0,
-            "lookahead": 2.0,
+            "lookahead": 5.0,
             "mode": "Herm Wide",
             "output-gain": 0.0,
             "oversampling": "None",
-            "release": 5.0,
+            "release": 20.0,
             "sidechain-preamp": 0.0,
             "sidechain-to-input": 0.0,
             "sidechain-to-link": 0.0,
             "sidechain-type": "Internal",
             "stereo-link": 100.0,
-            "threshold": -1.5
+            "threshold": -1.0
         },
         "plugins_order": [
             "rnnoise#0",
-            "speex#0",
+            "filter#0",
             "limiter#0",
             "stereo_tools#0"
         ],
@@ -42,22 +56,8 @@
             "output-gain": 0.0,
             "release": 20.0,
             "use-standard-model": true,
-            "vad-thres": 30.0,
-            "wet": 0.0
-        },
-        "speex#0": {
-            "bypass": false,
-            "enable-agc": true,
-            "enable-denoise": true,
-            "enable-dereverb": true,
-            "input-gain": 0.0,
-            "noise-suppression": -70,
-            "output-gain": 0.0,
-            "vad": {
-                "enable": false,
-                "probability-continue": 90,
-                "probability-start": 95
-            }
+            "vad-thres": 85.0,
+            "wet": 1.0
         },
         "stereo_tools#0": {
             "balance-in": 0.0,
@@ -65,7 +65,7 @@
             "bypass": false,
             "delay": 0.0,
             "dry": -100.0,
-            "input-gain": 0.0,
+            "input-gain": 12.0,
             "middle-level": 0.0,
             "middle-panorama": 0.0,
             "mode": "LR > LL (Mono Left Channel)",

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,8 +7,11 @@
 
   # Enable Niri
   programs.niri.enable = true;
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  programs.niri.package = pkgs.niri-unstable;
+  programs.niri.package = pkgs.niri;
+  # Don't use niri-unstable from overlay until GitHub link is fixed in niri-flake
+  # https://github.com/sodiboo/niri-flake/issues/1696
+  # nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  # programs.niri.package = pkgs.niri-unstable;
 
   # Required by Niri
   security.polkit.enable = true; # polkit

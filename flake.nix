@@ -61,11 +61,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spicetify-genres = {
-      url = "github:LucasOe/spicetify-genres";
-      flake = false;
-    };
-
     maccel = {
       url = "github:Gnarus-G/maccel";
     };

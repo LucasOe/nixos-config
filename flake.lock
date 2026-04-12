@@ -793,25 +793,8 @@
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "noctalia-qs": "noctalia-qs",
-        "spicetify-genres": "spicetify-genres",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"
-      }
-    },
-    "spicetify-genres": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1759595646,
-        "narHash": "sha256-sGmqgL+UmFw587yfBHWT/UvcOI7+TkXb+IOFZGB+reo=",
-        "owner": "LucasOe",
-        "repo": "spicetify-genres",
-        "rev": "b833f2d94ea6c59262f433857083e377b2522b52",
-        "type": "github"
-      },
-      "original": {
-        "owner": "LucasOe",
-        "repo": "spicetify-genres",
-        "type": "github"
       }
     },
     "spicetify-nix": {

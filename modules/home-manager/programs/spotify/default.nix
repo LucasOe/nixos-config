@@ -17,12 +17,7 @@
     theme.homeConfig = false;
 
     # Extensions
-    enabledExtensions = [
-      # {
-      #   src = "${inputs.spicetify-genres}/dist";
-      #   name = "whatsThatGenre.js";
-      # }
-    ];
+    enabledExtensions = [ ];
   };
 
   stylix.targets.spicetify = {

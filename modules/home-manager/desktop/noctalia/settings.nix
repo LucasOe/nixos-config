@@ -56,16 +56,8 @@
           right = [
             {
               id = "Tray";
-              blacklist = [
-                "nm-applet"
-              ];
-              pinned = [
-                "Discord"
-                "nm-applet"
-                "spotify-client"
-                "steam"
-                "Vesktop"
-              ];
+              blacklist = [ "nm-applet" ];
+              drawerEnabled = false;
             }
             {
               id = "Spacer";

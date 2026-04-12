@@ -7,11 +7,9 @@
 
   # Enable Niri
   programs.niri.enable = true;
+  # package gets overwritten by niri-flake
+  # https://github.com/sodiboo/niri-flake/blob/f943da038fd668d435c2d17916577f295faa8839/flake.nix#L428
   programs.niri.package = pkgs.niri;
-  # Don't use niri-unstable from overlay until GitHub link is fixed in niri-flake
-  # https://github.com/sodiboo/niri-flake/issues/1696
-  # nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  # programs.niri.package = pkgs.niri-unstable;
 
   # Required by Niri
   security.polkit.enable = true; # polkit
@@ -29,20 +27,5 @@
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
     ];
-
-    config = {
-      common = {
-        default = [
-          "gtk"
-          "gnome"
-        ];
-      };
-      niri = {
-        default = [
-          "gtk"
-          "gnome"
-        ];
-      };
-    };
   };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -7,9 +7,8 @@
 
   # Enable Niri
   programs.niri.enable = true;
-  # package gets overwritten by niri-flake
-  # https://github.com/sodiboo/niri-flake/blob/f943da038fd668d435c2d17916577f295faa8839/flake.nix#L428
-  programs.niri.package = pkgs.niri;
+  nixpkgs.overlays = [ inputs.niri-unstable.overlays.niri ];
+  programs.niri.package = pkgs.niri-unstable;
 
   # Required by Niri
   security.polkit.enable = true; # polkit

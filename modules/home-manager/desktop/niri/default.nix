@@ -16,6 +16,6 @@
     # Used by niri-flake to validate the config.kdl
     # Should match the NixOS system package
     # Has to be set manual because we don't import the nixosModule from niri-flake
-    package = pkgs.niri;
+    package = pkgs.niri-unstable;
   };
 }

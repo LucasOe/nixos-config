@@ -1,26 +1,39 @@
 { config, ... }:
 
+let
+  noRepeat = action: {
+    action = action;
+    repeat = false;
+  };
+in
 {
+  # List all available actions with 'niri msg action'
   # Shell specific keybinds are configure in the `dms` or `noctalia` modules
   programs.niri.settings.binds = with config.lib.niri.actions; {
     # Apps
     "Mod+B".action = spawn "firefox-devedition";
-    "Mod+T".action = spawn "ghostty";
-    "Mod+Return".action = spawn "ghostty";
     "Mod+E".action = spawn "nautilus";
     "Mod+Shift+C".action = spawn "eyedropper";
+    # Terminal
+    "Mod+Return".action = spawn "ghostty";
+    "Mod+T".action = spawn "ghostty";
+    "Mod+Shift+Return".action = spawn "ghostty" "--class=com.mitchellh.ghostty.float";
+    "Mod+Shift+T".action = spawn "ghostty" "--class=com.mitchellh.ghostty.float";
 
     # General
-    "Mod+Q".action = close-window;
-    "Mod+O".action = toggle-overview;
-    "Mod+R".action = switch-preset-column-width;
-    "Mod+W".action = toggle-column-tabbed-display;
     "Mod+C".action = center-column;
+    "Mod+O" = noRepeat toggle-overview;
+    "Mod+Q" = noRepeat close-window;
+    "Mod+R".action = switch-preset-column-width;
+    "Mod+Shift+Slash".action = show-hotkey-overlay;
+    "Mod+Shift+Space".action = toggle-window-floating;
+    "Mod+W".action = toggle-column-tabbed-display;
 
     # Fullscreen
     "Mod+F".action = maximize-column;
     "Mod+Shift+F".action = fullscreen-window;
     "Mod+Ctrl+F".action = expand-column-to-available-width;
+    "Mod+M".action = maximize-window-to-edges;
 
     # Columns
     "Mod+BracketLeft".action = consume-or-expel-window-left;
@@ -36,8 +49,8 @@
 
     "Mod+Shift+Left".action = move-column-left;
     "Mod+Shift+Right".action = move-column-right;
-    "Mod+Shift+Down".action = move-column-to-workspace-down;
-    "Mod+Shift+Up".action = move-column-to-workspace-up;
+    "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
+    "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
 
     "Mod+WheelScrollRight".action = focus-column-right;
     "Mod+WheelScrollLeft".action = focus-column-left;
@@ -82,6 +95,7 @@
     "Mod+8".action = focus-workspace 8;
     "Mod+9".action = focus-workspace 9;
 
+    # Broken, action is not cached: https://github.com/sodiboo/niri-flake/blob/main/memo-binds.nix
     # "Mod+Shift+1".action = move-column-to-workspace 1;
     # "Mod+Shift+2".action = move-column-to-workspace 2;
     # "Mod+Shift+3".action = move-column-to-workspace 3;

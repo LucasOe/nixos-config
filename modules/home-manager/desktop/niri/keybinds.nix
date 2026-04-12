@@ -1,4 +1,9 @@
-{ config, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   noRepeat = action: {
@@ -113,7 +118,9 @@ in
 
     # Screen mirroring
     # https://github.com/Ferdi265/wl-mirror/issues/59
-    "Mod+Alt+P".action = spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)";
-    "Mod+Alt+P".repeat = false;
+    "Mod+Alt+P" = {
+      action = spawn-sh "${lib.getExe' pkgs.wl-mirror "wl-mirror"} $(niri msg --json focused-output | ${lib.getExe pkgs.jq} -r .name)";
+      repeat = false;
+    };
   };
 }

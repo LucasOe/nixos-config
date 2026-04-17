@@ -100,6 +100,7 @@
         dimmerOpacity = 0.5;
         radiusRatio = 0.5;
         enableShadows = true;
+        enableBlurBehind = false;
         shadowDirection = "center";
         showChangelogOnStartup = false;
         clockStyle = "analog";

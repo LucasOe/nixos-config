@@ -49,7 +49,7 @@ in
         enabledThemes = [
           "midnight.css"
           "disblockOrigin.css"
-          "discordAdblock.css"
+          # "discordAdblock.css" # https://codeberg.org/ridge/Discord-Adblock/issues/52
         ];
         plugins = {
           NoProfileThemes = {

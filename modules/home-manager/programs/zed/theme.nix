@@ -3,8 +3,10 @@
 {
   programs.zed-editor = {
     themes = {
+      # https://zed.dev/theme-builder
       # https://zed.dev/schema/themes/v0.2.0.json
       # https://github.com/zed-industries/zed/blob/main/assets/themes/one/one.json
+      # https://github.com/zed-industries/zed/blob/main/crates/settings_content/src/theme.rs#L506
       "Stylix" =
         with config.lib.stylix.colors.withHashtag;
         with nix-colorizer.hex;
@@ -16,67 +18,145 @@
               name = "Stylix";
               appearance = "dark";
               style = {
+                # Surface
+                "background" = base01;
+                "surface.background" = base00;
+                "elevated_surface.background" = base00;
+                "panel.background" = base00;
+                "panel.focused_border" = "#00000000";
+                "panel.indent_guide" = setAlpha base06 0.1;
+                "panel.indent_guide_hover" = setAlpha base06 0.3;
+                "panel.indent_guide_active" = setAlpha base06 0.3;
+                "panel.overlay_background" = null;
+                "panel.overlay_hover" = null;
+                "pane.focused_border" = "#00000000";
+                "pane.group_border" = "#00000000";
+                # Border
                 "border" = base02;
                 "border.variant" = base02;
                 "border.focused" = null;
                 "border.selected" = null;
                 "border.transparent" = null;
                 "border.disabled" = null;
-                "elevated_surface.background" = base01;
-                "surface.background" = base00;
-                "background" = base00;
-                "element.background" = base00;
-                "element.hover" = base01;
-                "element.active" = base02;
-                "element.selected" = base02;
-                "element.disabled" = base03;
-                "drop_target.background" = base03;
-                "ghost_element.background" = "#00000000";
-                "ghost_element.hover" = base02;
-                "ghost_element.active" = base02;
-                "ghost_element.selected" = base02;
-                "ghost_element.disabled" = base03;
+                # Text
                 "text" = base06;
                 "text.muted" = base05;
                 "text.placeholder" = base04;
                 "text.disabled" = base04;
                 "text.accent" = base0D;
-                "icon" = base05;
-                "icon.muted" = base03;
-                "icon.disabled" = base03;
-                "icon.placeholder" = base03;
+                "link_text.hover" = base0D;
+                # Icon
+                "icon" = base06;
+                "icon.muted" = base05;
+                "icon.disabled" = base04;
                 "icon.accent" = base0D;
+                # Editor
+                "editor.foreground" = base05;
+                "editor.background" = base00;
+                "editor.gutter.background" = base00;
+                "editor.active_line.background" = base02;
+                "editor.highlighted_line.background" = null;
+                "editor.subheader.background" = base01;
+                "editor.active_line_number" = base05;
+                "editor.line_number" = base03;
+                "editor.hover_line_number" = base04;
+                "editor.invisible" = setAlpha base06 0.1;
+                "editor.wrap_guide" = setAlpha base06 0.1;
+                "editor.active_wrap_guide" = setAlpha base06 0.3;
+                "editor.indent_guide" = setAlpha base06 0.1;
+                "editor.indent_guide_active" = setAlpha base06 0.3;
+                "editor.document_highlight.read_background" = setAlpha base0D 0.2;
+                "editor.document_highlight.write_background" = setAlpha base03 0.3;
+                "editor.document_highlight.bracket_background" = null;
+                "search.match_background" = null;
+                "search.active_match_background" = null;
+                # Navigation
                 "status_bar.background" = base01;
                 "title_bar.background" = base01;
                 "title_bar.inactive_background" = base01;
                 "toolbar.background" = base00;
+                # Element
+                "element.background" = base01;
+                "element.hover" = base02;
+                "element.active" = base02;
+                "element.selected" = base02;
+                "element.selection_background" = null;
+                "element.disabled" = base01;
+                # Ghost Element
+                "ghost_element.background" = "#00000000";
+                "ghost_element.disabled" = base02;
+                "ghost_element.hover" = base02;
+                "ghost_element.active" = base02;
+                "ghost_element.selected" = base02;
+                # Drop Target
+                "drop_target.background" = setAlpha base03 0.5;
+                "drop_target.border" = null;
+                # Tabs
                 "tab_bar.background" = base01;
                 "tab.inactive_background" = base01;
                 "tab.active_background" = base00;
-                "search.match_background" = base02;
-                "search.active_match_background" = base03;
-                "panel.background" = base00;
-                "panel.focused_border" = null;
-                "pane.focused_border" = base00;
+                # Scrollbar
                 "scrollbar.thumb.background" = setAlpha base05 0.3;
-                "scrollbar.thumb.hover_background" = base02;
+                "scrollbar.thumb.hover_background" = setAlpha base05 0.5;
+                "scrollbar.thumb.active_background" = setAlpha base05 0.5;
                 "scrollbar.thumb.border" = base02;
                 "scrollbar.track.background" = "#00000000";
                 "scrollbar.track.border" = base02;
-                "editor.foreground" = base05;
-                "editor.background" = base00;
-                "editor.gutter.background" = base00;
-                "editor.subheader.background" = base00;
-                "editor.active_line.background" = base01;
-                "editor.highlighted_line.background" = base02;
-                "editor.line_number" = base03;
-                "editor.active_line_number" = base05;
-                "editor.hover_line_number" = base04;
-                "editor.invisible" = base03;
-                "editor.wrap_guide" = base01;
-                "editor.active_wrap_guide" = base02;
-                "editor.document_highlight.read_background" = setAlpha base0D 0.1;
-                "editor.document_highlight.write_background" = setAlpha base03 0.4;
+                # Status
+                "hint" = base0D;
+                "hint.background" = setAlpha base0D 0.1;
+                "hint.border" = darken base0D 0.4;
+                "info" = base0C;
+                "info.background" = setAlpha base0C 0.1;
+                "info.border" = darken base0C 0.4;
+                "success" = base0B;
+                "success.background" = setAlpha base0B 0.1;
+                "success.border" = darken base0B 0.4;
+                "warning" = base0A;
+                "warning.background" = setAlpha base0A 0.1;
+                "warning.border" = darken base0A 0.4;
+                "error" = base0F;
+                "error.background" = setAlpha base0F 0.1;
+                "error.border" = darken base0F 0.4;
+                "created" = base0B;
+                "created.background" = setAlpha base0B 0.1;
+                "created.border" = darken base0B 0.4;
+                "modified" = base0A;
+                "modified.background" = setAlpha base0A 0.1;
+                "modified.border" = darken base0A 0.4;
+                "deleted" = base08;
+                "deleted.background" = setAlpha base08 0.1;
+                "deleted.border" = darken base08 0.4;
+                "conflict" = base0A;
+                "conflict.background" = setAlpha base0A 0.1;
+                "conflict.border" = darken base0A 0.4;
+                "renamed" = base0D;
+                "renamed.background" = setAlpha base0D 0.1;
+                "renamed.border" = darken base0D 0.4;
+                "hidden" = base03;
+                "hidden.background" = setAlpha base03 0.1;
+                "hidden.border" = darken base03 0.4;
+                "ignored" = base03;
+                "ignored.background" = setAlpha base03 0.1;
+                "ignored.border" = darken base03 0.4;
+                "predictive" = base0E;
+                "predictive.background" = setAlpha base0E 0.1;
+                "predictive.border" = darken base0E 0.4;
+                "unreachable" = base03;
+                "unreachable.background" = setAlpha base03 0.1;
+                "unreachable.border" = darken base03 0.4;
+                # Version Control
+                "version_control.added" = base0B;
+                "version_control.deleted" = base08;
+                "version_control.modified" = base0A;
+                "version_control.renamed" = base0D;
+                "version_control.conflict" = base0A;
+                "version_control.ignored" = base03;
+                "version_control.word_added" = setAlpha (darken base0B 0.1) 0.3;
+                "version_control.word_deleted" = setAlpha (darken base0F 0.1) 0.3;
+                "version_control.conflict_marker.ours" = setAlpha base0B 0.1;
+                "version_control.conflict_marker.theirs" = setAlpha base0D 0.1;
+                # Terminal
                 "terminal.background" = base00;
                 "terminal.foreground" = base05;
                 "terminal.bright_foreground" = base06;
@@ -105,61 +185,12 @@
                 "terminal.ansi.white" = base05;
                 "terminal.ansi.bright_white" = base05;
                 "terminal.ansi.dim_white" = base05;
-                "link_text.hover" = base04;
-                "version_control.added" = base0B;
-                "version_control.modified" = base0A;
-                "version_control.word_added" = setAlpha (darken base0B 0.1) 0.3;
-                "version_control.word_deleted" = setAlpha base0F 0.8;
-                "version_control.deleted" = base08;
-                "version_control.conflict_marker.ours" = setAlpha base0B 0.1;
-                "version_control.conflict_marker.theirs" = setAlpha base0D 0.1;
-                "conflict" = base0A;
-                "conflict.background" = setAlpha base0A 0.1;
-                "conflict.border" = darken base0A 0.4;
-                "created" = base0B;
-                "created.background" = setAlpha base0B 0.1;
-                "created.border" = darken base0B 0.4;
-                "deleted" = base08;
-                "deleted.background" = setAlpha base08 0.1;
-                "deleted.border" = darken base08 0.4;
-                "error" = base0F;
-                "error.background" = setAlpha base0F 0.1;
-                "error.border" = darken base0F 0.4;
-                "hidden" = base03;
-                "hidden.background" = setAlpha base03 0.1;
-                "hidden.border" = darken base03 0.4;
-                "hint" = base0D;
-                "hint.background" = setAlpha base0D 0.1;
-                "hint.border" = darken base0D 0.4;
-                "ignored" = base03;
-                "ignored.background" = setAlpha base03 0.1;
-                "ignored.border" = darken base03 0.4;
-                "info" = base0C;
-                "info.background" = setAlpha base0C 0.1;
-                "info.border" = darken base0C 0.4;
-                "modified" = base0A;
-                "modified.background" = setAlpha base0A 0.1;
-                "modified.border" = darken base0A 0.4;
-                "predictive" = base0E;
-                "predictive.background" = setAlpha base0E 0.1;
-                "predictive.border" = darken base0E 0.4;
-                "renamed" = base0D;
-                "renamed.background" = setAlpha base0D 0.1;
-                "renamed.border" = darken base0D 0.4;
-                "success" = base0B;
-                "success.background" = setAlpha base0B 0.1;
-                "success.border" = darken base0B 0.4;
-                "unreachable" = base03;
-                "unreachable.background" = setAlpha base03 0.1;
-                "unreachable.border" = darken base03 0.4;
-                "warning" = base0A;
-                "warning.background" = setAlpha base0A 0.1;
-                "warning.border" = darken base0A 0.4;
+                # Players
                 "players" = [
                   {
                     "cursor" = base0D;
-                    "background" = base04;
-                    "selection" = setAlpha base04 0.25;
+                    "background" = base0D;
+                    "selection" = setAlpha base0D 0.25;
                   }
                   {
                     "cursor" = base09;
@@ -197,6 +228,7 @@
                     "selection" = setAlpha base0F 0.25;
                   }
                 ];
+                # Syntax
                 "syntax" = {
                   "attribute" = {
                     "color" = base0D;

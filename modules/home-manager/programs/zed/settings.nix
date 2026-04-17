@@ -6,7 +6,7 @@
     userSettings = with config.stylix; {
       # General -> Workspace Restoration
       session.restore_unsaved_buffers = false;
-      restore_on_startup = "launchpad"; # https://github.com/zed-industries/zed/issues/47075
+      restore_on_startup = "launchpad";
       # General -> Privacy
       telemetry = {
         metrics = false;
@@ -68,10 +68,14 @@
         "**/.svn"
         "**/CVS"
         "**/Thumbs.db"
-        # Nix
-        "**/.direnv"
         # JavaScript
         "**/node_modules"
+        # Nix
+        "**/.devenv"
+        "**/.direnv"
+        # Python
+        "**/.venv"
+        "**/__pycache__"
       ];
       # Window & Layout -> Title Bar
       title_bar = {
@@ -123,10 +127,10 @@
       };
       # AI -> Edit Predictions
       show_edit_predictions = false;
-      edit_predictions.provider = "copilot"; # Nightly
-      edit_predictions.mode = "subtle";
-      edit_predictions.enabled_in_text_threads = false;
-      # features.edit_prediction_provider = "copilot"; # Renamed in Nightly
+      edit_predictions = {
+        provider = "copilot";
+        mode = "subtle";
+      };
     };
   };
 }

@@ -5,6 +5,7 @@
     userSettings = {
       languages = {
         "CSS" = {
+          formatter = "none"; # Formatter should be set per project (Prettier, Biome or Oxfmt)
           language_servers = [
             "tailwindcss-intellisense-css"
             "!vscode-css-language-server"

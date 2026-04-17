@@ -90,10 +90,15 @@
       window_decorations = "server";
       # Panels -> Project Panel
       project_panel = {
-        default_width = 300;
+        default_width = 360;
+      };
+      # Panels -> Outline Panel
+      outline_panel = {
+        default_width = 360;
       };
       # Panels -> Git Panel
       git_panel = {
+        default_width = 360;
         tree_view = true;
       };
       # Panels -> Collaboration Panels

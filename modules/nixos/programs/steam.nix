@@ -16,6 +16,8 @@
         # https://github.com/CachyOS/proton-cachyos
         PROTON_USE_NTSYNC = "1";
         PROTON_VKD3D_HEAP = "1";
+        # https://github.com/HansKristian-Work/vkd3d-proton
+        VKD3D_CONFIG = "descriptor_heap";
       };
     };
 

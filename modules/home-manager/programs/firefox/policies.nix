@@ -21,7 +21,6 @@
       DisableFirefoxStudies = true;
       DisableFormHistory = true;
       DisableMasterPasswordCreation = true;
-      DisablePocket = true;
       DisablePrivateBrowsing = false;
       DisableProfileImport = true;
       DisableProfileRefresh = false;
@@ -43,14 +42,13 @@
       };
       ExtensionUpdate = true;
       FirefoxHome = {
-        Search = false;
-        TopSites = false;
-        SponsoredTopSites = false;
         Highlights = false;
-        Pocket = false;
-        SponsoredPocket = false;
+        Search = false;
         Snippets = false;
-        Locked = false;
+        SponsoredStories = false;
+        SponsoredTopSites = false;
+        Stories = false;
+        TopSites = false;
       };
       GenerativeAI = {
         Enabled = false;

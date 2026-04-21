@@ -4,7 +4,7 @@
   programs.firefox = {
     profiles.default.settings = {
       # Betterfox
-      # version: 149.0
+      # version: 150.0
       # https://github.com/yokoffing/Betterfox
 
       # ============================================================================

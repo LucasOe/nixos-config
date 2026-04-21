@@ -3,11 +3,11 @@
     (final: prev: {
       proton-cachyos-bin = final.stdenvNoCC.mkDerivation (finalAttrs: {
         pname = "proton-cachyos-bin";
-        version = "10.0-20260410";
+        version = "10.0-20260420";
 
         src = final.fetchzip {
           url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-${finalAttrs.version}-slr/proton-cachyos-${finalAttrs.version}-slr-x86_64.tar.xz";
-          hash = "sha256-pvzvXkHQM7rthmN2x32SIm8Stj0bfq0cBuYXMBzdhHQ=";
+          hash = "sha256-wvbJxYFkDVoqKBfZ25eHDwQBcbKLbhzjaLeTcHxQIUY=";
         };
 
         dontUnpack = true;

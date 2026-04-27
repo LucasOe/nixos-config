@@ -8,6 +8,7 @@
     ./programs/nextdns.nix
     ./programs/nh.nix
     ./programs/niri.nix
+    ./programs/pipewire.nix
     ./shell/fish.nix
     ./stylix.nix
   ];

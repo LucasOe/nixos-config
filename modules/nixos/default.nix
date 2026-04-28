@@ -26,6 +26,7 @@
       "boot.shell_on_fail"
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
+      "ipv6.disable=1" # https://github.com/NixOS/nixpkgs/issues/87802
     ];
     # Hide the OS choice for bootloaders.
     # It's still possible to open the bootloader list by pressing any key
@@ -72,7 +73,7 @@
   # Enable networking
   networking = {
     networkmanager.enable = true;
-    enableIPv6 = false;
+    enableIPv6 = false; # https://github.com/NixOS/nixpkgs/issues/87802
 
     # Firewall
     firewall.enable = true;

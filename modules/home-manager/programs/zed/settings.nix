@@ -79,7 +79,6 @@
       ];
       # Window & Layout -> Title Bar
       title_bar = {
-        show_branch_icon = true;
         show_user_picture = false;
       };
       # Window & Layout -> Tab Bar
@@ -91,14 +90,18 @@
       # Panels -> Project Panel
       project_panel = {
         default_width = 360;
+        dock = "left";
+        starts_open = false;
       };
       # Panels -> Outline Panel
       outline_panel = {
         default_width = 360;
+        dock = "left";
       };
       # Panels -> Git Panel
       git_panel = {
         default_width = 360;
+        dock = "left";
         tree_view = true;
       };
       # Panels -> Collaboration Panels
@@ -107,13 +110,13 @@
       };
       # Terminal
       terminal = {
-        line_height = "standard";
-        cursor_shape = "bar";
         blinking = "on";
+        cursor_shape = "bar";
         font_features = {
           calt = true;
           zero = true;
         };
+        line_height = "standard";
       };
       # Version Control
       git = {
@@ -129,6 +132,8 @@
           provider = "copilot_chat";
           model = "gpt-5-mini";
         };
+        dock = "right";
+        sidebar_side = "right"; # Threads Panel
       };
       # AI -> Edit Predictions
       show_edit_predictions = false;

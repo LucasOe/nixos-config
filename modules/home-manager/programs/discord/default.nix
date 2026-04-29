@@ -80,6 +80,7 @@ in
         "InstantMessaging"
         "Chat"
       ];
+      mimeType = [ "x-scheme-handler/discord" ];
     };
   };
 }

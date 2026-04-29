@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
 {
   xdg = {
@@ -24,13 +24,44 @@
       };
     };
 
-    mimeApps = {
-      enable = true;
+    mimeApps =
+      let
+        # https://github.com/krezh/dotnix/blob/main/modules/programs/xdg-settings/homeManager.nix
+        allMimes = lib.splitString "\n" (builtins.readFile "${pkgs.shared-mime-info}/share/mime/types");
+        matchingMimes = prefix: builtins.filter (mime: lib.hasPrefix prefix mime) allMimes;
+        defaultsFor = prefix: app: lib.genAttrs (matchingMimes prefix) (_: app);
 
-      defaultApplications = {
-        "inode/directory" = "org.gnome.Nautilus.desktop";
-        "text/plain" = "dev.zed.Zed.desktop";
+        # Default Applications
+        defaultTextEditor = "dev.zed.Zed.desktop";
+        defaultImageViewer = "org.gnome.Loupe.desktop";
+        defaultVideoPlayer = "org.gnome.Showtime.desktop";
+        defaultAudioPlayer = "org.gnome.Showtime.desktop";
+
+        mediaDefaults = lib.mkMerge [
+          (defaultsFor "text/" defaultTextEditor)
+          (defaultsFor "image/" defaultImageViewer)
+          (defaultsFor "video/" defaultVideoPlayer)
+          (defaultsFor "audio/" defaultAudioPlayer)
+        ];
+
+        manualDefaults = {
+          "inode/directory" = "org.gnome.Nautilus.desktop";
+          # Text
+          "application/json" = defaultTextEditor;
+          "application/toml" = defaultTextEditor;
+          "application/x-sh" = defaultTextEditor;
+          "application/x-shellscript" = defaultTextEditor;
+          "application/xml" = defaultTextEditor;
+          "application/yaml" = defaultTextEditor;
+        };
+      in
+      {
+        enable = true;
+
+        defaultApplications = lib.mkMerge [
+          mediaDefaults
+          manualDefaults
+        ];
       };
-    };
   };
 }

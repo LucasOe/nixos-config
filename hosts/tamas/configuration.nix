@@ -96,6 +96,10 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     (bottles.override { removeWarningPopup = true; })
+    # Required by bottles since 63.1
+    # https://github.com/bottlesdevs/Bottles/blob/1000d50acece7048b1ef485fa94654ebaa9057ac/bottles/backend/utils/vulkan.py#L94
+    vulkan-tools
+
     heroic
     networkmanagerapplet
     piper

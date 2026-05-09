@@ -41,34 +41,41 @@
     };
   };
 
-  nix.settings = {
-    # Enable Flakes
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+  nix = {
+    # Disable Channels, we're using Flakes instead
+    channel.enable = false;
 
-    # Add substituters
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://niri.cachix.org"
-      "https://noctalia.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
-    ];
+    # https://nixos.org/manual/nix/stable/command-ref/conf-file
+    # Show current config: `nix config show`
+    settings = {
+      use-xdg-base-directories = true;
+      warn-dirty = false;
 
-    # Add sudo users as trusted, so nixos-rebuild works
-    trusted-users = [
-      "root"
-      "@wheel"
-    ];
+      # Enable Flakes
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+
+      # Add substituters
+      extra-substituters = [
+        "https://nix-community.cachix.org"
+        "https://niri.cachix.org"
+        "https://noctalia.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+        "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      ];
+
+      # Add sudo users as trusted, so nixos-rebuild works
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
+    };
   };
-
-  # Disable Channels, we're using Flakes instead
-  nix.channel.enable = false;
 
   # Enable networking
   networking = {

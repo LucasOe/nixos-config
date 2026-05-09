@@ -5,7 +5,7 @@
     # https://sodiboo.github.io/niri-flake/settings
     settings = {
       spawn-at-startup = [
-        { command = [ "xwayland-satellite" ]; }
+        { command = [ "xembedsniproxy" ]; }
         { command = [ "noctalia-shell" ]; }
       ];
 

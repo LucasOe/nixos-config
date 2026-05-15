@@ -5,7 +5,10 @@
     # https://zed.dev/docs/visual-customization
     userSettings = with config.stylix; {
       # General -> Workspace Restoration
-      session.restore_unsaved_buffers = false;
+      session = {
+        restore_unsaved_buffers = false;
+        trust_all_worktrees = true;
+      };
       restore_on_startup = "launchpad";
       # General -> Privacy
       telemetry = {
@@ -138,6 +141,7 @@
       # AI -> Edit Predictions
       show_edit_predictions = false;
       edit_predictions = {
+        allow_data_collection = "no";
         provider = "copilot";
         mode = "subtle";
       };

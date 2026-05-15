@@ -6,6 +6,7 @@
       languages = {
         "Python" = {
           format_on_save = "on";
+          hard_tabs = false;
           code_actions_on_format = {
             "source.organizeImports.ruff" = true;
           };

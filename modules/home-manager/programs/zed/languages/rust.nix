@@ -6,6 +6,7 @@
       languages = {
         "Rust" = {
           format_on_save = "on";
+          hard_tabs = false;
           inlay_hints.enabled = true;
         };
       };

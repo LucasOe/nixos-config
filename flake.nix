@@ -2,8 +2,8 @@
   description = "NixOS configuration";
 
   inputs = {
-    # Official NixOS package source, using nixos's unstable branch by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-bottles-pr.url = "github:Gliczy/nixpkgs/fvs2";
 
     home-manager = {
       url = "github:nix-community/home-manager";

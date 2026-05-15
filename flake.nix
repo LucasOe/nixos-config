@@ -19,15 +19,17 @@
       url = "github:nutsalhan87/nix-colorizer";
     };
 
+    # We override niri-unstable because the very-refactor isn't updated
+    niri-unstable = {
+      url = "github:YaLTeR/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
+    };
+
     niri = {
       url = "github:sodiboo/niri-flake/very-refactor";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # pkgs.niri-unstable is outdated on the very-refactor branch
-    niri-unstable = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.niri-unstable.follows = "niri-unstable";
     };
 
     noctalia-qs = {

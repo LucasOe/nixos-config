@@ -7,7 +7,7 @@
 
   # Enable Niri
   programs.niri.enable = true;
-  nixpkgs.overlays = [ inputs.niri-unstable.overlays.niri ];
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   programs.niri.package = pkgs.niri-unstable;
 
   # Required by Niri

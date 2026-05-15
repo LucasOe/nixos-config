@@ -22,7 +22,6 @@
     # We override niri-unstable because the very-refactor isn't updated
     niri-unstable = {
       url = "github:YaLTeR/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
       flake = false;
     };
 

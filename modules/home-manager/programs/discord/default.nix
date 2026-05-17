@@ -72,7 +72,7 @@ in
   xdg.desktopEntries = {
     vesktop = {
       name = "Discord";
-      exec = "vesktop --user-agent-os windows %U";
+      exec = "vesktop --user-agent-os darwin %U";
       icon = "discord";
       genericName = "Internet Messenger";
       categories = [

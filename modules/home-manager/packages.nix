@@ -28,10 +28,10 @@
     gnome-disk-utility
     gnome-font-viewer
     gnome-logs
-    gnome-system-monitor
     loupe
     nautilus
     papers
+    resources
     showtime
     simple-scan
     snapshot

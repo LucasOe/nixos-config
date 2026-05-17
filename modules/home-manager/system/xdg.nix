@@ -3,7 +3,11 @@
 {
   xdg = {
     enable = true;
-    userDirs.enable = true;
+
+    userDirs = {
+      enable = true;
+      setSessionVariables = false;
+    };
 
     desktopEntries = {
       qt5ct = {

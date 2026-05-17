@@ -1,8 +1,12 @@
-{ ... }:
+{ config, ... }:
 
 {
   gtk = {
     enable = true;
+
+    # TODO: Remove when this upstream issue is resolved:
+    # https://github.com/nix-community/stylix/issues/2250
+    gtk4.theme = config.gtk.theme;
   };
 
   stylix.targets = {

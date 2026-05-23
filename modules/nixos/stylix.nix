@@ -41,6 +41,7 @@
     imageScalingMode = "fit";
 
     targets = {
+      console.enable = true;
       fontconfig.enable = true;
       gnome.enable = true;
       # plymouth.enable = true;

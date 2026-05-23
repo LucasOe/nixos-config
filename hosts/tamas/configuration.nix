@@ -23,7 +23,7 @@
   };
 
   # Console keymap
-  console.keyMap = "de";
+  console.keyMap = "eu";
 
   # Enable ratbagd for configuring gaming mice
   services.ratbagd.enable = true;
@@ -57,7 +57,7 @@
     # Modesetting is required.
     modesetting.enable = true;
 
-    # Use the NVidia open source kernel module (not to be confused with the
+    # Use the Nvidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
     # Support is limited to the Turing and later architectures. Full list of
     # supported GPUs is at:

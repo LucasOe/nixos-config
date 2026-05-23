@@ -22,9 +22,6 @@
     variant = ""; # Alternatively use 'us'
   };
 
-  # Console keymap
-  console.keyMap = "eu";
-
   # Enable ratbagd for configuring gaming mice
   services.ratbagd.enable = true;
 

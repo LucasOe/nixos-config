@@ -41,6 +41,9 @@
     };
   };
 
+  # Use console keymap from services.xserver.xkb.layout
+  console.useXkbConfig = true;
+
   nix = {
     # Disable Channels, we're using Flakes instead
     channel.enable = false;

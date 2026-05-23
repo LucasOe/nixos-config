@@ -3,7 +3,7 @@
 
 {
   imports = [
-    ./greeter/gdm.nix
+    ./greeter/greetd.nix
     ./programs/kdeconnect.nix
     ./programs/nextdns.nix
     ./programs/nh.nix

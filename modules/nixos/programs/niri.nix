@@ -11,7 +11,4 @@
   programs.niri.enable = true;
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   programs.niri.package = pkgs.niri-unstable;
-
-  # Disable KDE polkit agent from niri-flake
-  systemd.user.services.niri-flake-polkit.enable = false;
 }

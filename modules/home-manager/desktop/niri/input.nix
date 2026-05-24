@@ -1,7 +1,8 @@
 { ... }:
 
 {
-  programs.niri.settings = {
+  # https://niri-wm.github.io/niri/Configuration%3A-Input.html
+  wayland.windowManager.niri.settings = {
     input = {
       mouse = {
         # https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html
@@ -9,8 +10,8 @@
         accel-profile = "flat";
       };
       touchpad = {
-        dwt = true; # Disable touchpad while typing
-        dwtp = true; # Disable touchpad while trackpoint is in use
+        dwt = [ ]; # Disable touchpad while typing
+        dwtp = [ ]; # Disable touchpad while trackpoint is in use
       };
     };
   };

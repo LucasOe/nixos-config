@@ -1,126 +1,133 @@
 {
-  config,
   lib,
   pkgs,
   ...
 }:
 
-let
-  noRepeat = action: {
-    action = action;
-    repeat = false;
-  };
-in
 {
+  # https://niri-wm.github.io/niri/Configuration%3A-Key-Bindings.html
   # List all available actions with 'niri msg action'
   # Shell specific keybinds are configure in the `dms` or `noctalia` modules
-  programs.niri.settings.binds = with config.lib.niri.actions; {
+  wayland.windowManager.niri.settings.binds = {
     # Apps
-    "Mod+B".action = spawn "firefox-devedition";
-    "Mod+E".action = spawn "nautilus";
-    "Mod+Shift+C".action = spawn "eyedropper";
+    "Mod+B".spawn = "firefox-devedition";
+    "Mod+E".spawn = "nautilus";
+    "Mod+Shift+C".spawn = "eyedropper";
+
     # Terminal
-    "Mod+Return".action = spawn "ghostty";
-    "Mod+T".action = spawn "ghostty";
-    "Mod+Shift+Return".action = spawn "ghostty" "--class=com.mitchellh.ghostty.float";
-    "Mod+Shift+T".action = spawn "ghostty" "--class=com.mitchellh.ghostty.float";
+    "Mod+Return".spawn = "ghostty";
+    "Mod+T".spawn = "ghostty";
+    "Mod+Shift+Return".spawn = [
+      "ghostty"
+      "--class=com.mitchellh.ghostty.float"
+    ];
+    "Mod+Shift+T".spawn = [
+      "ghostty"
+      "--class=com.mitchellh.ghostty.float"
+    ];
 
     # General
-    "Mod+C".action = center-column;
-    "Mod+O" = noRepeat toggle-overview;
-    "Mod+Q" = noRepeat close-window;
-    "Mod+R".action = switch-preset-column-width;
-    "Mod+Shift+Slash".action = show-hotkey-overlay;
-    "Mod+Shift+Space".action = toggle-window-floating;
-    "Mod+W".action = toggle-column-tabbed-display;
+    "Mod+C".center-column = [ ];
+    "Mod+O" = {
+      toggle-overview = [ ];
+      _props.repeat = false;
+    };
+    "Mod+Q" = {
+      close-window = [ ];
+      _props.repeat = false;
+    };
+    "Mod+R".switch-preset-column-width = [ ];
+    "Mod+Shift+Slash".show-hotkey-overlay = [ ];
+    "Mod+Shift+Space".toggle-window-floating = [ ];
+    "Mod+W".toggle-column-tabbed-display = [ ];
 
     # Fullscreen
-    "Mod+F".action = maximize-column;
-    "Mod+Shift+F".action = fullscreen-window;
-    "Mod+Ctrl+F".action = expand-column-to-available-width;
-    "Mod+M".action = maximize-window-to-edges;
+    "Mod+F".maximize-column = [ ];
+    "Mod+Shift+F".fullscreen-window = [ ];
+    "Mod+Ctrl+F".expand-column-to-available-width = [ ];
+    "Mod+M".maximize-window-to-edges = [ ];
+    "Mod+Alt+F".toggle-windowed-fullscreen = [ ];
 
     # Columns
-    "Mod+BracketLeft".action = consume-or-expel-window-left;
-    "Mod+BracketRight".action = consume-or-expel-window-right;
-    "Mod+Odiaeresis".action = consume-or-expel-window-left;
-    "Mod+Adiaeresis".action = consume-or-expel-window-right;
+    "Mod+BracketLeft".consume-or-expel-window-left = [ ];
+    "Mod+BracketRight".consume-or-expel-window-right = [ ];
+    "Mod+Odiaeresis".consume-or-expel-window-left = [ ];
+    "Mod+Adiaeresis".consume-or-expel-window-right = [ ];
 
     # Focusing and moving
-    "Mod+Left".action = focus-column-left;
-    "Mod+Right".action = focus-column-right;
-    "Mod+Down".action = focus-window-down;
-    "Mod+Up".action = focus-window-up;
+    "Mod+Left".focus-column-left = [ ];
+    "Mod+Right".focus-column-right = [ ];
+    "Mod+Down".focus-window-down = [ ];
+    "Mod+Up".focus-window-up = [ ];
 
-    "Mod+Shift+Left".action = move-column-left;
-    "Mod+Shift+Right".action = move-column-right;
-    "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
-    "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
+    "Mod+Shift+Left".move-column-left = [ ];
+    "Mod+Shift+Right".move-column-right = [ ];
+    "Mod+Shift+Down".move-window-down-or-to-workspace-down = [ ];
+    "Mod+Shift+Up".move-window-up-or-to-workspace-up = [ ];
 
-    "Mod+WheelScrollRight".action = focus-column-right;
-    "Mod+WheelScrollLeft".action = focus-column-left;
+    "Mod+WheelScrollRight".focus-column-right = [ ];
+    "Mod+WheelScrollLeft".focus-column-left = [ ];
 
     # Monitors
-    "Mod+Ctrl+Left".action = focus-monitor-left;
-    "Mod+Ctrl+Right".action = focus-monitor-right;
-    "Mod+Ctrl+Down".action = focus-monitor-down;
-    "Mod+Ctrl+Up".action = focus-monitor-up;
+    "Mod+Ctrl+Left".focus-monitor-left = [ ];
+    "Mod+Ctrl+Right".focus-monitor-right = [ ];
+    "Mod+Ctrl+Down".focus-monitor-down = [ ];
+    "Mod+Ctrl+Up".focus-monitor-up = [ ];
 
-    "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
-    "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
-    "Mod+Shift+Ctrl+Down".action = move-column-to-monitor-down;
-    "Mod+Shift+Ctrl+Up".action = move-column-to-monitor-up;
+    "Mod+Shift+Ctrl+Left".move-column-to-monitor-left = [ ];
+    "Mod+Shift+Ctrl+Right".move-column-to-monitor-right = [ ];
+    "Mod+Shift+Ctrl+Down".move-column-to-monitor-down = [ ];
+    "Mod+Shift+Ctrl+Up".move-column-to-monitor-up = [ ];
 
-    "Mod+Comma".action = focus-monitor-left;
-    "Mod+Period".action = focus-monitor-right;
+    "Mod+Comma".focus-monitor-left = [ ];
+    "Mod+Period".focus-monitor-right = [ ];
 
-    "Mod+Shift+Comma".action = move-column-to-monitor-left;
-    "Mod+Shift+Period".action = move-column-to-monitor-right;
+    "Mod+Shift+Comma".move-column-to-monitor-left = [ ];
+    "Mod+Shift+Period".move-column-to-monitor-right = [ ];
 
     # Workspaces
-    "Mod+Page_Down".action = focus-workspace-down;
-    "Mod+Page_Up".action = focus-workspace-up;
+    "Mod+Page_Down".focus-workspace-down = [ ];
+    "Mod+Page_Up".focus-workspace-up = [ ];
 
-    "Mod+Shift+Page_Down".action = move-column-to-workspace-down;
-    "Mod+Shift+Page_Up".action = move-column-to-workspace-up;
+    "Mod+Shift+Page_Down".move-column-to-workspace-down = [ ];
+    "Mod+Shift+Page_Up".move-column-to-workspace-up = [ ];
 
-    "Mod+Home".action = focus-column-first;
-    "Mod+End".action = focus-column-last;
+    "Mod+Home".focus-column-first = [ ];
+    "Mod+End".focus-column-last = [ ];
 
-    "Mod+Ctrl+Home".action = move-column-to-first;
-    "Mod+Ctrl+End".action = move-column-to-last;
+    "Mod+Ctrl+Home".move-column-to-first = [ ];
+    "Mod+Ctrl+End".move-column-to-last = [ ];
 
-    "Mod+1".action = focus-workspace 1;
-    "Mod+2".action = focus-workspace 2;
-    "Mod+3".action = focus-workspace 3;
-    "Mod+4".action = focus-workspace 4;
-    "Mod+5".action = focus-workspace 5;
-    "Mod+6".action = focus-workspace 6;
-    "Mod+7".action = focus-workspace 7;
-    "Mod+8".action = focus-workspace 8;
-    "Mod+9".action = focus-workspace 9;
+    "Mod+1".focus-workspace = 1;
+    "Mod+2".focus-workspace = 2;
+    "Mod+3".focus-workspace = 3;
+    "Mod+4".focus-workspace = 4;
+    "Mod+5".focus-workspace = 5;
+    "Mod+6".focus-workspace = 6;
+    "Mod+7".focus-workspace = 7;
+    "Mod+8".focus-workspace = 8;
+    "Mod+9".focus-workspace = 9;
 
-    # Broken, action is not cached: https://github.com/sodiboo/niri-flake/blob/main/memo-binds.nix
-    # "Mod+Shift+1".action = move-column-to-workspace 1;
-    # "Mod+Shift+2".action = move-column-to-workspace 2;
-    # "Mod+Shift+3".action = move-column-to-workspace 3;
-    # "Mod+Shift+4".action = move-column-to-workspace 4;
-    # "Mod+Shift+5".action = move-column-to-workspace 5;
-    # "Mod+Shift+6".action = move-column-to-workspace 6;
-    # "Mod+Shift+7".action = move-column-to-workspace 7;
-    # "Mod+Shift+8".action = move-column-to-workspace 8;
-    # "Mod+Shift+9".action = move-column-to-workspace 9;
+    "Mod+Shift+1".move-column-to-workspace = 1;
+    "Mod+Shift+2".move-column-to-workspace = 2;
+    "Mod+Shift+3".move-column-to-workspace = 3;
+    "Mod+Shift+4".move-column-to-workspace = 4;
+    "Mod+Shift+5".move-column-to-workspace = 5;
+    "Mod+Shift+6".move-column-to-workspace = 6;
+    "Mod+Shift+7".move-column-to-workspace = 7;
+    "Mod+Shift+8".move-column-to-workspace = 8;
+    "Mod+Shift+9".move-column-to-workspace = 9;
 
     # Screenshots
-    "Mod+Print".action.screenshot = [ ];
-    "Mod+Ctrl+Print".action.screenshot-screen = [ ];
-    "Mod+Alt+Print".action.screenshot-window = [ ];
+    "Mod+Print".screenshot = [ ];
+    "Mod+Ctrl+Print".screenshot-screen = [ ];
+    "Mod+Alt+Print".screenshot-window = [ ];
 
     # Screen mirroring
     # https://github.com/Ferdi265/wl-mirror/issues/59
     "Mod+Alt+P" = {
-      action = spawn-sh "${lib.getExe' pkgs.wl-mirror "wl-mirror"} $(niri msg --json focused-output | ${lib.getExe pkgs.jq} -r .name)";
-      repeat = false;
+      _props.repeat = false;
+      spawn-sh = "${lib.getExe' pkgs.wl-mirror "wl-mirror"} $(niri msg --json focused-output | ${lib.getExe pkgs.jq} -r .name)";
     };
   };
 }

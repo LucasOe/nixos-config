@@ -1,7 +1,7 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 {
-  programs.niri.settings = {
+  wayland.windowManager.niri.settings.settings = {
     # Files under `$XDG_CONFIG_HOME/niri/dms` to be included into the new config
     includes = lib.mkAfter [
       "dms/alttab.kdl"
@@ -14,95 +14,198 @@
     ];
 
     # Keybinds for Niri
-    binds =
-      with config.lib.niri.actions;
-      let
-        dms-ipc = spawn "dms" "ipc" "call";
-      in
-      {
-        # Media Keys
-        "XF86AudioPlay" = {
-          action = dms-ipc "mpris" "playPause";
-          hotkey-overlay.title = "Start playback";
-        };
-        "XF86AudioStop" = {
-          action = dms-ipc "mpris" "stop";
-          hotkey-overlay.title = "Stop playback";
-        };
-        "XF86AudioPrev" = {
-          action = dms-ipc "mpris" "previous";
-          hotkey-overlay.title = "Skip to previous track";
-        };
-        "XF86AudioNext" = {
-          action = dms-ipc "mpris" "next";
-          hotkey-overlay.title = "Skip to next track";
-        };
-
-        # Launcher
-        "Mod+Control+Return" = {
-          action = dms-ipc "spotlight" "toggle";
-          hotkey-overlay.title = "Toggle Application Launcher";
-        };
-        "Mod+Space" = {
-          action = dms-ipc "spotlight" "toggle";
-          hotkey-overlay.title = "Toggle Application Launcher";
-        };
-        "Alt+Space" = {
-          action = dms-ipc "spotlight" "toggle";
-          hotkey-overlay.title = "Toggle Application Launcher";
-        };
-
-        # Notifications
-        "Mod+N" = {
-          action = dms-ipc "notifications" "toggle";
-          hotkey-overlay.title = "Toggle Notification Center";
-        };
-
-        # Lock Screen
-        "Super+Alt+L" = {
-          action = dms-ipc "lock" "lock";
-          hotkey-overlay.title = "Toggle Lock Screen";
-        };
-
-        # Power Menu
-        "Mod+X" = {
-          action = dms-ipc "powermenu" "toggle";
-          hotkey-overlay.title = "Toggle Power Menu";
-        };
-
-        # Volume Keys
-        "XF86AudioRaiseVolume" = {
-          allow-when-locked = true;
-          action = dms-ipc "audio" "increment" "3";
-        };
-        "XF86AudioLowerVolume" = {
-          allow-when-locked = true;
-          action = dms-ipc "audio" "decrement" "3";
-        };
-        "XF86AudioMute" = {
-          allow-when-locked = true;
-          action = dms-ipc "audio" "mute";
-        };
-        "XF86AudioMicMute" = {
-          allow-when-locked = true;
-          action = dms-ipc "audio" "micmute";
-        };
-
-        # Brightness
-        "XF86MonBrightnessUp" = {
-          action = dms-ipc "brightness" "increment" "5" "";
-          hotkey-overlay.title = "Increase brightness";
-        };
-        "XF86MonBrightnessDown" = {
-          action = dms-ipc "brightness" "decrement" "5" "";
-          hotkey-overlay.title = "Decrease brightness";
-        };
-
-        # Notepad
-        "Mod+P" = {
-          action = dms-ipc "notepad" "toggle";
-          hotkey-overlay.title = "Toggle Notepad";
-        };
+    binds = {
+      # Media Keys
+      "XF86AudioPlay" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "mpris"
+          "playPause"
+        ];
       };
+      "XF86AudioStop" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "mpris"
+          "stop"
+        ];
+      };
+      "XF86AudioPrev" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "mpris"
+          "previous"
+        ];
+      };
+      "XF86AudioNext" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "mpris"
+          "next"
+        ];
+      };
+
+      # Volume Keys
+      "XF86AudioRaiseVolume" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "increment"
+          "5"
+        ];
+      };
+      "XF86AudioLowerVolume" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "decrement"
+          "5"
+        ];
+      };
+      "XF86AudioMute" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "mute"
+        ];
+      };
+      "XF86AudioMicMute" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "audio"
+          "micmute"
+        ];
+      };
+
+      # Brightness
+      "XF86MonBrightnessUp" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "brightness"
+          "increment"
+          "5"
+          ""
+        ];
+      };
+      "XF86MonBrightnessDown" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "brightness"
+          "decrement"
+          "5"
+          ""
+        ];
+      };
+
+      # Launcher
+      "Mod+Control+Return" = {
+        _props.hotkey-overlay-title = "Toggle Application Launcher";
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "spotlight"
+          "toggle"
+        ];
+      };
+      "Mod+Space" = {
+        _props.hotkey-overlay-title = "Toggle Application Launcher";
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "spotlight"
+          "toggle"
+        ];
+      };
+      "Alt+Space" = {
+        _props.hotkey-overlay-title = "Toggle Application Launcher";
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "spotlight"
+          "toggle"
+        ];
+      };
+
+      # Notifications
+      "Mod+N" = {
+        _props.hotkey-overlay-title = "Toggle Notification Center";
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "notifications"
+          "toggle"
+        ];
+      };
+
+      # Lock Screen
+      "Super+Alt+L" = {
+        _props.hotkey-overlay-title = "Toggle Lock Screen";
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "lock"
+          "lock"
+        ];
+      };
+
+      # Power Menu
+      "Mod+X" = {
+        _props.hotkey-overlay-title = "Toggle Power Menu";
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "powermenu"
+          "toggle"
+        ];
+      };
+
+      # Notepad
+      "Mod+P" = {
+        _props.hotkey-overlay-title = "Toggle Notepad";
+        spawn = [
+          "dms"
+          "ipc"
+          "call"
+          "notepad"
+          "toggle"
+        ];
+      };
+    };
   };
 }

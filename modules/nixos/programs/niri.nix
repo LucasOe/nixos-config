@@ -1,14 +1,26 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  # Can be removed once https://github.com/NixOS/nixpkgs/pull/442948 is merged
-  environment.systemPackages = with pkgs; [
-    xwayland-satellite
-  ];
+  # https://codeberg.org/BANanaD3V/niri-nix/src/branch/main/modules/nixos.nix
+  imports = [ inputs.niri-nix.nixosModules.default ];
 
-  # Enable niri
-  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/wayland/niri.nix
+  # https://codeberg.org/BANanaD3V/niri-nix/src/branch/main/nixos-options.md
   programs.niri.enable = true;
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  nixpkgs.overlays = [ inputs.niri-nix.overlays.niri-nix ];
   programs.niri.package = pkgs.niri-unstable;
+
+  # Fix conflicting definition by forcing niri-nix config
+  systemd.user.units."niri.service" = {
+    overrideStrategy = lib.mkForce "asDropin";
+    text = lib.mkForce ''
+      [Service]
+      X-StopIfChanged=false
+      X-RestartIfChanged=false
+    '';
+  };
 }

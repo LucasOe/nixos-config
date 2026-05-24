@@ -1,37 +1,35 @@
 { ... }:
 
 {
-  programs.niri.settings = {
-    outputs = {
+  # https://niri-wm.github.io/niri/Configuration%3A-Outputs.html
+  wayland.windowManager.niri.settings.output = [
+    {
       # Laptop monitor
-      "eDP-1" = {
-        scale = 1.5;
-      };
+      _args = [ "eDP-1" ];
+      scale = 1.5;
+    }
+    {
       # Desktop secondary vertical monitor
-      "DP-1" = {
-        transform.rotation = 270;
-        position.x = 3440;
-        position.y = 0;
-        mode.width = 2560;
-        mode.height = 1440;
-        mode.refresh = 144.0;
-        variable-refresh-rate = "on-demand";
+      _args = [ "DP-1" ];
+      transform = "270";
+      position._props.x = 3440;
+      position._props.y = 0;
+      mode = "2560x1440@144.0";
+      variable-refresh-rate._props.on-demand = true;
 
-        layout = {
-          default-column-width.proportion = 1.0;
-          preset-column-widths = [ { proportion = 1.0; } ];
-        };
+      layout = {
+        default-column-width.proportion = 1.0;
+        preset-column-widths._children = [ { proportion = 1.0; } ];
       };
+    }
+    {
       # Desktop primary monitor
-      "DP-2" = {
-        position.x = 0;
-        position.y = 560;
-        mode.width = 3440;
-        mode.height = 1440;
-        mode.refresh = 143.923;
-        variable-refresh-rate = "on-demand";
-        focus-at-startup = true;
-      };
-    };
-  };
+      _args = [ "DP-2" ];
+      position._props.x = 0;
+      position._props.y = 560;
+      mode = "3440x1440@143.923";
+      variable-refresh-rate._props.on-demand = true;
+      focus-at-startup = [ ];
+    }
+  ];
 }

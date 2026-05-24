@@ -19,6 +19,7 @@
     p7zip
     ripgrep
     trashy
+    wl-clipboard-rs
     # GNOME Applications
     baobab
     decibels

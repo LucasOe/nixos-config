@@ -14,7 +14,10 @@
   ];
 
   # Enable networking
-  networking.hostName = "tamas";
+  networking = {
+    hostName = "tamas";
+    networkmanager.plugins = with pkgs; [ networkmanager-openvpn ];
+  };
 
   # Keymap
   services.xserver.xkb = {
@@ -98,6 +101,7 @@
     networkmanagerapplet
     piper
     via
+    openvpn
   ];
 
   # Permit to run via for /dev/hidraw*

@@ -229,6 +229,8 @@
       "media.getusermedia.audio.processing.agc.enabled" = false; # Automatic Gain Control
       "media.getusermedia.audio.processing.noise.enabled" = false; # Noise suppression
       "media.getusermedia.audio.processing.hpf.enabled" = false; # High-pass filter
+      # PREF: disable new tab page design
+      "browser.newtabpage.activity-stream.nova.enabled" = false;
 
       # ============================================================================
       # START: GNOME THEME

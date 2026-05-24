@@ -14,6 +14,10 @@
   nixpkgs.overlays = [ inputs.niri-nix.overlays.niri-nix ];
   programs.niri.package = pkgs.niri-unstable;
 
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite-unstable
+  ];
+
   # Fix conflicting definition by forcing niri-nix config
   systemd.user.units."niri.service" = {
     overrideStrategy = lib.mkForce "asDropin";

@@ -9,7 +9,7 @@
 
 {
   imports = [
-    (configLib.relativeToRoot "modules/nixos/programs/_steam.nix") # Steam
+    (configLib.relativeToRoot "modules/nixos/_steam.nix") # Steam
     inputs.maccel.nixosModules.default
   ];
 

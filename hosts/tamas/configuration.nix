@@ -2,10 +2,7 @@
 
 {
   # Enable networking
-  networking = {
-    hostName = "tamas";
-    networkmanager.plugins = with pkgs; [ networkmanager-openvpn ];
-  };
+  networking.hostName = "tamas";
 
   # Keymap
   services.xserver.xkb = {
@@ -41,13 +38,13 @@
     heroic
     networkmanagerapplet
     piper
-    openvpn
   ];
 
   my.nvidia.enable = true;
   my.steam.enable = true;
   my.maccel.enable = true;
   my.via.enable = true;
+  my.openvpn.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

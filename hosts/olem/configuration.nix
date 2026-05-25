@@ -11,20 +11,6 @@
   services.upower.enable = true; # Battery management
   services.thermald.enable = true; # Prevents overheating on Intel CPUs
 
-  # Enable hardware encoding for Intel Graphics
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      vpl-gpu-rt
-      intel-media-driver
-      libvdpau-va-gl
-    ];
-  };
-
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD"; # Force intel-media-driver
-  };
-
   # Keymap
   services.xserver.xkb = {
     layout = "de";
@@ -50,6 +36,8 @@
     adw-bluetooth
     networkmanagerapplet
   ];
+
+  my.intel-graphics.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

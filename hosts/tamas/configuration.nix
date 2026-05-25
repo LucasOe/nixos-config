@@ -88,16 +88,11 @@
     heroic
     networkmanagerapplet
     piper
-    via
     openvpn
   ];
 
   my.steam.enable = true;
-
-  # Permit to run via for /dev/hidraw*
-  services.udev.packages = with pkgs; [
-    via
-  ];
+  my.via.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

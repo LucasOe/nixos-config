@@ -11,6 +11,7 @@
 
   # https://codeberg.org/BANanaD3V/niri-nix/src/branch/main/nixos-options.md
   programs.niri.enable = true;
+  programs.niri.withUWSM = true;
   nixpkgs.overlays = [ inputs.niri-nix.overlays.niri-nix ];
   programs.niri.package = pkgs.niri-unstable;
 

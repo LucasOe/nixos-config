@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   pkgs,
   username,
   ...
@@ -21,23 +20,6 @@
 
   # Enable ratbagd for configuring gaming mice
   services.ratbagd.enable = true;
-
-  # https://github.com/Gnarus-G/maccel/blob/main/README_NIXOS.md
-  imports = [ inputs.maccel.nixosModules.default ];
-  hardware.maccel = {
-    enable = true;
-    enableCli = true;
-
-    parameters = {
-      sensMultiplier = 0.50;
-      inputDpi = 1600.0;
-
-      mode = "linear";
-      acceleration = 0.02;
-      offset = 5.0;
-      outputCap = 2.0;
-    };
-  };
 
   # Enable OpenGL
   hardware.graphics = {
@@ -92,6 +74,7 @@
   ];
 
   my.steam.enable = true;
+  my.maccel.enable = true;
   my.via.enable = true;
 
   # This value determines the NixOS release from which the default

@@ -1,6 +1,7 @@
 {
   config,
   configLib,
+  inputs,
   pkgs,
   username,
   ...
@@ -11,6 +12,7 @@
     ./hardware-configuration.nix # Generated (nixos-generate-config) hardware configuration
     ./audio.nix # Audio configuration
     (configLib.relativeToRoot "modules/nixos/programs/steam.nix") # Steam
+    inputs.maccel.nixosModules.default
   ];
 
   # Enable networking

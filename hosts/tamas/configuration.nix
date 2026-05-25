@@ -1,6 +1,5 @@
 {
   config,
-  configLib,
   inputs,
   pkgs,
   username,
@@ -8,11 +7,6 @@
 }:
 
 {
-  imports = [
-    (configLib.relativeToRoot "modules/nixos/_steam.nix") # Steam
-    inputs.maccel.nixosModules.default
-  ];
-
   # Enable networking
   networking = {
     hostName = "tamas";
@@ -29,6 +23,7 @@
   services.ratbagd.enable = true;
 
   # https://github.com/Gnarus-G/maccel/blob/main/README_NIXOS.md
+  imports = [ inputs.maccel.nixosModules.default ];
   hardware.maccel = {
     enable = true;
     enableCli = true;
@@ -96,6 +91,8 @@
     via
     openvpn
   ];
+
+  my.steam.enable = true;
 
   # Permit to run via for /dev/hidraw*
   services.udev.packages = with pkgs; [

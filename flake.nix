@@ -86,7 +86,6 @@
     inputs@{
       nixpkgs,
       home-manager,
-      nix-colorizer,
       ...
     }:
     let
@@ -97,7 +96,6 @@
         inherit inputs;
         inherit configLib;
         inherit username;
-        inherit nix-colorizer;
       };
     in
     {
@@ -123,6 +121,7 @@
             }
           ];
         };
+
         tamas = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = specialArgs;

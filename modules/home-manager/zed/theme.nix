@@ -1,4 +1,4 @@
-{ config, nix-colorizer, ... }:
+{ config, inputs, ... }:
 
 {
   programs.zed-editor = {
@@ -9,7 +9,7 @@
       # https://github.com/zed-industries/zed/blob/main/crates/settings_content/src/theme.rs#L506
       "Stylix" =
         with config.lib.stylix.colors.withHashtag;
-        with nix-colorizer.hex;
+        with inputs.nix-colorizer.hex;
         {
           name = "Stylix";
           author = "LucasOe";

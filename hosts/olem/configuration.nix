@@ -4,18 +4,21 @@
   # Enable networking
   networking.hostName = "olem";
 
-  # Enable Bluetooth
-  hardware.bluetooth.enable = true;
+  # Keymap
+  services.xserver.xkb.layout = "de";
 
   # Laptop Services
+  hardware.bluetooth.enable = true; # Enable Bluetooth
   services.upower.enable = true; # Battery management
   services.thermald.enable = true; # Prevents overheating on Intel CPUs
 
-  # Keymap
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
+  my.intel-graphics.enable = true;
+
+  # System Packages
+  environment.systemPackages = with pkgs; [
+    adw-bluetooth
+    networkmanagerapplet
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
@@ -30,14 +33,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQfqJnnqE7DxuGPh1ia7DlsoZMSenVPq2ND0X34dvBo"
     ];
   };
-
-  # System Packages
-  environment.systemPackages = with pkgs; [
-    adw-bluetooth
-    networkmanagerapplet
-  ];
-
-  my.intel-graphics.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

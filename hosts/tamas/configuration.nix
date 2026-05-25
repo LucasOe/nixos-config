@@ -5,17 +5,28 @@
   networking.hostName = "tamas";
 
   # Keymap
-  services.xserver.xkb = {
-    layout = "eu"; # Alternatively use 'de'
-    variant = ""; # Alternatively use 'us'
-  };
-
-  # Enable ratbagd for configuring gaming mice
-  services.ratbagd.enable = true;
+  services.xserver.xkb.layout = "eu";
 
   # Disable Intel HD Audio
   # https://docs.kernel.org/sound/alsa-configuration.html#module-snd-hda-intel
   boot.blacklistedKernelModules = [ "snd_hda_intel" ];
+
+  # Enable ratbagd for configuring gaming mice
+  services.ratbagd.enable = true;
+
+  my.maccel.enable = true;
+  my.nvidia.enable = true;
+  my.openvpn.enable = true;
+  my.steam.enable = true;
+  my.via.enable = true;
+
+  # System Packages
+  environment.systemPackages = with pkgs; [
+    (bottles.override { removeWarningPopup = true; })
+    heroic
+    networkmanagerapplet
+    piper
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
@@ -30,21 +41,6 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICs7Z+gwkmsOYB3SCyNmpzIbIB/TEp8vn8pyPt24XZCq"
     ];
   };
-
-  # System Packages
-  environment.systemPackages = with pkgs; [
-    (bottles.override { removeWarningPopup = true; })
-
-    heroic
-    networkmanagerapplet
-    piper
-  ];
-
-  my.nvidia.enable = true;
-  my.steam.enable = true;
-  my.maccel.enable = true;
-  my.via.enable = true;
-  my.openvpn.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

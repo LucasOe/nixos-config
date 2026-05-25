@@ -94,7 +94,6 @@
       project_panel = {
         default_width = 360;
         dock = "left";
-        starts_open = false;
       };
       # Panels -> Outline Panel
       outline_panel = {

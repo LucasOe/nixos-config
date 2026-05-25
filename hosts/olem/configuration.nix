@@ -17,7 +17,6 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     adw-bluetooth
-    networkmanagerapplet
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

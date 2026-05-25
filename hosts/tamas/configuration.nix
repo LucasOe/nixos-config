@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  username,
-  ...
-}:
+{ pkgs, username, ... }:
 
 {
   # Enable networking
@@ -20,30 +15,6 @@
 
   # Enable ratbagd for configuring gaming mice
   services.ratbagd.enable = true;
-
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  hardware.nvidia = {
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Use the Nvidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of
-    # supported GPUs is at:
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
-    # Only available from driver 515.43.04+
-    open = true;
-
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-  };
 
   # Disable Intel HD Audio
   # https://docs.kernel.org/sound/alsa-configuration.html#module-snd-hda-intel
@@ -73,6 +44,7 @@
     openvpn
   ];
 
+  my.nvidia.enable = true;
   my.steam.enable = true;
   my.maccel.enable = true;
   my.via.enable = true;

@@ -1,10 +1,7 @@
 { inputs, ... }:
 
 {
-  imports = [
-    inputs.spicetify-nix.homeManagerModules.default
-    ./colors.nix
-  ];
+  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
   programs.spicetify = {
     enable = true;

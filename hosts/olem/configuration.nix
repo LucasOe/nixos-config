@@ -1,11 +1,6 @@
 { username, pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix # Generated (nixos-generate-config) hardware configuration
-    ./certificates.nix # HSHL Root certificates
-  ];
-
   # Enable networking
   networking.hostName = "olem";
 

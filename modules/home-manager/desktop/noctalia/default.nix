@@ -1,13 +1,7 @@
 { inputs, ... }:
 
 {
-  imports = [
-    inputs.noctalia.homeModules.default # Import home-manager module
-    ./colors.nix
-    ./niri.nix
-    ./plugins.nix
-    ./settings.nix
-  ];
+  imports = [ inputs.noctalia.homeModules.default ];
 
   programs.noctalia-shell.enable = true;
 

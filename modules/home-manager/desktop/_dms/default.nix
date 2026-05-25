@@ -1,11 +1,7 @@
 { inputs, ... }:
 
 {
-  imports = [
-    inputs.dms.homeModules.dank-material-shell
-    ./settings.nix
-    ./niri.nix
-  ];
+  imports = [ inputs.dms.homeModules.dank-material-shell ];
 
   # https://danklinux.com/docs/dankmaterialshell/nixos
   programs.dank-material-shell = {

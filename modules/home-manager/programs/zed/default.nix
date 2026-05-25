@@ -1,13 +1,6 @@
 { ... }:
 
 {
-  imports = [
-    ./languages
-    ./keymap.nix
-    ./settings.nix
-    ./theme.nix
-  ];
-
   programs.zed-editor = {
     enable = true;
 

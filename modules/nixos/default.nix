@@ -2,17 +2,6 @@
 { pkgs, lib, ... }:
 
 {
-  imports = [
-    ./greeter/greetd.nix
-    ./programs/kdeconnect.nix
-    ./programs/nextdns.nix
-    ./programs/nh.nix
-    ./programs/niri.nix
-    ./programs/pipewire.nix
-    ./shell/fish.nix
-    ./stylix.nix
-  ];
-
   boot = {
     # Enable Plymouth
     # plymouth.enable = true;

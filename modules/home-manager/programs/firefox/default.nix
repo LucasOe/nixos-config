@@ -21,15 +21,6 @@ let
   };
 in
 {
-  imports = [
-    ./bookmarks.nix
-    ./extensions.nix
-    ./layout.nix
-    ./policies.nix
-    ./search.nix
-    ./settings.nix
-  ];
-
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-devedition;

@@ -4,8 +4,8 @@
   programs.dank-material-shell = {
     # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/settings/SettingsSpec.js
     settings = {
-      barConfigs = import ./bar.nix;
-      controlCenterWidgets = import ./widgets.nix;
+      barConfigs = import ./_bar.nix;
+      controlCenterWidgets = import ./_widgets.nix;
 
       # Theme
       currentThemeName = "blue";

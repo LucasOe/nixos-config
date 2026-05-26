@@ -1,190 +1,195 @@
-{ ... }:
+{ config, lib, ... }:
 
+let
+  cfg = config.my.niri;
+in
 {
-  # Keybinds for Niri
-  wayland.windowManager.niri.settings.binds = {
-    # Media Keys
-    "XF86AudioPlay" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "media"
-        "play"
-      ];
-    };
-    "XF86AudioStop" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "media"
-        "pause"
-      ];
-    };
-    "XF86AudioPrev" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "media"
-        "previous"
-      ];
-    };
-    "XF86AudioNext" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "media"
-        "next"
-      ];
-    };
+  config = lib.mkIf (cfg.environment == "noctalia") {
+    # Keybinds for Niri
+    wayland.windowManager.niri.settings.binds = {
+      # Media Keys
+      "XF86AudioPlay" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "media"
+          "play"
+        ];
+      };
+      "XF86AudioStop" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "media"
+          "pause"
+        ];
+      };
+      "XF86AudioPrev" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "media"
+          "previous"
+        ];
+      };
+      "XF86AudioNext" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "media"
+          "next"
+        ];
+      };
 
-    # Volume Keys
-    "XF86AudioRaiseVolume" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "volume"
-        "increase"
-      ];
-    };
-    "XF86AudioLowerVolume" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "volume"
-        "decrease"
-      ];
-    };
-    "XF86AudioMute" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "volume"
-        "muteOutput"
-      ];
-    };
-    "XF86AudioMicMute" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "volume"
-        "muteInput"
-      ];
-    };
+      # Volume Keys
+      "XF86AudioRaiseVolume" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "volume"
+          "increase"
+        ];
+      };
+      "XF86AudioLowerVolume" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "volume"
+          "decrease"
+        ];
+      };
+      "XF86AudioMute" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "volume"
+          "muteOutput"
+        ];
+      };
+      "XF86AudioMicMute" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "volume"
+          "muteInput"
+        ];
+      };
 
-    # Brightness
-    "XF86MonBrightnessUp" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "brightness"
-        "increase"
-      ];
-    };
-    "XF86MonBrightnessDown" = {
-      _props.allow-when-locked = true;
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "brightness"
-        "decrease"
-      ];
-    };
+      # Brightness
+      "XF86MonBrightnessUp" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "brightness"
+          "increase"
+        ];
+      };
+      "XF86MonBrightnessDown" = {
+        _props.allow-when-locked = true;
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "brightness"
+          "decrease"
+        ];
+      };
 
-    # Launcher
-    "Mod+Control+Return" = {
-      _props.hotkey-overlay-title = "Toggle Application Launcher";
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "launcher"
-        "toggle"
-      ];
-    };
-    "Mod+Space" = {
-      _props.hotkey-overlay-title = "Toggle Application Launcher";
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "launcher"
-        "toggle"
-      ];
-    };
-    "Alt+Space" = {
-      _props.hotkey-overlay-title = "Toggle Application Launcher";
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "launcher"
-        "toggle"
-      ];
-    };
-    "Mod+V" = {
-      _props.hotkey-overlay-title = "Toggle Clipboard";
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "launcher"
-        "clipboard"
-      ];
-    };
+      # Launcher
+      "Mod+Control+Return" = {
+        _props.hotkey-overlay-title = "Toggle Application Launcher";
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "launcher"
+          "toggle"
+        ];
+      };
+      "Mod+Space" = {
+        _props.hotkey-overlay-title = "Toggle Application Launcher";
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "launcher"
+          "toggle"
+        ];
+      };
+      "Alt+Space" = {
+        _props.hotkey-overlay-title = "Toggle Application Launcher";
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "launcher"
+          "toggle"
+        ];
+      };
+      "Mod+V" = {
+        _props.hotkey-overlay-title = "Toggle Clipboard";
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "launcher"
+          "clipboard"
+        ];
+      };
 
-    # Notifications
-    "Mod+N" = {
-      _props.hotkey-overlay-title = "Toggle Notification Center";
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "notifications"
-        "toggleHistory"
-      ];
-    };
+      # Notifications
+      "Mod+N" = {
+        _props.hotkey-overlay-title = "Toggle Notification Center";
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "notifications"
+          "toggleHistory"
+        ];
+      };
 
-    # Lock Screen
-    "Mod+Alt+L" = {
-      _props.hotkey-overlay-title = "Toggle Lock Screen";
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "lockScreen"
-        "lock"
-      ];
-    };
+      # Lock Screen
+      "Mod+Alt+L" = {
+        _props.hotkey-overlay-title = "Toggle Lock Screen";
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "lockScreen"
+          "lock"
+        ];
+      };
 
-    # Power Menu
-    "Mod+X" = {
-      _props.hotkey-overlay-title = "Toggle Power Menu";
-      spawn = [
-        "noctalia-shell"
-        "ipc"
-        "call"
-        "sessionMenu"
-        "toggle"
-      ];
+      # Power Menu
+      "Mod+X" = {
+        _props.hotkey-overlay-title = "Toggle Power Menu";
+        spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "sessionMenu"
+          "toggle"
+        ];
+      };
     };
   };
 }

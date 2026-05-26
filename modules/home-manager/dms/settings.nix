@@ -1,19 +1,14 @@
-{ config, ... }:
+{ ... }:
 
 {
   programs.dank-material-shell = {
     # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/settings/SettingsSpec.js
     settings = {
-      barConfigs = import ./_bar.nix;
-      controlCenterWidgets = import ./_widgets.nix;
-
       # Theme
-      currentThemeName = "blue";
       cornerRadius = 12;
-      wallpaperFillMode = "Fit";
-      blurredWallpaperLayer = false;
-      blurWallpaperOnOverview = false;
-      monoFontFamily = "JetBrains Mono";
+
+      # Wallpaper
+      screenPreferences.wallpaper = [ ]; # Disable wallpaper management, using wpaperd
 
       # Control Center
       controlCenterShowAudioIcon = true;
@@ -81,11 +76,6 @@
 
       # Running Apps
       runningAppsCurrentWorkspace = true;
-    };
-
-    # https://github.com/AvengeMedia/DankMaterialShell/blob/master/quickshell/Common/settings/SessionSpec.js
-    session = {
-      wallpaperPath = config.stylix.image;
     };
   };
 }

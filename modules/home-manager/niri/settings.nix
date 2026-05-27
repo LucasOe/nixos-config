@@ -69,6 +69,7 @@ in
     hotkey-overlay.skip-at-startup = [ ];
     clipboard.disable-primary = [ ];
     prefer-no-csd = [ ];
+    overview.workspace-shadow.off = [ ];
 
     environment = {
       CLUTTER_BACKEND = "wayland";

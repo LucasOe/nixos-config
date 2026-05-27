@@ -7,8 +7,9 @@ in
   # https://niri-wm.github.io/niri/Configuration%3A-Introduction.html
   wayland.windowManager.niri.settings = {
     spawn-sh-at-startup = [
-      (lib.mkIf (cfg.environment == "noctalia") [ "noctalia-shell" ])
       (lib.mkIf (cfg.environment == "dms") [ "dms run" ])
+      (lib.mkIf (cfg.environment == "noctalia4") [ "noctalia-shell" ])
+      (lib.mkIf (cfg.environment == "noctalia5") [ "noctalia" ])
     ];
 
     layout = {

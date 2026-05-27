@@ -9,10 +9,11 @@
   options.my.niri = {
     environment = lib.mkOption {
       type = lib.types.enum [
-        "noctalia"
         "dms"
+        "noctalia4"
+        "noctalia5"
       ];
-      default = "noctalia";
+      default = "noctalia5";
       description = "Desktop Environment";
     };
   };

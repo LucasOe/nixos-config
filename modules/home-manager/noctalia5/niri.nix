@@ -17,6 +17,44 @@ in
       ];
 
       binds = {
+        # Media Keys
+        "XF86AudioPlay" = {
+          _props.allow-when-locked = true;
+          spawn = [
+            "noctalia"
+            "msg"
+            "media"
+            "toggle"
+          ];
+        };
+        "XF86AudioStop" = {
+          _props.allow-when-locked = true;
+          spawn = [
+            "noctalia"
+            "msg"
+            "media"
+            "stop"
+          ];
+        };
+        "XF86AudioPrev" = {
+          _props.allow-when-locked = true;
+          spawn = [
+            "noctalia"
+            "msg"
+            "media"
+            "previous"
+          ];
+        };
+        "XF86AudioNext" = {
+          _props.allow-when-locked = true;
+          spawn = [
+            "noctalia"
+            "msg"
+            "media"
+            "next"
+          ];
+        };
+
         # Volume Keys
         "XF86AudioRaiseVolume" = {
           _props.allow-when-locked = true;

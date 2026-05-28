@@ -5,12 +5,12 @@
     settings = {
       controlCenterWidgets = [
         {
-          id = "brightnessSlider";
+          id = "wifi";
           enabled = true;
-          width = 100;
+          width = 50;
         }
         {
-          id = "wifi";
+          id = "builtin_vpn";
           enabled = true;
           width = 50;
         }
@@ -21,11 +21,6 @@
         }
         {
           id = "battery";
-          enabled = true;
-          width = 50;
-        }
-        {
-          id = "colorPicker";
           enabled = true;
           width = 50;
         }

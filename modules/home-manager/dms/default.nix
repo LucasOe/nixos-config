@@ -17,6 +17,13 @@
     enableClipboardPaste = true; # Pasting items from the clipboard (wtype)
   };
 
+  wayland.windowManager.niri.settings = {
+    environment = {
+      DMS_DISABLE_MATUGEN = "1";
+      DMS_DISABLE_CAVA = "1";
+    };
+  };
+
   stylix.targets.dank-material-shell = {
     enable = true;
   };

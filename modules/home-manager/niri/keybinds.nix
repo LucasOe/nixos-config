@@ -7,7 +7,7 @@
 {
   # https://niri-wm.github.io/niri/Configuration%3A-Key-Bindings.html
   # List all available actions with 'niri msg action'
-  # Shell specific keybinds are configure in the `dms` or `noctalia` modules
+  # Shell specific keybinds are configure in the `noctalia` module
   wayland.windowManager.niri.settings.binds = {
     # Apps
     "Mod+B".spawn = "firefox-devedition";

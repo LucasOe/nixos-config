@@ -7,12 +7,7 @@
       # Put wallpaper inside the overview backdrop
       # https://niri-wm.github.io/niri/Overview.html#backdrop-customization
       {
-        match = [
-          { _props.namespace = "^dms:blurwallpaper"; }
-          { _props.namespace = "^noctalia-wallpaper"; }
-          { _props.namespace = "^quickshell$"; }
-          { _props.namespace = "^wpaperd"; }
-        ];
+        match = [ { _props.namespace = "^wpaperd"; } ];
         place-within-backdrop = true;
       }
     ];

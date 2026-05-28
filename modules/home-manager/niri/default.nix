@@ -1,37 +1,18 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 
 {
-  options.my.niri = {
-    environment = lib.mkOption {
-      type = lib.types.enum [
-        "dms"
-        "noctalia4"
-        "noctalia5"
-      ];
-      default = "noctalia5";
-      description = "Desktop Environment";
-    };
-  };
-
   imports = [
     inputs.niri-nix.homeModules.default # Import home-manager module
     inputs.niri-nix.homeModules.stylix # Import stylix module
   ];
 
-  config = {
-    # https://codeberg.org/BANanaD3V/niri-nix/src/branch/main/home-options.md
-    wayland.windowManager.niri = {
-      enable = true;
-      package = pkgs.niri-unstable; # We are using the NixOS module to install niri
-    };
+  # https://codeberg.org/BANanaD3V/niri-nix/src/branch/main/home-options.md
+  wayland.windowManager.niri = {
+    enable = true;
+    package = pkgs.niri-unstable; # We are using the NixOS module to install niri
+  };
 
-    stylix.targets.niri = {
-      enable = true;
-    };
+  stylix.targets.niri = {
+    enable = true;
   };
 }

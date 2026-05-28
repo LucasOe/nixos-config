@@ -1,8 +1,4 @@
-{
-  config,
-  configLib,
-  ...
-}:
+{ config, configLib, ... }:
 
 {
   programs.noctalia = {
@@ -16,25 +12,26 @@
           enable_community_templates = false;
         };
       };
+      # https://github.com/iStellanova/Stellyrland/blob/827773060acf6cdd36a85f3ff78e087e2dffed3c/modules/programs/noctalia/default.nix#L41
       wallpaper = {
-        enabled = false;
-        wallpaper.monitors =
-          let
-            color = "color:#${config.lib.stylix.colors.base00}";
-          in
-          {
-            "DP-1" = color;
-            "DP-2" = color;
-            "eDP-1" = color;
-          };
+        enabled = true;
+        directory = configLib.relativeToRoot "assets/wallpapers";
+        fill_color = config.lib.stylix.colors.withHashtag.base00;
+        fill_mode = "fit";
+        transition = [ "wipe" ];
+        monitors = {
+          "DP-1".path = config.stylix.image;
+          "DP-2".path = config.stylix.image;
+          "eDP-1".path = config.stylix.image;
+        };
       };
       control_center = {
         sidebar = "none";
         shortcuts = [
-          "wifi"
-          "bluetooth"
-          "nightlight"
-          "notification"
+          { type = "wifi"; }
+          { type = "bluetooth"; }
+          { type = "nightlight"; }
+          { type = "notification"; }
         ];
       };
       desktop_widgets = {

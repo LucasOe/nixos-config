@@ -392,22 +392,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-bottles-pr": {
-      "locked": {
-        "lastModified": 1779522642,
-        "narHash": "sha256-rX6PCKamOqp3dA1rs80X1dvp/J38SQq7JpKCfL5m9Go=",
-        "owner": "Gliczy",
-        "repo": "nixpkgs",
-        "rev": "450da259091ecfce1773277c69e96e75a67fbde7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Gliczy",
-        "ref": "fvs2",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1779508470,
@@ -551,7 +535,6 @@
         "niri-nix": "niri-nix",
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-bottles-pr": "nixpkgs-bottles-pr",
         "noctalia-qs": "noctalia-qs",
         "noctalia4": "noctalia4",
         "noctalia5": "noctalia5",

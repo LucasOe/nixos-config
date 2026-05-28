@@ -20,7 +20,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-bottles-pr.url = "github:Gliczy/nixpkgs/fvs2";
     import-tree.url = "github:denful/import-tree";
 
     home-manager = {

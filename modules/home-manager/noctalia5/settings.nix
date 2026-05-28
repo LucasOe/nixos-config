@@ -23,6 +23,15 @@ in
         };
         wallpaper = {
           enabled = false;
+          wallpaper.monitors =
+            let
+              color = "color:#${config.lib.stylix.colors.base00}";
+            in
+            {
+              "DP-1" = color;
+              "DP-2" = color;
+              "eDP-1" = color;
+            };
         };
         control_center = {
           sidebar = "none";
@@ -88,14 +97,14 @@ in
         notification = {
           background_opacity = 1.0;
           monitors = [ "DP-2" ];
-          offset_x = 8.0; # Broken?
-          offset_y = 8.0;
+          offset_x = 16.0;
+          offset_y = 16.0;
         };
         osd = {
           background_opacity = 1.0;
           monitors = [ "DP-2" ]; # Not available
-          offset_x = 8.0; # Broken?
-          offset_y = 8.0;
+          offset_x = 16.0;
+          offset_y = 16.0;
         };
         bar = {
           default = {
@@ -115,6 +124,7 @@ in
             margin_ends = 0.0;
             padding = 4;
             radius = 0;
+            widget_spacing = 8;
             start = [
               "control-center"
               "cpu"
@@ -143,10 +153,15 @@ in
           };
         };
         widget = {
+          space = {
+            type = "spacer";
+          };
           control-center = {
+            capsule = true;
             glyph = "settings";
           };
           media = {
+            capsule = true;
             hide_when_no_media = true;
           };
           cpu = {
@@ -167,21 +182,32 @@ in
           taskbar = {
             capsule = true;
             capsule_opacity = 0.0;
+            capsule_padding = 16.0;
             empty_color = "outline";
             group_by_workspace = true;
-            inactive_opacity = 0.7;
+            hide_empty_workspaces = true;
+            inactive_opacity = 0.75;
             occupied_color = "outline";
             scale = 1.2;
             show_active_indicator = false;
-            workspace_label_placement = "inside";
+            show_all_outputs = true;
+            workspace_group_capsule = false;
+            workspace_label_placement = "centered";
           };
           tray = {
+            capsule = true;
             hidden = [
               "nm-applet"
             ];
           };
-          space = {
-            type = "spacer";
+          battery = {
+            capsule = true;
+          };
+          bluetooth = {
+            capsule = true;
+          };
+          brightness = {
+            capsule = true;
           };
           lock_keys = {
             capsule = true;
@@ -189,7 +215,11 @@ in
             hide_when_off = true;
             show_scroll_lock = true;
           };
+          notifications = {
+            capsule = true;
+          };
           network = {
+            capsule = true;
             show_label = false;
           };
           input_volume = {

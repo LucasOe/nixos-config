@@ -3,11 +3,11 @@
     (final: prev: {
       proton-cachyos-bin = final.stdenvNoCC.mkDerivation (finalAttrs: {
         pname = "proton-cachyos-bin";
-        version = "10.0-20260425";
+        version = "11.0-20260521";
 
         src = final.fetchzip {
           url = "https://github.com/CachyOS/proton-cachyos/releases/download/cachyos-${finalAttrs.version}-slr/proton-cachyos-${finalAttrs.version}-slr-x86_64.tar.xz";
-          hash = "sha256-EYhn6eZ84HSyYbEU5JwXPxNkKH5bxfm3ct5BBHx4Ul4=";
+          hash = "sha256-OrZfLv0FV+fhDuhbmcbMhtylDTMwTfRAvENh/v7iIr8=";
         };
 
         dontUnpack = true;
@@ -38,7 +38,7 @@
         # This could be useful if multiple versions should be installed together
         preFixup = ''
           substituteInPlace "$steamcompattool/compatibilitytool.vdf" \
-            --replace-fail "proton-cachyos-${finalAttrs.version}-slr-x86_64" "Proton-CachyOS"
+            --replace-fail "proton-cachyos-${finalAttrs.version}-slr-x86_64" "Proton CachyOS"
         '';
 
         meta = {

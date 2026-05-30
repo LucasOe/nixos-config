@@ -10,8 +10,10 @@
         accel-profile = "flat";
       };
       touchpad = {
+        tap = [ ]; # Tap to click
         dwt = [ ]; # Disable touchpad while typing
         dwtp = [ ]; # Disable touchpad while trackpoint is in use
+        natural-scroll = [ ]; # Inverse the scrolling direction
       };
     };
   };

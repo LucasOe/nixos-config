@@ -91,7 +91,7 @@
         spawn = [
           "noctalia"
           "msg"
-          "brightnes-up"
+          "brightness-up"
         ];
       };
       "XF86MonBrightnessDown" = {
@@ -99,7 +99,7 @@
         spawn = [
           "noctalia"
           "msg"
-          "brightnes-down"
+          "brightness-down"
         ];
       };
 

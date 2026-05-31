@@ -39,6 +39,7 @@
       };
       shell = {
         avatar_path = configLib.relativeToRoot "assets/avatars/tamas.png";
+        corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
         font_family = config.stylix.fonts.monospace;
         middle_click_opens_widget_settings = false;
@@ -48,6 +49,9 @@
           open_near_click_control_center = true;
           session_placement = "centered";
           wallpaper_placement = "centered";
+        };
+        screenshot = {
+          freeze_screen = true;
         };
         session.actions = [
           {
@@ -117,11 +121,33 @@
           padding = 4;
           radius = 0;
           widget_spacing = 8;
+          capsule_group = [
+            {
+              id = "g1";
+              members = [
+                "cpu"
+                "temp"
+                "ram"
+              ];
+            }
+            {
+              id = "g2";
+              members = [
+                "input_volume"
+                "output_volume"
+              ];
+            }
+            {
+              id = "g3";
+              members = [
+                "clock"
+                "date"
+              ];
+            }
+          ];
           start = [
             "control-center"
-            "cpu"
-            "temp"
-            "ram"
+            "group:g1"
             "media"
           ];
           center = [
@@ -136,11 +162,9 @@
             "network"
             "battery"
             "brightness"
-            "input_volume"
-            "output_volume"
+            "group:g2"
             "Space"
-            "clock"
-            "date"
+            "group:g3"
           ];
         };
       };

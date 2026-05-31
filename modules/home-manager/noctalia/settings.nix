@@ -92,13 +92,13 @@
       };
       notification = {
         background_opacity = 1.0;
-        monitors = [ "DP-2" ];
+        monitors = [ "DP-1" ];
         offset_x = 16.0;
         offset_y = 16.0;
       };
       osd = {
         background_opacity = 1.0;
-        monitors = [ "DP-2" ]; # Not available
+        monitors = [ "DP-1" ];
         offset_x = 16.0;
         offset_y = 16.0;
       };

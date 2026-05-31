@@ -69,7 +69,7 @@
           { _props.app-id = "^steam_app_.*$"; }
           { _props.app-id = "^Minecraft"; }
         ];
-        open-on-output = "DP-2";
+        open-on-output = "DP-1";
         variable-refresh-rate = true;
       }
     ];

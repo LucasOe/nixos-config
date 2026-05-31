@@ -9,8 +9,17 @@
       scale = 1.5;
     }
     {
-      # Desktop secondary vertical monitor
+      # Desktop primary monitor
       _args = [ "DP-1" ];
+      position._props.x = 0;
+      position._props.y = 560;
+      mode = "3440x1440@143.923";
+      variable-refresh-rate._props.on-demand = true;
+      focus-at-startup = [ ];
+    }
+    {
+      # Desktop secondary vertical monitor
+      _args = [ "DP-2" ];
       transform = "270";
       position._props.x = 3440;
       position._props.y = 0;
@@ -21,15 +30,6 @@
         default-column-width.proportion = 1.0;
         preset-column-widths._children = [ { proportion = 1.0; } ];
       };
-    }
-    {
-      # Desktop primary monitor
-      _args = [ "DP-2" ];
-      position._props.x = 0;
-      position._props.y = 560;
-      mode = "3440x1440@143.923";
-      variable-refresh-rate._props.on-demand = true;
-      focus-at-startup = [ ];
     }
   ];
 }

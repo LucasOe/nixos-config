@@ -1,5 +1,8 @@
 { config, configLib, ... }:
 
+let
+  gaps = config.wayland.windowManager.niri.settings.layout.gaps;
+in
 {
   programs.noctalia = {
     # https://docs.noctalia.dev/v5/configuration/
@@ -42,6 +45,7 @@
         corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
         font_family = config.stylix.fonts.monospace;
+        launch_apps_as_systemd_services = true;
         middle_click_opens_widget_settings = false;
         polkit_agent = true;
         panel = {
@@ -50,9 +54,7 @@
           session_placement = "centered";
           wallpaper_placement = "centered";
         };
-        screenshot = {
-          freeze_screen = true;
-        };
+        setup_wizard_enabled = false;
         session.actions = [
           {
             action = "lock";
@@ -87,25 +89,27 @@
         ];
       };
       weather = {
-        address = "Hamm, Germany";
         effects = false;
+      };
+      location = {
+        address = "Hamm, Germany";
       };
       notification = {
         background_opacity = 1.0;
         monitors = [ "DP-1" ];
-        offset_x = 16.0;
-        offset_y = 16.0;
+        offset_x = gaps;
+        offset_y = gaps;
       };
       osd = {
         background_opacity = 1.0;
         monitors = [ "DP-1" ];
-        offset_x = 16.0;
-        offset_y = 16.0;
+        offset_x = gaps;
+        offset_y = gaps;
       };
       bar = {
         default = {
           monitor = {
-            "DP-1" = {
+            "DP-2" = {
               enabled = false;
             };
           };
@@ -155,7 +159,6 @@
           ];
           end = [
             "tray"
-            "Space"
             "lock_keys"
             "notifications"
             "bluetooth"
@@ -163,15 +166,11 @@
             "battery"
             "brightness"
             "group:g2"
-            "Space"
             "group:g3"
           ];
         };
       };
       widget = {
-        space = {
-          type = "spacer";
-        };
         control-center = {
           capsule = true;
           glyph = "settings";
@@ -221,9 +220,11 @@
         };
         bluetooth = {
           capsule = true;
+          show_label = false;
         };
         brightness = {
           capsule = true;
+          show_label = false;
         };
         lock_keys = {
           capsule = true;

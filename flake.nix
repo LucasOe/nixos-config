@@ -30,6 +30,7 @@
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.firefox-gnome-theme.follows = "firefox-gnome-theme";
     };
 
     nix-colorizer = {

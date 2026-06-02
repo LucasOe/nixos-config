@@ -30,7 +30,8 @@ in
       # Only available from driver 515.43.04+
       open = true;
 
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      # Use production new_feature, or beta whichever is highest
+      package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
     };
   };
 }

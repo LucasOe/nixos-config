@@ -40,14 +40,20 @@ in
         extraEnv = {
           MANGOHUD = "1";
           PULSE_LATENCY_MSEC = "60";
-          # https://github.com/gloriouseggroll/proton-ge-custom
+          # Mesa (https://docs.mesa3d.org/envvars.html)
+          MESA_SHADER_CACHE_MAX_SIZE = "10G";
+          # Nvidia (https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/README/openglenvvariables.html)
+          __GL_SHADER_DISK_CACHE = "1";
+          __GL_SHADER_DISK_CACHE_SIZE = "10737418240"; # 10 GB
+          __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1"; # Allow unlimited shader cache (~/.cache/nvidia)
+          # Proton GE (https://github.com/gloriouseggroll/proton-ge-custom)
           PROTON_ENABLE_WAYLAND = "1";
-          PROTON_DLSS_UPGRADE = lib.optionalAttrs config.my.nvidia.enable "1"; # Can be set to a specific version, e.g. 310.5
-          # https://github.com/CachyOS/proton-cachyos
+          PROTON_DLSS_UPGRADE = "1"; # Can be set to a specific version, e.g. 310.5
+          # Proton Cachy OS (https://github.com/CachyOS/proton-cachyos)
           PROTON_USE_NTSYNC = "1";
-          # https://github.com/HansKristian-Work/vkd3d-proton
+          # vkd3d-proton (https://github.com/HansKristian-Work/vkd3d-proton)
           VKD3D_CONFIG = "descriptor_heap";
-          # https://github.com/jp7677/dxvk-nvapi
+          # dxvk-nvapi (https://github.com/jp7677/dxvk-nvapi)
           DXVK_NVAPI_VKREFLEX = lib.optionalAttrs config.my.nvidia.enable "1"; # Might cause problems for games not using Reflex
         };
       };

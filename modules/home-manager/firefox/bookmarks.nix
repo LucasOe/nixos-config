@@ -23,12 +23,8 @@ let
       name = "GitHub";
     }
     {
-      url = "https://search.nixos.org/packages?channel=unstable";
+      url = "https://nixsearch.thekoppe.com/";
       name = "NixOS Search";
-    }
-    {
-      url = "https://mynixos.com/";
-      name = "MyNixOS";
     }
     {
       url = "https://chatgpt.com/?temporary-chat=true";
@@ -65,6 +61,10 @@ let
     {
       url = "https://garmoth.com/";
       name = "Garmoth";
+    }
+    {
+      url = "https://www.nytimes.com/crosswords";
+      name = "NYT Games";
     }
   ];
 

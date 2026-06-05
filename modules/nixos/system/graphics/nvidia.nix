@@ -33,5 +33,8 @@ in
       # Use production new_feature, or beta whichever is highest
       package = config.boot.kernelPackages.nvidiaPackages.bleeding_edge;
     };
+
+    # Enable system wide CUDA support for packages
+    nixpkgs.config.cudaSupport = true;
   };
 }

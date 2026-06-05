@@ -147,7 +147,8 @@
         spawn = [
           "noctalia"
           "msg"
-          "screen-lock"
+          "session"
+          "lock"
         ];
       };
 

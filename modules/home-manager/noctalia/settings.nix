@@ -122,6 +122,10 @@ in
         offset_y = gaps;
         position = "top_right";
       };
+      lockscreen = {
+        blur_intensity = 0.0;
+        tint_intensity = 0.0;
+      };
       bar = {
         default = {
           monitor = {

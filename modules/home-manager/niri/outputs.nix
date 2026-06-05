@@ -1,35 +1,76 @@
-{ ... }:
+{ config, lib, ... }:
 
+let
+  cfg = config.my.monitors;
+in
 {
-  # https://niri-wm.github.io/niri/Configuration%3A-Outputs.html
-  wayland.windowManager.niri.settings.output = [
-    {
-      # Laptop monitor
-      _args = [ "eDP-1" ];
-      scale = 1.5;
-    }
-    {
-      # Desktop primary monitor
-      _args = [ "DP-1" ];
-      position._props.x = 0;
-      position._props.y = 560;
-      mode = "3440x1440@143.923";
-      variable-refresh-rate._props.on-demand = true;
-      focus-at-startup = [ ];
-    }
-    {
-      # Desktop secondary vertical monitor
-      _args = [ "DP-2" ];
-      transform = "270";
-      position._props.x = 3440;
-      position._props.y = 0;
-      mode = "2560x1440@144.0";
-      variable-refresh-rate._props.on-demand = true;
+  options.my.monitors = lib.mkOption {
+    type = lib.types.attrsOf (
+      lib.types.submodule (
+        { config, ... }:
+        {
+          options = {
+            width = lib.mkOption {
+              type = lib.types.nullOr lib.types.int;
+              default = null;
+            };
 
-      layout = {
-        default-column-width.proportion = 1.0;
-        preset-column-widths._children = [ { proportion = 1.0; } ];
+            height = lib.mkOption {
+              type = lib.types.nullOr lib.types.int;
+              default = null;
+            };
+
+            hasResolution = lib.mkOption {
+              type = lib.types.bool;
+              readOnly = true;
+            };
+
+            refreshRate = lib.mkOption {
+              type = lib.types.nullOr lib.types.str;
+              default = null;
+            };
+
+            niri = lib.mkOption {
+              type = lib.types.attrs;
+              default = { };
+            };
+          };
+
+          config.hasResolution = config.width != null && config.height != null;
+        }
+      )
+    );
+
+    default = { };
+
+    example = {
+      "DP-1" = {
+        width = 3440;
+        height = 1440;
+        refreshRate = "144.0";
+        niri = {
+          variable-refresh-rate._props.on-demand = true;
+        };
       };
-    }
-  ];
+    };
+  };
+
+  config = {
+    # https://niri-wm.github.io/niri/Configuration%3A-Outputs.html
+    wayland.windowManager.niri.settings.output = lib.mapAttrsToList (
+      name: monitor:
+      let
+        # Set the monitor resolution and refresh rate in the format `<width>x<height>@<refreshRate>`
+        # https://niri-wm.github.io/niri/Configuration%3A-Outputs.html#mode
+        mode =
+          "${toString monitor.width}x${toString monitor.height}"
+          + lib.optionalString (monitor.refreshRate != null) "@${toString monitor.refreshRate}";
+      in
+      {
+        _args = [ name ];
+        mode = lib.mkIf monitor.hasResolution mode;
+      }
+      // monitor.niri
+    ) cfg;
+  };
 }

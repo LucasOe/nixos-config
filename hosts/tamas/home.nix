@@ -6,9 +6,9 @@
       "DP-1" = {
         width = 3440;
         height = 1440;
-        refreshRate = "143.923";
 
         niri = {
+          mode = "3440x1440@143.923";
           position._props.x = 0;
           position._props.y = 560;
           variable-refresh-rate._props.on-demand = true;
@@ -16,11 +16,11 @@
         };
       };
       "DP-2" = {
-        width = 2560;
-        height = 1440;
-        refreshRate = "144.0";
+        width = 1440;
+        height = 2560;
 
         niri = {
+          mode = "2560x1440@144.0";
           transform = "270";
           position._props.x = 3440;
           position._props.y = 0;

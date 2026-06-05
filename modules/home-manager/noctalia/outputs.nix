@@ -1,7 +1,11 @@
 { config, lib, ... }:
 
 let
-  validMonitors = lib.filterAttrs (_: monitor: monitor.hasResolution) config.my.monitors;
+  # Only create lockscreen widgets for monitors with a configured width and height
+  validMonitors = lib.filterAttrs (
+    _: monitor: monitor.width != null && monitor.height != null
+  ) config.my.monitors;
+
   padding = 123.0;
 in
 {
@@ -22,14 +26,14 @@ in
         lib.mapAttrsToList (name: monitor: {
           "lockscreen-login-box@${name}" = {
             output = name;
-            cx = monitor.effectiveWidth / 2.0;
-            cy = monitor.effectiveHeight - padding;
+            cx = monitor.width / 2.0;
+            cy = monitor.height - padding;
             scale = 1.0;
             type = "login_box";
           };
           "lockscreen-widget-clock@${name}" = {
             output = name;
-            cx = monitor.effectiveWidth / 2.0;
+            cx = monitor.width / 2.0;
             cy = padding;
             scale = 1.8;
             type = "clock";

@@ -9,9 +9,13 @@
 
   # Laptop Services
   hardware.bluetooth.enable = true; # Enable Bluetooth
-  services.upower.enable = true; # Battery management
+
+  # Power Management
+  services.tlp.enable = true; # Automatic power management for laptops
+  services.tlp.pd.enable = true; # power-rofiles-daemon like DBus interface
   services.thermald.enable = true; # Prevents overheating on Intel CPUs
 
+  # Custom options
   my.intel-graphics.enable = true;
 
   # System Packages

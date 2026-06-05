@@ -11,9 +11,14 @@
   # https://docs.kernel.org/sound/alsa-configuration.html#module-snd-hda-intel
   boot.blacklistedKernelModules = [ "snd_hda_intel" ];
 
+  # CPU frequency scaling
+  powerManagement.cpuFreqGovernor = "performance";
+  services.power-profiles-daemon.enable = true;
+
   # Enable ratbagd for configuring gaming mice
   services.ratbagd.enable = true;
 
+  # Custom options
   my.maccel.enable = true;
   my.nvidia.enable = true;
   my.openvpn.enable = true;

@@ -23,9 +23,9 @@
   services.flatpak.enable = true; # Flatpak
   services.gvfs.enable = true; # Gnome Virtual File System / Required by Nautilus
   services.playerctld.enable = true; # Media Keys
-  services.power-profiles-daemon.enable = true; # Power profile management
   services.printing.enable = true; # Printing
   services.resolved.enable = true; # DNS
+  services.upower.enable = true; # D-Bus service for power management
 
   virtualisation.docker.enable = true; # Docker
 

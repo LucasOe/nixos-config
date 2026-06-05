@@ -26,6 +26,9 @@
 
     mimeApps =
       let
+        # FIXME: Functions can be removed if globbing is officially supported by home-manager
+        # https://github.com/nix-community/home-manager/issues/8752#issuecomment-4568645264
+
         # https://github.com/krezh/dotnix/blob/main/modules/programs/xdg-settings/homeManager.nix
         allMimes = lib.splitString "\n" (builtins.readFile "${pkgs.shared-mime-info}/share/mime/types");
         matchingMimes = prefix: builtins.filter (mime: lib.hasPrefix prefix mime) allMimes;

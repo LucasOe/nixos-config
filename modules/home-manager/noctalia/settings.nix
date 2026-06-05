@@ -1,11 +1,18 @@
-{ config, configLib, ... }:
+{
+  config,
+  configLib,
+  lib,
+  ...
+}:
 
 let
+  cfg = config.my.noctalia;
   gaps = config.wayland.windowManager.niri.settings.layout.gaps;
 in
 {
   programs.noctalia = {
     # https://docs.noctalia.dev/v5/configuration/
+    # https://github.com/noctalia-dev/noctalia-shell/blob/v5/example.toml
     settings = {
       theme = {
         community_palette = "One";
@@ -30,6 +37,7 @@ in
       };
       control_center = {
         sidebar = "none";
+        sidebar_section = "none";
         shortcuts = [
           { type = "wifi"; }
           { type = "bluetooth"; }
@@ -54,6 +62,7 @@ in
           session_placement = "centered";
           wallpaper_placement = "centered";
         };
+        settings_show_advanced = true;
         setup_wizard_enabled = false;
         session.actions = [
           {
@@ -88,6 +97,11 @@ in
           }
         ];
       };
+      system = {
+        monitor = {
+          gpu_poll_seconds = lib.mkIf cfg.gpuMonitoring 5;
+        };
+      };
       weather = {
         effects = false;
       };
@@ -99,12 +113,14 @@ in
         monitors = [ "DP-1" ];
         offset_x = gaps;
         offset_y = gaps;
+        position = "top_right";
       };
       osd = {
         background_opacity = 1.0;
         monitors = [ "DP-1" ];
         offset_x = gaps;
         offset_y = gaps;
+        position = "top_right";
       };
       bar = {
         default = {
@@ -114,11 +130,6 @@ in
             };
           };
           capsule = true;
-          capsule_groups = [
-            "Date Time"
-            "Volume"
-            "System Monitor"
-          ];
           capsule_radius = 8.0;
           margin_edge = 0.0;
           margin_ends = 0.0;
@@ -127,22 +138,30 @@ in
           widget_spacing = 8;
           capsule_group = [
             {
-              id = "g1";
+              id = "cpu";
               members = [
-                "cpu"
-                "temp"
-                "ram"
+                "cpu_usage"
+                "cpu_temp"
+                "ram_used"
               ];
             }
             {
-              id = "g2";
+              id = "gpu";
+              members = lib.mkIf cfg.gpuMonitoring [
+                "gpu_usage"
+                "gpu_temp"
+                "gpu_vram"
+              ];
+            }
+            {
+              id = "volume";
               members = [
                 "input_volume"
                 "output_volume"
               ];
             }
             {
-              id = "g3";
+              id = "time";
               members = [
                 "clock"
                 "date"
@@ -151,7 +170,8 @@ in
           ];
           start = [
             "control-center"
-            "group:g1"
+            "group:cpu"
+            "group:gpu"
             "media"
           ];
           center = [
@@ -165,8 +185,8 @@ in
             "network"
             "battery"
             "brightness"
-            "group:g2"
-            "group:g3"
+            "group:volume"
+            "group:time"
           ];
         };
       };
@@ -179,20 +199,41 @@ in
           capsule = true;
           hide_when_no_media = true;
         };
-        cpu = {
+        cpu_usage = {
           capsule = true;
-          capsule_group = "System Monitor";
           display = "text";
+          stat = "cpu_usage";
+          type = "sysmon";
         };
-        temp = {
+        cpu_temp = {
           capsule = true;
-          capsule_group = "System Monitor";
           display = "text";
+          stat = "cpu_temp";
+          type = "sysmon";
         };
-        ram = {
+        ram_used = {
           capsule = true;
-          capsule_group = "System Monitor";
           display = "text";
+          stat = "ram_used";
+          type = "sysmon";
+        };
+        gpu_usage = {
+          capsule = true;
+          display = "text";
+          stat = "gpu_usage";
+          type = "sysmon";
+        };
+        gpu_temp = {
+          capsule = true;
+          display = "text";
+          stat = "gpu_temp";
+          type = "sysmon";
+        };
+        gpu_vram = {
+          capsule = true;
+          display = "text";
+          stat = "gpu_vram";
+          type = "sysmon";
         };
         taskbar = {
           capsule = true;
@@ -241,22 +282,18 @@ in
         };
         input_volume = {
           capsule = true;
-          capsule_group = "Volume";
           show_label = false;
         };
         output_volume = {
           capsule = true;
-          capsule_group = "Volume";
           show_label = false;
         };
         date = {
           capsule = true;
-          capsule_group = "Date Time";
           format = "{:%a, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
         };
         clock = {
           capsule = true;
-          capsule_group = "Date Time";
         };
       };
     };

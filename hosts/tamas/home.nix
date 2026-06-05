@@ -30,10 +30,12 @@
         "DP-1" = {
           width = 3440;
           height = 1440;
+          showBar = true;
         };
         "DP-2" = {
           width = 1440;
           height = 2560;
+          showBar = false;
         };
       };
     };

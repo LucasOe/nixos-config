@@ -128,11 +128,6 @@ in
       };
       bar = {
         default = {
-          monitor = {
-            "DP-2" = {
-              enabled = false;
-            };
-          };
           capsule = true;
           capsule_radius = 8.0;
           margin_edge = 0.0;

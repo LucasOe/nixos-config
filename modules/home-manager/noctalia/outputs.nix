@@ -22,6 +22,8 @@ in
               Effective monitor height in pixels after applying any rotation.
             '';
           };
+
+          showBar = lib.mkEnableOption "Show the bar for this monitor.";
         };
       }
     );
@@ -36,6 +38,11 @@ in
 
   config = {
     programs.noctalia.settings = {
+      # Show/Hide the bar for each monitor
+      bar.default.monitor = lib.mapAttrs (_: attrs: {
+        enabled = attrs.showBar;
+      }) cfg;
+
       # Generate lockscreen widgets for each monitor
       lockscreen_widgets = {
         enabled = true;

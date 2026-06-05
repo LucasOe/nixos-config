@@ -2,11 +2,9 @@
 
 {
   home-manager.users.${username} = {
-    my.monitors = {
+    my.niri.monitors = {
       "eDP-1" = {
-        niri = {
-          scale = 1.5;
-        };
+        scale = 1.5;
       };
     };
   };

@@ -28,11 +28,6 @@ in
         fill_color = config.lib.stylix.colors.withHashtag.base00;
         fill_mode = "fit";
         transition = [ "wipe" ];
-        monitors = {
-          "DP-1".path = config.stylix.image;
-          "DP-2".path = config.stylix.image;
-          "eDP-1".path = config.stylix.image;
-        };
       };
       control_center = {
         sidebar = "none";
@@ -109,14 +104,12 @@ in
       };
       notification = {
         background_opacity = 1.0;
-        monitors = [ "DP-1" ];
         offset_x = gaps;
         offset_y = gaps;
         position = "top_right";
       };
       osd = {
         background_opacity = 1.0;
-        monitors = [ "DP-1" ];
         offset_x = gaps;
         offset_y = gaps;
         position = "top_right";

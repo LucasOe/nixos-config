@@ -24,6 +24,8 @@ in
           };
 
           showBar = lib.mkEnableOption "Show the bar for this monitor.";
+          showNotifications = lib.mkEnableOption "Show notification toasts for this monitor.";
+          showOSD = lib.mkEnableOption "Show OSD popups for this monitor.";
         };
       }
     );
@@ -38,12 +40,23 @@ in
 
   config = {
     programs.noctalia.settings = {
-      # Show/Hide the bar for each monitor
+      # Set wallpaper
+      wallpaper.monitors = lib.mapAttrs (_: attrs: {
+        path = config.stylix.image;
+      }) cfg;
+
+      # Show/Hide bar
       bar.default.monitor = lib.mapAttrs (_: attrs: {
         enabled = attrs.showBar;
       }) cfg;
 
-      # Generate lockscreen widgets for each monitor
+      # Show/Hide notications toasts
+      notification.monitors = lib.attrNames (lib.filterAttrs (_: attrs: attrs.showNotifications) cfg);
+
+      # Show/Hide OSD popups
+      osd.monitors = lib.attrNames (lib.filterAttrs (_: attrs: attrs.showOSD) cfg);
+
+      # Generate lockscreen widgets
       lockscreen_widgets = {
         enabled = true;
         schema_version = 1;

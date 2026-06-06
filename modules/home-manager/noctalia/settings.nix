@@ -22,7 +22,6 @@ in
           enable_community_templates = false;
         };
       };
-      # https://github.com/iStellanova/Stellyrland/blob/827773060acf6cdd36a85f3ff78e087e2dffed3c/modules/programs/noctalia/default.nix#L41
       wallpaper = {
         enabled = true;
         directory = configLib.relativeToRoot "assets/wallpapers";
@@ -42,7 +41,7 @@ in
           { type = "wifi"; }
           { type = "bluetooth"; }
           { type = "nightlight"; }
-          { type = "notification"; }
+          { type = "power_profile"; }
         ];
       };
       desktop_widgets = {
@@ -182,8 +181,8 @@ in
             "notifications"
             "bluetooth"
             "network"
-            "battery"
             "brightness"
+            "battery"
             "group:volume"
             "group:time"
           ];

@@ -9,7 +9,7 @@ in
       "gdm"
       "greetd"
     ];
-    default = "greetd";
+    default = "gdm";
     description = "Display Manager";
   };
 

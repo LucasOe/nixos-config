@@ -45,5 +45,6 @@
     # Other Applications
     gpu-screen-recorder
     obsidian
+    proton-pass-cli
   ];
 }

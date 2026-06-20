@@ -15,6 +15,7 @@
     EDITOR = "zeditor";
     VISUAL = "zeditor";
     NODE_OPTIONS = "--no-deprecation";
+    PROTON_PASS_LINUX_KEYRING = "dbus"; # https://protonpass.github.io/pass-cli/get-started/configuration/#secure-key-storage
   };
 
   # Aliases

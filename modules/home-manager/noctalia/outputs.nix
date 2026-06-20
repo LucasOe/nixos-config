@@ -64,6 +64,7 @@ in
         widget_order = lib.concatLists (
           lib.mapAttrsToList (name: _: [
             "lockscreen-login-box@${name}"
+            "lockscreen-widget-date@${name}"
             "lockscreen-widget-clock@${name}"
           ]) cfg
         );
@@ -74,16 +75,29 @@ in
               output = name;
               cx = attrs.width / 2.0;
               cy = attrs.height - padding;
-              scale = 1.0;
+              box_width = 0.0;
+              box_height = 0.0;
               type = "login_box";
+            };
+            "lockscreen-widget-date@${name}" = {
+              output = name;
+              cx = attrs.width / 2.0;
+              cy = padding;
+              box_width = 768.0;
+              box_height = 64.0;
+              type = "clock";
+              settings.background = false;
+              settings.format = "{:%a, %b %d}";
             };
             "lockscreen-widget-clock@${name}" = {
               output = name;
               cx = attrs.width / 2.0;
-              cy = padding;
-              scale = 1.8;
+              cy = padding + 112;
+              box_width = 768.0;
+              box_height = 160.0;
               type = "clock";
               settings.background = false;
+              settings.format = "{:%H:%M}";
             };
           }) cfg
         );

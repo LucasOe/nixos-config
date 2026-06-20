@@ -46,12 +46,13 @@ in
         avatar_path = configLib.relativeToRoot "assets/avatars/tamas.png";
         corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
-        font_family = config.stylix.fonts.monospace;
+        font_family = config.stylix.fonts.sansSerif.name;
         launch_apps_as_systemd_services = true;
         middle_click_opens_widget_settings = false;
         polkit_agent = true;
         panel = {
           launcher_categories = false;
+          launcher_session_search = true;
           open_near_click_control_center = true;
           session_placement = "centered";
           wallpaper_placement = "centered";
@@ -96,6 +97,9 @@ in
           gpu_poll_seconds = lib.mkIf cfg.gpuMonitoring 5;
         };
       };
+      audio = {
+        enable_sounds = true;
+      };
       weather = {
         effects = false;
       };
@@ -113,6 +117,9 @@ in
         offset_x = gaps;
         offset_y = gaps;
         position = "top_right";
+        kinds = {
+          media = false;
+        };
       };
       lockscreen = {
         blur_intensity = 0.0;
@@ -122,6 +129,8 @@ in
         default = {
           capsule = true;
           capsule_radius = 8.0;
+          font_family = config.stylix.fonts.sansSerif.name;
+          font_weight = 400;
           margin_edge = 0.0;
           margin_ends = 0.0;
           padding = 4;
@@ -195,36 +204,42 @@ in
           display = "text";
           stat = "cpu_usage";
           type = "sysmon";
+          highlight_color = "on_surface";
         };
         cpu_temp = {
           capsule = true;
           display = "text";
           stat = "cpu_temp";
           type = "sysmon";
+          highlight_color = "on_surface";
         };
         ram_used = {
           capsule = true;
           display = "text";
           stat = "ram_used";
           type = "sysmon";
+          highlight_color = "on_surface";
         };
         gpu_usage = {
           capsule = true;
           display = "text";
           stat = "gpu_usage";
           type = "sysmon";
+          highlight_color = "on_surface";
         };
         gpu_temp = {
           capsule = true;
           display = "text";
           stat = "gpu_temp";
           type = "sysmon";
+          highlight_color = "on_surface";
         };
         gpu_vram = {
           capsule = true;
           display = "text";
           stat = "gpu_vram";
           type = "sysmon";
+          highlight_color = "on_surface";
         };
         taskbar = {
           capsule = true;

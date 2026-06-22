@@ -10,6 +10,14 @@
         match = [ { _props.namespace = "^noctalia-wallpaper"; } ];
         place-within-backdrop = true;
       }
+
+      # Disable xray on all Noctalia surfaces so it looks more realistic.
+      # Noctalia publishes blur regions automatically when ext-background-effects is available.
+      # https://docs.noctalia.dev/v5/compositor-settings/niri/?section=blur
+      {
+        match = [ { _props.namespace = "^noctalia-"; } ];
+        background-effect.xray = false;
+      }
     ];
 
     window-rule = [

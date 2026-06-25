@@ -56,6 +56,10 @@ in
         polkit_agent = true;
         panel = {
           open_near_click_control_center = true;
+          session_placement = "floating";
+          session_position = "center";
+          wallpaper_placement = "floating";
+          wallpaper_position = "center";
         };
         settings_show_advanced = true;
         setup_wizard_enabled = false;
@@ -99,6 +103,7 @@ in
       };
       audio = {
         enable_sounds = true;
+        sound_volume = 1.0;
       };
       weather = {
         effects = false;

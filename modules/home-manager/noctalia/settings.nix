@@ -47,15 +47,15 @@ in
         corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
         font_family = config.stylix.fonts.sansSerif.name;
+        launcher = {
+          categories = false;
+          session_search = true;
+        };
         launch_apps_as_systemd_services = true;
         middle_click_opens_widget_settings = false;
         polkit_agent = true;
         panel = {
-          launcher_categories = false;
-          launcher_session_search = true;
           open_near_click_control_center = true;
-          session_placement = "centered";
-          wallpaper_placement = "centered";
         };
         settings_show_advanced = true;
         setup_wizard_enabled = false;

@@ -13,6 +13,7 @@
       "eDP-1" = {
         width = 2256;
         height = 1504;
+        scale = 1.5;
 
         showBar = true;
         showNotifications = true;

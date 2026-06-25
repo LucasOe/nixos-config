@@ -23,6 +23,11 @@ in
             '';
           };
 
+          scale = lib.mkOption {
+            type = lib.types.float;
+            default = 1.0;
+          };
+
           showBar = lib.mkEnableOption "Show the bar for this monitor.";
           showNotifications = lib.mkEnableOption "Show notification toasts for this monitor.";
           showOSD = lib.mkEnableOption "Show OSD popups for this monitor.";
@@ -73,15 +78,15 @@ in
           lib.mapAttrsToList (name: attrs: {
             "lockscreen-login-box@${name}" = {
               output = name;
-              cx = attrs.width / 2.0;
-              cy = attrs.height - padding;
-              box_width = 0.0;
-              box_height = 0.0;
+              cx = attrs.width / attrs.scale / 2.0;
+              cy = attrs.height / attrs.scale - padding;
+              box_width = 400.0;
+              box_height = 70.0;
               type = "login_box";
             };
             "lockscreen-widget-date@${name}" = {
               output = name;
-              cx = attrs.width / 2.0;
+              cx = attrs.width / attrs.scale / 2.0;
               cy = padding;
               box_width = 768.0;
               box_height = 64.0;
@@ -91,7 +96,7 @@ in
             };
             "lockscreen-widget-clock@${name}" = {
               output = name;
-              cx = attrs.width / 2.0;
+              cx = attrs.width / attrs.scale / 2.0;
               cy = padding + 112;
               box_width = 768.0;
               box_height = 160.0;

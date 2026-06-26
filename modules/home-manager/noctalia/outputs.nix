@@ -23,11 +23,6 @@ in
             '';
           };
 
-          scale = lib.mkOption {
-            type = lib.types.float;
-            default = 1.0;
-          };
-
           showBar = lib.mkEnableOption "Show the bar for this monitor.";
           showNotifications = lib.mkEnableOption "Show notification toasts for this monitor.";
           showOSD = lib.mkEnableOption "Show OSD popups for this monitor.";
@@ -75,36 +70,45 @@ in
         );
 
         widget = lib.mergeAttrsList (
-          lib.mapAttrsToList (name: attrs: {
-            "lockscreen-login-box@${name}" = {
-              output = name;
-              cx = attrs.width / attrs.scale / 2.0;
-              cy = attrs.height / attrs.scale - padding;
-              box_width = 400.0;
-              box_height = 70.0;
-              type = "login_box";
-            };
-            "lockscreen-widget-date@${name}" = {
-              output = name;
-              cx = attrs.width / attrs.scale / 2.0;
-              cy = padding;
-              box_width = 768.0;
-              box_height = 64.0;
-              type = "clock";
-              settings.background = false;
-              settings.format = "{:%a, %b %d}";
-            };
-            "lockscreen-widget-clock@${name}" = {
-              output = name;
-              cx = attrs.width / attrs.scale / 2.0;
-              cy = padding + 112;
-              box_width = 768.0;
-              box_height = 160.0;
-              type = "clock";
-              settings.background = false;
-              settings.format = "{:%H:%M}";
-            };
-          }) cfg
+          lib.mapAttrsToList (
+            name: attrs:
+            let
+              # Take display scaling into effect for width and height
+              scale = config.my.niri.monitors.${name}.scale or 1;
+              effectiveWidth = attrs.width / scale;
+              effectiveHeight = attrs.height / scale;
+            in
+            {
+              "lockscreen-login-box@${name}" = {
+                output = name;
+                cx = effectiveWidth / 2.0;
+                cy = effectiveHeight - padding;
+                box_width = 400.0;
+                box_height = 70.0;
+                type = "login_box";
+              };
+              "lockscreen-widget-date@${name}" = {
+                output = name;
+                cx = effectiveWidth / 2.0;
+                cy = padding;
+                box_width = 768.0;
+                box_height = 64.0;
+                type = "clock";
+                settings.background = false;
+                settings.format = "{:%a, %b %d}";
+              };
+              "lockscreen-widget-clock@${name}" = {
+                output = name;
+                cx = effectiveWidth / 2.0;
+                cy = padding + 112;
+                box_width = 768.0;
+                box_height = 160.0;
+                type = "clock";
+                settings.background = false;
+                settings.format = "{:%H:%M}";
+              };
+            }
+          ) cfg
         );
       };
     };

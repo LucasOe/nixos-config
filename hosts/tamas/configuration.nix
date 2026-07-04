@@ -27,7 +27,7 @@
 
   # System Packages
   environment.systemPackages = with pkgs; [
-    (bottles.override { removeWarningPopup = true; })
+    bottles
     heroic
     piper
   ];

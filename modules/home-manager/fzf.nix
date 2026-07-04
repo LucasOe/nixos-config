@@ -12,8 +12,8 @@
     enableZshIntegration = true;
 
     defaultCommand = "fd --type f --follow";
-    fileWidgetCommand = "fd --type f --follow"; # Ctrl+T
-    changeDirWidgetCommand = "fd --type d --follow"; # Alt+C
+    fileWidget.command = "fd --type f --follow"; # Ctrl+T
+    changeDirWidget.command = "fd --type d --follow"; # Alt+C
 
     defaultOptions = [
       "--ansi"
@@ -24,7 +24,7 @@
       "--preview-window=border-rounded:noinfo"
       "--style=full:rounded"
     ];
-    fileWidgetOptions = [
+    fileWidget.options = [
       "--select-1"
       "--exit-0"
       "--preview='bat --color=always --style=numbers --line-range=:250 {}'"
@@ -34,10 +34,11 @@
       "--bind='start:change-preview-window(hidden)'"
       "--bind='ctrl-p:toggle-preview'"
     ];
-    historyWidgetOptions = [
+    historyWidget.options = [
       "--no-sort"
       "--exact"
     ];
+
     colors = {
       "fg" = "bright-white";
       "fg+" = "bright-white";

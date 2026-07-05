@@ -37,6 +37,7 @@
       _props.repeat = false;
     };
     "Mod+R".switch-preset-column-width = [ ];
+    "Mod+Shift+R".switch-preset-column-width-back = [ ];
     "Mod+Shift+Slash".show-hotkey-overlay = [ ];
     "Mod+Shift+Space".toggle-window-floating = [ ];
     "Mod+W".toggle-column-tabbed-display = [ ];

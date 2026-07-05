@@ -104,6 +104,8 @@
       git_panel = {
         default_width = 360;
         dock = "left";
+        entry_primary_click_action = "file_diff";
+        group_by = "none";
         tree_view = true;
       };
       # Panels -> Collaboration Panels

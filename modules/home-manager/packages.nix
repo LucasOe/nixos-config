@@ -12,11 +12,7 @@
     oxlint
     stylua
     # Command Line
-    eza
-    fd
-    jq
     p7zip
-    ripgrep
     trashy
     wl-clipboard-rs
     # GNOME Applications

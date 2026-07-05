@@ -4,6 +4,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Remove default packages
+  # https://github.com/NixOS/nixpkgs/issues/263289
+  environment.defaultPackages = [ ];
+
   # System Packages
   environment.systemPackages = with pkgs; [
     nautilus

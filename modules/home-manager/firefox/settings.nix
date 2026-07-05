@@ -4,8 +4,33 @@
   programs.firefox = {
     profiles.default.settings = {
       # Betterfox
-      # version: 150.0
+      # version: 152.0
       # https://github.com/yokoffing/Betterfox
+
+      # ============================================================================
+      # START: SECUREFOX
+      # ============================================================================
+
+      # SECTION: GENERAL
+      "gfx.content.skia-font-cache-size" = 20;
+      "content.notify.interval" = 100000;
+      # SECTION: GFX
+      "gfx.canvas.accelerated.cache-size" = 512;
+      # SECTION: JS
+      "javascript.options.baselinejit.threshold" = 50;
+      # SECTION: MEDIA CACHE
+      "media.cache_readahead_limit" = 3600;
+      "media.cache_resume_threshold" = 1800;
+      # SECTION: IMAGE CACHE
+      "image.mem.decode_bytes_at_a_time" = 32768;
+      # SECTION: NETWORKING
+      "network.buffer.cache.size" = 65535;
+      "network.buffer.cache.count" = 48;
+      "network.http.max-connections" = 1800;
+      "network.http.max-persistent-connections-per-server" = 10;
+      "network.http.max-urgent-start-excessive-connections-per-host" = 5;
+      "network.http.request.max-start-delay" = 5;
+      "network.dnsCacheExpiration" = 3600;
 
       # ============================================================================
       # START: SECUREFOX
@@ -44,7 +69,6 @@
       "privacy.clearSiteData.formdata" = true;
       "privacy.clearSiteData.historyFormDataAndDownloads" = true;
       "privacy.clearSiteData.siteSettings" = false;
-      "browser.privatebrowsing.resetPBM.enabled" = true;
       # SECTION: SHUTDOWN & SANITIZING
       "privacy.history.custom" = true;
       "privacy.sanitize.sanitizeOnShutdown" = true;
@@ -200,9 +224,7 @@
       "browser.download.open_pdf_attachments_inline" = true;
       # SECTION: TAB BEHAVIOR
       "browser.bookmarks.openInTabClosesMenu" = false;
-      "browser.menu.showViewImageInfo" = true;
       "findbar.highlightAll" = true;
-      "layout.word_select.eat_space_to_next_word" = false;
 
       # ============================================================================
       # START: SMOOTHFOX

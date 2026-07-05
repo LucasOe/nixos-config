@@ -76,6 +76,7 @@
         match = [
           { _props.app-id = "^steam_app_.*$"; }
           { _props.app-id = "^Minecraft"; }
+          { _props.title = "^Mirror's Edge"; }
         ];
         open-on-output = "DP-1";
         variable-refresh-rate = true;

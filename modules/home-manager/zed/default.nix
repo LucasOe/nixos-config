@@ -31,6 +31,15 @@
     ];
   };
 
+  home.shellAliases = {
+    zed = "zeditor";
+  };
+
+  home.sessionVariables = {
+    EDITOR = "zeditor";
+    VISUAL = "zeditor";
+  };
+
   stylix.targets.zed = {
     enable = false;
   };

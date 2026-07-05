@@ -16,4 +16,12 @@
       "--time-style=long-iso"
     ];
   };
+
+  home.shellAliases = {
+    la = "eza -la";
+    ll = "eza -l";
+    ls = "eza";
+    lt = "eza --tree";
+    tree = "eza --tree";
+  };
 }

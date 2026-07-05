@@ -76,4 +76,8 @@
       };
     };
   };
+
+  home.shellAliases = {
+    g = "git";
+  };
 }

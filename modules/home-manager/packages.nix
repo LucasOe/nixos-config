@@ -11,8 +11,6 @@
     oxfmt
     oxlint
     stylua
-    # Development
-    devenv
     # Command Line
     eza
     fd

@@ -48,10 +48,4 @@
       glibc # Required by zed-editor / https://zed.dev/docs/linux
     ];
   };
-
-  # Sudo
-  security.sudo.extraConfig = ''
-    Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
-    Defaults timestamp_timeout=120 # only ask for password every 2h
-  '';
 }

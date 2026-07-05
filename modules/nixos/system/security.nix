@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   security = {
@@ -20,8 +20,10 @@
     };
   };
 
-  environment.shellAliases = {
-    run0 = "run0 --background=''";
-    sudo = "sudo --run0-extra-arg=--background=''";
-  };
+  # Override run0 to disable the background
+  environment.systemPackages = [
+    (pkgs.writeShellScriptBin "run0" ''
+      exec ${pkgs.systemd}/bin/run0 --background= "$@"
+    '')
+  ];
 }

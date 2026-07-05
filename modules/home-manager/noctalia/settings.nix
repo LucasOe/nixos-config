@@ -67,31 +67,26 @@ in
           {
             action = "lock";
             enabled = true;
-            shortcut = "1";
             variant = "default";
           }
           {
             action = "logout";
             enabled = true;
-            shortcut = "2";
             variant = "default";
           }
           {
             action = "suspend";
             enabled = false;
-            shortcut = "3";
             variant = "default";
           }
           {
             action = "reboot";
             enabled = true;
-            shortcut = "4";
             variant = "default";
           }
           {
             action = "shutdown";
             enabled = true;
-            shortcut = "5";
             variant = "destructive";
           }
         ];
@@ -203,6 +198,7 @@ in
         media = {
           capsule = true;
           hide_when_no_media = true;
+          hide_album_art = true;
         };
         cpu_usage = {
           capsule = true;

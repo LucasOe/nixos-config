@@ -170,6 +170,7 @@ in
           ];
           start = [
             "control-center"
+            "nix-status"
             "group:cpu"
             "group:gpu"
             "media"
@@ -194,6 +195,10 @@ in
         control-center = {
           capsule = true;
           glyph = "settings";
+        };
+        nix-status = {
+          type = "lucasoe/nix-status:nix-status";
+          hide = true;
         };
         media = {
           capsule = true;
@@ -302,6 +307,34 @@ in
         clock = {
           capsule = true;
         };
+      };
+      plugins = {
+        source = [
+          {
+            name = "official";
+            location = "https://github.com/noctalia-dev/official-plugins";
+            kind = "git";
+          }
+          {
+            name = "community";
+            location = "https://github.com/noctalia-dev/community-plugins";
+            kind = "git";
+          }
+          {
+            name = "lucasoe";
+            location = "https://github.com/LucasOe/noctalia-plugins";
+            kind = "git";
+          }
+          {
+            name = "lucasoe";
+            location = "~/Projects/noctalia-plugins";
+            kind = "path";
+          }
+        ];
+        enabled = [
+          "lucasoe/proton-pass"
+          "lucasoe/nix-status"
+        ];
       };
     };
   };

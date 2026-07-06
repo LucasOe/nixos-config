@@ -195,11 +195,11 @@
       },
       "locked": {
         "dir": "packages/nix",
-        "lastModified": 1783197693,
-        "narHash": "sha256-qfi8K535nd9BjDhQmXyPSPZOBZLZ1c54wkAwIhLp0iE=",
+        "lastModified": 1783273395,
+        "narHash": "sha256-ZCFyI5uR7pwkoLzLYxFqJWV8mjujVQIgqCqm+KeF+a4=",
         "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "ff02ea1ab68e99373575c75e90542884559f9a48",
+        "rev": "3e6443a6ea1a5213adabe0327d3844e1ab432094",
         "type": "github"
       },
       "original": {
@@ -318,11 +318,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1783264446,
-        "narHash": "sha256-Xeb4OSx42L2zAVACmdmMZ0veG3Ksk8c7i0mdBEMu7JU=",
+        "lastModified": 1783304144,
+        "narHash": "sha256-2C5d5CRPWM08RxImNs2aetbkeY3e0XIYanvUCND/R3E=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "87db64f1ad856ded71a09bfae971025640a6034d",
+        "rev": "272bc873ded18ad8cf68ad81a3c74d381269de84",
         "type": "github"
       },
       "original": {
@@ -380,11 +380,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1782898510,
-        "narHash": "sha256-7QVN7ijsXbIBRrI9LdXfeoFktTS0I6HZya9tu6+STrs=",
+        "lastModified": 1783303713,
+        "narHash": "sha256-d6Zs6wD0kvWQXn7qPU0YsuqoqBhT7zi5+1M365FINt8=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "9cabea6f5973ec01f60080ea50f54f8f6d74dc95",
+        "rev": "d9d714243e2f8d10af28db5111f018ec2d77acc9",
         "type": "github"
       },
       "original": {

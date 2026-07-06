@@ -8,12 +8,6 @@
   # https://github.com/NixOS/nixpkgs/issues/263289
   environment.defaultPackages = [ ];
 
-  # System Packages
-  environment.systemPackages = with pkgs; [
-    nautilus
-    papirus-icon-theme
-  ];
-
   # Fonts
   fonts.packages = with pkgs; [
     inter

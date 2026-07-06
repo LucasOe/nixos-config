@@ -146,8 +146,9 @@ in
               ];
             }
             {
+              enabled = cfg.gpuMonitoring;
               id = "gpu";
-              members = lib.mkIf cfg.gpuMonitoring [
+              members = [
                 "gpu_usage"
                 "gpu_temp"
                 "gpu_vram"

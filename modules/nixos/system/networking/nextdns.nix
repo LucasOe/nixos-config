@@ -11,7 +11,7 @@
 
     # https://github.com/nextdns/nextdns/wiki/Configuration
     arguments = [
-      "-profile"
+      "-config"
       "fcc66c"
       "-cache-size"
       "10MB"

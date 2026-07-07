@@ -129,6 +129,8 @@
           min_column = 80;
         };
       };
+      # AI -> General
+      disable_ai = true;
       # AI -> Agent Configuration
       agent = {
         enable_feedback = false;

@@ -253,6 +253,8 @@
       "media.getusermedia.audio.processing.hpf.enabled" = false; # High-pass filter
       # PREF: disable new tab page design
       "browser.newtabpage.activity-stream.nova.enabled" = false;
+      # PREF: disable "Alt" menu bar
+      "ui.key.menuAccessKeyFocuses" = false;
 
       # ============================================================================
       # START: GNOME THEME

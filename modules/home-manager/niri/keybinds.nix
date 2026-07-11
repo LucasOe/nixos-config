@@ -10,7 +10,7 @@
   # Shell specific keybinds are configure in the `noctalia` module
   wayland.windowManager.niri.settings.binds = {
     # Apps
-    "Mod+B".spawn = "firefox-devedition";
+    "Mod+B".spawn = "firefox";
     "Mod+E".spawn = "nautilus";
     "Mod+Shift+C".spawn = "eyedropper";
 

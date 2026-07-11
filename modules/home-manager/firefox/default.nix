@@ -23,7 +23,7 @@ in
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-devedition;
+    package = pkgs.firefox;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     profiles = {

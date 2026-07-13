@@ -30,6 +30,10 @@ in
         transition = [ "wipe" ];
       };
       control_center = {
+        calendar = {
+          show_events_card = false;
+        };
+        width = 800;
         sidebar = "none";
         sidebar_section = "none";
         shortcuts = [
@@ -44,6 +48,7 @@ in
       };
       shell = {
         avatar_path = configLib.relativeToRoot "assets/avatars/tamas.png";
+        button_borders = false;
         corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
         font_family = config.stylix.fonts.sansSerif.name;
@@ -55,9 +60,11 @@ in
         middle_click_opens_widget_settings = false;
         polkit_agent = true;
         panel = {
+          borders = false;
           open_near_click_control_center = true;
           session_placement = "floating";
           session_position = "center";
+          transparency_mode = "soft";
           wallpaper_placement = "floating";
           wallpaper_position = "center";
         };
@@ -90,6 +97,10 @@ in
             variant = "destructive";
           }
         ];
+        shadow = {
+          alpha = 1.0;
+          direction = "center";
+        };
       };
       system = {
         monitor = {
@@ -107,13 +118,13 @@ in
         address = "Hamm, Germany";
       };
       notification = {
-        background_opacity = 1.0;
+        background_opacity = 0.8;
         offset_x = gaps;
         offset_y = gaps;
         position = "top_right";
       };
       osd = {
-        background_opacity = 1.0;
+        background_opacity = 0.8;
         offset_x = gaps;
         offset_y = gaps;
         position = "top_right";
@@ -127,6 +138,7 @@ in
       };
       bar = {
         default = {
+          background_opacity = 0.8;
           capsule = true;
           capsule_radius = 8.0;
           font_family = config.stylix.fonts.sansSerif.name;
@@ -134,6 +146,7 @@ in
           margin_edge = 0.0;
           margin_ends = 0.0;
           padding = 4;
+          panel_overlap = 0;
           radius = 0;
           widget_spacing = 8;
           capsule_group = [

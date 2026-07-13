@@ -19,11 +19,6 @@ in
       default = true;
       description = "Millennium";
     };
-    gamescope = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Gamescope";
-    };
     autoStart = lib.mkOption {
       type = lib.types.bool;
       default = true;
@@ -79,15 +74,6 @@ in
 
     # Enable ntsync
     boot.kernelModules = [ "ntsync" ];
-
-    # Enable Gamescope
-    programs.gamescope = {
-      enable = cfg.gamescope;
-      # https://github.com/ValveSoftware/gamescope/issues/1924
-      package = pkgs.gamescope.overrideAttrs (_: {
-        NIX_CFLAGS_COMPILE = [ "-fno-fast-math" ];
-      });
-    };
 
     # Workaround for issue with capSysNice not working in gamescope
     # https://github.com/NixOS/nixpkgs/issues/351516

@@ -83,6 +83,14 @@ in
       });
     };
 
+    # Workaround for issue with capSysNice not working in gamescope
+    # https://github.com/NixOS/nixpkgs/issues/351516
+    services.ananicy = {
+      enable = true;
+      package = pkgs.ananicy-cpp;
+      rulesProvider = pkgs.ananicy-rules-cachyos;
+    };
+
     # Autostart Steam
     environment.systemPackages = [
       (lib.mkIf cfg.autoStart (

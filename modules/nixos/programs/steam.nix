@@ -37,8 +37,14 @@ in
     programs.steam = {
       enable = true;
       package = steamPkg.override {
+        extraPkgs =
+          pkgs: with pkgs; [
+            # MangoHud is required for `gamescope --mangoapp` to work
+            mangohud
+          ];
+
         extraEnv = {
-          MANGOHUD = "1";
+          MANGOHUD = "1"; # Disable when using gamescope (use `gamescope --mangoapp` instead)
           PULSE_LATENCY_MSEC = "60";
           # Mesa (https://docs.mesa3d.org/envvars.html)
           MESA_SHADER_CACHE_MAX_SIZE = "10G";

@@ -37,6 +37,7 @@ in
     xdg.configFile."scopebuddy/scb.conf".text = ''
       export MANGOHUD=0
       SCB_GAMESCOPE_ARGS="${cfg.gamescopeArgs}"
+      SCB_APPENDMODE=1
       SCB_AUTO_RES=1
       SCB_AUTO_HDR=1
       SCB_AUTO_VRR=1

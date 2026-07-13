@@ -53,6 +53,8 @@ in
           PROTON_USE_NTSYNC = "1";
           # vkd3d-proton (https://github.com/HansKristian-Work/vkd3d-proton)
           VKD3D_CONFIG = "descriptor_heap";
+          # DXVK (https://github.com/doitsujin/dxvk)
+          DXVK_HUD = "";
           # dxvk-nvapi (https://github.com/jp7677/dxvk-nvapi)
           DXVK_NVAPI_VKREFLEX = lib.optionalAttrs config.my.nvidia.enable "1"; # Might cause problems for games not using Reflex
         };

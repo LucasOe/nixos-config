@@ -32,12 +32,6 @@ in
     programs.steam = {
       enable = true;
       package = steamPkg.override {
-        extraPkgs =
-          pkgs: with pkgs; [
-            # MangoHud is required for `gamescope --mangoapp` to work
-            mangohud
-          ];
-
         extraEnv = {
           MANGOHUD = "1";
           PULSE_LATENCY_MSEC = "60";

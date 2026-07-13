@@ -66,6 +66,11 @@
     millennium = {
       url = "github:SteamClientHomebrew/Millennium/?dir=packages/nix";
     };
+
+    scopebuddy = {
+      url = "github:HikariKnight/ScopeBuddy";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

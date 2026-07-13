@@ -44,7 +44,7 @@ in
           ];
 
         extraEnv = {
-          MANGOHUD = "1"; # Disable when using gamescope (use `gamescope --mangoapp` instead)
+          MANGOHUD = "1";
           PULSE_LATENCY_MSEC = "60";
           # Mesa (https://docs.mesa3d.org/envvars.html)
           MESA_SHADER_CACHE_MAX_SIZE = "10G";

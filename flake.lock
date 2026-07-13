@@ -368,8 +368,29 @@
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
+        "scopebuddy": "scopebuddy",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"
+      }
+    },
+    "scopebuddy": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772751261,
+        "narHash": "sha256-3h6N5h9aYumIStx+G7qYZpKTOiMG+tQokjs8c+xuJ2A=",
+        "owner": "HikariKnight",
+        "repo": "ScopeBuddy",
+        "rev": "150051976a2a1e64179edc7265175ba4e5f62f62",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HikariKnight",
+        "repo": "ScopeBuddy",
+        "type": "github"
       }
     },
     "spicetify-nix": {

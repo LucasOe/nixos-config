@@ -45,13 +45,11 @@ in
           PROTON_ENABLE_WAYLAND = "1";
           PROTON_DLSS_UPGRADE = "1"; # Can be set to a specific version, e.g. 310.5
           # Proton Cachy OS (https://github.com/CachyOS/proton-cachyos)
-          PROTON_USE_NTSYNC = "1";
+          PROTON_DXVK_LOWLATENCY = "1";
           # vkd3d-proton (https://github.com/HansKristian-Work/vkd3d-proton)
           VKD3D_CONFIG = "descriptor_heap";
           # DXVK (https://github.com/doitsujin/dxvk)
           DXVK_HUD = "";
-          # dxvk-nvapi (https://github.com/jp7677/dxvk-nvapi)
-          DXVK_NVAPI_VKREFLEX = lib.optionalAttrs config.my.nvidia.enable "1"; # Might cause problems for games not using Reflex
         };
       };
 

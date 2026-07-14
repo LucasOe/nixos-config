@@ -380,15 +380,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1772751261,
-        "narHash": "sha256-3h6N5h9aYumIStx+G7qYZpKTOiMG+tQokjs8c+xuJ2A=",
-        "owner": "HikariKnight",
+        "lastModified": 1784017740,
+        "narHash": "sha256-zFq70LvuZIpko7EmY56dEVt2X01+gutaIZFT/e9P4Hw=",
+        "owner": "LucasOe",
         "repo": "ScopeBuddy",
-        "rev": "150051976a2a1e64179edc7265175ba4e5f62f62",
+        "rev": "b0b65c02e1d7d6349b0f99ad03f6bb5477589655",
         "type": "github"
       },
       "original": {
-        "owner": "HikariKnight",
+        "owner": "LucasOe",
         "repo": "ScopeBuddy",
         "type": "github"
       }

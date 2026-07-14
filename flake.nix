@@ -68,7 +68,7 @@
     };
 
     scopebuddy = {
-      url = "github:HikariKnight/ScopeBuddy";
+      url = "github:LucasOe/ScopeBuddy";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   nixosConfig,
   pkgs,
@@ -30,9 +29,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      inputs.scopebuddy.packages.${pkgs.stdenv.hostPlatform.system}.default
-    ];
+    home.packages = with pkgs; [ scopebuddy ];
 
     xdg.configFile."scopebuddy/scb.conf".text = ''
       export MANGOHUD=0

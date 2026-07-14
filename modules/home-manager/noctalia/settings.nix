@@ -184,7 +184,6 @@ in
           ];
           start = [
             "control-center"
-            "nix-status"
             "group:cpu"
             "group:gpu"
             "media"
@@ -209,10 +208,6 @@ in
         control-center = {
           capsule = true;
           glyph = "settings";
-        };
-        nix-status = {
-          type = "lucasoe/nix-status:nix-status";
-          hide = true;
         };
         media = {
           capsule = true;
@@ -340,14 +335,18 @@ in
             kind = "git";
           }
           {
-            name = "lucasoe";
-            location = "~/Projects/noctalia-plugins";
+            name = "official";
+            location = "~/Projects/official-plugins";
+            kind = "path";
+          }
+          {
+            name = "community";
+            location = "~/Projects/community-plugins";
             kind = "path";
           }
         ];
         enabled = [
           "lucasoe/proton-pass"
-          "lucasoe/nix-status"
         ];
       };
     };

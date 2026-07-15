@@ -334,11 +334,6 @@ in
             kind = "git";
           }
           {
-            name = "lucasoe";
-            location = "https://github.com/LucasOe/noctalia-plugins";
-            kind = "git";
-          }
-          {
             name = "official";
             location = "~/Projects/official-plugins";
             kind = "path";

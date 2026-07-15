@@ -4,12 +4,13 @@ The default Steam environment variables for Steam are declared in the [Steam Mod
 
 | Variable | Value | Support | Description |
 |----------|-------|----------|-------------|
+| `DXVK_HUD` | `""` | All | Disable the HUD for DXVK. Proton CachyOS shows the compiler by default. |
 | `MANGOHUD` | `1` | All | Enable MangoHud by default. This gets disabled when using `scopebuddy` in preference of `gamescope --mangoapp`[^1]. |
-| `PROTON_ENABLE_WAYLAND` | `1` | ProtonGE & Proton CachyOS | Use native Wayland to reduce input latency [^2]. Disabled the Steam overlay and game recording. |
 | `PROTON_DLSS_UPGRADE` | `1` | ProtonGE & Proton CachyOS | Force the Latest DLSS Preset |
 | `PROTON_DXVK_LOWLATENCY` | `1` | Proton CachyOS | Enable the alternative [dxvk-low-latency](https://github.com/netborg-afps/dxvk-low-latency) fork [^2] |
+| `PROTON_ENABLE_WAYLAND` | `1` | ProtonGE & Proton CachyOS | Use native Wayland to reduce input latency [^2]. Disabled the Steam overlay and game recording. |
+| `PROTON_LOCAL_SHADER_CACHE` | `1` | Proton CachyOs | Enable per-game shader cache |
 | `VKD3D_CONFIG` | `descriptor_heap` | Proton CachyOS | Enable the experimental descriptor heap from dxkv-proton [^3] |
-| `DXVK_HUD` | `""` | All | Disable the HUD for DXVK. Proton CachyOS shows the compiler by default. |
 
 In addition, the maximum shader cache size is increased to 10GB.
 

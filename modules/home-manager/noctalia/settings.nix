@@ -334,12 +334,12 @@ in
             kind = "git";
           }
           {
-            name = "official";
+            name = "official-local";
             location = "~/Projects/official-plugins";
             kind = "path";
           }
           {
-            name = "community";
+            name = "community-local";
             location = "~/Projects/community-plugins";
             kind = "path";
           }

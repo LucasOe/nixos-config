@@ -24,6 +24,7 @@
   my.openvpn.enable = true;
   my.steam.enable = true;
   my.via.enable = true;
+  my.gpu-screen-recorder.enable = true;
 
   # System Packages
   environment.systemPackages = with pkgs; [

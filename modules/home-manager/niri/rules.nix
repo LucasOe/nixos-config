@@ -71,13 +71,14 @@
         default-window-height.fixed = 1080;
       }
 
-      # Games
+      # Steam Games
+      # Note: this doesn't match games using gamescope
       {
         match = [
           { _props.app-id = "^steam_app_.*$"; }
-          { _props.app-id = "^Minecraft"; }
-          { _props.title = "^Mirror's Edge"; }
+          { _props.app-id = "\\.exe$"; }
         ];
+        open-fullscreen = true;
         open-on-output = "DP-1";
         variable-refresh-rate = true;
       }

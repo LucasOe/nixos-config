@@ -54,7 +54,11 @@ in
         font_family = config.stylix.fonts.sansSerif.name;
         launcher = {
           categories = false;
-          session_search = true;
+          providers = {
+            session = {
+              global = true;
+            };
+          };
         };
         launch_apps_as_systemd_services = true;
         middle_click_opens_widget_settings = false;

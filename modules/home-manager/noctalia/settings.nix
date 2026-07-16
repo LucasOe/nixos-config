@@ -178,16 +178,10 @@ in
                 "output_volume"
               ];
             }
-            {
-              id = "time";
-              members = [
-                "clock"
-                "date"
-              ];
-            }
           ];
           start = [
             "control-center"
+            "nix-monitor"
             "group:cpu"
             "group:gpu"
             "media"
@@ -196,15 +190,16 @@ in
             "taskbar"
           ];
           end = [
-            "tray"
             "lock_keys"
+            "tray"
+            "mini-docker"
             "notifications"
             "bluetooth"
             "network"
             "brightness"
             "battery"
             "group:volume"
-            "group:time"
+            "clock"
           ];
         };
       };
@@ -212,6 +207,13 @@ in
         control-center = {
           capsule = true;
           glyph = "settings";
+        };
+        nix-monitor = {
+          checking_color = "on_surface";
+          show_text = false;
+          type = "avivbintangaringga/nix-monitor:nix-monitor";
+          up_to_date_color = "tertiary";
+          update_available_color = "error";
         };
         media = {
           capsule = true;
@@ -281,6 +283,11 @@ in
             "nm-applet"
           ];
         };
+        mini-docker = {
+          show_count = false;
+          status_mode = "hidden";
+          type = "8bury/mini-docker:mini-docker";
+        };
         battery = {
           capsule = true;
         };
@@ -313,12 +320,18 @@ in
           capsule = true;
           show_label = false;
         };
-        date = {
-          capsule = true;
-          format = "{:%a, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
-        };
         clock = {
           capsule = true;
+          format = "{:%H:%M} {:%a, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
+        };
+      };
+      plugin_settings = {
+        "8bury/mini-docker" = {
+          manager_placement = "attached";
+        };
+        "avivbintangaringga/nix-monitor" = {
+          clean_command = "nh clean all --keep-one";
+          show_update_available_notification = false;
         };
       };
       plugins = {
@@ -345,6 +358,8 @@ in
           }
         ];
         enabled = [
+          "8bury/mini-docker"
+          "avivbintangaringga/nix-monitor"
           "lucasoe/proton-pass"
         ];
       };

@@ -14,5 +14,7 @@
     "org/gnome/desktop/privacy".remember-recent-files = false;
     # Firefox uses dconf color scheme
     "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    # Disable maximize on title bar double-click
+    "org/gnome/desktop/wm/preferences".action-double-click-titlebar = "none";
   };
 }

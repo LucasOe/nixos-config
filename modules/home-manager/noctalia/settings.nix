@@ -123,6 +123,7 @@ in
       };
       notification = {
         background_opacity = 0.8;
+        layer = "overlay";
         offset_x = gaps;
         offset_y = gaps;
         position = "top_right";

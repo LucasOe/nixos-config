@@ -14,7 +14,10 @@
 
     # Firewall
     firewall.enable = true;
-    firewall.allowedTCPPorts = [ 22 ];
+    firewall.allowedTCPPorts = [
+      22 # SSH
+      3000 # Vite dev server
+    ];
     firewall.checkReversePath = false;
   };
 

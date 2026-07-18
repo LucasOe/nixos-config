@@ -30,4 +30,40 @@
       pkgs.gst_all_1.gst-libav
     ];
   };
+
+  # Packages that should be installed to the user profile
+  home.packages = with pkgs; [
+    baobab
+    bazaar
+    biome
+    decibels
+    eyedropper
+    file-roller
+    gnome-calculator
+    gnome-characters
+    gnome-connections
+    gnome-disk-utility
+    gnome-font-viewer
+    gnome-logs
+    loupe
+    nautilus
+    nil
+    nixd
+    nixfmt
+    obsidian
+    oxfmt
+    oxlint
+    p7zip
+    papers
+    proton-pass-cli
+    resources
+    showtime
+    simple-scan
+    snapshot
+    sqlite
+    stylua
+    trashy
+    typesetter
+    wl-clipboard-rs
+  ];
 }

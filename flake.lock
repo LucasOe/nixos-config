@@ -145,11 +145,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784129366,
-        "narHash": "sha256-N5JiyICSeQF14x+OQebNyPpYowOT9Rs1iKyeCylSzOA=",
+        "lastModified": 1784351324,
+        "narHash": "sha256-By+kuRJZRqs2TuXgtR8vJ8cTKWXw33YG/Yollu5cO1U=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "165228b0efefc3e635e5174020c40ea64271dc25",
+        "rev": "460108009ca1ff69ca2ff19079ca2c838d6e3080",
         "type": "github"
       },
       "original": {
@@ -160,11 +160,11 @@
     },
     "import-tree": {
       "locked": {
-        "lastModified": 1778781969,
-        "narHash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0=",
+        "lastModified": 1784254960,
+        "narHash": "sha256-iI88R3wHz8wTKQb5orvpc51L/Xr64AJyxid/0MKa/b8=",
         "owner": "denful",
         "repo": "import-tree",
-        "rev": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
+        "rev": "4ebb10ae17d5f1ad366e7aef5b92cb8eecf24f69",
         "type": "github"
       },
       "original": {
@@ -235,11 +235,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1784155826,
-        "narHash": "sha256-UVSn05UV5tlyYAgocTA83ujbKreFrivRG/KGtQAErds=",
+        "lastModified": 1784320426,
+        "narHash": "sha256-LEwF60zKoIAHmM12ryTQ17+/e73+fs2IHyxcj9J3gu4=",
         "ref": "refs/heads/main",
-        "rev": "f8c23c6d66d1a3ef8b5f7625d10eac84ce9af2ea",
-        "revCount": 142,
+        "rev": "e931c61ea715fec54e2343e850b4811cc6296fbb",
+        "revCount": 143,
         "type": "git",
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       },
@@ -297,11 +297,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1783224372,
-        "narHash": "sha256-8i/87eeoqiGE4yOTjwSA3Eh/ziJRQEmd/unYU+K27sk=",
+        "lastModified": 1784356753,
+        "narHash": "sha256-12KrbMiWLcf8m7pCvAtZh1ZrgF85ZXDXvfR/fWTKy84=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d407951447dcd00442e97087bf374aad70c04cea",
+        "rev": "61b7c44c4073f0b827768aff0049561b5110ea5a",
         "type": "github"
       },
       "original": {
@@ -318,11 +318,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784363671,
-        "narHash": "sha256-KsrN59riCCj2wlBROljgLMAXtHg9IDbsF+RvHUtjpyY=",
+        "lastModified": 1784376408,
+        "narHash": "sha256-H9cQABMpK1p8SXfxB1esK6mk32IEzRqqWSadHB42lCI=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "0ac8744a86d8fb293a2b1b67da0c43be0253809c",
+        "rev": "52f7ec18e073b092b5bc7ddece9e458d0155beb6",
         "type": "github"
       },
       "original": {

@@ -333,6 +333,8 @@ in
         "avivbintangaringga/nix-monitor" = {
           clean_command = "nh clean all --keep-one";
           show_update_available_notification = false;
+          hide_clean_button = true;
+          hide_update_button = true;
         };
       };
       plugins = {

@@ -20,16 +20,6 @@
     xwayland-satellite-unstable
   ];
 
-  # Fix conflicting definition by forcing niri-nix config
-  systemd.user.units."niri.service" = {
-    overrideStrategy = lib.mkForce "asDropin";
-    text = lib.mkForce ''
-      [Service]
-      X-StopIfChanged=false
-      X-RestartIfChanged=false
-    '';
-  };
-
   # NVIDIA VRAM leak workaround
   # https://niri-wm.github.io/niri/Nvidia.html
   environment.etc."nvidia/nvidia-application-profiles-rc.d/50-limit-free-buffer-pool-in-wayland-compositors.json".text =

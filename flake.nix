@@ -68,7 +68,7 @@
     };
 
     scopebuddy = {
-      url = "github:LucasOe/ScopeBuddy";
+      url = "github:OpenGamingCollective/ScopeBuddy";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

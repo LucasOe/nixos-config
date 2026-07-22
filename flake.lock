@@ -318,11 +318,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784376408,
-        "narHash": "sha256-H9cQABMpK1p8SXfxB1esK6mk32IEzRqqWSadHB42lCI=",
+        "lastModified": 1784430650,
+        "narHash": "sha256-N7cwX7wpUA4k2rpNkkEKrhr2DUhFWvGxTgz9Q+8rOLY=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "52f7ec18e073b092b5bc7ddece9e458d0155beb6",
+        "rev": "1b0d7ae454a6d09a5f2cc2097274173424139b41",
         "type": "github"
       },
       "original": {
@@ -380,15 +380,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1784017740,
+        "lastModified": 1784658606,
         "narHash": "sha256-zFq70LvuZIpko7EmY56dEVt2X01+gutaIZFT/e9P4Hw=",
-        "owner": "LucasOe",
+        "owner": "OpenGamingCollective",
         "repo": "ScopeBuddy",
-        "rev": "b0b65c02e1d7d6349b0f99ad03f6bb5477589655",
+        "rev": "86f03ce8b7c528edede1cab58a8f8cf111644792",
         "type": "github"
       },
       "original": {
-        "owner": "LucasOe",
+        "owner": "OpenGamingCollective",
         "repo": "ScopeBuddy",
         "type": "github"
       }

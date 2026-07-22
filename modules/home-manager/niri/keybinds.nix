@@ -29,12 +29,12 @@
     # General
     "Mod+C".center-column = [ ];
     "Mod+O" = {
-      toggle-overview = [ ];
       _props.repeat = false;
+      toggle-overview = [ ];
     };
     "Mod+Q" = {
-      close-window = [ ];
       _props.repeat = false;
+      close-window = [ ];
     };
     "Mod+R".switch-preset-column-width = [ ];
     "Mod+Shift+R".switch-preset-column-width-back = [ ];
@@ -66,8 +66,15 @@
     "Mod+Shift+Down".move-window-down-or-to-workspace-down = [ ];
     "Mod+Shift+Up".move-window-up-or-to-workspace-up = [ ];
 
+    "Mod+WheelScrollDown".focus-column-right = [ ];
+    "Mod+WheelScrollUp".focus-column-left = [ ];
     "Mod+WheelScrollRight".focus-column-right = [ ];
     "Mod+WheelScrollLeft".focus-column-left = [ ];
+
+    "Mod+Shift+WheelScrollDown".move-column-right = [ ];
+    "Mod+Shift+WheelScrollUp".move-column-left = [ ];
+    "Mod+Shift+WheelScrollRight".move-column-right = [ ];
+    "Mod+Shift+WheelScrollLeft".move-column-left = [ ];
 
     # Monitors
     "Mod+Ctrl+Left".focus-monitor-left = [ ];

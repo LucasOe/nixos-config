@@ -7,9 +7,22 @@
     # Actions: https://zed.dev/docs/all-actions
     userKeymaps = [
       {
+        context = "Terminal";
+        bindings = {
+          "ctrl-n" = "workspace::NewTerminal";
+          # These bindings are disabled by default to prevent conflicts.
+          # We don't override bindings used by the shell.
+          # https://fishshell.com/docs/current/interactive.html#shared-bindings
+          "ctrl-b" = "workspace::ToggleLeftDock";
+          "ctrl-e" = "file_finder::Toggle";
+          "ctrl-o" = "workspace::OpenFiles";
+          "ctrl-q" = "zed::Quit";
+        };
+      }
+      {
         context = "Terminal && selection";
         bindings = {
-          ctrl-c = "terminal::Copy";
+          "ctrl-c" = "terminal::Copy";
         };
       }
     ];

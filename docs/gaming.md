@@ -25,13 +25,6 @@ Refer to the [documentation](https://docs.bazzite.gg/Advanced/scopebuddy/).
 
 # Game Notes
 
-## Hunt Showdown: 1896
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `PROTON_ENABLE_WAYLAND` | `0` | Use XWayland to enable the Steam overlay and game recording |
-| `DXVK_NVAPI_VKREFLEX` | `1` | Enables [DXVK-NVAPI's Vulkan Reflex layer](https://github.com/jp7677/dxvk-nvapi#vulkan-reflex-layer) |
-
 ## Mirror's Edge
 
 Run with `scopebuddy` to fix letterboxing on ultrawide displays when using Proton 11.0.

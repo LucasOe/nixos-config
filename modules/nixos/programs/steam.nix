@@ -46,11 +46,10 @@ in
           PROTON_DLSS_UPGRADE = "1"; # Can be set to a specific version, e.g. 310.5
           # Proton Cachy OS (https://github.com/CachyOS/proton-cachyos)
           PROTON_DXVK_LOWLATENCY = "1";
+          PROTON_VKD3D_LOWLATENCY = "1";
           PROTON_LOCAL_SHADER_CACHE = "1";
           # vkd3d-proton (https://github.com/HansKristian-Work/vkd3d-proton)
           VKD3D_CONFIG = "descriptor_heap";
-          # DXVK (https://github.com/doitsujin/dxvk)
-          DXVK_HUD = "";
         };
       };
 

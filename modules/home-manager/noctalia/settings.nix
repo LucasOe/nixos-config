@@ -1,7 +1,6 @@
 {
   config,
   configLib,
-  lib,
   ...
 }:
 
@@ -27,11 +26,12 @@ in
         directory = configLib.relativeToRoot "assets/wallpapers";
         fill_color = config.lib.stylix.colors.withHashtag.base00;
         fill_mode = "fit";
-        transition = [ "wipe" ];
+        transition = [ ];
       };
       control_center = {
         calendar = {
           show_events_card = false;
+          show_week_numbers = true;
         };
         width = 800;
         sidebar = "none";
@@ -104,11 +104,6 @@ in
         shadow = {
           alpha = 1.0;
           direction = "center";
-        };
-      };
-      system = {
-        monitor = {
-          gpu_poll_seconds = lib.mkIf cfg.gpuMonitoring 5;
         };
       };
       audio = {
@@ -310,6 +305,7 @@ in
           capsule = true;
         };
         network = {
+          enabled = false;
           capsule = true;
           show_label = false;
         };

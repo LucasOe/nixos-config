@@ -72,15 +72,22 @@
       }
 
       # Steam Games
-      # Note: this doesn't match games using gamescope
       {
         match = [
           { _props.app-id = "^steam_app_.*$"; }
           { _props.app-id = "\\.exe$"; }
         ];
+        force-render = true; # Requires (https://github.com/niri-wm/niri/pull/2609
         open-fullscreen = true;
         open-on-output = "DP-1";
         variable-refresh-rate = true;
+      }
+
+      # Fullscreen Applications
+      {
+        match = [ { _props.is-fullscreen = true; } ]; # Requires https://github.com/niri-wm/niri/pull/4064
+        variable-refresh-rate = true;
+        force-render = true; # Requires (https://github.com/niri-wm/niri/pull/2609
       }
     ];
   };

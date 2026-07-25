@@ -8,6 +8,10 @@
       AppAutoUpdate = false;
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
+      BrowserDataBackup = {
+        AllowBackup = false;
+        AllowRestore = false;
+      };
       DisableAppUpdate = true;
       DisableFeedbackCommands = true;
       DisableFirefoxAccounts = true;

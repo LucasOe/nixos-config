@@ -18,8 +18,8 @@ in
 
     gamescopeArgs = lib.mkOption {
       type = lib.types.str;
-      default = "--prefer-output DP-1,eDP-1 --fullscreen --force-grab-cursor --mangoapp";
-      example = "--prefer-output DP-1,eDP-1 --fullscreen --force-grab-cursor --mangoapp";
+      default = "--prefer-output DP-1,eDP-1 --fullscreen --force-grab-cursor --adaptive-sync --mangoapp";
+      example = "--prefer-output DP-1,eDP-1 --fullscreen --force-grab-cursor --adaptive-sync --mangoapp";
       description = ''
         Value for SCB_GAMESCOPE_ARGS. Passed to every gamescope launch
         unless overridden by a per-game config in ~/.config/scopebuddy/AppID/.
@@ -36,8 +36,6 @@ in
       SCB_GAMESCOPE_ARGS="${cfg.gamescopeArgs}"
       SCB_APPENDMODE=1
       SCB_AUTO_RES=1
-      SCB_AUTO_HDR=1
-      SCB_AUTO_VRR=1
     '';
   };
 }

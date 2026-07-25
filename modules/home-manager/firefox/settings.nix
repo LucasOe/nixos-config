@@ -4,11 +4,11 @@
   programs.firefox = {
     profiles.default.settings = {
       # Betterfox
-      # version: 152.0
+      # version: 153.0
       # https://github.com/yokoffing/Betterfox
 
       # ============================================================================
-      # START: SECUREFOX
+      # START: FASTFOX
       # ============================================================================
 
       # SECTION: GENERAL
@@ -16,8 +16,6 @@
       "content.notify.interval" = 100000;
       # SECTION: GFX
       "gfx.canvas.accelerated.cache-size" = 512;
-      # SECTION: JS
-      "javascript.options.baselinejit.threshold" = 50;
       # SECTION: MEDIA CACHE
       "media.cache_readahead_limit" = 3600;
       "media.cache_resume_threshold" = 1800;
@@ -166,6 +164,7 @@
       # SECTION: CRASH REPORTS
       "breakpad.reportURL" = "";
       "browser.tabs.crashReporting.sendReport" = false;
+      "browser.crashReports.unsubmittedCheck.enabled" = false;
 
       # ============================================================================
       # START: PESKYFOX

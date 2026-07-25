@@ -5,26 +5,17 @@
     # Firefox has to be installed system wide for policies to work
     # https://mozilla.github.io/policy-templates/
     policies = {
-      AllowFileSelectionDialogs = true;
       AppAutoUpdate = false;
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
-      BackgroundAppUpdate = false;
-      BlockAboutAddons = false;
-      BlockAboutConfig = false;
-      BlockAboutProfiles = false;
-      BlockAboutSupport = false;
       DisableAppUpdate = true;
       DisableFeedbackCommands = true;
       DisableFirefoxAccounts = true;
-      DisableFirefoxScreenshots = false;
       DisableFirefoxStudies = true;
       DisableFormHistory = true;
       DisableMasterPasswordCreation = true;
-      DisablePrivateBrowsing = false;
       DisableProfileImport = true;
-      DisableProfileRefresh = false;
-      DisableSafeMode = false;
+      DisableSetDesktopBackground = true;
       DisableTelemetry = true;
       DisplayBookmarksToolbar = "never";
       DNSOverHTTPS = {
@@ -36,11 +27,8 @@
         Locked = true;
         Cryptomining = true;
         Fingerprinting = true;
+        EmailTracking = true;
       };
-      EncryptedMediaExtensions = {
-        Enabled = true;
-      };
-      ExtensionUpdate = true;
       FirefoxHome = {
         Highlights = false;
         Search = false;
@@ -59,20 +47,10 @@
       OfferToSaveLogins = false;
       OfferToSaveLoginsDefault = false;
       PasswordManagerEnabled = false;
-      PictureInPicture = {
-        Enabled = true;
-      };
-      PopupBlocking = {
-        Allow = [ ];
-        Default = true;
-      };
-      PromptForDownloadLocation = true;
       SearchEngines = {
         PreventInstalls = true;
       };
-      SearchSuggestEnabled = false;
       SkipTermsOfUse = true;
-      StartDownloadsInTempDirectory = false;
       TranslateEnabled = false;
       UserMessaging = {
         ExtensionRecommendations = false;

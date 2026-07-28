@@ -15,7 +15,7 @@ in
 
   config = lib.mkIf cfg.enable {
     services.displayManager.gdm.enable = true;
-    services.displayManager.defaultSession = "niri-uwsm";
+    services.displayManager.defaultSession = "niri";
 
     # Set GDM user profile picture
     # https://discourse.nixos.org/t/setting-the-user-profile-image-under-gnome/36233/7

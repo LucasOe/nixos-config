@@ -51,10 +51,12 @@
       ];
     };
 
-    window-rule = [
+    _children = [
       {
-        geometry-corner-radius = 8.0;
-        clip-to-geometry = true;
+        window-rule._children = [
+          { geometry-corner-radius = 8.0; }
+          { clip-to-geometry = true; }
+        ];
       }
     ];
 

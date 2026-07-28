@@ -36,5 +36,33 @@ in
 
     # Enable system wide CUDA support for packages
     nixpkgs.config.cudaSupport = true;
+
+    # NVIDIA does not return its free buffer pool to the GPU under Wayland
+    # compositors, so niri's VRAM climbs across a session and never drops
+    # when other apps need it.
+    # https://niri-wm.github.io/niri/Nvidia.html
+    environment.etc."nvidia/nvidia-application-profiles-rc.d/50-limit-free-buffer-pool-in-wayland-compositors.json".text =
+      builtins.toJSON {
+        rules = [
+          {
+            pattern = {
+              feature = "procname";
+              matches = "niri";
+            };
+            profile = "Limit Free Buffer Pool On Wayland Compositors";
+          }
+        ];
+        profiles = [
+          {
+            name = "Limit Free Buffer Pool On Wayland Compositors";
+            settings = [
+              {
+                key = "GLVidHeapReuseRatio";
+                value = 0;
+              }
+            ];
+          }
+        ];
+      };
   };
 }

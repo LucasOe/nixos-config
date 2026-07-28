@@ -25,7 +25,12 @@ in
   config = {
     wayland.windowManager.niri.settings = {
       # https://niri-wm.github.io/niri/Configuration%3A-Outputs.html
-      output = lib.mapAttrsToList (name: attrs: { _args = [ name ]; } // attrs) cfg;
+      _children = lib.mapAttrsToList (name: attrs: {
+        output = {
+          _args = [ name ];
+        }
+        // attrs;
+      }) cfg;
     };
   };
 }

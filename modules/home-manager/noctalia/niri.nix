@@ -2,13 +2,15 @@
 
 {
   wayland.windowManager.niri.settings = {
-    window-rule = [
+    _children = [
       # Floating Noctalia settings window
       {
-        match = [ { _props.app-id = "dev.noctalia.Noctalia.Settings"; } ];
-        open-floating = true;
-        default-column-width.proportion = 0.5;
-        default-window-height.proportion = 0.75;
+        window-rule._children = [
+          { match._props.app-id = "dev.noctalia.Noctalia.Settings"; }
+          { open-floating = true; }
+          { default-column-width.proportion = 0.5; }
+          { default-window-height.proportion = 0.75; }
+        ];
       }
     ];
 

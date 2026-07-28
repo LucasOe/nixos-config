@@ -1,11 +1,9 @@
-{ inputs, ... }:
+{ ... }:
 
 {
   nixpkgs.overlays = [
-    inputs.niri-nix.overlays.niri-nix
-
     (final: prev: {
-      niri-unstable = prev.niri-unstable.overrideAttrs (old: {
+      niri = prev.niri.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
           # feat: force render (https://github.com/niri-wm/niri/pull/2609, mithicSpirit branch @ d98bc1d)
           (final.fetchpatch2 {

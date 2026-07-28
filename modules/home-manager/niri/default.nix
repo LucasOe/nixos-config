@@ -4,7 +4,8 @@
   wayland.windowManager.niri = {
     enable = true;
 
-    # We set the portal in the NixOS module
+    # Already set by the NixOS module
     portalPackage = null;
+    systemd.enable = false;
   };
 }

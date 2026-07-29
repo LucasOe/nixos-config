@@ -1,8 +1,14 @@
-{ ... }:
+{ config, ... }:
 
 {
   # Use console keymap from services.xserver.xkb.layout
   console.useXkbConfig = true;
+
+  environment.variables = {
+    XKB_DEFAULT_LAYOUT = config.services.xserver.xkb.layout;
+    XKB_DEFAULT_VARIANT = config.services.xserver.xkb.variant;
+    XKB_DEFAULT_OPTIONS = config.services.xserver.xkb.options;
+  };
 
   # Locale
   time.timeZone = "Europe/Berlin";

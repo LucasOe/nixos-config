@@ -26,6 +26,14 @@
   my.via.enable = true;
   my.gpu-screen-recorder.enable = false;
 
+  my.noctalia-greeter = {
+    output = {
+      # name = "DP-1";
+      layout = "DP-1:0,560; DP-2:3440,0";
+      transforms = "DP-1:normal; DP-2:270";
+    };
+  };
+
   # System Packages
   environment.systemPackages = with pkgs; [
     bottles

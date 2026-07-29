@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   # https://niri-wm.github.io/niri/Configuration%3A-Introduction.html
@@ -26,18 +26,12 @@
       border = {
         on = [ ];
         width = 2;
-        active-color = config.lib.stylix.colors.withHashtag.base0B;
-        inactive-color = config.lib.stylix.colors.withHashtag.base03;
-        urgent-color = config.lib.stylix.colors.withHashtag.base0F;
       };
 
       tab-indicator = {
         on = [ ];
         gap = 2;
         corner-radius = 1;
-        active-color = config.lib.stylix.colors.withHashtag.base0B;
-        inactive-color = config.lib.stylix.colors.withHashtag.base02;
-        urgent-color = config.lib.stylix.colors.withHashtag.base0F;
       };
 
       default-column-width.proportion = 0.500;

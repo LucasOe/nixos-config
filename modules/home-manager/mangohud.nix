@@ -19,6 +19,10 @@
       reload_cfg = "";
       upload_log = "";
       reset_fps_metrics = "";
+      # FPS Limit
+      # https://www.reddit.com/r/nvidia/s/eeiXz0R43U
+      fps_limit = 138;
+      vsync = 2; # Mailbox (VSync with uncapped FPS)
     };
   };
 

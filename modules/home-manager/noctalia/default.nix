@@ -1,15 +1,10 @@
 {
   inputs,
   lib,
-  osConfig,
   pkgs,
   ...
 }:
 
-let
-  noctaliaPkg = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  cudaSupport = osConfig.nixpkgs.config.cudaSupport or false;
-in
 {
   options.my.noctalia = {
     gpuMonitoring = lib.mkEnableOption ''
@@ -23,7 +18,7 @@ in
   config = {
     programs.noctalia = {
       enable = true;
-      package = noctaliaPkg.override { cudaSupport = cudaSupport; };
+      package = pkgs.noctalia;
     };
 
     # Disable GUI/IPC-managed configuration

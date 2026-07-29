@@ -86,6 +86,11 @@ in
                 box_width = 400.0;
                 box_height = 70.0;
                 type = "login_box";
+                settings = {
+                  show_media = false;
+                  show_session_buttons = true;
+                  show_weather = false;
+                };
               };
               "lockscreen-widget-date@${name}" = {
                 output = name;
@@ -94,8 +99,10 @@ in
                 box_width = 768.0;
                 box_height = 64.0;
                 type = "clock";
-                settings.background = false;
-                settings.format = "{:%a, %b %d}";
+                settings = {
+                  background = false;
+                  format = "{:%a, %b %d}";
+                };
               };
               "lockscreen-widget-clock@${name}" = {
                 output = name;
@@ -104,8 +111,10 @@ in
                 box_width = 768.0;
                 box_height = 160.0;
                 type = "clock";
-                settings.background = false;
-                settings.format = "{:%H:%M}";
+                settings = {
+                  background = false;
+                  format = "{:%H:%M}";
+                };
               };
             }
           ) cfg

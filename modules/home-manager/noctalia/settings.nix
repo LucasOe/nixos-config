@@ -61,7 +61,6 @@ in
           };
         };
         launch_apps_as_systemd_services = true;
-        middle_click_opens_widget_settings = false;
         polkit_agent = true;
         panel = {
           borders = false;
@@ -327,9 +326,9 @@ in
           manager_placement = "attached";
         };
         "avivbintangaringga/nix-monitor" = {
-          clean_command = "nh clean all --keep-one";
           show_update_available_notification = false;
           hide_clean_button = true;
+          hide_optimize_button = true;
           hide_update_button = true;
         };
       };

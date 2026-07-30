@@ -259,22 +259,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-flatpak": {
-      "locked": {
-        "lastModified": 1781332575,
-        "narHash": "sha256-tyh5yzbIN2ftH+uilyTWR6WCMZQeh3m5iOowTLNodyk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "51effaf9783e0226281ad10e95a4af6c8a145316",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "51effaf9783e0226281ad10e95a4af6c8a145316",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1785318670,
@@ -366,7 +350,6 @@
         "millennium": "millennium",
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-flatpak": "nixpkgs-flatpak",
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
         "scopebuddy": "scopebuddy",

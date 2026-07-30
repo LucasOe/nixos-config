@@ -18,6 +18,7 @@
   programs.dconf.enable = true; # dconf
   programs.seahorse.enable = true; # GNOME Passwords & Key management
 
+  services.flatpak.enable = true;
   services.gvfs.enable = true; # Gnome Virtual File System / Required by Nautilus
   services.playerctld.enable = true; # Media Keys
   services.printing.enable = true; # Printing

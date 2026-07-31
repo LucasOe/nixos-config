@@ -3,8 +3,6 @@
 {
   # https://niri-wm.github.io/niri/Configuration%3A-Introduction.html
   wayland.windowManager.niri.settings = {
-    spawn-sh-at-startup = [ "noctalia" ];
-
     layout = {
       gaps = 10;
       center-focused-column = "never";

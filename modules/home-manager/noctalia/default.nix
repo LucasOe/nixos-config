@@ -19,6 +19,7 @@
     programs.noctalia = {
       enable = true;
       package = pkgs.noctalia;
+      systemd.enable = true;
     };
 
     # Disable GUI/IPC-managed configuration

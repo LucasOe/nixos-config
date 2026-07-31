@@ -35,11 +35,12 @@
         defaultsFor = prefix: app: lib.genAttrs (matchingMimes prefix) (_: app);
 
         # Default Applications
-        defaultTextEditor = "dev.zed.Zed.desktop";
-        defaultImageViewer = "org.gnome.Loupe.desktop";
-        defaultVideoPlayer = "org.gnome.Showtime.desktop";
         defaultAudioPlayer = "org.gnome.Showtime.desktop";
         defaultBrowser = "firefox-devedition.desktop";
+        defaultDocumentViewer = "org.gnome.Papers.desktop";
+        defaultImageViewer = "org.gnome.Loupe.desktop";
+        defaultTextEditor = "dev.zed.Zed.desktop";
+        defaultVideoPlayer = "org.gnome.Showtime.desktop";
 
         mediaDefaults = lib.mkMerge [
           (defaultsFor "text/" defaultTextEditor)
@@ -57,6 +58,8 @@
           "application/x-shellscript" = defaultTextEditor;
           "application/xml" = defaultTextEditor;
           "application/yaml" = defaultTextEditor;
+          # Documents
+          "application/pdf" = defaultDocumentViewer;
           # Browser
           "x-scheme-handler/http" = defaultBrowser;
           "x-scheme-handler/https" = defaultBrowser;

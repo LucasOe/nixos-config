@@ -7,9 +7,6 @@
   # Keymap
   services.xserver.xkb.layout = "de";
 
-  # Laptop Services
-  hardware.bluetooth.enable = true; # Enable Bluetooth
-
   # Power Management
   services.tlp.enable = true; # Automatic power management for laptops
   services.tlp.pd.enable = true; # power-rofiles-daemon like DBus interface

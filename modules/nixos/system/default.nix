@@ -15,15 +15,17 @@
     roboto-mono
   ];
 
-  programs.dconf.enable = true; # dconf
-  programs.seahorse.enable = true; # GNOME Passwords & Key management
+  hardware.bluetooth.enable = true;
+
+  programs.dconf.enable = true;
+  programs.seahorse.enable = true;
 
   services.flatpak.enable = true;
-  services.gvfs.enable = true; # Gnome Virtual File System / Required by Nautilus
-  services.playerctld.enable = true; # Media Keys
-  services.printing.enable = true; # Printing
-  services.resolved.enable = true; # DNS
-  services.upower.enable = true; # D-Bus service for power management
+  services.gvfs.enable = true;
+  services.playerctld.enable = true;
+  services.printing.enable = true;
+  services.resolved.enable = true;
+  services.upower.enable = true;
 
   virtualisation.docker.enable = true; # Docker
 

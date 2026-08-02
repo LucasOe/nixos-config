@@ -86,8 +86,6 @@
       };
     in
     {
-      # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
         olem = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -97,8 +95,6 @@
             (inputs.import-tree ./modules/nixos)
             (inputs.import-tree ./hosts/olem)
 
-            # make home-manager as a module of nixos
-            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -117,8 +113,6 @@
             (inputs.import-tree ./modules/nixos)
             (inputs.import-tree ./hosts/tamas)
 
-            # make home-manager as a module of nixos
-            # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

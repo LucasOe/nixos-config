@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  pkgs,
   username,
   ...
 }:
@@ -43,6 +44,7 @@ in
   config = {
     programs.noctalia-greeter = {
       enable = true;
+      package = pkgs.noctalia-greeter;
 
       settings = {
         session = {

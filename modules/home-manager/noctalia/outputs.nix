@@ -89,6 +89,7 @@ in
                 settings = {
                   show_media = false;
                   show_session_buttons = true;
+                  show_unlock_hint = false;
                   show_weather = false;
                 };
               };

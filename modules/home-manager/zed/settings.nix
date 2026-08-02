@@ -55,6 +55,10 @@
       prettier = {
         allowed = false;
       };
+      # Languages & Tools -> File Types
+      file_types = {
+        "YAML" = [ "base" ];
+      };
       # Languages & Tools -> Inline Diagnostics
       diagnostics = {
         inline.enabled = true;

@@ -1,9 +1,9 @@
-{ config, ... }:
+{ nixosConfig, ... }:
 
 {
   programs.spicetify = {
     colorScheme = "custom";
-    customColorScheme = with config.lib.stylix.colors; {
+    customColorScheme = with nixosConfig.theme.colors; {
       text = base06;
       subtext = base05;
       main = base01;

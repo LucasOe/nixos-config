@@ -1,15 +1,15 @@
-{ config, ... }:
+{ nixosConfig, ... }:
 
 let
-  midnightTheme = config.lib.stylix.colors {
+  midnightTheme = nixosConfig.theme.colors {
     template = ./themes/midnight.css.mustache;
     extension = ".css";
   };
-  disblockOriginTheme = config.lib.stylix.colors {
+  disblockOriginTheme = nixosConfig.theme.colors {
     template = ./themes/disblockOrigin.css.mustache;
     extension = ".css";
   };
-  discordAdblockTheme = config.lib.stylix.colors {
+  discordAdblockTheme = nixosConfig.theme.colors {
     template = ./themes/discordAdblock.css.mustache;
     extension = ".css";
   };
@@ -35,8 +35,8 @@ in
       hardwareVideoAcceleration = true;
       minimizeToTray = true;
       openLinksWithElectron = false;
-      splashBackground = config.lib.stylix.colors.withHashtag.base01;
-      splashColor = config.lib.stylix.colors.withHashtag.base05;
+      splashBackground = nixosConfig.theme.colors.withHashtag.base01;
+      splashColor = nixosConfig.theme.colors.withHashtag.base05;
     };
 
     vencord = {

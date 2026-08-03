@@ -54,10 +54,28 @@ in
           default = username;
         };
         appearance = {
-          scheme = "Synced";
+          # scheme = "Synced";
           hide_logo = true;
           corner_radius_scale = 0.5;
-          font_family = config.stylix.fonts.sansSerif.name;
+          font_family = config.theme.fonts.sansSerif.name;
+          palette = with config.theme.colors.withHashtag; {
+            primary = base0D;
+            on_primary = base00;
+            secondary = base0E;
+            on_secondary = base00;
+            tertiary = base0B;
+            on_tertiary = base00;
+            error = base08;
+            on_error = base00;
+            surface = base00;
+            on_surface = base07;
+            surface_variant = base01;
+            on_surface_variant = base05;
+            outline = base02;
+            shadow = base00;
+            hover = base0B;
+            on_hover = base00;
+          };
         };
         output = {
           name = cfg.output.name;
@@ -65,9 +83,9 @@ in
           transforms = cfg.output.transforms;
         };
         cursor = {
-          theme = config.stylix.cursor.name;
-          size = config.stylix.cursor.size;
-          path = "${config.stylix.cursor.package}/share/icons";
+          theme = config.theme.cursor.name;
+          size = config.theme.cursor.size;
+          path = "${config.theme.cursor.package}/share/icons";
         };
         keyboard = {
           layout = config.services.xserver.xkb.layout;

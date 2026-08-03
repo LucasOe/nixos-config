@@ -2,20 +2,21 @@
   config,
   inputs,
   lib,
+  nixosConfig,
   pkgs,
   ...
 }:
 
 let
-  colors = config.lib.stylix.colors {
+  colors = nixosConfig.theme.colors {
     template = ./assets/colors.css.mustache;
     extension = ".css";
   };
-  userChrome = config.lib.stylix.colors {
+  userChrome = nixosConfig.theme.colors {
     template = ./assets/userChrome.css.mustache;
     extension = ".css";
   };
-  userContent = config.lib.stylix.colors {
+  userContent = nixosConfig.theme.colors {
     template = ./assets/userContent.css.mustache;
     extension = ".css";
   };

@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ nixosConfig, inputs, ... }:
 
 {
   programs.zed-editor = {
@@ -7,15 +7,15 @@
       # https://zed.dev/schema/themes/v0.2.0.json
       # https://github.com/zed-industries/zed/blob/main/assets/themes/one/one.json
       # https://github.com/zed-industries/zed/blob/main/crates/settings_content/src/theme.rs#L506
-      "Stylix" =
-        with config.lib.stylix.colors.withHashtag;
+      "NixOS Generated" =
+        with nixosConfig.theme.colors.withHashtag;
         with inputs.nix-colorizer.hex;
         {
-          name = "Stylix";
+          name = "NixOS Generated";
           author = "LucasOe";
           themes = [
             {
-              name = "Stylix";
+              name = "NixOS Generated";
               appearance = "dark";
               style = {
                 # Surface

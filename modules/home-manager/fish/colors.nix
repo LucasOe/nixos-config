@@ -1,8 +1,8 @@
-{ config, ... }:
+{ nixosConfig, ... }:
 
 {
   # https://fishshell.com/docs/current/interactive.html#syntax-highlighting-variables
-  programs.fish.interactiveShellInit = with config.lib.stylix.colors; ''
+  programs.fish.interactiveShellInit = with nixosConfig.theme.colors; ''
     set fish_color_normal white
     set fish_color_command green
     set fish_color_keyword magenta

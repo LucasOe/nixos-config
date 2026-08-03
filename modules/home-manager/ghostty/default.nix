@@ -4,6 +4,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
+      theme = "nixos";
       font-size = 13;
       font-feature = "'calt', 'zero'";
       cursor-style = "bar";
@@ -51,9 +52,5 @@
         "shift+arrow_up=adjust_selection:up"
       ];
     };
-  };
-
-  stylix.targets.ghostty = {
-    enable = true;
   };
 }

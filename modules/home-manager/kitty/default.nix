@@ -14,6 +14,7 @@
       font_size = 13.0;
       window_padding_width = 10;
     };
+
     mouseBindings = {
       "left click" = "ungrabbed mouse_handle_click selection link prompt";
       # URL handling
@@ -42,9 +43,5 @@
       # Layout management
       "ctrl+shift+l" = "next_layout";
     };
-  };
-
-  stylix.targets.kitty = {
-    enable = true;
   };
 }

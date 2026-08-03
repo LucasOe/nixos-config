@@ -1,6 +1,7 @@
 {
   config,
   configLib,
+  nixosConfig,
   ...
 }:
 
@@ -14,8 +15,6 @@ in
     # https://github.com/noctalia-dev/noctalia-shell/blob/v5/example.toml
     settings = {
       theme = {
-        community_palette = "One";
-        source = "community";
         templates = {
           enable_builtin_templates = false;
           enable_community_templates = false;
@@ -24,7 +23,7 @@ in
       wallpaper = {
         enabled = true;
         directory = configLib.relativeToRoot "assets/wallpapers";
-        fill_color = config.lib.stylix.colors.withHashtag.base00;
+        fill_color = nixosConfig.theme.colors.withHashtag.base00;
         fill_mode = "fit";
         transition = [ ];
       };
@@ -51,7 +50,7 @@ in
         button_borders = false;
         corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
-        font_family = config.stylix.fonts.sansSerif.name;
+        font_family = nixosConfig.theme.fonts.sansSerif.name;
         launcher = {
           categories = false;
           providers = {
@@ -139,8 +138,9 @@ in
         default = {
           background_opacity = 0.8;
           capsule = true;
+          capsule_fill = nixosConfig.theme.colors.withHashtag.base02;
           capsule_radius = 8.0;
-          font_family = config.stylix.fonts.sansSerif.name;
+          font_family = nixosConfig.theme.fonts.sansSerif.name;
           font_weight = 400;
           margin_edge = 0.0;
           margin_ends = 0.0;
@@ -150,6 +150,7 @@ in
           widget_spacing = 8;
           capsule_group = [
             {
+              fill = nixosConfig.theme.colors.withHashtag.base02;
               id = "cpu";
               members = [
                 "cpu_usage"
@@ -159,6 +160,7 @@ in
             }
             {
               enabled = cfg.gpuMonitoring;
+              fill = nixosConfig.theme.colors.withHashtag.base02;
               id = "gpu";
               members = [
                 "gpu_usage"
@@ -167,6 +169,7 @@ in
               ];
             }
             {
+              fill = nixosConfig.theme.colors.withHashtag.base02;
               id = "volume";
               members = [
                 "input_volume"

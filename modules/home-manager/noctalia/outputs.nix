@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  nixosConfig,
+  ...
+}:
 
 let
   cfg = config.my.noctalia.monitors;
@@ -42,7 +47,7 @@ in
     programs.noctalia.settings = {
       # Set wallpaper
       wallpaper.monitors = lib.mapAttrs (_: attrs: {
-        path = config.stylix.image;
+        path = nixosConfig.theme.wallpaper.image;
       }) cfg;
 
       # Show/Hide bar

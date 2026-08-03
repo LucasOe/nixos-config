@@ -34,27 +34,6 @@
         "type": "github"
       }
     },
-    "flake-parts": {
-      "inputs": {
-        "nixpkgs-lib": [
-          "stylix",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1782949081,
-        "narHash": "sha256-vp6Y/Grm98ESt6ceOkWiHWyZRDV3J1RID4w+6NWK9yA=",
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "rev": "17c9d6cdfc60c64f4ee8d306f9bc0b4ccb51481e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hercules-ci",
-        "repo": "flake-parts",
-        "type": "github"
-      }
-    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -249,6 +228,7 @@
     },
     "root": {
       "inputs": {
+        "base16": "base16",
         "firefox-gnome-theme": "firefox-gnome-theme",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
@@ -259,8 +239,7 @@
         "noctalia": "noctalia",
         "noctalia-greeter": "noctalia-greeter",
         "scopebuddy": "scopebuddy",
-        "spicetify-nix": "spicetify-nix",
-        "stylix": "stylix"
+        "spicetify-nix": "spicetify-nix"
       }
     },
     "scopebuddy": {
@@ -304,39 +283,6 @@
         "type": "github"
       }
     },
-    "stylix": {
-      "inputs": {
-        "base16": "base16",
-        "base16-fish": [],
-        "base16-helix": [],
-        "base16-vim": [],
-        "firefox-gnome-theme": [],
-        "flake-parts": "flake-parts",
-        "gnome-shell": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nur": [],
-        "systems": "systems_2",
-        "tinted-kitty": "tinted-kitty",
-        "tinted-schemes": [],
-        "tinted-tmux": [],
-        "tinted-zed": []
-      },
-      "locked": {
-        "lastModified": 1785610152,
-        "narHash": "sha256-A9ULLA7jySD8VcDj2igqhiHeddRHDAPAofdBizQctNQ=",
-        "owner": "nix-community",
-        "repo": "stylix",
-        "rev": "e491a6a6fa8d170e872b92864fc51fb6080c934c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "stylix",
-        "type": "github"
-      }
-    },
     "systems": {
       "locked": {
         "lastModified": 1681028828,
@@ -349,37 +295,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_2": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "tinted-kitty": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1735730497,
-        "narHash": "sha256-4KtB+FiUzIeK/4aHCKce3V9HwRvYaxX+F1edUrfgzb8=",
-        "owner": "tinted-theming",
-        "repo": "tinted-kitty",
-        "rev": "de6f888497f2c6b2279361bfc790f164bfd0f3fa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tinted-theming",
-        "repo": "tinted-kitty",
         "type": "github"
       }
     }

@@ -1,9 +1,9 @@
-{ config, ... }:
+{ nixosConfig, ... }:
 
 {
   programs.zed-editor = {
     # https://zed.dev/docs/visual-customization
-    userSettings = with config.stylix; {
+    userSettings = with nixosConfig.theme; {
       # General -> Workspace Restoration
       session = {
         restore_unsaved_buffers = false;
@@ -16,7 +16,7 @@
         diagnostics = false;
       };
       # Apperance -> Theme
-      theme = "Stylix";
+      theme = "NixOS Generated";
       icon_theme = "Colored Zed Icons Theme Dark";
       # Apperance -> Buffer Font
       buffer_font_family = fonts.monospace.name;

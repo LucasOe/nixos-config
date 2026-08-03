@@ -58,8 +58,4 @@
       "list-label" = "bright-black";
     };
   };
-
-  stylix.targets.fzf = {
-    enable = false;
-  };
 }

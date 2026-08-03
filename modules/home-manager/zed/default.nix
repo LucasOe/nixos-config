@@ -40,8 +40,4 @@
     EDITOR = "zeditor";
     VISUAL = "zeditor";
   };
-
-  stylix.targets.zed = {
-    enable = false;
-  };
 }

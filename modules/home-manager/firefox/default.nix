@@ -53,12 +53,4 @@ in
   };
 
   home.file.".mozilla/native-messaging-hosts".enable = false;
-
-  stylix.targets.firefox = {
-    enable = false;
-    firefoxGnomeTheme.enable = true;
-    profileNames = [
-      "default"
-    ];
-  };
 }

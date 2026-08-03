@@ -62,11 +62,6 @@ in
         };
       };
     };
-
-  };
-
-  stylix.targets.nixcord = {
-    enable = false;
   };
 
   xdg.desktopEntries = {

@@ -16,8 +16,4 @@
     # Extensions
     enabledExtensions = [ ];
   };
-
-  stylix.targets.spicetify = {
-    enable = false;
-  };
 }

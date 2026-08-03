@@ -28,7 +28,16 @@
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.firefox-gnome-theme.follows = "firefox-gnome-theme";
+      # Disable unused dependencies
+      inputs.base16-fish.follows = "";
+      inputs.base16-helix.follows = "";
+      inputs.base16-vim.follows = "";
+      inputs.gnome-shell.follows = "";
+      inputs.firefox-gnome-theme.follows = "";
+      inputs.nur.follows = "";
+      inputs.tinted-tmux.follows = "";
+      inputs.tinted-zed.follows = "";
+      inputs.tinted-schemes.follows = "";
     };
 
     nix-colorizer = {

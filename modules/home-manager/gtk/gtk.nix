@@ -1,4 +1,9 @@
-{ config, nixosConfig, ... }:
+{
+  config,
+  nixosConfig,
+  pkgs,
+  ...
+}:
 
 let
   gtkTheme = nixosConfig.theme.colors {
@@ -10,6 +15,11 @@ in
   gtk = {
     enable = true;
 
+    theme = {
+      package = pkgs.adw-gtk3;
+      name = "adw-gtk3";
+    };
+    gtk4.theme = null; # Silence warning for `home.stateVersion` less than 26.05
     gtk3.extraCss = ''@import url("file://${gtkTheme}");'';
     gtk4.extraCss = ''@import url("file://${gtkTheme}");'';
 

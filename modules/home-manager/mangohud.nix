@@ -26,13 +26,13 @@
       vsync = 2; # Mailbox (VSync with uncapped FPS)
 
       # Theme
-      text_color = base05;
+      text_color = base07;
       text_outline_color = base00;
       background_color = base00;
       gpu_color = base0B;
       cpu_color = base0D;
       vram_color = base0C;
-      media_player_color = base05;
+      media_player_color = base07;
       engine_color = base0E;
       wine_color = base0E;
       frametime_color = base0B;

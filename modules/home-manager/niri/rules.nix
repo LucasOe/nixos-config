@@ -101,6 +101,7 @@
       {
         window-rule._children = [
           { match._props.is-fullscreen = true; } # Requires https://github.com/niri-wm/niri/pull/4064
+          { exclude._props.app-id = "^firefox"; }
           { variable-refresh-rate = true; }
           { force-render = true; } # Requires https://github.com/niri-wm/niri/pull/2609
         ];

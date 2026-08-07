@@ -15,7 +15,7 @@ in
   gtk = {
     enable = true;
 
-    theme = {
+    gtk3.theme = {
       package = pkgs.adw-gtk3;
       name = "adw-gtk3";
     };

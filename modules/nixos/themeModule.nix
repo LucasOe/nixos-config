@@ -81,13 +81,11 @@ in
       };
     };
 
-    wallpaper = {
-      image = lib.mkOption {
-        description = "Wallpaper image.";
-        # Ensure the path is copied to the store
-        type = with lib.types; nullOr (coercedTo path (src: "${src}") pathInStore);
-        default = null;
-      };
+    wallpaper = lib.mkOption {
+      description = "Wallpaper image.";
+      # Ensure the path is copied to the store
+      type = with lib.types; nullOr (coercedTo path (src: "${src}") pathInStore);
+      default = null;
     };
 
     avatar = lib.mkOption {

@@ -47,7 +47,7 @@ in
     programs.noctalia.settings = {
       # Set wallpaper
       wallpaper.monitors = lib.mapAttrs (_: attrs: {
-        path = nixosConfig.theme.wallpaper.image;
+        path = nixosConfig.theme.wallpaper;
       }) cfg;
 
       # Show/Hide bar

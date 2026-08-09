@@ -89,6 +89,13 @@ in
         default = null;
       };
     };
+
+    avatar = lib.mkOption {
+      description = "Avatar image.";
+      # Ensure the path is copied to the store
+      type = with lib.types; nullOr (coercedTo path (src: "${src}") pathInStore);
+      default = null;
+    };
   };
 
   imports = [ inputs.base16.nixosModule ];

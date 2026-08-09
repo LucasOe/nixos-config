@@ -95,5 +95,11 @@ in
         };
       };
     };
+
+    # Set profile picture for AccountService
+    systemd.tmpfiles.rules = lib.mkIf (config.theme.avatar != null) [
+      "f+ /var/lib/AccountsService/users/${username}  0600 root root - [User]\\nIcon=/var/lib/AccountsService/icons/${username}\\n"
+      "L+ /var/lib/AccountsService/icons/${username}  - - - - ${config.theme.avatar}"
+    ];
   };
 }

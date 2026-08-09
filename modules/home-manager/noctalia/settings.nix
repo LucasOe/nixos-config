@@ -46,7 +46,6 @@ in
         enabled = false;
       };
       shell = {
-        avatar_path = configLib.relativeToRoot "assets/avatars/tamas.png";
         button_borders = false;
         corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/

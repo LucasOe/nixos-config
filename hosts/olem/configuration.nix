@@ -1,4 +1,9 @@
-{ username, pkgs, ... }:
+{
+  configLib,
+  pkgs,
+  username,
+  ...
+}:
 
 {
   # Enable networking
@@ -11,6 +16,9 @@
   services.tlp.enable = true; # Automatic power management for laptops
   services.tlp.pd.enable = true; # power-rofiles-daemon like DBus interface
   services.thermald.enable = true; # Prevents overheating on Intel CPUs
+
+  # Set profile picture
+  theme.avatar = configLib.relativeToRoot "assets/avatars/olem.png";
 
   # Custom options
   my.intel-graphics.enable = true;

@@ -1,4 +1,9 @@
-{ pkgs, username, ... }:
+{
+  configLib,
+  pkgs,
+  username,
+  ...
+}:
 
 {
   # Enable networking
@@ -17,6 +22,9 @@
 
   # Enable ratbagd for configuring gaming mice
   services.ratbagd.enable = true;
+
+  # Set profile picture
+  theme.avatar = configLib.relativeToRoot "assets/avatars/tamas.png";
 
   # Custom options
   my.maccel.enable = true;

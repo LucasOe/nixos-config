@@ -1,8 +1,14 @@
-{ ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   programs.ghostty = {
     enable = true;
+    systemd.enable = true; # Start Ghostty at login to improve "first" startup times
     settings = {
       theme = "nixos";
       font-size = 13;
@@ -12,6 +18,8 @@
       window-padding-x = 10;
       window-padding-y = 10;
       confirm-close-surface = false;
+      gtk-single-instance = true;
+      quit-after-last-window-closed = false;
       keybind = [
         # Remove defeault keybinds
         # Using Niri for tabs, no need for this in Ghostty.
@@ -53,4 +61,8 @@
       ];
     };
   };
+
+  # `programs.ghostty.systemd.enable` does not autostart the service at boot, this fixes it
+  xdg.configFile."systemd/user/graphical-session.target.wants/app-com.mitchellh.ghostty.service".source =
+    lib.mkIf config.programs.ghostty.systemd.enable "${pkgs.ghostty}/share/systemd/user/app-com.mitchellh.ghostty.service";
 }

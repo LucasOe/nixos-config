@@ -15,8 +15,15 @@
     "Mod+Shift+C".spawn = "eyedropper";
 
     # Terminal
-    "Mod+Return".spawn = "ghostty";
-    "Mod+T".spawn = "ghostty";
+    # https://ghostty.org/docs/linux/systemd#scripting-new-windows
+    "Mod+Return".spawn = [
+      "ghostty"
+      "+new-window"
+    ];
+    "Mod+T".spawn = [
+      "ghostty"
+      "+new-window"
+    ];
     "Mod+Shift+Return".spawn = [
       "ghostty"
       "--class=com.mitchellh.ghostty.float"

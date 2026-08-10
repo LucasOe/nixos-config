@@ -27,10 +27,12 @@
     "Mod+Shift+Return".spawn = [
       "ghostty"
       "--class=com.mitchellh.ghostty.float"
+      "--quit-after-last-window-closed=true"
     ];
     "Mod+Shift+T".spawn = [
       "ghostty"
       "--class=com.mitchellh.ghostty.float"
+      "--quit-after-last-window-closed=true"
     ];
 
     # General

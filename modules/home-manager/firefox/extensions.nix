@@ -35,6 +35,7 @@ in
           (extension "ublock-origin" "uBlock0@raymondhill.net" true)
           (extension "vercel" "extension@vercel.com" false)
           (extension "web-clipper-obsidian" "clipper@obsidian.md" false)
+          (extension "youtube-no-translation" "{9a3104a2-02c2-464c-b069-82344e5ed4ec}" false)
         ];
     };
   };

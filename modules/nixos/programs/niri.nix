@@ -50,6 +50,7 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  services.graphical-desktop.enable = true;
 
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
 }

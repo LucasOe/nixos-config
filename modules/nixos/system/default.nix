@@ -36,4 +36,7 @@
       glibc # Required by zed-editor / https://zed.dev/docs/linux
     ];
   };
+
+  # Disable speechd/Speech Dispatcher (enabled by services.graphical-desktop.enable)
+  services.speechd.enable = false;
 }

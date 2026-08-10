@@ -39,4 +39,10 @@
 
   # Disable speechd/Speech Dispatcher (enabled by services.graphical-desktop.enable)
   services.speechd.enable = false;
+
+  # Disable HTML docs and info, man pages are enough
+  documentation = {
+    doc.enable = false;
+    info.enable = false;
+  };
 }

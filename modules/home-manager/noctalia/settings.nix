@@ -47,6 +47,9 @@ in
       };
       shell = {
         button_borders = false;
+        card_borders = false;
+        input_borders = false;
+        popup_borders = false;
         corner_radius_scale = 0.5;
         date_format = "{:%A, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
         font_family = nixosConfig.theme.fonts.sansSerif.name;

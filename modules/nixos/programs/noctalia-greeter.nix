@@ -1,8 +1,6 @@
 {
   config,
-  inputs,
   lib,
-  pkgs,
   username,
   ...
 }:
@@ -39,12 +37,9 @@ in
     };
   };
 
-  imports = [ inputs.noctalia-greeter.nixosModules.default ];
-
   config = {
-    programs.noctalia-greeter = {
+    services.displayManager.noctalia-greeter = {
       enable = true;
-      package = pkgs.noctalia-greeter;
 
       settings = {
         session = {

@@ -222,42 +222,42 @@ in
         };
         cpu_usage = {
           capsule = true;
-          display = "text";
+          visualization = "none";
           stat = "cpu_usage";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         cpu_temp = {
           capsule = true;
-          display = "text";
+          visualization = "none";
           stat = "cpu_temp";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         ram_used = {
           capsule = true;
-          display = "text";
+          visualization = "none";
           stat = "ram_used";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         gpu_usage = {
           capsule = true;
-          display = "text";
+          visualization = "none";
           stat = "gpu_usage";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         gpu_temp = {
           capsule = true;
-          display = "text";
+          visualization = "none";
           stat = "gpu_temp";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         gpu_vram = {
           capsule = true;
-          display = "text";
+          visualization = "none";
           stat = "gpu_vram";
           type = "sysmon";
           highlight_color = "on_surface";

@@ -110,7 +110,9 @@
           "[](bright-green)"
         ];
       };
-      # Special
+      # Nix
+      # Only works with `nix-shell` and direnv
+      # See: https://github.com/NixOS/nix/issues/3862
       nix_shell = {
         disabled = false;
         # Settings
@@ -122,7 +124,7 @@
           "[](blue)"
         ];
       };
-      # The direnv module has problems when using Ghostty and bash!
+      # Direnv
       direnv = {
         disabled = false;
         # Settings

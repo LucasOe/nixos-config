@@ -32,6 +32,11 @@ in
         allowedTCPPorts = [
           22 # SSH
           3000 # Vite dev server
+          5355 # LLMNR
+        ];
+        allowedUDPPorts = [
+          5353 # mDNS
+          5355 # LLMNR
         ];
       };
 
@@ -60,9 +65,11 @@ in
     services.resolved = {
       enable = true;
 
-      settings.Resolve = lib.mkIf (cfg.nextdns.id != null) {
+      settings.Resolve = {
         Domains = [ "~." ];
-        DNSOverTLS = "true";
+        MulticastDNS = "yes";
+        LLMNR = "yes";
+        DNSOverTLS = lib.mkIf (cfg.nextdns.id != null) "yes";
         FallbackDNS = [
           "1.1.1.1"
           "1.0.0.1"

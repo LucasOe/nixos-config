@@ -6,8 +6,9 @@
 }:
 
 {
-  # Enable networking
+  # Networking
   networking.hostName = "olem";
+  my.networking.nextdns.id = "fcc66c";
 
   # Keymap
   services.xserver.xkb.layout = "de";

@@ -24,7 +24,6 @@
   services.gvfs.enable = true;
   services.playerctld.enable = true;
   services.printing.enable = true;
-  services.resolved.enable = true;
   services.upower.enable = true;
 
   virtualisation.docker.enable = true; # Docker

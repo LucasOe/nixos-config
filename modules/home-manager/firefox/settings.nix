@@ -1,5 +1,9 @@
-{ ... }:
+{ lib, nixosConfig, ... }:
 
+let
+  nextdns.id = nixosConfig.my.networking.nextdns.id;
+  hostname = nixosConfig.networking.hostName;
+in
 {
   programs.firefox = {
     profiles.default.settings = {
@@ -96,10 +100,6 @@
       # SECTION: HTTPS-ONLY MODE
       "dom.security.https_only_mode" = true;
       "dom.security.https_only_mode_error_page_user_suggestions" = true;
-      # SECTION: DNS-over-HTTPS
-      "network.trr.mode" = 2;
-      "network.trr.max-fails" = 5;
-      "network.trr.uri" = "https://dns.nextdns.io/fcc66c/firefox";
       # SECTION: PASSWORDS
       "signon.rememberSignons" = false;
       "signon.schemeUpgrades" = true;
@@ -277,6 +277,12 @@
       "gnomeTheme.allTabsButton" = false;
       "gnomeTheme.tabAlignLeft" = true;
       "gnomeTheme.bookmarksOnFullscreen" = false;
+    }
+    # SECTION: DNS-over-HTTPS
+    // lib.mkIf (nextdns.id != null) {
+      "network.trr.mode" = 2;
+      "network.trr.max-fails" = 5;
+      "network.trr.uri" = "https://dns.nextdns.io/${nextdns.id}/${hostname}-firefox";
     };
   };
 }

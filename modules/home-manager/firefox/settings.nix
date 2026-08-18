@@ -279,7 +279,7 @@ in
       "gnomeTheme.bookmarksOnFullscreen" = false;
     }
     # SECTION: DNS-over-HTTPS
-    // lib.mkIf (nextdns.id != null) {
+    // lib.optionalAttrs (nextdns.id != null) {
       "network.trr.mode" = 2;
       "network.trr.max-fails" = 5;
       "network.trr.uri" = "https://dns.nextdns.io/${nextdns.id}/${hostname}-firefox";

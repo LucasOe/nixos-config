@@ -205,7 +205,6 @@ in
       };
       widget = {
         control-center = {
-          capsule = true;
           glyph = "settings";
         };
         nix-monitor = {
@@ -216,54 +215,46 @@ in
           update_available_color = "error";
         };
         media = {
-          capsule = true;
           hide_when_no_media = true;
           hide_album_art = true;
         };
         cpu_usage = {
-          capsule = true;
           visualization = "none";
           stat = "cpu_usage";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         cpu_temp = {
-          capsule = true;
           visualization = "none";
           stat = "cpu_temp";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         ram_used = {
-          capsule = true;
           visualization = "none";
           stat = "ram_used";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         gpu_usage = {
-          capsule = true;
           visualization = "none";
           stat = "gpu_usage";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         gpu_temp = {
-          capsule = true;
           visualization = "none";
           stat = "gpu_temp";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         gpu_vram = {
-          capsule = true;
           visualization = "none";
           stat = "gpu_vram";
           type = "sysmon";
           highlight_color = "on_surface";
         };
         taskbar = {
-          capsule = true;
           capsule_opacity = 0.0;
           capsule_padding = 16.0;
           empty_color = "outline";
@@ -277,59 +268,38 @@ in
           workspace_group_capsule = false;
           workspace_label_placement = "centered";
         };
-        tray = {
-          capsule = true;
-          hidden = [
-            "nm-applet"
-          ];
-        };
         mini-docker = {
           show_count = false;
           status_mode = "hidden";
           type = "8bury/mini-docker:mini-docker";
         };
-        battery = {
-          capsule = true;
-        };
         bluetooth = {
-          capsule = true;
+          enabled = false;
           show_label = false;
         };
         brightness = {
-          capsule = true;
           show_label = false;
         };
         lock_keys = {
-          capsule = true;
           display = "full";
           hide_when_off = true;
           show_scroll_lock = true;
         };
-        notifications = {
-          capsule = true;
-        };
         network = {
           enabled = false;
-          capsule = true;
           show_label = false;
         };
         input_volume = {
-          capsule = true;
           show_label = false;
         };
         output_volume = {
-          capsule = true;
           show_label = false;
         };
         clock = {
-          capsule = true;
           format = "{:%H:%M} {:%a, %b %d}"; # https://docs.noctalia.dev/v5/configuration/date-format-tokens/
         };
       };
       plugin_settings = {
-        "8bury/mini-docker" = {
-          manager_placement = "attached";
-        };
         "avivbintangaringga/nix-monitor" = {
           show_update_available_notification = false;
           hide_clean_button = true;

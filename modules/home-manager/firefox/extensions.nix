@@ -28,6 +28,7 @@ in
           (extension "proton-pass" "78272b6fa58f4a1abaac99321d503a20@proton.me" true)
           (extension "react-devtools" "@react-devtools" false)
           (extension "redirector" "redirector@einaregilsson.com" false)
+          (extension "refern-clipper" "jackson@refern.app" false)
           (extension "refined-github-" "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}" false)
           (extension "sponsorblock" "sponsorBlocker@ajay.app" false)
           (extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" false)

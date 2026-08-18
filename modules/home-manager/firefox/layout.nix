@@ -26,6 +26,7 @@ in
             # Extensions
             (extension "78272b6fa58f4a1abaac99321d503a20@proton.me")
             (extension "clipper@obsidian.md")
+            # (extension "jackson@refern.app")
           ];
           toolbar-menubar = [
             "menubar-items"

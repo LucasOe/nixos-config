@@ -31,6 +31,6 @@
       name = "Papirus-Dark";
     };
 
-    wallpaper = configLib.relativeToRoot "assets/wallpapers/nixos.png";
+    # wallpaper = configLib.relativeToRoot "assets/wallpapers/nixos.png";
   };
 }

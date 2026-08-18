@@ -56,6 +56,7 @@
     p7zip
     papers
     proton-pass-cli
+    refern
     resources
     showtime
     simple-scan

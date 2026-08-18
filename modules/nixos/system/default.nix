@@ -44,4 +44,13 @@
     doc.enable = false;
     info.enable = false;
   };
+
+  # Use scx_lavd scheduler
+  services.scx = {
+    enable = true;
+    scheduler = "scx_lavd";
+    # Automatically decide the scheduler's power mode (performance vs.
+    # powersave vs. balanced) based on the system's active power profile.
+    extraArgs = [ "--autopower" ];
+  };
 }

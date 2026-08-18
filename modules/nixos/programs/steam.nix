@@ -69,6 +69,8 @@ in
 
     # Workaround for issue with capSysNice not working in gamescope
     # https://github.com/NixOS/nixpkgs/issues/351516
+    #
+    # Using ananicy-cpp with sched-ext seems to be mostly supported.
     services.ananicy = {
       enable = true;
       package = pkgs.ananicy-cpp;

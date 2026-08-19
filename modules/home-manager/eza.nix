@@ -9,11 +9,13 @@
       "--header"
       "--sort=type"
       "--no-permissions"
-      "--hyperlink"
+      "--hyperlink=auto"
       "--level=3"
       "--git-ignore"
       "--time=created"
       "--time-style=long-iso"
+      "--short-nix"
+      "--loc"
     ];
   };
 

@@ -63,11 +63,7 @@
   };
 
   outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      ...
-    }:
+    inputs@{ nixpkgs, ... }:
     let
       configLib = import ./lib { inherit (nixpkgs) lib; };
       username = "lucas";
@@ -87,14 +83,6 @@
             (inputs.import-tree ./overlays)
             (inputs.import-tree ./modules/nixos)
             (inputs.import-tree ./hosts/olem)
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username} = (inputs.import-tree ./modules/home-manager);
-            }
           ];
         };
 
@@ -105,14 +93,6 @@
             (inputs.import-tree ./overlays)
             (inputs.import-tree ./modules/nixos)
             (inputs.import-tree ./hosts/tamas)
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username} = (inputs.import-tree ./modules/home-manager);
-            }
           ];
         };
       };

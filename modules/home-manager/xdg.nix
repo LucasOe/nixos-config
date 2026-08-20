@@ -9,6 +9,11 @@
       setSessionVariables = false;
     };
 
+    autostart = {
+      enable = true;
+      readOnly = true;
+    };
+
     mimeApps =
       let
         # FIXME: Functions can be removed if globbing is officially supported by home-manager

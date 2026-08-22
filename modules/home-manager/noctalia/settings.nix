@@ -108,7 +108,7 @@ in
       };
       audio = {
         enable_sounds = true;
-        sound_volume = 1.0;
+        sound_volume = 0.5;
       };
       weather = {
         effects = false;
@@ -250,7 +250,7 @@ in
         };
         gpu_vram = {
           visualization = "none";
-          stat = "gpu_vram";
+          stat = "gpu_vram_used";
           type = "sysmon";
           highlight_color = "on_surface";
         };
@@ -267,6 +267,10 @@ in
           show_all_outputs = true;
           workspace_group_capsule = false;
           workspace_label_placement = "centered";
+          actions = {
+            scroll_down = "none";
+            scroll_up = "none";
+          };
         };
         mini-docker = {
           show_count = false;

@@ -1,9 +1,4 @@
-{
-  inputs,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, ... }:
 
 {
   options.my.noctalia = {
@@ -13,12 +8,9 @@
     '';
   };
 
-  imports = [ inputs.noctalia.homeModules.default ];
-
   config = {
     programs.noctalia = {
       enable = true;
-      package = pkgs.noctalia;
       systemd.enable = true;
     };
 

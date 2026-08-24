@@ -13,7 +13,7 @@
         nativeBuildInputs = with final; [
           autoPatchelfHook
           rpmextract
-          wrapGAppsHook4
+          wrapGAppsHook3
         ];
 
         buildInputs = with final; [

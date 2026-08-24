@@ -45,6 +45,7 @@
 
     maccel = {
       url = "github:Gnarus-G/maccel";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     millennium = {

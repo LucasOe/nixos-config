@@ -44,7 +44,7 @@ in
           ];
         };
         seen = [ ];
-        currentVersion = 23;
+        currentVersion = 26;
         newElementCount = 0;
       };
     };

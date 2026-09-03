@@ -9,13 +9,13 @@
     mutableUserSettings = false;
     mutableUserTasks = false;
 
-    # Extensions
+    # Extensions removed from this list do not get automaticall removed
+    # See: https://github.com/zed-industries/zed/issues/40266
     extensions = [
-      # Themes
-      "colored-zed-icons-theme"
-      # Languages / Grammars
       "biome"
+      "colored-zed-icons-theme"
       "csharp"
+      "depsy-lsp"
       "dockerfile"
       "emmet"
       "fish"
@@ -27,8 +27,6 @@
       "sql"
       "toml"
       "tsgo"
-      # Other
-      "dependi"
     ];
   };
 

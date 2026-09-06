@@ -5,16 +5,18 @@
     (final: prev: {
       niri = prev.niri.overrideAttrs (old: {
         patches = (old.patches or [ ]) ++ [
-          # feat: force render (https://github.com/niri-wm/niri/pull/2609, mithicSpirit branch @ d98bc1d)
+          # feat: force render (v2)
+          # https://github.com/niri-wm/niri/pull/4392
           (final.fetchpatch2 {
-            url = "https://github.com/niri-wm/niri/compare/7f26c3ee804fb6ed458ef7fb0e3c794f14e0b3bc...d98bc1df96befa4ed60f3e6e419778b8544a3641.diff?full_index=1";
-            hash = "sha256-rBtWDfcJM8QNv3tih+jDihL3B7k1IdX0VbcavBIJsgo=";
+            url = "https://github.com/niri-wm/niri/compare/1352ddeefa7a2687d5f7babd346abe878625c3a1.diff?full_index=1";
+            hash = "sha256-Tih+zFUiUbtYu5hXhql8TlW5Jkmo78ZNKi8rC/YejnI=";
           })
 
-          # window-rule: add is-fullscreen matcher (https://github.com/niri-wm/niri/pull/4064)
+          # window-rule: add is-fullscreen matcher
+          # https://github.com/niri-wm/niri/pull/4064
           (final.fetchpatch2 {
-            url = "https://github.com/niri-wm/niri/compare/7f26c3ee804fb6ed458ef7fb0e3c794f14e0b3bc...9a72ee871ebc269f666962945e445470cdf3a7ef.diff?full_index=1";
-            hash = "sha256-4yc0BcFZIUNVNzk4KiMOUslBiMByp1FbjOMrQJKoTMI=";
+            url = "https://github.com/niri-wm/niri/compare/c50f06b48d047d3cb7a4a07ec95242602394c81a.diff?full_index=1";
+            hash = "sha256-3cLJEool4uysX5h1UgH4VmbBJdMOOUrrtJl+GaBX0OQ=";
           })
         ];
       });

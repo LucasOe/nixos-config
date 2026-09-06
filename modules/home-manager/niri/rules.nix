@@ -90,7 +90,7 @@
         window-rule._children = [
           { match._props.app-id = "^steam_app_.*$"; }
           { match._props.app-id = "\.exe$"; }
-          { force-render = true; } # Requires https://github.com/niri-wm/niri/pull/2609
+          { force-render = 30; } # Requires https://github.com/niri-wm/niri/pull/4392
           { open-fullscreen = true; }
           { open-on-output = "DP-1"; }
           { variable-refresh-rate = true; }
@@ -103,7 +103,7 @@
           { match._props.is-fullscreen = true; } # Requires https://github.com/niri-wm/niri/pull/4064
           { exclude._props.app-id = "^firefox"; }
           { variable-refresh-rate = true; }
-          { force-render = true; } # Requires https://github.com/niri-wm/niri/pull/2609
+          { force-render = 30; } # Requires https://github.com/niri-wm/niri/pull/4392
         ];
       }
     ];

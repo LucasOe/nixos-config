@@ -19,6 +19,7 @@
       DisableFormHistory = true;
       DisableMasterPasswordCreation = true;
       DisableProfileImport = true;
+      DisableRemoteImprovements = true;
       DisableSetDesktopBackground = true;
       DisableTelemetry = true;
       DisplayBookmarksToolbar = "never";

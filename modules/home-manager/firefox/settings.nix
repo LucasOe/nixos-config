@@ -8,7 +8,7 @@ in
   programs.firefox = {
     profiles.default.settings = {
       # Betterfox
-      # version: 153.0
+      # version: 154.0
       # https://github.com/yokoffing/Betterfox
 
       # ============================================================================
@@ -161,6 +161,7 @@ in
       "app.shield.optoutstudies.enabled" = false;
       "app.normandy.enabled" = false;
       "app.normandy.api_url" = "";
+      "nimbus.rollouts.enabled" = false;
       # SECTION: CRASH REPORTS
       "breakpad.reportURL" = "";
       "browser.tabs.crashReporting.sendReport" = false;

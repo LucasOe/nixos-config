@@ -17,8 +17,11 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    import-tree.url = "github:denful/import-tree";
+    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst";
+
+    import-tree = {
+      url = "github:denful/import-tree";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";

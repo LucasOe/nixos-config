@@ -3,11 +3,11 @@
     (final: prev: {
       refern = final.stdenv.mkDerivation (finalAttrs: {
         pname = "refern";
-        version = "1.6.0";
+        version = "1.8.1";
 
         src = final.fetchurl {
           url = "https://storage.googleapis.com/refern-releases/releases/v${finalAttrs.version}/refern-${finalAttrs.version}-1.x86_64.rpm";
-          hash = "sha256-mfi48WsHqP7jLPeaDK5E9SHajh4gf5pegwrdIFoWEkc=";
+          hash = "sha256-M43SilIQTaexCW/Lhc+Lh0NII5Sarjh0SJElEQtOlZU=";
         };
 
         nativeBuildInputs = with final; [
@@ -31,6 +31,7 @@
 
         preFixup = ''
           gappsWrapperArgs+=(
+            --prefix PATH : "${final.lib.makeBinPath [ final.desktop-file-utils ]}"
             --prefix LD_LIBRARY_PATH : "${final.lib.makeLibraryPath [ final.libayatana-appindicator ]}"
           )
         '';

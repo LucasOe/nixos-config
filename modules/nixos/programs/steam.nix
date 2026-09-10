@@ -35,19 +35,25 @@ in
         extraEnv = {
           MANGOHUD = "1";
           PULSE_LATENCY_MSEC = "60";
+
           # Mesa (https://docs.mesa3d.org/envvars.html)
           MESA_SHADER_CACHE_MAX_SIZE = "10G";
+
           # Nvidia (https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/README/openglenvvariables.html)
           __GL_SHADER_DISK_CACHE = "1";
           __GL_SHADER_DISK_CACHE_SIZE = "10737418240"; # 10 GB
           __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1"; # Allow unlimited shader cache (~/.cache/nvidia)
+
           # Proton GE (https://github.com/gloriouseggroll/proton-ge-custom)
+          # Note: these environment variables are also used by Proton CachyOS!
           PROTON_ENABLE_WAYLAND = "1";
-          PROTON_DLSS_UPGRADE = "1"; # Can be set to a specific version, e.g. 310.5
-          # Proton Cachy OS (https://github.com/CachyOS/proton-cachyos)
+          PROTON_DLSS_UPGRADE = "1";
+
+          # Proton CachyOS (https://github.com/CachyOS/proton-cachyos)
           PROTON_DXVK_LOWLATENCY = "1";
           PROTON_VKD3D_LOWLATENCY = "1";
           PROTON_LOCAL_SHADER_CACHE = "1";
+
           # vkd3d-proton (https://github.com/HansKristian-Work/vkd3d-proton)
           VKD3D_CONFIG = "descriptor_heap";
         };

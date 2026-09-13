@@ -164,6 +164,32 @@
           "session"
         ];
       };
+
+      # Screenshot
+      "Mod+BackSpace" = {
+        _props.hotkey-overlay-title = "Annotate Screen";
+        spawn = [
+          "noctalia"
+          "msg"
+          "annotate"
+        ];
+      };
+      "Mod+Print" = {
+        _props.hotkey-overlay-title = "Screenshot Region";
+        spawn = [
+          "noctalia"
+          "msg"
+          "screenshot-region"
+        ];
+      };
+      "Mod+Ctrl+Print" = {
+        _props.hotkey-overlay-title = "Screenshot Screen";
+        spawn = [
+          "noctalia"
+          "msg"
+          "screenshot-fullscreen"
+        ];
+      };
     };
   };
 }

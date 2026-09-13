@@ -135,11 +135,6 @@
     "Mod+Shift+8".move-column-to-workspace = 8;
     "Mod+Shift+9".move-column-to-workspace = 9;
 
-    # Screenshots
-    "Mod+Print".screenshot = [ ];
-    "Mod+Ctrl+Print".screenshot-screen = [ ];
-    "Mod+Alt+Print".screenshot-window = [ ];
-
     # Screen mirroring
     # https://github.com/Ferdi265/wl-mirror/issues/59
     "Mod+Alt+P" = {

@@ -72,6 +72,9 @@ in
           wallpaper_placement = "floating";
           wallpaper_position = "center";
         };
+        screenshot = {
+          directory = "${config.xdg.userDirs.pictures}/Screenshots";
+        };
         settings_show_advanced = true;
         setup_wizard_enabled = false;
         session.actions = [

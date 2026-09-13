@@ -91,7 +91,7 @@
           { match._props.app-id = "^steam_app_.*$"; }
           { match._props.app-id = "\.exe$"; }
           { force-render = 30; } # Requires https://github.com/niri-wm/niri/pull/4392
-          { open-fullscreen = true; }
+          # { open-fullscreen = true; }
           { open-on-output = "DP-1"; }
           { variable-refresh-rate = true; }
         ];

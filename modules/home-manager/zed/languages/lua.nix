@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.zed-editor = {
@@ -12,7 +12,7 @@
           format_on_save = "on";
           formatter = {
             external = {
-              command = "stylua";
+              command = lib.getExe pkgs.stylua;
               arguments = [ "-" ];
             };
           };

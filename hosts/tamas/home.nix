@@ -41,5 +41,8 @@
         };
       };
     };
+
+    # Custom options
+    my.easyeffects.enable = true;
   };
 }

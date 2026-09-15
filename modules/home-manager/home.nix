@@ -8,25 +8,30 @@
 {
   config = lib.mkIf nixosConfig.my.gui.enable {
     home.packages = with pkgs; [
-      baobab
+      # Gnome Core Apps
+      baobab # Disk Usage Analyzer
+      decibels # Audio Player
+      file-roller # File Roller
+      gnome-calculator # Calculator
+      gnome-characters # Character
+      gnome-connections # Connections
+      gnome-disk-utility # Disks
+      gnome-font-viewer # Fonts
+      gnome-logs # Logs
+      loupe # Image Viewer
+      papers # Document Viewer
+      showtime # Video Player
+      simple-scan # Document Scanner
+      snapshot # Camera
+
+      # Gnome Circle Apps
       bazaar
-      decibels
       eyedropper
-      file-roller
-      gnome-calculator
-      gnome-characters
-      gnome-connections
-      gnome-disk-utility
-      gnome-font-viewer
-      gnome-logs
-      loupe
-      obsidian
-      papers
-      refern
       resources
-      showtime
-      simple-scan
-      snapshot
+
+      # Other
+      obsidian
+      refern
     ];
   };
 }

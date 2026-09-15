@@ -3,8 +3,7 @@
 {
   options.my.noctalia = {
     gpuMonitoring = lib.mkEnableOption ''
-      Monitor GPU temperature and VRAM usage.
-      Disabled by default so a discrete GPU is not woken on laptops.
+      Bar widgets for GPU temperature and VRAM usage.
     '';
   };
 

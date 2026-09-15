@@ -41,11 +41,5 @@ let
   ];
 in
 {
-  # Environment variables
-  home.sessionVariables = {
-    NODE_OPTIONS = "--no-deprecation";
-  };
-
-  # Packages that should be installed to the user profile
   home.packages = cliPackages ++ lib.optionals nixosConfig.my.gui.enable guiPackages;
 }

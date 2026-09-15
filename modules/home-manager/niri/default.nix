@@ -2,6 +2,7 @@
   config,
   lib,
   nixosConfig,
+  pkgs,
   ...
 }:
 
@@ -25,5 +26,9 @@ in
       portalPackage = null;
       systemd.enable = false;
     };
+
+    home.packages = with pkgs; [
+      wl-clipboard-rs
+    ];
   };
 }

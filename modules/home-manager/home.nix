@@ -18,7 +18,6 @@ let
     sqlite
     stylua
     trashy
-    wl-clipboard-rs
   ];
 
   guiPackages = with pkgs; [

@@ -11,6 +11,11 @@ let
 in
 {
   options.my.niri = {
+    enable = lib.mkEnableOption "niri" // {
+      default = config.my.gui.enable;
+      defaultText = lib.literalExpression "config.my.gui.enable";
+    };
+
     package = lib.mkOption {
       type = options.programs.niri.package.type;
       default = config.programs.niri.package;
@@ -18,7 +23,7 @@ in
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       cfg.package
       xwayland-satellite

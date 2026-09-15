@@ -1,6 +1,14 @@
-{ nixosConfig, ... }:
+{
+  config,
+  lib,
+  nixosConfig,
+  ...
+}:
 
 let
+  cfg = config.my.discord;
+
+  # Theme Templates
   midnightTheme = nixosConfig.theme.colors {
     template = ./themes/midnight.css.mustache;
     extension = ".css";
@@ -15,67 +23,76 @@ let
   };
 in
 {
-  home.file = {
-    ".config/vesktop/userAssets/tray".source = ./userAssets/tray.png;
-    ".config/vesktop/userAssets/trayUnread".source = ./userAssets/trayUnread.png;
+  options.my.discord = {
+    enable = lib.mkEnableOption "Discord" // {
+      default = nixosConfig.my.gui.enable;
+      defaultText = lib.literalExpression "nixosConfig.my.gui.enable";
+    };
   };
 
-  programs.vesktop = {
-    enable = true;
-
-    # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
-    settings = {
-      appBadge = false;
-      arRPC = false;
-      autoStartMinimized = true;
-      checkUpdates = false;
-      clickTrayToShowHide = true;
-      disableMinSize = true;
-      hardwareAcceleration = true;
-      hardwareVideoAcceleration = true;
-      minimizeToTray = true;
-      openLinksWithElectron = false;
-      splashBackground = nixosConfig.theme.colors.withHashtag.base01;
-      splashColor = nixosConfig.theme.colors.withHashtag.base05;
+  config = lib.mkIf cfg.enable {
+    home.file = {
+      ".config/vesktop/userAssets/tray".source = ./userAssets/tray.png;
+      ".config/vesktop/userAssets/trayUnread".source = ./userAssets/trayUnread.png;
     };
 
-    vencord = {
-      themes = {
-        midnight = midnightTheme;
-        disblockOrigin = disblockOriginTheme;
-        discordAdblock = discordAdblockTheme;
-      };
+    programs.vesktop = {
+      enable = true;
+
+      # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
       settings = {
-        enabledThemes = [
-          "midnight.css"
-          "disblockOrigin.css"
-          "discordAdblock.css"
-        ];
-        plugins = {
-          NoProfileThemes = {
-            enabled = true;
-          };
-          CustomIdle = {
-            enabled = true;
-            idleTimeout = 0;
+        appBadge = false;
+        arRPC = false;
+        autoStartMinimized = true;
+        checkUpdates = false;
+        clickTrayToShowHide = true;
+        disableMinSize = true;
+        hardwareAcceleration = true;
+        hardwareVideoAcceleration = true;
+        minimizeToTray = true;
+        openLinksWithElectron = false;
+        splashBackground = nixosConfig.theme.colors.withHashtag.base01;
+        splashColor = nixosConfig.theme.colors.withHashtag.base05;
+      };
+
+      vencord = {
+        themes = {
+          midnight = midnightTheme;
+          disblockOrigin = disblockOriginTheme;
+          discordAdblock = discordAdblockTheme;
+        };
+        settings = {
+          enabledThemes = [
+            "midnight.css"
+            "disblockOrigin.css"
+            "discordAdblock.css"
+          ];
+          plugins = {
+            NoProfileThemes = {
+              enabled = true;
+            };
+            CustomIdle = {
+              enabled = true;
+              idleTimeout = 0;
+            };
           };
         };
       };
     };
-  };
 
-  xdg.desktopEntries = {
-    vesktop = {
-      name = "Discord";
-      exec = "vesktop --user-agent-os darwin %U";
-      icon = "discord";
-      genericName = "Internet Messenger";
-      categories = [
-        "Network"
-        "InstantMessaging"
-        "Chat"
-      ];
-      mimeType = [ "x-scheme-handler/discord" ];
+    xdg.desktopEntries = {
+      vesktop = {
+        name = "Discord";
+        exec = "vesktop --user-agent-os darwin %U";
+        icon = "discord";
+        genericName = "Internet Messenger";
+        categories = [
+          "Network"
+          "InstantMessaging"
+          "Chat"
+        ];
+        mimeType = [ "x-scheme-handler/discord" ];
+      };
     };
   };
 }

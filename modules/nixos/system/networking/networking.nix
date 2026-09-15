@@ -18,8 +18,8 @@ in
   };
 
   config = {
-    environment.systemPackages = with pkgs; [
-      networkmanagerapplet
+    environment.systemPackages = lib.mkIf config.my.gui.enable [
+      pkgs.networkmanagerapplet
     ];
 
     networking = {

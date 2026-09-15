@@ -10,7 +10,10 @@ let
 in
 {
   options.my.maccel = {
-    enable = lib.mkEnableOption "maccel";
+    enable = lib.mkEnableOption "maccel" // {
+      default = config.my.gui.enable;
+      defaultText = lib.literalExpression "config.my.gui.enable";
+    };
   };
 
   imports = [ inputs.maccel.nixosModules.default ];

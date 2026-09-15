@@ -10,6 +10,11 @@ let
 in
 {
   options.my.noctalia-greeter = {
+    enable = lib.mkEnableOption "Noctalia Greeter" // {
+      default = config.my.gui.enable;
+      defaultText = lib.literalExpression "config.my.gui.enable";
+    };
+
     output = {
       name = lib.mkOption {
         type = lib.types.str;
@@ -37,7 +42,7 @@ in
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     services.displayManager.noctalia-greeter = {
       enable = true;
 

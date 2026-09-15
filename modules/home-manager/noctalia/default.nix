@@ -1,13 +1,26 @@
-{ lib, ... }:
+{
+  config,
+  lib,
+  nixosConfig,
+  ...
+}:
 
+let
+  cfg = config.my.noctalia;
+in
 {
   options.my.noctalia = {
+    enable = lib.mkEnableOption "Noctalia" // {
+      default = nixosConfig.my.gui.enable;
+      defaultText = lib.literalExpression "nixosConfig.my.gui.enable";
+    };
+
     gpuMonitoring = lib.mkEnableOption ''
       Bar widgets for GPU temperature and VRAM usage.
     '';
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     programs.noctalia = {
       enable = true;
       systemd.enable = true;

@@ -1,19 +1,38 @@
-{ inputs, ... }:
-
 {
+  config,
+  inputs,
+  lib,
+  nixosConfig,
+  ...
+}:
+
+let
+  cfg = config.my.spotify;
+in
+{
+  options.my.spotify = {
+    enable = lib.mkEnableOption "Spotify" // {
+      default = nixosConfig.my.gui.enable;
+      defaultText = lib.literalExpression "nixosConfig.my.gui.enable";
+    };
+  };
+
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];
 
-  programs.spicetify = {
-    enable = true;
-    alwaysEnableDevTools = true;
-    experimentalFeatures = true;
+  config = lib.mkIf cfg.enable {
+    programs.spicetify = {
+      enable = true;
 
-    # Custom CSS
-    theme.name = "custom";
-    theme.src = ./theme;
-    theme.homeConfig = false;
+      alwaysEnableDevTools = true;
+      experimentalFeatures = true;
 
-    # Extensions
-    enabledExtensions = [ ];
+      # Custom CSS
+      theme.name = "custom";
+      theme.src = ./theme;
+      theme.homeConfig = false;
+
+      # Extensions
+      enabledExtensions = [ ];
+    };
   };
 }

@@ -5,7 +5,10 @@ let
 in
 {
   options.my.gpu-screen-recorder = {
-    enable = lib.mkEnableOption "GPU Screen Recorder";
+    enable = lib.mkEnableOption "GPU Screen Recorder" // {
+      default = config.my.gui.enable;
+      defaultText = lib.literalExpression "config.my.gui.enable";
+    };
   };
 
   config = lib.mkIf cfg.enable {

@@ -13,7 +13,7 @@ in
   options.my.gpu-screen-recorder = {
     enable = lib.mkEnableOption "GPU Screen Recorder" // {
       default = nixosConfig.my.gpu-screen-recorder.enable;
-      defaultText = lib.literalExpression "config.my.gpu-screen-recorder.enable";
+      defaultText = lib.literalExpression "nixosConfig.my.gpu-screen-recorder.enable";
     };
 
     captureTarget = lib.mkOption {
@@ -76,7 +76,7 @@ in
       };
     };
 
-    wayland.windowManager.niri.settings.binds = lib.mkIf config.wayland.windowManager.niri.enable {
+    wayland.windowManager.niri.settings.binds = lib.mkIf config.my.niri.enable {
       # Start/Stop Recording
       "Mod+F9".spawn = "${pkgs.writeShellScript "toggle-recording" ''
         pkill -SIGRTMIN -f gpu-screen-recorder -H

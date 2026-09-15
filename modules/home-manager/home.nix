@@ -13,7 +13,6 @@ let
     nixfmt
     oxfmt
     oxlint
-    proton-pass-cli
     sqlite
     stylua
     trashy
@@ -45,7 +44,6 @@ in
   # Environment variables
   home.sessionVariables = {
     NODE_OPTIONS = "--no-deprecation";
-    PROTON_PASS_LINUX_KEYRING = "dbus"; # https://protonpass.github.io/pass-cli/get-started/configuration/#secure-key-storage
   };
 
   # Packages that should be installed to the user profile

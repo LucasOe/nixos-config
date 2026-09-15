@@ -13,7 +13,6 @@ let
     nixfmt
     oxfmt
     oxlint
-    p7zip
     proton-pass-cli
     sqlite
     stylua
@@ -33,7 +32,6 @@ let
     gnome-font-viewer
     gnome-logs
     loupe
-    nautilus
     obsidian
     papers
     refern
@@ -41,7 +39,6 @@ let
     showtime
     simple-scan
     snapshot
-    typesetter
   ];
 in
 {

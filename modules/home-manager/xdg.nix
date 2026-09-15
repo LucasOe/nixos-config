@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  nixosConfig,
+  ...
+}:
 
 {
   xdg = {
@@ -18,6 +23,9 @@
       let
         # FIXME: Functions can be removed if globbing is officially supported by home-manager
         # https://github.com/nix-community/home-manager/issues/8752#issuecomment-4568645264
+        #
+        # # Remove when the following PR is merged:
+        # https://github.com/nix-community/home-manager/pull/9883
 
         # https://github.com/krezh/dotnix/blob/main/modules/programs/xdg-settings/homeManager.nix
         allMimes = lib.splitString "\n" (builtins.readFile "${pkgs.shared-mime-info}/share/mime/types");
@@ -56,8 +64,7 @@
         };
       in
       {
-        enable = true;
-
+        enable = lib.mkDefault nixosConfig.my.gui.enable;
         defaultApplications = lib.mkMerge [
           mediaDefaults
           manualDefaults

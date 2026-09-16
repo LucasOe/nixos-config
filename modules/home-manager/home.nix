@@ -30,7 +30,6 @@
       resources
 
       # Other
-      obsidian
       refern
     ];
   };

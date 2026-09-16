@@ -28,9 +28,6 @@
       bazaar
       eyedropper
       resources
-
-      # Other
-      refern
     ];
   };
 }

@@ -44,5 +44,6 @@
 
     # Custom options
     my.easyeffects.enable = true;
+    my.refern.enable = true;
   };
 }

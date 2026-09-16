@@ -73,6 +73,20 @@ in
     # Enable ntsync
     boot.kernelModules = [ "ntsync" ];
 
+    # Gamescope
+    programs.gamescope = {
+      enable = true;
+      env = {
+        MANGOHUD = "0";
+      };
+      args = [
+        "--prefer-output=DP-1,eDP-1"
+        "--fullscreen"
+        "--force-grab-cursor"
+        "--mangoapp"
+      ];
+    };
+
     # Workaround for issue with capSysNice not working in gamescope
     # https://github.com/NixOS/nixpkgs/issues/351516
     #

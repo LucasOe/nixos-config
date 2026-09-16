@@ -197,7 +197,6 @@
         "millennium": "millennium",
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs_2",
-        "scopebuddy": "scopebuddy",
         "spicetify-nix": "spicetify-nix",
         "xwayland-satellite": "xwayland-satellite"
       }
@@ -220,26 +219,6 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "scopebuddy": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1787088847,
-        "narHash": "sha256-dimDUlRtDXZDCUUOjW2KX+1XiWjOiMUIudh6VClZlZ0=",
-        "owner": "OpenGamingCollective",
-        "repo": "ScopeBuddy",
-        "rev": "0269fd2b3b5f0b2af191d52d1b8e4a8088a49fdc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "OpenGamingCollective",
-        "repo": "ScopeBuddy",
         "type": "github"
       }
     },

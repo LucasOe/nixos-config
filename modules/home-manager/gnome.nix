@@ -1,12 +1,23 @@
 {
+  config,
   lib,
   nixosConfig,
   pkgs,
   ...
 }:
 
+let
+  cfg = config.my.gnome;
+in
 {
-  config = lib.mkIf nixosConfig.my.gui.enable {
+  options.my.gnome = {
+    enable = lib.mkEnableOption "GNOME Apps" // {
+      default = nixosConfig.my.gui.enable;
+      defaultText = lib.literalExpression "nixosConfig.my.gui.enable";
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       # Gnome Core Apps
       baobab # Disk Usage Analyzer

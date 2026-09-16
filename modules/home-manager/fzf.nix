@@ -6,7 +6,6 @@
   programs.fzf = {
     enable = true;
 
-    # Disable when using television
     enableBashIntegration = true;
     enableFishIntegration = true;
     enableZshIntegration = true;

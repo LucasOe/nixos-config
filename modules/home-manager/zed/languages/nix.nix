@@ -5,10 +5,17 @@
     userSettings = {
       languages = {
         "Nix" = {
+          # Editor -> Formatting
           format_on_save = "on";
-          formatter = "language_server";
+          formatter.language_server.name = "nil";
+          # Editor -> Indentation
           hard_tabs = false;
           tab_size = 2;
+          # Language & Tools -> LSP
+          language_servers = [
+            "nixd"
+            "nil"
+          ];
         };
       };
       lsp = {

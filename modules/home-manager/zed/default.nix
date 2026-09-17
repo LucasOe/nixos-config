@@ -28,12 +28,10 @@ in
       # Extensions removed from this list do not get automaticall removed
       # See: https://github.com/zed-industries/zed/issues/40266
       extensions = [
-        "biome"
         "colored-zed-icons-theme"
-        "csharp"
-        "dockerfile"
+        # LSPs
+        "biome"
         "emmet"
-        "fish"
         "html"
         "java"
         "kotlin"
@@ -41,7 +39,6 @@ in
         "luau"
         "nix"
         "oxc" # https://github.com/oxc-project/oxc-zed/issues/29
-        "sql"
         "toml"
         "tsgo"
       ];

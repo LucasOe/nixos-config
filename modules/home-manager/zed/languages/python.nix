@@ -5,18 +5,18 @@
     userSettings = {
       languages = {
         "Python" = {
+          # Editor -> Formatting
           format_on_save = "on";
-          hard_tabs = false;
+          formatter.language_server.name = "ruff";
           code_actions_on_format = {
             "source.organizeImports.ruff" = true;
           };
-          # Enable ty, disable basedpyright and pylsp, and enable all
-          # other registered language servers (ruff, pyright).
+          # Editor -> Indentation
+          hard_tabs = false;
+          # Language & Tools -> LSP
           language_servers = [
             "ty"
-            "!basedpyright"
-            "!pylsp" # https://github.com/zed-industries/zed/issues/37323
-            "..."
+            "ruff"
           ];
         };
       };

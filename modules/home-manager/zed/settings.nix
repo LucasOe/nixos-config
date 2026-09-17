@@ -2,7 +2,8 @@
 
 {
   programs.zed-editor = {
-    # https://zed.dev/docs/visual-customization
+    # Default settings:
+    # https://github.com/zed-industries/zed/blob/main/assets/settings/default.json
     userSettings = with nixosConfig.theme; {
       # General -> Workspace Restoration
       session = {
@@ -43,14 +44,17 @@
         120
       ];
       # Editor -> Formatting
-      format_on_save = "off"; # We override this either per language or per project
+      format_on_save = "off"; # Override this either per language or per project
+      formatter = "none"; # Override this either per language or per project
       # Editor -> Inlay Hints
       inlay_hints = {
-        enabled = false; # We override this per language
+        enabled = false; # Override this per language
         show_type_hints = true;
         show_parameter_hints = true;
         show_other_hints = true;
       };
+      # Languages & Tools -> LSP
+      language_servers = [ ]; # Override this per language
       # Languages & Tools -> Prettier
       prettier = {
         allowed = false;

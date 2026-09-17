@@ -1,49 +1,28 @@
-{ ... }:
+{ lib, ... }:
 
 {
   programs.zed-editor = {
     userSettings = {
-      languages = {
-        "JavaScript" = {
-          formatter = "none"; # Formatter should be set per project (Prettier, Biome or Oxfmt)
-          code_actions_on_format = {
-            "source.fixAll.eslint" = true;
-            "source.fixAll.oxc" = true;
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
+      # Shared settings by JavaScript, TypeScript, JSX and TSX.
+      # JSX falls under the Javascript language name.
+      # Enable the tsgo LSP for JavaScript for JSDoc support.
+      languages = lib.genAttrs [ "JavaScript" "TypeScript" "TSX" ] (_: {
+        # Editor -> Formatting
+        code_actions_on_format = {
+          "source.fixAll.eslint" = true;
+          "source.fixAll.oxc" = true;
+          "source.fixAll.biome" = true;
+          "source.organizeImports.biome" = true;
         };
-        "TypeScript" = {
-          formatter = "none"; # Formatter should be set per project (Prettier, Biome or Oxfmt)
-          code_actions_on_format = {
-            "source.fixAll.eslint" = true;
-            "source.fixAll.oxc" = true;
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-          language_servers = [
-            "typescript-ls" # Use tsgo
-            "!vtsls"
-            "!typescript-language-server"
-            "..."
-          ];
-        };
-        "TSX" = {
-          formatter = "none"; # Formatter should be set per project (Prettier, Biome or Oxfmt)
-          code_actions_on_format = {
-            "source.fixAll.eslint" = true;
-            "source.fixAll.oxc" = true;
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-          language_servers = [
-            "typescript-ls" # Use tsgo
-            "!vtsls"
-            "!typescript-language-server"
-            "..."
-          ];
-        };
-      };
+        # Language & Tools -> LSP
+        language_servers = [
+          "biome"
+          "emmet-language-server"
+          "oxfmt"
+          "oxlint"
+          "typescript-ls" # tsgo
+        ];
+      });
       lsp = {
         # https://biomejs.dev/reference/zed/
         "biome" = {

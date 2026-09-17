@@ -5,11 +5,10 @@
     userSettings = {
       languages = {
         "CSS" = {
-          formatter = "none"; # Formatter should be set per project (Prettier, Biome or Oxfmt)
+          # Language & Tools -> LSP
           language_servers = [
+            "emmet-language-server"
             "tailwindcss-intellisense-css"
-            "!vscode-css-language-server"
-            "..."
           ];
         };
       };

@@ -76,9 +76,6 @@ in
     # Gamescope
     programs.gamescope = {
       enable = true;
-      env = {
-        MANGOHUD = "0";
-      };
       args = [
         "--prefer-output=DP-1,eDP-1"
         "--fullscreen"

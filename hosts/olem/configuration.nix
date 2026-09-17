@@ -1,9 +1,4 @@
-{
-  configLib,
-  pkgs,
-  username,
-  ...
-}:
+{ configLib, username, ... }:
 
 {
   # Networking
@@ -23,11 +18,6 @@
 
   # Custom options
   my.intel-graphics.enable = true;
-
-  # System Packages
-  environment.systemPackages = with pkgs; [
-    adw-bluetooth
-  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {

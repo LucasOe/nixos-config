@@ -18,16 +18,6 @@
           ];
         };
       };
-      lsp = {
-        "rust-analyzer" = {
-          # https://rust-analyzer.github.io/book/configuration.html
-          initialization_options = {
-            check = {
-              command = "clippy"; # default: "check"
-            };
-          };
-        };
-      };
     };
   };
 }

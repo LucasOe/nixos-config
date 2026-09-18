@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   security = {
@@ -12,7 +12,7 @@
     };
 
     sudo = {
-      enable = false;
+      enable = !config.security.run0.enableSudoAlias;
       extraConfig = ''
         Defaults pwfeedback # password input feedback - makes typed password visible as asterisks
         Defaults timestamp_timeout=120 # only ask for password every 2h

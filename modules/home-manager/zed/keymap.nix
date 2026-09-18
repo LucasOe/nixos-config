@@ -10,6 +10,7 @@
         context = "Terminal";
         bindings = {
           "ctrl-n" = "workspace::NewTerminal";
+          "ctrl-v" = "terminal::Paste";
           # These bindings are disabled by default to prevent conflicts.
           # We don't override bindings used by the shell.
           # https://fishshell.com/docs/current/interactive.html#shared-bindings

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Allow unfree packages
@@ -18,7 +18,7 @@
   hardware.bluetooth.enable = true;
 
   programs.dconf.enable = true;
-  programs.seahorse.enable = true;
+  programs.seahorse.enable = config.my.gui.enable;
 
   services.flatpak.enable = true;
   services.gvfs.enable = true;

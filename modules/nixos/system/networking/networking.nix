@@ -30,7 +30,6 @@ in
         enable = true;
         checkReversePath = false;
         allowedTCPPorts = [
-          22 # SSH
           3000 # Vite dev server
         ];
         allowedUDPPorts = [

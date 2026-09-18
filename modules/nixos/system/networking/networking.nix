@@ -29,6 +29,9 @@ in
       firewall = {
         enable = true;
         checkReversePath = false;
+        trustedInterfaces = [
+          config.services.tailscale.interfaceName
+        ];
         allowedTCPPorts = [
           3000 # Vite dev server
         ];
@@ -72,5 +75,21 @@ in
         ];
       };
     };
+
+    # Tailscale
+    services.tailscale = {
+      enable = true;
+      openFirewall = true;
+    };
+
+    # Force tailscaled to use nftables (Critical for clean nftables-only systems)
+    # This avoids the "iptables-compat" translation layer issues.
+    systemd.services.tailscaled.serviceConfig.Environment = [
+      "TS_DEBUG_FIREWALL_MODE=nftables"
+    ];
+
+    # Prevent systemd from waiting for network online
+    systemd.network.wait-online.enable = false;
+    boot.initrd.systemd.network.wait-online.enable = false;
   };
 }

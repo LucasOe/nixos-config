@@ -17,6 +17,7 @@
 
   hardware.bluetooth.enable = true;
 
+  programs.comma.enable = true;
   programs.dconf.enable = true;
   programs.seahorse.enable = config.my.gui.enable;
 

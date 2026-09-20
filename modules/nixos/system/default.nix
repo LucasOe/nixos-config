@@ -21,7 +21,7 @@
   programs.dconf.enable = true;
   programs.seahorse.enable = config.my.gui.enable;
 
-  services.flatpak.enable = true;
+  services.flatpak.enable = config.my.gui.enable;
   services.gvfs.enable = true;
   services.playerctld.enable = true;
   services.printing.enable = true;

@@ -60,6 +60,13 @@ in
       };
     };
 
+    # Fall back to a known terminfo entry
+    # https://ghostty.org/docs/help/terminfo#method-2:-configure-ssh-to-fall-back-to-a-known-terminfo-entry
+    programs.ssh.extraConfig = ''
+      Host *
+        SetEnv TERM=xterm-256color
+    '';
+
     # Enable systemd-resolved
     # Uses `config.networking.nameservers` for DNS
     services.resolved = {

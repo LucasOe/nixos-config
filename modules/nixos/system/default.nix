@@ -16,6 +16,8 @@
   ];
 
   hardware.bluetooth.enable = true;
+  hardware.enableAllFirmware = true;
+  hardware.enableAllHardware = true;
 
   programs.comma.enable = true;
   programs.dconf.enable = true;

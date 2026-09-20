@@ -195,7 +195,6 @@ in
           end = [
             "lock_keys"
             "tray"
-            "mini-docker"
             "notifications"
             "bluetooth"
             "network"
@@ -275,11 +274,6 @@ in
             scroll_up = "none";
           };
         };
-        mini-docker = {
-          show_count = false;
-          status_mode = "hidden";
-          type = "8bury/mini-docker:mini-docker";
-        };
         bluetooth = {
           enabled = false;
           show_label = false;
@@ -338,7 +332,6 @@ in
           }
         ];
         enabled = [
-          "8bury/mini-docker"
           "avivbintangaringga/nix-monitor"
           "lucasoe/proton-pass"
         ];

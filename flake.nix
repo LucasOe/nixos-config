@@ -96,6 +96,16 @@
             (inputs.import-tree ./hosts/tamas)
           ];
         };
+
+        mihali = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+          specialArgs = specialArgs;
+          modules = [
+            (inputs.import-tree ./overlays)
+            (inputs.import-tree ./modules/nixos)
+            (inputs.import-tree ./hosts/mihali)
+          ];
+        };
       };
     };
 }

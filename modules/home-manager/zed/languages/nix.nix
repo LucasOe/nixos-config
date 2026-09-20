@@ -7,7 +7,12 @@
         "Nix" = {
           # Editor -> Formatting
           format_on_save = "on";
-          formatter.language_server.name = "nil";
+          formatter = {
+            external = {
+              command = lib.getExe pkgs.nixfmt;
+              arguments = [ "-" ];
+            };
+          };
           # Editor -> Indentation
           hard_tabs = false;
           tab_size = 2;
@@ -23,9 +28,6 @@
           binary = {
             path = lib.getExe pkgs.nixd;
           };
-          initialization_options = {
-            "formatting".command = [ (lib.getExe pkgs.nixfmt) ];
-          };
           settings = {
             diagnostic = {
               suppress = [ "sema-extra-with" ];
@@ -35,9 +37,6 @@
         "nil" = {
           binary = {
             path = lib.getExe pkgs.nil;
-          };
-          initialization_options = {
-            "formatting".command = [ (lib.getExe pkgs.nixfmt) ];
           };
           settings = {
             diagnostics = {

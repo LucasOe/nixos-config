@@ -3,11 +3,11 @@
     (final: prev: {
       refern = final.stdenv.mkDerivation (finalAttrs: {
         pname = "refern";
-        version = "1.8.1";
+        version = "1.9.0";
 
         src = final.fetchurl {
           url = "https://storage.googleapis.com/refern-releases/releases/v${finalAttrs.version}/refern-${finalAttrs.version}-1.x86_64.rpm";
-          hash = "sha256-M43SilIQTaexCW/Lhc+Lh0NII5Sarjh0SJElEQtOlZU=";
+          hash = "sha256-NQGISDUWSoft1x8iTbHKa60VKTH/3Ziy+SFqhedL6E8=";
         };
 
         nativeBuildInputs = with final; [

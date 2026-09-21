@@ -7,6 +7,7 @@
 
   # Headless
   my.gui.enable = false;
+  my.audio.enable = false;
 
   # Keymap
   services.xserver.xkb.layout = "eu";

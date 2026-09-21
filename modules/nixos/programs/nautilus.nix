@@ -21,6 +21,9 @@ in
     # https://github.com/NixOS/nixpkgs/pull/319535
     environment.systemPackages = with pkgs; [ nautilus ];
 
+    # GNOME virtual file system
+    services.gvfs.enable = true;
+
     # Fix Nautilus error "Your GStreamer installation is missing a plug-in."
     # https://github.com/NixOS/nixpkgs/issues/195936#issuecomment-1278954466
     # https://github.com/NixOS/nixpkgs/issues/53631#issuecomment-3704189416

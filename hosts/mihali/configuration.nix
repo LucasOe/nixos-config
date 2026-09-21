@@ -11,20 +11,6 @@
   # Keymap
   services.xserver.xkb.layout = "eu";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
-    isNormalUser = true;
-    description = "Lucas Oelker";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQfqJnnqE7DxuGPh1ia7DlsoZMSenVPq2ND0X34dvBo lucas@tamas"
-    ];
-  };
-
   # Automatically log in at the virtual consoles.
   services.getty.autologinUser = "lucas";
 

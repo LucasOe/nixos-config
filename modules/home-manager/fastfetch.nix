@@ -56,10 +56,12 @@
         {
           type = "cpu";
           key = "󰻠 CPU";
+          temp = true;
         }
         {
           type = "gpu";
           key = "󰍛 GPU";
+          temp = true;
         }
         {
           type = "disk";

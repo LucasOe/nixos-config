@@ -56,11 +56,6 @@
     millennium = {
       url = "github:SteamClientHomebrew/Millennium/?dir=packages/nix";
     };
-
-    xwayland-satellite = {
-      url = "github:Supreeeme/xwayland-satellite";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =

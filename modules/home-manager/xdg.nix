@@ -1,9 +1,4 @@
-{
-  lib,
-  pkgs,
-  nixosConfig,
-  ...
-}:
+{ lib, nixosConfig, ... }:
 
 {
   xdg = {
@@ -21,33 +16,22 @@
 
     mimeApps =
       let
-        # FIXME: Functions can be removed if globbing is officially supported by home-manager
-        # https://github.com/nix-community/home-manager/issues/8752#issuecomment-4568645264
-        #
-        # # Remove when the following PR is merged:
-        # https://github.com/nix-community/home-manager/pull/9883
-
-        # https://github.com/krezh/dotnix/blob/main/modules/programs/xdg-settings/homeManager.nix
-        allMimes = lib.splitString "\n" (builtins.readFile "${pkgs.shared-mime-info}/share/mime/types");
-        matchingMimes = prefix: builtins.filter (mime: lib.hasPrefix prefix mime) allMimes;
-        defaultsFor = prefix: app: lib.genAttrs (matchingMimes prefix) (_: app);
-
-        # Default Applications
         defaultAudioPlayer = "org.gnome.Showtime.desktop";
         defaultBrowser = "firefox-devedition.desktop";
         defaultDocumentViewer = "org.gnome.Papers.desktop";
         defaultImageViewer = "org.gnome.Loupe.desktop";
         defaultTextEditor = "dev.zed.Zed.desktop";
         defaultVideoPlayer = "org.gnome.Showtime.desktop";
-
-        mediaDefaults = lib.mkMerge [
-          (defaultsFor "text/" defaultTextEditor)
-          (defaultsFor "image/" defaultImageViewer)
-          (defaultsFor "video/" defaultVideoPlayer)
-          (defaultsFor "audio/" defaultAudioPlayer)
-        ];
-
-        manualDefaults = {
+      in
+      {
+        enable = lib.mkDefault nixosConfig.my.gui.enable;
+        defaultApplications = {
+          # Globs
+          "text/*" = defaultTextEditor;
+          "image/*" = defaultImageViewer;
+          "video/*" = defaultVideoPlayer;
+          "audio/*" = defaultAudioPlayer;
+          # Directories
           "inode/directory" = "org.gnome.Nautilus.desktop";
           # Text
           "application/json" = defaultTextEditor;
@@ -62,13 +46,6 @@
           "x-scheme-handler/http" = defaultBrowser;
           "x-scheme-handler/https" = defaultBrowser;
         };
-      in
-      {
-        enable = lib.mkDefault nixosConfig.my.gui.enable;
-        defaultApplications = lib.mkMerge [
-          mediaDefaults
-          manualDefaults
-        ];
       };
   };
 }

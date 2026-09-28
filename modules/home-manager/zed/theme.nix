@@ -232,7 +232,7 @@
                 # https://zed.dev/docs/extensions/languages#syntax-highlighting
                 "syntax" = {
                   "attribute" = {
-                    "color" = base0A;
+                    "color" = base0D;
                     "font_style" = null;
                     "font_weight" = null;
                   };
@@ -304,6 +304,11 @@
                   "label" = {
                     "color" = base0D;
                     "font_style" = null;
+                    "font_weight" = null;
+                  };
+                  "lifetime" = {
+                    "color" = base05;
+                    "font_style" = "italic";
                     "font_weight" = null;
                   };
                   "link_text" = {
@@ -411,6 +416,11 @@
                     "font_style" = null;
                     "font_weight" = null;
                   };
+                  "struct" = {
+                    "color" = base0A;
+                    "font_style" = null;
+                    "font_weight" = null;
+                  };
                   "tag" = {
                     "color" = base0D;
                     "font_style" = null;
@@ -437,7 +447,7 @@
                     "font_weight" = null;
                   };
                   "type.builtin" = {
-                    "color" = base0A;
+                    "color" = base09;
                     "font_style" = null;
                     "font_weight" = null;
                   };
@@ -453,7 +463,7 @@
                   };
                   "variable.special" = {
                     "color" = base0A;
-                    "font_style" = null;
+                    "font_style" = "italic";
                     "font_weight" = null;
                   };
                   "variable.parameter" = {
@@ -471,6 +481,52 @@
             }
           ];
         };
+    };
+
+    # https://zed.dev/docs/semantic-tokens#customizing-token-colors
+    #
+    # Override Default Rust Grammar
+    # https://github.com/zed-industries/zed/blob/main/crates/grammars/src/rust/semantic_token_rules.json
+    # https://rust-analyzer.github.io/book/features.html#token-tags
+    userSettings = with nixosConfig.theme.colors.withHashtag; {
+      global_lsp_settings = {
+        semantic_token_rules = [
+          {
+            token_type = "derive";
+            foreground_color = base0D;
+          }
+          {
+            token_type = "macro";
+            foreground_color = base0D;
+            font_style = "italic";
+          }
+          {
+            token_type = "arithmetic";
+            foreground_color = base0D;
+          }
+          {
+            token_type = "angle";
+            foreground_color = base0C;
+          }
+          {
+            token_type = "arithmetic";
+            foreground_color = base0C;
+          }
+          {
+            token_type = "builtinType";
+            foreground_color = base09;
+          }
+          {
+            token_type = "deriveHelper";
+            foreground_color = base0D;
+          }
+          {
+            token_type = "variable";
+            token_modifiers = [ "mutable" ];
+            underline = true;
+          }
+        ];
+      };
     };
   };
 }

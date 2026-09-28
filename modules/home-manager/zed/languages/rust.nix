@@ -13,9 +13,21 @@
           # Editor -> Inlay Hints
           inlay_hints.enabled = true;
           # Language & Tools -> LSP
+          semantic_tokens = "full";
           language_servers = [
             "rust-analyzer"
           ];
+        };
+      };
+      lsp = {
+        "rust-analyzer" = {
+          # https://rust-analyzer.github.io/book/configuration.html
+          initialization_options = {
+            inlayHints.closingBraceHints.enable = false;
+            semanticHighlighting.operator.enable = false;
+            semanticHighlighting.punctuation.enable = true;
+            semanticHighlighting.punctuation.specialization.enable = true;
+          };
         };
       };
     };

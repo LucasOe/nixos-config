@@ -229,9 +229,10 @@
                   }
                 ];
                 # Syntax
+                # https://zed.dev/docs/extensions/languages#syntax-highlighting
                 "syntax" = {
                   "attribute" = {
-                    "color" = base0D;
+                    "color" = base0A;
                     "font_style" = null;
                     "font_weight" = null;
                   };
@@ -255,6 +256,11 @@
                     "font_style" = null;
                     "font_weight" = null;
                   };
+                  "constant.builtin" = {
+                    "color" = base09;
+                    "font_style" = null;
+                    "font_weight" = null;
+                  };
                   "constructor" = {
                     "color" = base0D;
                     "font_style" = null;
@@ -267,7 +273,7 @@
                   };
                   "emphasis" = {
                     "color" = base0D;
-                    "font_style" = null;
+                    "font_style" = "italic";
                     "font_weight" = null;
                   };
                   "emphasis.strong" = {
@@ -276,7 +282,7 @@
                     "font_weight" = null;
                   };
                   "enum" = {
-                    "color" = base08;
+                    "color" = base0A;
                     "font_style" = null;
                     "font_weight" = null;
                   };
@@ -286,7 +292,7 @@
                     "font_weight" = null;
                   };
                   "hint" = {
-                    "color" = base0D;
+                    "color" = base03;
                     "font_style" = null;
                     "font_weight" = null;
                   };
@@ -365,11 +371,6 @@
                     "font_style" = null;
                     "font_weight" = null;
                   };
-                  "punctuation.markup" = {
-                    "color" = base08;
-                    "font_style" = null;
-                    "font_weight" = null;
-                  };
                   "punctuation.special" = {
                     "color" = base0F;
                     "font_style" = null;
@@ -401,16 +402,21 @@
                     "font_weight" = null;
                   };
                   "string.special" = {
-                    "color" = base09;
+                    "color" = base0E;
                     "font_style" = null;
                     "font_weight" = null;
                   };
                   "string.special.symbol" = {
-                    "color" = base09;
+                    "color" = base0E;
                     "font_style" = null;
                     "font_weight" = null;
                   };
                   "tag" = {
+                    "color" = base0D;
+                    "font_style" = null;
+                    "font_weight" = null;
+                  };
+                  "tag.doctype" = {
                     "color" = base0D;
                     "font_style" = null;
                     "font_weight" = null;
@@ -430,6 +436,16 @@
                     "font_style" = null;
                     "font_weight" = null;
                   };
+                  "type.builtin" = {
+                    "color" = base0A;
+                    "font_style" = null;
+                    "font_weight" = null;
+                  };
+                  "typeParameter" = {
+                    "color" = base0A;
+                    "font_style" = null;
+                    "font_weight" = null;
+                  };
                   "variable" = {
                     "color" = base05;
                     "font_style" = null;
@@ -440,8 +456,13 @@
                     "font_style" = null;
                     "font_weight" = null;
                   };
+                  "variable.parameter" = {
+                    "color" = base05;
+                    "font_style" = null;
+                    "font_weight" = null;
+                  };
                   "variant" = {
-                    "color" = base0D;
+                    "color" = base0A;
                     "font_style" = null;
                     "font_weight" = null;
                   };

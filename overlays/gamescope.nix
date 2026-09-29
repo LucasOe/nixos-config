@@ -11,7 +11,8 @@
         # `programs.gamescope.env` uses `--set-default` instead of `--set`.
         postInstall = (old.postInstall or "") + ''
           wrapProgram "$out/bin/gamescope" \
-            --set MANGOHUD 0
+            --set MANGOHUD 0 \
+            --set PROTON_ENABLE_WAYLAND 0
         '';
       });
     })

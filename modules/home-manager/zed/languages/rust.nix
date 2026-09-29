@@ -24,9 +24,8 @@
           # https://rust-analyzer.github.io/book/configuration.html
           initialization_options = {
             inlayHints.closingBraceHints.enable = false;
-            semanticHighlighting.operator.enable = false;
+            semanticHighlighting.operator.enable = true;
             semanticHighlighting.punctuation.enable = true;
-            semanticHighlighting.punctuation.specialization.enable = true;
           };
         };
       };

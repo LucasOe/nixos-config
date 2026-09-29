@@ -234,437 +234,350 @@
                   "angle" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "arithmetic" = {
                     "color" = base0C;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "attribute" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "attributeBracket" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "bitwise" = {
                     "color" = base0C;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "boolean" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "brace" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "bracket" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "builtinAttribute" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "builtinType" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "character" = {
                     "color" = base0B;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "colon" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "comma" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "comment" = {
                     "color" = base04;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "comment.doc" = {
                     "color" = base04;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "comparison" = {
                     "color" = base0C;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "const" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "constant" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "constant.builtin" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "constParameter" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "constructor" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "derive" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "deriveHelper" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "dot" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "embedded" = {
                     "color" = base07;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "emphasis" = {
                     "color" = base0D;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "emphasis.strong" = {
                     "color" = base09;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "enum" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "enumMember" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "escapeSequence" = {
                     "color" = base0E;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "formatSpecifier" = {
                     "color" = base0E;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "function" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "generic" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "hint" = {
                     "color" = base03;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "keyword" = {
                     "color" = base0E;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "label" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "lifetime" = {
                     "color" = base05;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "link_text" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "link_uri" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "logical" = {
                     "color" = base0C;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "macro" = {
                     "color" = base0D;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "macroBang" = {
                     "color" = base0E;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "method" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "namespace" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "negation" = {
                     "color" = base0C;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "number" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "operator" = {
                     "color" = base0C;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "parameter" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "parenthesis" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "predictive" = {
                     "color" = base0D;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "preproc" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "primary" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "procMacro" = {
                     "color" = base0D;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "property" = {
                     "color" = base08;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "punctuation" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "punctuation.bracket" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "punctuation.delimiter" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "punctuation.list_marker" = {
                     "color" = base08;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "punctuation.special" = {
                     "color" = base0F;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "selector" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "selector.pseudo" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "selfKeyword" = {
                     "color" = base09;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "selfTypeKeyword" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "semi" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "static" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "string" = {
                     "color" = base0B;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "string.escape" = {
                     "color" = base0E;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "string.regex" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "string.special" = {
                     "color" = base0E;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "string.special.symbol" = {
                     "color" = base0E;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "struct" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "tag" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "tag.doctype" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "text.literal" = {
                     "color" = base0B;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "title" = {
                     "color" = base08;
                     "font_style" = null;
-                    "font_weight" = 400;
                   };
                   "toolModule" = {
                     "color" = base0D;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "trait" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "type" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "type.builtin" = {
                     "color" = base09;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "typeAlias" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "typeParameter" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "union" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "unresolvedReference" = {
                     "color" = base0C;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "variable" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "variable.parameter" = {
                     "color" = base05;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                   "variable.special" = {
                     "color" = base0A;
                     "font_style" = "italic";
-                    "font_weight" = null;
                   };
                   "variant" = {
                     "color" = base0A;
                     "font_style" = null;
-                    "font_weight" = null;
                   };
                 };
               };
@@ -675,240 +588,84 @@
 
     # https://zed.dev/docs/semantic-tokens#customizing-token-colors
     #
-    # Override Zeds Default Rust Grammar
+    # Override Zeds Default Rust Grammar. Zed by default doesn't map all tokens.
     # https://github.com/zed-industries/zed/blob/main/crates/grammars/src/rust/semantic_token_rules.json
-    # https://github.com/rust-lang/rust-analyzer/blob/master/crates/rust-analyzer/src/lsp/semantic_tokens.rs
     userSettings = {
       global_lsp_settings = {
-        semantic_token_rules = [
-          {
-            token_type = "angle";
-            style = [ "angle" ];
-          }
-          {
-            token_type = "arithmetic";
-            style = [ "arithmetic" ];
-          }
-          {
-            token_type = "attribute";
-            style = [ "attribute" ];
-          }
-          {
-            token_type = "attributeBracket";
-            style = [ "attributeBracket" ];
-          }
-          {
-            token_type = "bitwise";
-            style = [ "bitwise" ];
-          }
-          {
-            token_type = "boolean";
-            style = [ "boolean" ];
-          }
-          {
-            token_type = "brace";
-            style = [ "brace" ];
-          }
-          {
-            token_type = "bracket";
-            style = [ "bracket" ];
-          }
-          {
-            token_type = "builtinAttribute";
-            style = [ "builtinAttribute" ];
-          }
-          {
-            token_type = "builtinType";
-            style = [ "builtinType" ];
-          }
-          {
-            token_type = "character";
-            style = [ "character" ];
-          }
-          {
-            token_type = "colon";
-            style = [ "colon" ];
-          }
-          {
-            token_type = "comma";
-            style = [ "comma" ];
-          }
-          {
-            token_type = "comment";
-            style = [ "comment" ];
-          }
-          {
-            token_type = "comparison";
-            style = [ "comparison" ];
-          }
-          {
-            token_type = "const";
-            style = [ "const" ];
-          }
-          {
-            token_type = "constParameter";
-            style = [ "constParameter" ];
-          }
-          {
-            token_type = "derive";
-            style = [ "derive" ];
-          }
-          {
-            token_type = "deriveHelper";
-            style = [ "deriveHelper" ];
-          }
-          {
-            token_type = "dot";
-            style = [ "dot" ];
-          }
-          {
-            token_type = "enum";
-            style = [ "enum" ];
-          }
-          {
-            token_type = "enumMember";
-            style = [ "enumMember" ];
-          }
-          {
-            token_type = "escapeSequence";
-            style = [ "escapeSequence" ];
-          }
-          {
-            token_type = "formatSpecifier";
-            style = [ "formatSpecifier" ];
-          }
-          {
-            token_type = "function";
-            style = [ "function" ];
-          }
-          {
-            token_type = "generic";
-            style = [ "generic" ];
-          }
-          {
-            token_type = "label";
-            style = [ "label" ];
-          }
-          {
-            token_type = "lifetime";
-            style = [ "lifetime" ];
-          }
-          {
-            token_type = "logical";
-            style = [ "logical" ];
-          }
-          {
-            token_type = "macro";
-            style = [ "macro" ];
-          }
-          {
-            token_type = "macroBang";
-            style = [ "macroBang" ];
-          }
-          {
-            token_type = "method";
-            style = [ "method" ];
-          }
-          {
-            token_type = "namespace";
-            style = [ "namespace" ];
-          }
-          {
-            token_type = "negation";
-            style = [ "negation" ];
-          }
-          {
-            token_type = "number";
-            style = [ "number" ];
-          }
-          {
-            token_type = "operator";
-            style = [ "operator" ];
-          }
-          {
-            token_type = "parameter";
-            style = [ "parameter" ];
-          }
-          {
-            token_type = "parenthesis";
-            style = [ "parenthesis" ];
-          }
-          {
-            token_type = "procMacro";
-            style = [ "procMacro" ];
-          }
-          {
-            token_type = "property";
-            style = [ "property" ];
-          }
-          {
-            token_type = "punctuation";
-            style = [ "punctuation" ];
-          }
-          {
-            token_type = "selfKeyword";
-            style = [ "selfKeyword" ];
-          }
-          {
-            token_type = "selfTypeKeyword";
-            style = [ "selfTypeKeyword" ];
-          }
-          {
-            token_type = "semi";
-            style = [ "semi" ];
-          }
-          {
-            token_type = "static";
-            style = [ "static" ];
-          }
-          {
-            token_type = "string";
-            style = [ "string" ];
-          }
-          {
-            token_type = "struct";
-            style = [ "struct" ];
-          }
-          {
-            token_type = "toolModule";
-            style = [ "toolModule" ];
-          }
-          {
-            token_type = "trait";
-            style = [ "trait" ];
-          }
-          {
-            token_type = "typeAlias";
-            style = [ "typeAlias" ];
-          }
-          {
-            token_type = "typeParameter";
-            style = [ "typeParameter" ];
-          }
-          {
-            token_type = "union";
-            style = [ "union" ];
-          }
-          {
-            token_type = "unresolvedReference";
-            style = [ "unresolvedReference" ];
-          }
-          {
-            token_type = "variable";
-            style = [ "variable" ];
-          }
-          {
-            token_type = "keyword";
-            style = [ "keyword" ];
-          }
+        semantic_token_rules =
+          let
+            mapToken = name: {
+              token_type = name;
+              style = [ name ];
+            };
+          in
+          [
+            # Map each token to its own name so it can be used in the syntax theme.
+            # The full list of token can be found here:
+            # https://github.com/rust-lang/rust-analyzer/blob/master/crates/rust-analyzer/src/lsp/semantic_tokens.rs
+            (mapToken "angle")
+            (mapToken "arithmetic")
+            (mapToken "attribute")
+            (mapToken "attributeBracket")
+            (mapToken "bitwise")
+            (mapToken "boolean")
+            (mapToken "brace")
+            (mapToken "bracket")
+            (mapToken "builtinAttribute")
+            (mapToken "builtinType")
+            (mapToken "character")
+            (mapToken "colon")
+            (mapToken "comma")
+            (mapToken "comment")
+            (mapToken "comparison")
+            (mapToken "const")
+            (mapToken "constParameter")
+            (mapToken "derive")
+            (mapToken "deriveHelper")
+            (mapToken "dot")
+            (mapToken "enum")
+            (mapToken "enumMember")
+            (mapToken "escapeSequence")
+            (mapToken "formatSpecifier")
+            (mapToken "function")
+            (mapToken "generic")
+            (mapToken "keyword")
+            (mapToken "label")
+            (mapToken "lifetime")
+            (mapToken "logical")
+            (mapToken "macro")
+            (mapToken "macroBang")
+            (mapToken "method")
+            (mapToken "namespace")
+            (mapToken "negation")
+            (mapToken "number")
+            (mapToken "operator")
+            (mapToken "parameter")
+            (mapToken "parenthesis")
+            (mapToken "procMacro")
+            (mapToken "property")
+            (mapToken "punctuation")
+            (mapToken "selfKeyword")
+            (mapToken "selfTypeKeyword")
+            (mapToken "semi")
+            (mapToken "static")
+            (mapToken "string")
+            (mapToken "struct")
+            (mapToken "toolModule")
+            (mapToken "trait")
+            (mapToken "typeAlias")
+            (mapToken "typeParameter")
+            (mapToken "union")
+            (mapToken "unresolvedReference")
+            (mapToken "variable")
 
-          # Special
-          {
-            token_type = "variable";
-            token_modifiers = [ "mutable" ];
-            underline = true;
-          }
-        ];
+            # Special
+            {
+              token_type = "variable";
+              token_modifiers = [ "mutable" ];
+              underline = true;
+            }
+          ];
       };
     };
   };

@@ -323,6 +323,14 @@
                     "color" = base0D;
                     "font_style" = null;
                   };
+                  "diff.minus" = {
+                    "color" = base0F;
+                    "font_style" = null;
+                  };
+                  "diff.plus" = {
+                    "color" = base0B;
+                    "font_style" = null;
+                  };
                   "dot" = {
                     "color" = base05;
                     "font_style" = null;

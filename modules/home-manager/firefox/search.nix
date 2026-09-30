@@ -21,6 +21,7 @@
         ecosia.metaData.hidden = true;
         google.metaData.hidden = true;
         perplexity.metaData.hidden = true;
+        startpage.metaData.hidden = true;
         wikipedia.metaData.hidden = true;
       };
     };

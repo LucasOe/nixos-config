@@ -37,9 +37,8 @@
     };
 
     firefox-gnome-theme = {
-      # Switch back to rafaelmardojai/firefox-gnome-theme once this PR is merged:
-      # https://github.com/rafaelmardojai/firefox-gnome-theme/pull/1108
-      url = "github:DavideLoconte/firefox-gnome-theme";
+      # Switch back to rafaelmardojai/firefox-gnome-theme the PRs are merged
+      url = "github:Amphero/firefox-gnome-theme";
       flake = false;
     };
 

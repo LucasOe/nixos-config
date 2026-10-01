@@ -21,15 +21,15 @@
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1785616478,
-        "narHash": "sha256-f0vtli0ctTcbP63TI0402bd9YGsQgA9Z5XOEsIj/Q1o=",
-        "owner": "DavideLoconte",
+        "lastModified": 1790633105,
+        "narHash": "sha256-K5f5HZd9pTGAW1eO7yBXVBpRZE+2i/S2gMy7v/fyJ68=",
+        "owner": "Amphero",
         "repo": "firefox-gnome-theme",
-        "rev": "b1b671e3b36c1697b2e7ba90ad2732191d6d4efb",
+        "rev": "454df8f46a24a3df928f7288ebb4babaf62fe44a",
         "type": "github"
       },
       "original": {
-        "owner": "DavideLoconte",
+        "owner": "Amphero",
         "repo": "firefox-gnome-theme",
         "type": "github"
       }

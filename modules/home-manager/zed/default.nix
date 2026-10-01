@@ -37,6 +37,7 @@ in
         "kotlin"
         "lua"
         "luau"
+        "mustache"
         "nix"
         "oxc" # https://github.com/oxc-project/oxc-zed/issues/29
         "toml"

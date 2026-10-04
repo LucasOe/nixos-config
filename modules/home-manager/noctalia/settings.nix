@@ -1,6 +1,7 @@
 {
   config,
   configLib,
+  lib,
   nixosConfig,
   ...
 }:
@@ -22,6 +23,7 @@ in
       };
       wallpaper = {
         enabled = true;
+        default.path = lib.mkIf (nixosConfig.theme.wallpaper != null) nixosConfig.theme.wallpaper;
         directory = configLib.relativeToRoot "assets/wallpapers";
         fill_color = nixosConfig.theme.colors.withHashtag.base00;
         fill_mode = "fit";

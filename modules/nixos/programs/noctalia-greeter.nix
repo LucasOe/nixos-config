@@ -58,6 +58,10 @@ in
           hide_logo = true;
           corner_radius_scale = 0.5;
           font_family = config.theme.fonts.sansSerif.name;
+          wallpaper = {
+            path = lib.mkIf (config.theme.wallpaper != null) config.theme.wallpaper;
+            fill_color = config.theme.colors.withHashtag.base00;
+          };
           palette = with config.theme.colors.withHashtag; {
             primary = base0D;
             on_primary = base00;

@@ -27,7 +27,7 @@ in
     };
 
     # Disable GUI/IPC-managed configuration
-    home.file.".local/state/noctalia/settings.toml" = {
+    xdg.stateFile."noctalia/settings.toml" = {
       force = true;
       text = "";
     };

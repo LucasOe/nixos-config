@@ -31,6 +31,7 @@ in
         "colored-zed-icons-theme"
         # LSPs
         "biome"
+        "csharp"
         "emmet"
         "html"
         "java"

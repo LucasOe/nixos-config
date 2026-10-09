@@ -211,7 +211,28 @@
         "millennium": "millennium",
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs_2",
+        "sone": "sone",
         "spicetify-nix": "spicetify-nix"
+      }
+    },
+    "sone": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791549984,
+        "narHash": "sha256-+z7CA+qsAFk/9rmaRrF1xeJx6/fkCGBn98/TQoHBiz4=",
+        "owner": "lullabyX",
+        "repo": "sone",
+        "rev": "940bf42f06c55323aff721986aa8dc560a107ed4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lullabyX",
+        "repo": "sone",
+        "type": "github"
       }
     },
     "spicetify-nix": {

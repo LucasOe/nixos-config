@@ -54,6 +54,11 @@
     millennium = {
       url = "github:SteamClientHomebrew/Millennium/?dir=packages/nix";
     };
+
+    sone = {
+      url = "github:lullabyX/sone";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   nixosConfig,
   pkgs,
@@ -22,7 +23,7 @@ in
       # https://github.com/lullabyX/sone/issues/16
       (pkgs.symlinkJoin {
         name = "sone";
-        paths = [ pkgs.sone ];
+        paths = [ inputs.sone.packages.${pkgs.stdenv.hostPlatform.system}.sone ];
         nativeBuildInputs = [ pkgs.makeWrapper ];
         postBuild = ''
           wrapProgram $out/bin/sone \

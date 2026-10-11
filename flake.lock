@@ -21,11 +21,11 @@
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
-        "lastModified": 1791437164,
-        "narHash": "sha256-g9jaFhIdcFe2HLj8jA+J6olUMOF68wyO3/PFnu84WWw=",
+        "lastModified": 1791493836,
+        "narHash": "sha256-s6epz5bIf0HT+ObWuBt9mf+YqVvtJfW/APlvwso7nxk=",
         "owner": "rafaelmardojai",
         "repo": "firefox-gnome-theme",
-        "rev": "1f890b05d54606e17a05c73f137a0cfde3340d6a",
+        "rev": "bbee0636118e77db35eb311610706f23f8691da1",
         "type": "github"
       },
       "original": {
@@ -57,11 +57,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791465139,
-        "narHash": "sha256-hXTjOf2VQDXrNt4aU9rmNhc0qdOhnjy9FcA4tlPEdq8=",
+        "lastModified": 1791642191,
+        "narHash": "sha256-0bK0A59rVUn1SRZzo4cNi4VSqAe7vR1gL2/MZl53Frw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "678e6c11cd5d24226087dc758d17f705c7c4106a",
+        "rev": "c58f54c733a7894d84fa2fdff26cc12088c4b78c",
         "type": "github"
       },
       "original": {
@@ -190,11 +190,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1791456040,
-        "narHash": "sha256-gRZ/s8WQJ2CsXdhcDVQH34qxuL0MuMCOs3aBiK1Prsw=",
-        "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+        "lastModified": 1791594108,
+        "narHash": "sha256-V0WmebqwEeAVZMqxfv7Dq7hpKkPPM19W50xQf3D1Kf4=",
+        "rev": "6510408d147d8c5e6d76043e899e9251756f6a75",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1087755.e7439b6b14ad/nixexprs.tar.zst"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1089111.6510408d147d/nixexprs.tar.zst"
       },
       "original": {
         "type": "tarball",
@@ -222,11 +222,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791549984,
-        "narHash": "sha256-+z7CA+qsAFk/9rmaRrF1xeJx6/fkCGBn98/TQoHBiz4=",
+        "lastModified": 1791662599,
+        "narHash": "sha256-xJSFlCZzpMLEcyFPw5J/S9+Q+joPYK0Cl9147nIqaUo=",
         "owner": "lullabyX",
         "repo": "sone",
-        "rev": "940bf42f06c55323aff721986aa8dc560a107ed4",
+        "rev": "77d3bac0cd9b3bac8ad770fb5e1b57c9055cdaba",
         "type": "github"
       },
       "original": {

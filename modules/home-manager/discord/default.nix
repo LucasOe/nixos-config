@@ -42,7 +42,7 @@ in
       # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
       settings = {
         appBadge = false;
-        arRPC = false;
+        arRPC = true;
         autoStartMinimized = true;
         checkUpdates = false;
         clickTrayToShowHide = true;
@@ -62,6 +62,8 @@ in
           discordAdblock = discordAdblockTheme;
         };
         settings = {
+          autoUpdate = false;
+          autoUpdateNotification = false;
           enabledThemes = [
             "midnight.css"
             "disblockOrigin.css"

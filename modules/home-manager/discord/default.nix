@@ -62,8 +62,6 @@ in
           discordAdblock = discordAdblockTheme;
         };
         settings = {
-          autoUpdate = false;
-          autoUpdateNotification = false;
           enabledThemes = [
             "midnight.css"
             "disblockOrigin.css"

@@ -16,6 +16,8 @@
         metrics = false;
         diagnostics = false;
       };
+      # General -> Extensions
+      suggest_extensions = false;
       # Apperance -> Theme
       theme = "NixOS Generated";
       icon_theme = "Colored Zed Icons Theme Dark";
@@ -142,12 +144,10 @@
       # AI -> Agent Configuration
       agent = {
         enable_feedback = false;
-        default_model = {
-          provider = "copilot_chat";
-          model = "gpt-5-mini";
-        };
         dock = "right";
-        sidebar_side = "right"; # Threads Panel
+        threads_sidebar = {
+          position = "right";
+        };
       };
       # AI -> Edit Predictions
       show_edit_predictions = false;

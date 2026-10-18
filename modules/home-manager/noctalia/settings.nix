@@ -57,6 +57,7 @@ in
         font_family = nixosConfig.theme.fonts.sansSerif.name;
         launcher = {
           categories = false;
+          layout = "simple";
           providers = {
             session = {
               global = true;

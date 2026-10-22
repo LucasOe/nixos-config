@@ -55,4 +55,7 @@
     # powersave vs. balanced) based on the system's active power profile.
     extraArgs = [ "--autopower" ];
   };
+
+  # Use latest kernel version
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }

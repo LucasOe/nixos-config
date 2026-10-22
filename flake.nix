@@ -47,7 +47,8 @@
     };
 
     maccel = {
-      url = "github:Gnarus-G/maccel";
+      # url = "github:Gnarus-G/maccel";
+      url = "github:chrisheib/maccel/fix/nixos-kernel-module-install";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -1,7 +1,6 @@
 {
   config,
   configLib,
-  lib,
   nixosConfig,
   ...
 }:
@@ -9,6 +8,12 @@
 let
   cfg = config.my.noctalia;
   gaps = config.wayland.windowManager.niri.settings.layout.gaps;
+
+  wallpaper =
+    if nixosConfig.theme.wallpaper != null then
+      nixosConfig.theme.wallpaper
+    else
+      "color:${nixosConfig.theme.colors.withHashtag.base00}";
 in
 {
   programs.noctalia = {
@@ -23,7 +28,7 @@ in
       };
       wallpaper = {
         enabled = true;
-        default.path = lib.mkIf (nixosConfig.theme.wallpaper != null) nixosConfig.theme.wallpaper;
+        default.path = wallpaper;
         directory = configLib.relativeToRoot "assets/wallpapers";
         fill_color = nixosConfig.theme.colors.withHashtag.base00;
         fill_mode = "fit";

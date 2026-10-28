@@ -191,7 +191,7 @@
         ];
       };
       # Requires: https://github.com/niri-wm/niri/pull/4599
-      "Mod+Alt+Print" = {
+      "Mod+Shift+Print" = {
         _props.hotkey-overlay-title = "Screenshot Window";
         spawn = [
           "noctalia"

@@ -45,10 +45,10 @@
 
     _children = [
       {
-        window-rule._children = [
-          { geometry-corner-radius = 8.0; }
-          { clip-to-geometry = true; }
-        ];
+        window-rule = {
+          geometry-corner-radius = 8.0;
+          clip-to-geometry = true;
+        };
       }
     ];
 

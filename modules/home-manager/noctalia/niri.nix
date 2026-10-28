@@ -190,6 +190,14 @@
           "screenshot-fullscreen"
         ];
       };
+      "Mod+Alt+Print" = {
+        _props.hotkey-overlay-title = "Screenshot Window";
+        spawn = [
+          "noctalia"
+          "msg"
+          "screenshot-window"
+        ];
+      };
     };
   };
 }

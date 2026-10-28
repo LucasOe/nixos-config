@@ -153,6 +153,17 @@
         ];
       };
 
+      # Window Switcher
+      "Alt+Tab" = {
+        _props.hotkey-overlay-title = "Toggle Window Switcher";
+        spawn = [
+          "noctalia"
+          "msg"
+          "window-switcher"
+          "hold"
+        ];
+      };
+
       # Screenshot
       "Mod+BackSpace" = {
         _props.hotkey-overlay-title = "Annotate Screen";

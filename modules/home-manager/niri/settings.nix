@@ -57,6 +57,7 @@
     clipboard.disable-primary = [ ];
     prefer-no-csd = [ ];
     overview.workspace-shadow.off = [ ];
+    recent-windows.off = [ ];
 
     environment = {
       CLUTTER_BACKEND = "wayland";

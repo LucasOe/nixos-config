@@ -23,6 +23,14 @@
         };
       }
 
+      # Enable blur on Noctalia's window switcher
+      {
+        layer-rule = {
+          match._props.namespace = "^noctalia-window-switcher$";
+          background-effect.blur = true;
+        };
+      }
+
       # Floating Windows
       {
         window-rule = {

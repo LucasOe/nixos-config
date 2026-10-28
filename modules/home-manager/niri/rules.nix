@@ -97,6 +97,20 @@
           variable-refresh-rate = "fullscreen-only";
         };
       }
+
+      # Black Desert
+      # Requires force-render patch:
+      # https://github.com/niri-wm/niri/pull/4392
+      {
+        window-rule = {
+          _children = [
+            { match._props.app-id = "^blackdesert64.exe$"; }
+            { match._props.app-id = "^blackdesertpatcher32.pae$"; }
+          ];
+          open-on-output = "DP-1";
+          force-render = 30;
+        };
+      }
     ];
   };
 }

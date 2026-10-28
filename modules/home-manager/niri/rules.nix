@@ -4,7 +4,7 @@
   # https://niri-wm.github.io/niri/Configuration%3A-Window-Rules.html
   wayland.windowManager.niri.settings = {
     _children = [
-      # Put wallpaper inside the overview backdrop
+      # Put wallpaper inside the overview backdrop.
       # https://niri-wm.github.io/niri/Overview.html#backdrop-customization
       {
         layer-rule = {
@@ -87,27 +87,14 @@
         };
       }
 
-      # Steam Games
+      # Enable on-demand VRR when any window is fullscreen.
+      # Exclude Firefox to avoid flickering when watching videos in fullscreen.
+      # Requires niri-unstable:
+      # https://github.com/niri-wm/niri/commit/83193223171fb55f5bfceaa2fe9aaf6cf6159684
       {
         window-rule = {
-          _children = [
-            { match._props.app-id = "^steam_app_.*$"; }
-            { match._props.app-id = "\.exe$"; }
-          ];
-          force-render = 30; # Requires https://github.com/niri-wm/niri/pull/4392
-          # open-fullscreen = true;
-          open-on-output = "DP-1";
-          variable-refresh-rate = true;
-        };
-      }
-
-      # Fullscreen Applications
-      {
-        window-rule = {
-          match._props.is-fullscreen = true; # Requires https://github.com/niri-wm/niri/pull/4064
           exclude._props.app-id = "^firefox";
-          variable-refresh-rate = true;
-          force-render = 30; # Requires https://github.com/niri-wm/niri/pull/4392
+          variable-refresh-rate = "fullscreen-only";
         };
       }
     ];

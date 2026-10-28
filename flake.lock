@@ -150,6 +150,26 @@
         "type": "github"
       }
     },
+    "niri": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793091370,
+        "narHash": "sha256-PM8tinYBMFRZfRkOiRZPbgBdDK0tMlsqpeupa2b8CcU=",
+        "owner": "niri-wm",
+        "repo": "niri",
+        "rev": "fcbc971cf49a987b1e8d5ff1d64da6b1f61a1787",
+        "type": "github"
+      },
+      "original": {
+        "owner": "niri-wm",
+        "repo": "niri",
+        "type": "github"
+      }
+    },
     "nix-colorizer": {
       "locked": {
         "lastModified": 1750078528,
@@ -202,6 +222,7 @@
         "import-tree": "import-tree",
         "maccel": "maccel",
         "millennium": "millennium",
+        "niri": "niri",
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs",
         "spicetify-nix": "spicetify-nix"

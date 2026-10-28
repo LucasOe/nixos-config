@@ -57,6 +57,11 @@
       url = "github:SteamClientHomebrew/Millennium/?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri = {
+      url = "github:niri-wm/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

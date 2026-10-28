@@ -267,11 +267,11 @@ in
         taskbar = {
           capsule_opacity = 0.0;
           capsule_padding = 16.0;
-          empty_color = "outline";
+          empty_color = "outline_variant";
           group_by_workspace = true;
           hide_empty_workspaces = true;
           inactive_opacity = 0.75;
-          occupied_color = "outline";
+          occupied_color = "outline_variant";
           scale = 1.2;
           show_active_indicator = false;
           show_all_outputs = true;

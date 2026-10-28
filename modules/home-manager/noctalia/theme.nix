@@ -1,7 +1,7 @@
 { nixosConfig, ... }:
 
 let
-  # https://docs.noctalia.dev/v5/theming/palette/
+  # https://docs.noctalia.dev/noctalia/theming/palette/
   palette = with nixosConfig.theme.colors.withHashtag; {
     mPrimary = base0D;
     mOnPrimary = base00;

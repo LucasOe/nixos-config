@@ -50,6 +50,7 @@ in
         hardwareAcceleration = true;
         hardwareVideoAcceleration = true;
         minimizeToTray = true;
+        nativeTitleBar = true;
         openLinksWithElectron = false;
         splashBackground = nixosConfig.theme.colors.withHashtag.base01;
         splashColor = nixosConfig.theme.colors.withHashtag.base05;

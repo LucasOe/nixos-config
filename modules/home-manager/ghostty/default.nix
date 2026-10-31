@@ -75,6 +75,9 @@ in
       };
     };
 
+    # SSH Integration with ghostty +ssh
+    home.shellAliases.ssh = "ghostty +ssh --";
+
     # `programs.ghostty.systemd.enable` does not autostart the service at boot, this fixes it
     xdg.configFile."systemd/user/graphical-session.target.wants/app-com.mitchellh.ghostty.service".source =
       lib.mkIf config.programs.ghostty.systemd.enable "${pkgs.ghostty}/share/systemd/user/app-com.mitchellh.ghostty.service";

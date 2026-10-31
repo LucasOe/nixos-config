@@ -58,4 +58,11 @@
 
   # Use latest kernel version
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Install terminfo outputs
+  # environment.enableAllTerminfo = true;
+  environment.systemPackages = with pkgs; [
+    ghostty.terminfo
+    kitty.terminfo
+  ];
 }

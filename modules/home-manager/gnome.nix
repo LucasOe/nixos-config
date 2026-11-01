@@ -31,6 +31,7 @@ in
       gnome-logs # Logs
       loupe # Image Viewer
       papers # Document Viewer
+      seahorse # Passwords and Secrets
       showtime # Video Player
       simple-scan # Document Scanner
       snapshot # Camera

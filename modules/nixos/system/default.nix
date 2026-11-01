@@ -21,7 +21,6 @@
 
   programs.comma.enable = true;
   programs.dconf.enable = true;
-  programs.seahorse.enable = config.my.gui.enable;
 
   services.flatpak.enable = config.my.gui.enable;
   services.playerctld.enable = true;

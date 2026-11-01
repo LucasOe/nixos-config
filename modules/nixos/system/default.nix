@@ -28,8 +28,6 @@
   services.printing.enable = true;
   services.upower.enable = true;
 
-  virtualisation.docker.enable = true; # Docker
-
   # Allow dynamically linked libraries
   programs.nix-ld = {
     enable = true;

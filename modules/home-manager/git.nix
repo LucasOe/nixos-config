@@ -1,9 +1,17 @@
-{ ... }:
+{ config, ... }:
 
 {
   programs.git = {
     enable = true;
     lfs.enable = true;
+
+    signing = {
+      format = "ssh";
+      key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
+      signByDefault = true;
+    };
+
+    # https://git-scm.com/docs/git-config
     settings = {
       user.name = "LucasOe";
       user.email = "github@lucasoe.com";

@@ -11,12 +11,12 @@
         "$directory"
         # VCS
         "$vcs"
-        # Special
+        # Nix
         "$nix_shell"
         "\${custom.nix_shell_adhoc}"
         "$direnv"
         # Character
-        "\n"
+        "$line_break"
         "$character"
       ];
       # Username
@@ -39,11 +39,10 @@
         disabled = false;
         # Settings
         ssh_only = true;
-        ssh_symbol = "";
         # Format
         format = lib.concatStrings [
           "[](bright-black)"
-          "[ $ssh_symbol on $hostname ](bg:bright-black bold bright-green)"
+          "[  on $hostname ](bg:bright-black bold bright-green)"
           "[](bright-black)"
         ];
       };
@@ -95,7 +94,7 @@
         # Format
         format = lib.concatStrings [
           "[](bright-green)"
-          "[ $symbol$branch ](bg:bright-green black)"
+          "[  $branch ](bg:bright-green black)"
         ];
       };
       git_commit = {
@@ -134,7 +133,7 @@
         # Format
         format = lib.concatStrings [
           "[](bright-green)"
-          "[ $symbol$bookmark ](bg:bright-green black)"
+          "[  $bookmark ](bg:bright-green black)"
         ];
       };
       jj_change = {
@@ -172,12 +171,10 @@
       # https://github.com/NixOS/nix/issues/6677
       nix_shell = {
         disabled = false;
-        # Settings
-        symbol = "󱄅";
         # Format
         format = lib.concatStrings [
           "[](blue)"
-          "[ $symbol ](bg:blue black)"
+          "[ 󱄅 ](bg:blue black)"
           "[](blue)"
         ];
       };
@@ -191,11 +188,10 @@
           "--noprofile"
           "--norc"
         ];
-        symbol = "󱄅";
         # Format
         format = lib.concatStrings [
           "[](blue)"
-          "[ $symbol ](bg:blue black)"
+          "[ 󱄅 ](bg:blue black)"
           "[](blue)"
         ];
       };
@@ -211,11 +207,14 @@
         # Format
         format = lib.concatStrings [
           "[](blue)"
-          "[ $symbol$loaded$allowed ](bg:blue black)"
+          "[ direnv $loaded$allowed ](bg:blue black)"
           "[](blue)"
         ];
       };
       # Character
+      line_break = {
+        disabled = false;
+      };
       character = {
         success_symbol = "[❯](white)";
         error_symbol = "[❯](red)";

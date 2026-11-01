@@ -13,6 +13,7 @@
         "$vcs"
         # Special
         "$nix_shell"
+        "\${custom.nix_shell_adhoc}"
         "$direnv"
         # Character
         "\n"
@@ -166,11 +167,30 @@
         ];
       };
       # Nix
-      # Only works with `nix-shell` and direnv
-      # See: https://github.com/NixOS/nix/issues/3862
+      # Only works with `nix-shell` and direnv. See:
+      # https://github.com/NixOS/nix/issues/3862
+      # https://github.com/NixOS/nix/issues/6677
       nix_shell = {
         disabled = false;
         # Settings
+        symbol = "󱄅";
+        # Format
+        format = lib.concatStrings [
+          "[](blue)"
+          "[ $symbol ](bg:blue black)"
+          "[](blue)"
+        ];
+      };
+      # Detect ad-hoc `nix shell` (no IN_NIX_SHELL, raw /nix/store on PATH).
+      # Using custom module instead of `heuristic` to avoid false positives when
+      # using Ghostty or Kitty by running it inside a clean bash shell.
+      custom.nix_shell_adhoc = {
+        when = ''[ -z "$IN_NIX_SHELL" ] && printf '%s' "$PATH" | grep -q "^/nix/store/"'';
+        shell = [
+          "bash"
+          "--noprofile"
+          "--norc"
+        ];
         symbol = "󱄅";
         # Format
         format = lib.concatStrings [

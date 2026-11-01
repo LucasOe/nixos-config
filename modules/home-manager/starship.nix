@@ -9,10 +9,8 @@
         "$username"
         "$hostname"
         "$directory"
-        # Git
-        "$git_branch"
-        "$git_commit"
-        "$git_status"
+        # VCS
+        "$vcs"
         # Special
         "$nix_shell"
         "$direnv"
@@ -71,6 +69,25 @@
           "[](bright-black)"
         ];
       };
+      # VCS
+      vcs = {
+        disabled = false;
+        # Settings
+        order = [
+          "jj"
+          "git"
+        ];
+        git_modules = lib.concatStrings [
+          "$git_branch"
+          "$git_commit"
+          "$git_status"
+        ];
+        jj_modules = lib.concatStrings [
+          "$jj_bookmark"
+          "$jj_change"
+          "$jj_status"
+        ];
+      };
       # Git
       git_branch = {
         disabled = false;
@@ -92,21 +109,59 @@
       };
       git_status = {
         disabled = false;
-        # Branch
+        # Settings ($ahead_behind)
         ahead = "↑\${count}";
-        diverged = "↑\${ahead_count}↓\${behind_count}";
         behind = "↓\${count}";
+        diverged = "↑\${ahead_count}↓\${behind_count}";
+        # Settings ($all_status)
         conflicted = "🞪\${count}";
-        # HEAD
         untracked = "?\${count}";
+        stashed = "\\$\${count}";
         modified = "~\${count}";
         staged = "+\${count}";
-        deleted = "-\${count}";
-        stashed = "\\$\${count}";
         renamed = "»\${count}";
+        deleted = "-\${count}";
         # Format
         format = lib.concatStrings [
           "([\\[$ahead_behind$all_status\\] ](bg:bright-green black))"
+          "[](bright-green)"
+        ];
+      };
+      # JJ
+      jj_bookmark = {
+        disabled = false;
+        # Format
+        format = lib.concatStrings [
+          "[](bright-green)"
+          "[ $symbol$bookmark ](bg:bright-green black)"
+        ];
+      };
+      jj_change = {
+        disabled = false;
+        # Style
+        prefix_style = "bg:bright-green black";
+        suffix_style = "bg:bright-green bright-black";
+        change_offset_style = "bg:bright-green bold black";
+        # Format
+        format = lib.concatStrings [
+          "[](bright-green)"
+          "[ $change ](bg:bright-green black)"
+        ];
+      };
+      jj_status = {
+        disabled = false;
+        # Settings
+        conflicted = "🞪";
+        description_empty = "◌";
+        immutable = "◆";
+        added = "+$count";
+        copied = "=$count";
+        deleted = "-$count";
+        modified = "~$count";
+        renamed = "»$count";
+        # Format
+        format = lib.concatStrings [
+          "([\\[$all\\] ](bg:bright-green black))"
           "[](bright-green)"
         ];
       };

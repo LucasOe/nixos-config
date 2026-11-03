@@ -6,6 +6,11 @@
       "eDP-1" = {
         scale = 1.5;
         variable-refresh-rate = [ ];
+
+        layout = {
+          default-column-width.proportion = 1.0;
+          preset-column-widths._children = [ { proportion = 0.5; } ];
+        };
       };
     };
 

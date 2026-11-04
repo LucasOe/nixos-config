@@ -51,8 +51,8 @@ in
     };
 
     home.sessionVariables = {
-      EDITOR = "zeditor";
-      VISUAL = "zeditor";
+      EDITOR = "zeditor --wait";
+      VISUAL = "zeditor --wait";
     };
   };
 }

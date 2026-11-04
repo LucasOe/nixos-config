@@ -29,15 +29,3 @@ modules use [Option Declarations][options] for per-host configuration.
 | mihali   | aarch64      | Raspberry Pi 4                      | Homelab           |
 | olem     | x86_64       | Microsoft Surface Laptop 3          | University        |
 | tamas    | x86_64       | AMD Ryzen 5 5600x + Nvidia GTX 3070 | Workstation       |
-
-## Imperative Setup
-
-While most of the system configuration is declarative, some state is
-intentionally managed outside of Nix and must be configured manually after
-installation.
-
-- **User Passwords**: Set a password for your user account with `passwd <username>`.
-- **SSH Keys**: Add your SSH key to `~/.ssh/`.
-- **GitHub Access Token**: Add a GitHub API token to `~/.config/nix/nix.conf` to avoid rate limiting.
-
-I am not using any secret management yet.

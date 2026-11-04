@@ -28,6 +28,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     base16 = {
       url = "github:SenchoPens/base16.nix";
       inputs.nixpkgs.follows = "nixpkgs";

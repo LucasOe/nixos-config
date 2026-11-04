@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Required for Flakes
@@ -22,5 +22,9 @@
         "flakes"
       ];
     };
+
+    extraOptions = ''
+      !include ${config.age.secrets."github-access-token".path}
+    '';
   };
 }

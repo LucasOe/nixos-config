@@ -22,4 +22,10 @@ in
     olem
     tamas
   ];
+  "secrets/github-access-token.age".publicKeys = [
+    admin
+    mihali
+    olem
+    tamas
+  ];
 }

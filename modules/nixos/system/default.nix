@@ -62,4 +62,11 @@
     ghostty.terminfo
     kitty.terminfo
   ];
+
+  # Remove perl from activation
+  #
+  # /etc/ isn't automatically migrated to /.rw-etc/upper
+  # See: https://github.com/NixOS/nixpkgs/issues/319524
+  system.etc.overlay.enable = true;
+  services.userborn.enable = true;
 }

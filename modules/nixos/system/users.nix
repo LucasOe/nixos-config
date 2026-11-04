@@ -10,8 +10,6 @@
 {
   imports = [ inputs.home-manager.nixosModules.default ];
 
-  services.userborn.enable = true;
-
   users = {
     mutableUsers = false;
 

@@ -1,0 +1,175 @@
+diff --git a/niri-config/src/lib.rs b/niri-config/src/lib.rs
+index f026f9bc0c..72ec41839c 100644
+--- a/niri-config/src/lib.rs
++++ b/niri-config/src/lib.rs
+@@ -906,6 +906,7 @@ mod tests {
+                 match app-id=".*alacritty"
+                 exclude title="~"
+                 exclude is-active=true is-focused=false
++                exclude is-fullscreen=true
+ 
+                 open-on-output "eDP-1"
+                 open-maximized true
+@@ -1761,6 +1762,7 @@ mod tests {
+                             is_floating: None,
+                             is_window_cast_target: None,
+                             is_urgent: None,
++                            is_fullscreen: None,
+                             at_startup: None,
+                         },
+                     ],
+@@ -1780,6 +1782,7 @@ mod tests {
+                             is_floating: None,
+                             is_window_cast_target: None,
+                             is_urgent: None,
++                            is_fullscreen: None,
+                             at_startup: None,
+                         },
+                         Match {
+@@ -1795,6 +1798,21 @@ mod tests {
+                             is_floating: None,
+                             is_window_cast_target: None,
+                             is_urgent: None,
++                            is_fullscreen: None,
++                            at_startup: None,
++                        },
++                        Match {
++                            app_id: None,
++                            title: None,
++                            is_active: None,
++                            is_focused: None,
++                            is_active_in_column: None,
++                            is_floating: None,
++                            is_window_cast_target: None,
++                            is_urgent: None,
++                            is_fullscreen: Some(
++                                true,
++                            ),
+                             at_startup: None,
+                         },
+                     ],
+diff --git a/niri-config/src/window_rule.rs b/niri-config/src/window_rule.rs
+index 0aeae2ccbe..9ce83e5725 100644
+--- a/niri-config/src/window_rule.rs
++++ b/niri-config/src/window_rule.rs
+@@ -138,6 +138,8 @@ pub struct Match {
+     #[knuffel(property)]
+     pub is_urgent: Option<bool>,
+     #[knuffel(property)]
++    pub is_fullscreen: Option<bool>,
++    #[knuffel(property)]
+     pub at_startup: Option<bool>,
+ }
+ 
+diff --git a/src/window/mapped.rs b/src/window/mapped.rs
+index 3db1f66cad..a4f30bde0e 100644
+--- a/src/window/mapped.rs
++++ b/src/window/mapped.rs
+@@ -791,25 +791,27 @@ impl LayoutElement for Mapped {
+             self.needs_configure = true;
+         }
+ 
+-        let changed = self.toplevel().with_pending_state(|state| {
+-            let changed = state.size != Some(size);
++        let mut size_changed = false;
++        let mut fullscreen_changed = false;
++        self.toplevel().with_pending_state(|state| {
++            size_changed = state.size != Some(size);
+             state.size = Some(size);
+ 
+             if mode.is_fullscreen() || self.is_pending_windowed_fullscreen {
+-                state.states.set(xdg_toplevel::State::Fullscreen);
++                fullscreen_changed = state.states.set(xdg_toplevel::State::Fullscreen);
+                 state.states.unset(xdg_toplevel::State::Maximized);
+             } else if mode.is_maximized() {
+-                state.states.unset(xdg_toplevel::State::Fullscreen);
++                fullscreen_changed = state.states.unset(xdg_toplevel::State::Fullscreen);
+                 state.states.set(xdg_toplevel::State::Maximized);
+             } else {
+-                state.states.unset(xdg_toplevel::State::Fullscreen);
++                fullscreen_changed = state.states.unset(xdg_toplevel::State::Fullscreen);
+                 state.states.unset(xdg_toplevel::State::Maximized);
+-            }
+-
+-            changed
++            };
+         });
+ 
+-        if changed && animate {
++        self.need_to_recompute_rules |= fullscreen_changed;
++
++        if size_changed && animate {
+             self.animate_next_configure = true;
+         }
+ 
+@@ -880,16 +882,20 @@ impl LayoutElement for Mapped {
+             return;
+         }
+ 
+-        let changed = self.toplevel().with_pending_state(|state| {
++        let (changed, fullscreen_changed) = self.toplevel().with_pending_state(|state| {
+             let changed = state.size != Some(size);
+             state.size = Some(size);
+-            if !self.is_pending_windowed_fullscreen {
+-                state.states.unset(xdg_toplevel::State::Fullscreen);
+-            }
++            let fullscreen_changed = if !self.is_pending_windowed_fullscreen {
++                state.states.unset(xdg_toplevel::State::Fullscreen)
++            } else {
++                false
++            };
+             state.states.unset(xdg_toplevel::State::Maximized);
+-            changed
++            (changed, fullscreen_changed)
+         });
+ 
++        self.need_to_recompute_rules |= fullscreen_changed;
++
+         if changed && animate {
+             self.animate_next_configure = true;
+         }
+@@ -1329,19 +1335,20 @@ impl LayoutElement for Mapped {
+         //
+         // When going from windowed to real fullscreen, we'll use request_size() which will set the
+         // fullscreen state back.
+-        self.toplevel().with_pending_state(|state| {
++        let fullscreen_changed = self.toplevel().with_pending_state(|state| {
+             if value {
+-                state.states.set(xdg_toplevel::State::Fullscreen);
+                 state.states.unset(xdg_toplevel::State::Maximized);
++                state.states.set(xdg_toplevel::State::Fullscreen)
+             } else {
+-                state.states.unset(xdg_toplevel::State::Fullscreen);
+-
+                 if self.is_pending_maximized {
+                     state.states.set(xdg_toplevel::State::Maximized);
+                 }
++                state.states.unset(xdg_toplevel::State::Fullscreen)
+             }
+         });
+ 
++        self.need_to_recompute_rules |= fullscreen_changed;
++
+         // Make sure we receive a commit later to update self.is_windowed_fullscreen.
+         self.needs_configure = true;
+     }
+diff --git a/src/window/mod.rs b/src/window/mod.rs
+index 1134510ed9..1d07e3f879 100644
+--- a/src/window/mod.rs
++++ b/src/window/mod.rs
+@@ -416,6 +416,15 @@ fn window_matches(window: WindowRef, role: &XdgToplevelSurfaceRoleAttributes, m:
+         }
+     }
+ 
++    if let Some(is_fullscreen) = m.is_fullscreen {
++        let pending_fullscreen = server_pending
++            .states
++            .contains(xdg_toplevel::State::Fullscreen);
++        if is_fullscreen != pending_fullscreen {
++            return false;
++        }
++    }
++
+     if let Some(app_id_re) = &m.app_id {
+         let Some(app_id) = &role.app_id else {
+             return false;

@@ -1,9 +1,6 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
-  # Required for Flakes
-  environment.systemPackages = [ pkgs.git ];
-
   nix = {
     # Disable Channels, we're using Flakes instead
     channel.enable = false;

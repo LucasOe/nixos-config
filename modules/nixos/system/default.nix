@@ -45,12 +45,16 @@
   };
 
   # Use scx_lavd scheduler
-  services.scx = {
+  services.scx-loader = {
     enable = true;
-    scheduler = "scx_lavd";
-    # Automatically decide the scheduler's power mode (performance vs.
-    # powersave vs. balanced) based on the system's active power profile.
-    extraArgs = [ "--autopower" ];
+    # https://github.com/sched-ext/scx-loader/blob/main/crates/scx_loader/configuration.md
+    config = {
+      default_sched = "scx_lavd";
+      default_mode = "Auto"; # Use auto_mode
+      # Automatically decide the scheduler's power mode (performance vs.
+      # powersave vs. balanced) based on the system's active power profile.
+      scheds.scx_lavd.auto_mode = [ "--autopower" ];
+    };
   };
 
   # Use latest kernel version

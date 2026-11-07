@@ -28,4 +28,8 @@ in
     olem
     tamas
   ];
+  "secrets/cloudflare-caddy.age".publicKeys = [
+    admin
+    mihali
+  ];
 }

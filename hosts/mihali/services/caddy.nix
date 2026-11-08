@@ -18,7 +18,7 @@
 
     # https://caddyserver.com/docs/caddyfile/options
     globalConfig = ''
-      dns cloudflare {env.CF_API_TOKEN}
+      acme_dns cloudflare {env.CF_API_TOKEN}
       tls_resolvers 1.1.1.1
     '';
 

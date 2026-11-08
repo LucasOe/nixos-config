@@ -59,12 +59,12 @@ let
       name = "Amazon";
     }
     {
-      url = "https://garmoth.com/";
-      name = "Garmoth";
-    }
-    {
       url = "https://www.nytimes.com/crosswords";
       name = "NYT Games";
+    }
+    {
+      url = "https://home.ts.lucasoe.com/";
+      name = "Home";
     }
   ];
 

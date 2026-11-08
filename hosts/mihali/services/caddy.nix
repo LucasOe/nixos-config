@@ -23,8 +23,14 @@
     '';
 
     virtualHosts = {
+      # Stump
       "stump.ts.lucasoe.com".extraConfig = ''
         reverse_proxy 127.0.0.1:${lib.toString config.services.stump.port}
+      '';
+
+      # Glance
+      "home.ts.lucasoe.com".extraConfig = ''
+        reverse_proxy 127.0.0.1:${lib.toString config.services.glance.settings.server.port}
       '';
     };
   };

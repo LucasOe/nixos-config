@@ -38,6 +38,9 @@ in
 
     programs.vesktop = {
       enable = true;
+      # For some reason Vesktop overrides the symlink at ./config/vesktop/settings.json
+      # Enable mutable settings to avoid conflicts when the file already exists.
+      mutableSettings = true;
 
       # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
       settings = {
@@ -49,6 +52,7 @@ in
         disableMinSize = true;
         hardwareAcceleration = true;
         hardwareVideoAcceleration = true;
+        hardwareVideoEncoding = true;
         minimizeToTray = true;
         nativeTitleBar = true;
         openLinksWithElectron = false;

@@ -189,13 +189,24 @@
           "screenshot-fullscreen"
         ];
       };
-      # Requires: https://github.com/niri-wm/niri/pull/4599
       "Mod+Shift+Print" = {
         _props.hotkey-overlay-title = "Screenshot Window";
         spawn = [
           "noctalia"
           "msg"
           "screenshot-window"
+        ];
+      };
+
+      # Screen Mirror
+      "Mod+Alt+P" = {
+        _props.repeat = false;
+        _props.hotkey-overlay-title = "Screen Mirror";
+        spawn = [
+          "noctalia"
+          "msg"
+          "panel-toggle"
+          "elijaharch/wl-screen-mirror:controls"
         ];
       };
     };

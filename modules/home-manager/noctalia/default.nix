@@ -2,6 +2,7 @@
   config,
   lib,
   nixosConfig,
+  pkgs,
   ...
 }:
 
@@ -31,5 +32,9 @@ in
       force = true;
       text = "";
     };
+
+    home.packages = with pkgs; [
+      wl-mirror # Required by elijaharch/wl-screen-mirror
+    ];
   };
 }

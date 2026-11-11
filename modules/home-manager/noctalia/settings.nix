@@ -315,6 +315,10 @@ in
           hide_optimize_button = true;
           hide_update_button = true;
         };
+        "elijaharch/wl-screen-mirror" = {
+          controls_placement = "floating";
+          controls_position = "center";
+        };
       };
       plugins = {
         source = [
@@ -341,6 +345,7 @@ in
         ];
         enabled = [
           "avivbintangaringga/nix-monitor"
+          "elijaharch/wl-screen-mirror"
           "lucasoe/proton-pass"
         ];
       };

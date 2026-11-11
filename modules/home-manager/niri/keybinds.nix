@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ ... }:
 
 {
   # https://niri-wm.github.io/niri/Configuration%3A-Key-Bindings.html
@@ -137,9 +133,9 @@
 
     # Screen mirroring
     # https://github.com/Ferdi265/wl-mirror/issues/59
-    "Mod+Alt+P" = {
-      _props.repeat = false;
-      spawn-sh = "${lib.getExe' pkgs.wl-mirror "wl-mirror"} $(niri msg --json focused-output | ${lib.getExe pkgs.jq} -r .name)";
-    };
+    # "Mod+Alt+P" = {
+    #   _props.repeat = false;
+    #   spawn-sh = "${lib.getExe' pkgs.wl-mirror "wl-mirror"} $(niri msg --json focused-output | ${lib.getExe pkgs.jq} -r .name)";
+    # };
   };
 }

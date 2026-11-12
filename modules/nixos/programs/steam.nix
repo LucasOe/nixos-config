@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
@@ -8,7 +7,7 @@
 
 let
   cfg = config.my.steam;
-  steamPkg = if cfg.millennium then pkgs.millennium-steam else pkgs.steam;
+  steamPkg = if cfg.millennium then pkgs.steamWithMillennium else pkgs.steam;
 in
 {
   options.my.steam = {
@@ -27,8 +26,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    nixpkgs.overlays = [ inputs.millennium.overlays.default ];
-
     programs.steam = {
       enable = true;
       package = steamPkg.override {

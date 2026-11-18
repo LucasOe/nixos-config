@@ -45,7 +45,7 @@ in
       # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
       settings = {
         appBadge = false;
-        arRPC = true;
+        arRPC = false;
         autoStartMinimized = true;
         checkUpdates = false;
         clickTrayToShowHide = true;

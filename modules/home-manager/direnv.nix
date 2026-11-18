@@ -3,6 +3,7 @@
 {
   programs.direnv = {
     enable = true;
+    enableGitIntegration = true;
     silent = true;
     nix-direnv.enable = true;
   };

@@ -141,6 +141,7 @@ in
         position = "top_right";
         kinds = {
           media = false;
+          media_volume = false;
         };
       };
       lockscreen = {

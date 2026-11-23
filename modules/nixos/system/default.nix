@@ -19,7 +19,7 @@
   hardware.enableAllFirmware = true;
   hardware.enableAllHardware = true;
 
-  programs.comma.enable = true;
+  programs.command-not-found.enable = false;
   programs.dconf.enable = true;
 
   services.flatpak.enable = config.my.gui.enable;

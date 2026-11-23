@@ -177,6 +177,21 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
       }
     },
+    "nixtopsy": {
+      "locked": {
+        "lastModified": 1795426408,
+        "narHash": "sha256-RH4EUjl0wx+VIzRy6zamLsNzfh+73fCm68OuKf4cdsM=",
+        "owner": "amaanq",
+        "repo": "nixtopsy",
+        "rev": "3517742d58366babf3aabd3a7688f6fd85e0c8a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "amaanq",
+        "repo": "nixtopsy",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -188,6 +203,7 @@
         "niri": "niri",
         "nix-colorizer": "nix-colorizer",
         "nixpkgs": "nixpkgs",
+        "nixtopsy": "nixtopsy",
         "spicetify-nix": "spicetify-nix"
       }
     },

@@ -62,6 +62,10 @@
       url = "github:niri-wm/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixtopsy = {
+      url = "github:amaanq/nixtopsy";
+    };
   };
 
   outputs =

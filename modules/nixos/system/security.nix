@@ -4,7 +4,7 @@
   security = {
     run0 = {
       enable = true;
-      enableSudoAlias = true;
+      sudo-shim.enable = true;
       persistentAuth = {
         enable = true;
         enableRemote = true;

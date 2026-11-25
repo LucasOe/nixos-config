@@ -1,4 +1,4 @@
-{ username, ... }:
+{ lib, username, ... }:
 
 {
   # Networking
@@ -45,6 +45,11 @@
       size = 4096;
     }
   ];
+
+  # Disabled due to build failure
+  # https://github.com/NixOS/nixpkgs/issues/585262
+  # https://github.com/sched-ext/scx/issues/3977
+  services.scx-loader.enable = lib.mkForce false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -32,6 +32,7 @@ in
         # LSPs
         "biome"
         "csharp"
+        "dockerfile"
         "emmet"
         "html"
         "java"
@@ -41,6 +42,7 @@ in
         "mustache"
         "nix"
         "oxc" # https://github.com/oxc-project/oxc-zed/issues/29
+        "sql"
         "toml"
         "tsgo"
       ];

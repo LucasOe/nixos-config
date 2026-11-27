@@ -99,8 +99,8 @@
       }
 
       # Black Desert
-      # Requires force-render patch:
-      # https://github.com/niri-wm/niri/pull/4392
+      # Requires niri-unstable:
+      # https://github.com/niri-wm/niri/commit/8cace1644cf4c6c9964eb32f9e623648aee870af
       {
         window-rule = {
           _children = [
@@ -108,7 +108,7 @@
             { match._props.app-id = "^blackdesertpatcher32.pae$"; }
           ];
           open-on-output = "DP-1";
-          force-render = 30;
+          offscreen-fps = 30;
         };
       }
     ];

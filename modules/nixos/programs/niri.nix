@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   options,
@@ -8,6 +9,8 @@
 
 let
   cfg = config.my.niri;
+
+  system = pkgs.stdenv.hostPlatform.system;
 in
 {
   options.my.niri = {
@@ -24,6 +27,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # Use Niri unstable
+    my.niri.package = inputs.niri.packages.${system}.default;
+
     environment.systemPackages = with pkgs; [
       cfg.package
       xwayland-satellite

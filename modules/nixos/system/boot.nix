@@ -9,7 +9,6 @@
     # https://wiki.nixos.org/wiki/Plymouth
     # https://wiki.archlinux.org/title/Silent_boot
     # consoleLogLevel = 3;
-    # initrd.verbose = false;
     # kernelParams = [
     #   "quiet"
     #   # "splash" # Already set by plymouth.enable

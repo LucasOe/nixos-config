@@ -1,7 +1,7 @@
-{ ... }:
+{ lib, ... }:
 
 let
-  ESC = builtins.fromJSON ''"\u001b"'';
+  ESC = lib.fromJSON ''"\u001b"'';
 in
 {
   programs.zed-editor = {

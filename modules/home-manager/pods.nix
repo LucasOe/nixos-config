@@ -20,7 +20,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [ pkgs.pods ];
 
-    xdg.configFile."pods/connections.json".text = builtins.toJSON {
+    xdg.configFile."pods/connections.json".text = lib.toJSON {
       "28a71bb3-7ea8-4585-9672-ca887cd29d9a" = {
         uuid = "28a71bb3-7ea8-4585-9672-ca887cd29d9a";
         name = "localhost";

@@ -74,7 +74,7 @@ in
       in
       ''
         [Context]
-        filesystems=${builtins.concatStringsSep ";" dirs}
+        filesystems=${lib.concatStringsSep ";" dirs}
       '';
   };
 }

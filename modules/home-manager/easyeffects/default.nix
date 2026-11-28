@@ -3,7 +3,7 @@
 let
   cfg = config.my.easyeffects;
 
-  loadPreset = path: builtins.fromJSON (builtins.readFile path);
+  loadPreset = path: lib.fromJSON (lib.readFile path);
 in
 {
   options.my.easyeffects = {

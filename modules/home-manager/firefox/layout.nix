@@ -1,12 +1,12 @@
-{ ... }:
+{ lib, ... }:
 
 let
-  extension = id: builtins.replaceStrings [ "@" "." ] [ "_" "_" ] id + "-browser-action";
+  extension = id: lib.replaceStrings [ "@" "." ] [ "_" "_" ] id + "-browser-action";
 in
 {
   programs.firefox = {
     profiles.default.settings = {
-      "browser.uiCustomization.state" = builtins.toJSON {
+      "browser.uiCustomization.state" = lib.toJSON {
         placements = {
           widget-overflow-fixed-list = [ ];
           unified-extensions-area = [ ];

@@ -41,7 +41,7 @@ in
     # when other apps need it.
     # https://niri-wm.github.io/niri/Nvidia.html
     environment.etc."nvidia/nvidia-application-profiles-rc.d/50-limit-free-buffer-pool-in-wayland-compositors.json".text =
-      builtins.toJSON {
+      lib.toJSON {
         rules = [
           {
             pattern = {

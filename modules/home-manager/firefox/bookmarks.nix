@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 let
   toolbarBookmarks = [
@@ -69,7 +69,7 @@ let
   ];
 
   # Map 'name' to 'label' and turn into json
-  pinned = builtins.toJSON (
+  pinned = lib.toJSON (
     map (b: {
       inherit (b) url;
       label = b.name;
